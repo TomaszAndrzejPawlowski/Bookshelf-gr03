@@ -15,7 +15,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/migace/parcel-project-template-pl-main/issues"
+    "url": "https://github.com/TomaszAndrzejPawlowski/Bookshelf-gr03.git/issues"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
