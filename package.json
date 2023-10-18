@@ -2,7 +2,7 @@
   "name": "Bookshelf-gr03",
   "version": "1.1.0",
   "description": "",
-  "homepage": "https://github.com/TomaszAndrzejPawlowski/Bookshelf-gr03.git",
+  "homepage": "https://tomaszandrzejpawlowski.github.io/Bookshelf-gr03",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url Bookshelf-gr03"
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/TomaszAndrzejPawlowski/Bookshelf-gr03.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Tomasz Andrzej Pawłowski <pawlowski.t.93@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TomaszAndrzejPawlowski/Bookshelf-gr03.git/issues"
