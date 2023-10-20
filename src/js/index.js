@@ -1,1 +1,258 @@
 import '../sass/main.scss';
+
+import { charities } from './charity-gallery';
+import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
+
+const charitiesSlider = document.getElementById('charitiesSlider');
+
+// fundacje charytatywne
+charities.forEach(charity => {
+  const div = document.createElement('div');
+  div.innerHTML = `<a href="${charity.url}" target="_blank">${charity.title}</a>`;
+  charitiesSlider.appendChild(div);
+});
+////////////////////////////
+
+// lista kategorii
+function renderCategories(categoriesData) {
+  const categoriesList = document.getElementById('categoriesList');
+
+  categoriesData.forEach(category => {
+    const li = document.createElement('li');
+    li.classList.add('category');
+    /// kategoria - powiekszona trzcionka po wyborze
+    //li.classList.add('selected-category');
+
+    li.textContent = category.list_name;
+    categoriesList.appendChild(li);
+  });
+}
+
+// Wywołanie funkcji i obsługa Promise
+fetchCategories()
+  .then(categoriesData => {
+    //console.log('Categories Received:', categoriesData);
+    renderCategories(categoriesData);
+  })
+  .catch(error => {
+    // Obsługa błędów
+    console.error('Error in promise chain:', error);
+  });
+//////////////////////////////////////////////////
+
+// Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
+fetchBooks('some-category')
+  .then(data => {
+    //console.log('Data Received:', data);
+
+    const booksContainer = document.getElementById('booksList');
+
+    data.forEach(category => {
+      const categoryBooksList = document.createElement('ul');
+      booksContainer.appendChild(categoryBooksList);
+
+      category.books.forEach(book => {
+        const bookItem = document.createElement('li');
+        bookItem.innerHTML = `
+          <div>
+            <h2>${category.list_name}</h2>
+            <img src="${book.book_image}" alt="${book.title}" />
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+          </div>
+        `;
+        categoryBooksList.appendChild(bookItem);
+      });
+    });
+  })
+  .catch(error => {
+    // Obsługa błędów
+    console.error('Error in promise chain:', error);
+  });
+//////////////////////////////////////
+
+// ksiaki w best selerss, po kliknieciu w best selerss
+function renderCategoriesWithBooks(categoriesData) {
+  const booksContainer = document.getElementById('booksList');
+  booksContainer.innerHTML = '';
+
+  categoriesData.forEach(category => {
+    const categoryBooksList = document.createElement('ul');
+    booksContainer.appendChild(categoryBooksList);
+
+    const categoryTitle = document.createElement('h2');
+    categoryTitle.textContent = category.list_name;
+    categoryBooksList.appendChild(categoryTitle);
+
+    category.books.forEach(book => {
+      const bookItem = document.createElement('li');
+      bookItem.innerHTML = `
+        <div>          
+          <img src="${book.book_image}" alt="${book.title}" />
+          <h3>${book.title}</h3>
+          <p>Author: ${book.author}</p>
+        </div>
+      `;
+      categoryBooksList.appendChild(bookItem);
+    });
+  });
+}
+document.getElementById('bestSellers').addEventListener('click', async event => {
+  if (event.target.tagName === 'LI') {
+    const selectedCategory = event.target.textContent;
+
+    if (selectedCategory === 'Best Sellers Books') {
+      try {
+        const booksData = await fetchBooks('best-sellers');
+        document.getElementById('bestSellersHeader').textContent = 'Best Sellers Books';
+        renderCategoriesWithBooks(booksData, 'booksList');
+      } catch (error) {
+        console.error('Error fetching best sellers:', error);
+        alert('Failed to fetch best sellers. Please try again.');
+      }
+    } else {
+      const booksData = await fetchBooks(selectedCategory);
+      document.getElementById('bestSellersHeader').textContent = selectedCategory;
+      renderCategoriesWithBooks(booksData, 'booksList');
+    }
+  }
+});
+////////////////////////////
+
+function renderBooks(booksData, category) {
+  const booksContainer = document.getElementById('booksList');
+  booksContainer.innerHTML = '';
+
+  if (booksData && booksData.length > 0) {
+    const categoryBooksList = document.createElement('ul');
+
+    booksContainer.appendChild(categoryBooksList);
+
+    /*const categoryTitle = document.createElement('h2');
+    categoryTitle.textContent = category;
+    categoryBooksList.appendChild(categoryTitle);*/
+    booksData.forEach(book => {
+      const bookItem = document.createElement('li');
+
+      bookItem.innerHTML = `
+        <div>             
+          <img src="${book.book_image}" alt="${book.title}" />
+          <h3>${book.title}</h3>
+          <p>Author: ${book.author}</p>
+        </div>
+      `;
+      //console.log(book._id);//////// wyciagamy id na kazda karte, tworzymy karte ksiazki, dodajemy  do div....................
+
+      // ...
+
+      bookItem.addEventListener('click', async () => {
+        //console.log('kliknięto element książki');
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = document.createElement('div');
+          bookCard.classList.add('book-card');
+
+          // zawartość karty książki
+          bookCard.innerHTML = `
+      <img src="${bookDetails.book_image}" alt="${bookDetails.title}" />
+      <h2>${bookDetails.title}</h2>
+      <p>Author: ${bookDetails.author}</p>
+      <p>Description: ${bookDetails.description}</p>
+      <p>Amazon Product URL: <a href="${bookDetails.amazon_product_url}" target="_blank">${
+            bookDetails.amazon_product_url
+          }</a></p>
+      
+      <!-- Lista linków do platform handlowych -->
+      <ul>
+        ${bookDetails.buy_links
+          .map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`)
+          .join('')}
+      </ul>
+      
+      <!-- button dodawania/usuwania z listy zakupów -->
+      <button id="addToCartButton" data-book-id="${bookDetails._id}">Add to Cart</button>
+    `;
+
+          const addToCartButton = bookCard.querySelector('#addToCartButton');
+          addToCartButton.addEventListener('click', () => {
+            console.log('Book added/removed from the cart!');
+          });
+
+          // dodaję kartę książki do kontenera
+          bookCardContainer.appendChild(bookCard);
+
+          console.log(bookDetails);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      categoryBooksList.appendChild(bookItem);
+    });
+  } else {
+    // gdy nie ma ksiązki
+    const noBooksMessage = document.createElement('p');
+    noBooksMessage.textContent = 'No books found in this category.';
+    booksContainer.appendChild(noBooksMessage);
+  }
+}
+
+////////////////////////////////////// Dodanie obsługi zdarzenia dla każdej kategorii, dodanie ksiazek z danej kategori, pogrubienie trzcionki kazdej kategori i pierwszej kategoti
+const categoryElements = document.querySelectorAll('.category');
+const bestSellersHeader = document.getElementById('bestSellersHeader');
+
+document.getElementById('categoriesList').addEventListener('click', async event => {
+  const clickedCategory = event.target.closest('.category, .categoryTop');
+
+  if (clickedCategory) {
+    const selectedCategory = clickedCategory.textContent;
+    const booksData = await fetchBooksData(selectedCategory);
+
+    // usuwamy klasę selected-category od wszystkich kategorii
+    document.querySelectorAll('.category, .categoryTop').forEach(element => {
+      element.classList.remove('selected-category');
+    });
+
+    bestSellersHeader.textContent = selectedCategory;
+    renderBooks(booksData, selectedCategory);
+
+    // dodana  klasa selected-category tylko do klikniętej kategorii
+    clickedCategory.classList.add('selected-category');
+  }
+});
+
+//  obsługa dla pierwszej kategorii, która już istnieje w HTML
+const bestSellersCategory = document.getElementById('bestSellers');
+bestSellersCategory.addEventListener('click', async event => {
+  const selectedCategory = bestSellersCategory.textContent;
+  const booksData = await fetchBooksData(selectedCategory);
+
+  //usuwamy klasę selected-category od wszystkich kategorii
+  document.querySelectorAll('.category, .categoryTop').forEach(element => {
+    element.classList.remove('selected-category');
+  });
+
+  bestSellersHeader.textContent = selectedCategory;
+  renderBooks(booksData, selectedCategory);
+
+  //  klasa selected-category tylko do klikniętej kategorii
+  bestSellersCategory.classList.add('selected-category');
+});
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ciemny motyw
+/*const themeSwitch = document.getElementById('themeSwitch');
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+document.body.classList.toggle('dark-mode', isDarkMode);
+
+themeSwitch.addEventListener('change', () => {
+  const isDarkMode = themeSwitch.checked;
+  document.body.classList.toggle('dark-mode', isDarkMode);
+  localStorage.setItem('darkMode', isDarkMode.toString());
+});*/
