@@ -67,28 +67,36 @@ function handleSeeMoreButtonClick(event) {
 // Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
 fetchBooks('some-category')
   .then(data => {
-    //console.log('Data Received:', data);
-
     const booksContainer = document.getElementById('booksList');
 
     data.forEach(category => {
       const categoryBooksList = document.createElement('ul');
       booksContainer.appendChild(categoryBooksList);
 
+      // Utwórz jeden przycisk "See more" dla całego zestawu książek
+      const seeMoreButton = document.createElement('button');
+      seeMoreButton.className = 'category-button';
+      seeMoreButton.innerText = 'See more';
+
+      // Utwórz jedną sekcję z napisem <h2>${category.list_name}</h2> dla całego zestawu książek
+      const categoryTitle = document.createElement('h2');
+      categoryTitle.innerHTML = category.list_name;
+      categoryBooksList.appendChild(categoryTitle);
+
       category.books.forEach(book => {
         const bookItem = document.createElement('li');
         bookItem.innerHTML = `
           <div>
-            <h2>${category.list_name}</h2>
             <img src="${book.book_image}" alt="${book.title}" />
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
-            <button class="category-button">See more</button>
           </div>
         `;
         categoryBooksList.appendChild(bookItem);
-        bookItem.addEventListener('click', handleSeeMoreButtonClick);
       });
+
+      // Dodaj przycisk "See more" dla całego zestawu książek
+      categoryBooksList.appendChild(seeMoreButton);
     });
   })
   .catch(error => {

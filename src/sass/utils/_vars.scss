@@ -1,19 +1,35 @@
-$colors: (
-    'black': #111111,
-    'black 1': #202024,
-    'grey': #b4afaf,
-    'lightgrey':#e0e0e0,
-    'violet': #4f2ee8,
-    'yellow': #eac645,
-    'white': #ffffff,
-);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-$font-primary: "DM Sans", sans-serif;
+:root {
+    --black: #111111;
+    --black_1: #202024;
+    --grey:#b4afaf;
+    --lighygrey:#e0e0e0;
+    --violet:#4f2ee8;
+    --white:#ffffff;
 
-$font-size-extrabig: 48px;
-$font-size-big: 32px;
-$font-size-normal: 22px;
-$font-size-normal_1: 18px;
-$font-size-small: 16px;
-$fint-size-small_1: 14px;
-$font-size-small_2: 12px;
+    --font-size-extrabig: 48px;
+    --font-size-big: 32px;
+    --font-size-normal: 22px;
+    --font-size-normal_1: 18px;
+    --font-size-small: 16px;
+    --fint-size-small_1: 14px;
+    --font-size-small_2: 12px;
+}
+
+img {
+    border-radius:8px;
+    
+}
+
+h3 {
+    font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -4%;
+  line-height: 18px;
+  text-align: left;
+}
