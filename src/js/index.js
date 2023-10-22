@@ -2,7 +2,8 @@ import '../sass/main.scss';
 
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
-
+//import { handleSeeMoreButtonClick } from './indexCallbacks';
+//export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
 
 // fundacje charytatywne
@@ -39,6 +40,29 @@ fetchCategories()
     console.error('Error in promise chain:', error);
   });
 //////////////////////////////////////////////////
+// funkcja oblsugi button 'See more'
+function handleSeeMoreButtonClick(event) {
+  const button = event.target.closest('.category-button');
+  if (button) {
+    const bookItem = button.closest('li');
+    const selectedCategory = bookItem.querySelector('h2').textContent;
+    fetchBooksData(selectedCategory)
+      .then(booksData => {
+        document.querySelectorAll('.category, .categoryTop, .category-button').forEach(element => {
+          element.classList.remove('selected-category');
+        });
+
+        bestSellersHeader.textContent = selectedCategory;
+        renderBooks(booksData, selectedCategory);
+
+        // dodana klasa selected-category tylko do klikniętej kategorii
+        bookItem.classList.add('selected-category');
+      })
+      .catch(error => {
+        console.error('Error fetching books data:', error);
+      });
+  }
+}
 
 // Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
 fetchBooks('some-category')
@@ -59,9 +83,11 @@ fetchBooks('some-category')
             <img src="${book.book_image}" alt="${book.title}" />
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
+            <button class="category-button">See more</button>
           </div>
         `;
         categoryBooksList.appendChild(bookItem);
+        bookItem.addEventListener('click', handleSeeMoreButtonClick);
       });
     });
   })
@@ -80,20 +106,19 @@ function renderCategoriesWithBooks(categoriesData) {
     const categoryBooksList = document.createElement('ul');
     booksContainer.appendChild(categoryBooksList);
 
-    const categoryTitle = document.createElement('h2');
-    categoryTitle.textContent = category.list_name;
-    categoryBooksList.appendChild(categoryTitle);
-
     category.books.forEach(book => {
       const bookItem = document.createElement('li');
       bookItem.innerHTML = `
-        <div>          
+        <div>
+          <h2>${category.list_name}</h2>          
           <img src="${book.book_image}" alt="${book.title}" />
           <h3>${book.title}</h3>
           <p>Author: ${book.author}</p>
+          <button class="category-button">See more</button>
         </div>
       `;
       categoryBooksList.appendChild(bookItem);
+      bookItem.addEventListener('click', handleSeeMoreButtonClick);
     });
   });
 }
@@ -215,23 +240,6 @@ document.getElementById('categoriesList').addEventListener('click', async event 
   }
 });
 
-//  obsługa dla pierwszej kategorii, która już istnieje w HTML
-const bestSellersCategory = document.getElementById('bestSellers');
-bestSellersCategory.addEventListener('click', async event => {
-  const selectedCategory = bestSellersCategory.textContent;
-  const booksData = await fetchBooksData(selectedCategory);
-
-  //usuwamy klasę selected-category od wszystkich kategorii
-  document.querySelectorAll('.category, .categoryTop').forEach(element => {
-    element.classList.remove('selected-category');
-  });
-
-  bestSellersHeader.textContent = selectedCategory;
-  renderBooks(booksData, selectedCategory);
-
-  //  klasa selected-category tylko do klikniętej kategorii
-  bestSellersCategory.classList.add('selected-category');
-});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ciemny motyw

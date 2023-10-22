@@ -21,13 +21,13 @@ async function fetchBookDetails(bookId) {
   const url = `https://books-backend.p.goit.global/books/${bookId}`;
 
   try {
-    const response = await fetch(url);
+    const response = await axios.get(url);
 
-    if (!response.ok) {
+    if (response.status !== 200) {
       throw new Error('Failed to fetch book details');
     }
 
-    const bookDetails = await response.json();
+    const bookDetails = response.data;
     //console.log(bookDetails);
     return bookDetails;
   } catch (error) {
