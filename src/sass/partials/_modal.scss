@@ -1,0 +1,68 @@
+/* CSS for the modal container */
+.modal-card-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto; /* Dodaj overflow, aby umożliwić przewijanie */
+}
+
+/* CSS for the modal */
+.book-card {
+  width: 90%; /* Dostosuj szerokość modala do ekranu mobilnego */
+  max-width: 300px; /* Ogranicz maksymalną szerokość */
+  top: 30%;
+  margin: 20px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Dodaj overflow, aby zawartość mogła być przewijana */
+}
+
+/* Close button styles */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #555;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Add to cart button styles (optional) */
+.add-to-cart-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.modalDiv {
+  position: fixed;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

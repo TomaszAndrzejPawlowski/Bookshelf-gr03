@@ -124,13 +124,6 @@ function renderBooks(booksData, category) {
   booksContainer.innerHTML = '';
 
   if (booksData && booksData.length > 0) {
-    const categoryBooksList = document.createElement('ul');
-
-    booksContainer.appendChild(categoryBooksList);
-
-    /*const categoryTitle = document.createElement('h2');
-    categoryTitle.textContent = category;
-    categoryBooksList.appendChild(categoryTitle);*/
     booksData.forEach(book => {
       const bookItem = document.createElement('li');
 
@@ -141,12 +134,8 @@ function renderBooks(booksData, category) {
           <p>Author: ${book.author}</p>
         </div>
       `;
-      //console.log(book._id);//////// wyciagamy id na kazda karte, tworzymy karte ksiazki, dodajemy  do div....................
-
-      // ...
 
       bookItem.addEventListener('click', async () => {
-        //console.log('kliknięto element książki');
         const bookCardContainer = document.getElementById('bookCardContainer');
         bookCardContainer.innerHTML = '';
 
@@ -156,46 +145,46 @@ function renderBooks(booksData, category) {
           const bookCard = document.createElement('div');
           bookCard.classList.add('book-card');
 
-          // zawartość karty książki
-          bookCard.innerHTML = `
-      <img src="${bookDetails.book_image}" alt="${bookDetails.title}" />
-      <h2>${bookDetails.title}</h2>
-      <p>Author: ${bookDetails.author}</p>
-      <p>Description: ${bookDetails.description}</p>
-      <p>Amazon Product URL: <a href="${bookDetails.amazon_product_url}" target="_blank">${
+          bookCard.innerHTML = `<div class="modal-card-container">
+          <div class="book-card">
+            <span class="close-button" title="Close">&times;</span>
+            <img src="${bookDetails.book_image}" alt="${bookDetails.title}" />
+            <h2>${bookDetails.title}</h2>
+            <p>Author: ${bookDetails.author}</p>
+            <p>Description: ${bookDetails.description}</p>
+            <p>Amazon Product URL: <a href="${bookDetails.amazon_product_url}" target="_blank">${
             bookDetails.amazon_product_url
           }</a></p>
-      
-      <!-- Lista linków do platform handlowych -->
-      <ul>
-        ${bookDetails.buy_links
-          .map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`)
-          .join('')}
-      </ul>
-      
-      <!-- button dodawania/usuwania z listy zakupów -->
-      <button id="addToCartButton" data-book-id="${bookDetails._id}">Add to Cart</button>
-    `;
+            <ul>
+              ${bookDetails.buy_links
+                .map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`)
+                .join('')}
+            </ul>
+            <button class="add-to-cart-button" data-book-id="${
+              bookDetails._id
+            }">Add to Cart</button>
+            </div></div>
+          `;
 
-          const addToCartButton = bookCard.querySelector('#addToCartButton');
+          const closeButton = bookCard.querySelector('.close-button');
+          closeButton.addEventListener('click', () => {
+            bookCardContainer.innerHTML = ''; // Close the modal
+          });
+
+          const addToCartButton = bookCard.querySelector('.add-to-cart-button');
           addToCartButton.addEventListener('click', () => {
             console.log('Book added/removed from the cart!');
           });
 
-          // dodaję kartę książki do kontenera
           bookCardContainer.appendChild(bookCard);
-
-          console.log(bookDetails);
         } catch (error) {
           console.error(error);
         }
       });
 
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      categoryBooksList.appendChild(bookItem);
+      booksContainer.appendChild(bookItem);
     });
   } else {
-    // gdy nie ma ksiązki
     const noBooksMessage = document.createElement('p');
     noBooksMessage.textContent = 'No books found in this category.';
     booksContainer.appendChild(noBooksMessage);
