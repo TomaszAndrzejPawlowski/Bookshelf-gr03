@@ -17,6 +17,7 @@ themeSwitch.addEventListener('change', () => {
   loginBtn.style.backgroundColor = 'white';
   logoLight.style.display = 'block';
   logoDark.style.display = 'none';
+
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
