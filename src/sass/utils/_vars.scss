@@ -33,3 +33,7 @@ h3 {
   line-height: 18px;
   text-align: left;
 }
+
+////---slider///
+$mainColorSlider: #4F2EE8;
+$backgroundSlider: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
