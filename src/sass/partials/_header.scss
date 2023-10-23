@@ -1,0 +1,133 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+.logo_dark {
+  display: none;
+}
+.dark_mode {
+  display: none;
+}
+.btn_log-out-desktop {
+  display: none;
+}
+.btn_log-out-mobile {
+  display: none;
+}
+.hamburger_open {
+  display: none;
+}
+.hamburger_close {
+  display: none;
+}
+.header_wrapper {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  border: 1.5px solid black;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.logo {
+  position: absolute;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home_shopping_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 20%;
+  cursor: pointer;
+}
+.shoping-list_text {
+  margin-left: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+.shoping-list_text:hover::after {
+  content: '';
+  position: absolute;
+  left: -5;
+  background-color: #eac645;
+  width: 180px;
+  height: 45px;
+  border-radius: 45%;
+  z-index: -1;
+}
+.home_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+.home_text:hover::after {
+  content: '';
+  position: absolute;
+  top: -5;
+  left: -5;
+  background-color: #eac645;
+  width: 70px;
+  height: 45px;
+  border-radius: 45%;
+  z-index: -1;
+}
+.lock-icon {
+  margin-left: 5%;
+}
+.switcher_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 15%;
+  margin-right: 1%;
+}
+
+#themeSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.button_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 2%;
+}
+.btn_log-in {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.lock-icon {
+  fill: white;
+}
+.modal_signup {
+  width: 579px;
+  height: 516px;
+  border: 2px solid black;
+  border-radius: 18px;
+  position: absolute;
+  top: 100%;
+}
