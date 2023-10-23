@@ -1,7 +1,7 @@
 import '../sass/main.scss';
 import '../sass/partials/_header.scss';
 
-import { charities } from './charity-gallery';
+// import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
