@@ -1,4 +1,5 @@
 import '../sass/main.scss';
+import './shoppingList';
 
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
