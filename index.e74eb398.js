@@ -536,7 +536,12 @@ function(t){let e=document.getElementById("categoriesList");t.forEach(t=>{let r=
 //li.classList.add('selected-category');
 r.textContent=t.list_name,e.appendChild(r)})}(t)}).catch(t=>{// Obsługa błędów
 console.error("Error in promise chain:",t)}),ek("some-category").then(t=>{let e=document.getElementById("booksList");t.forEach(t=>{// tworzy sekcję dla danej kategorii
-let r=document.createElement("div");r.className="category-section";let n=document.createElement("h2");n.innerHTML=t.list_name,r.appendChild(n);let o=document.createElement("ul");t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title;let s=document.createElement("p");s.textContent=`Author: ${t.author}`,r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e)}),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
+let r=document.createElement("div");r.className="category-section";let n=document.createElement("h2");n.innerHTML=t.list_name,r.appendChild(n);let o=document.createElement("ul");t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;//nowy fragment - kontener na tytuł i autora
+let i=document.createElement("div");// Kontener na tytuł i autora
+i.className="book-details";let s=document.createElement("h3");s.textContent=t.title;let a=document.createElement("p");a.textContent=`Author: ${t.author}`,// dodatkowo:
+i.appendChild(s),i.appendChild(a),r.appendChild(n),e.appendChild(r),e.appendChild(i),//bookItem.appendChild(p);
+o.appendChild(e)}),// Dodaje klasę "category-list" do elementu <ul>
+o.classList.add("category-list"),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
 let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),// Dodaj sekcję kategorii do kontenera
 e.appendChild(r)})}).catch(t=>{// Obsługa błędów
 console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("Best Sellers Books"===e)try{let t=await ek("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",ej(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}else{let t=await ek(e);document.getElementById("bestSellersHeader").textContent=e,ej(t,"booksList")}}}),document.querySelectorAll(".category");const eI=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await eB(t);// usuwamy klasę selected-category od wszystkich kategorii
@@ -552,6 +557,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.26516f77.js.map
+});*///# sourceMappingURL=index.e74eb398.js.map
 
-//# sourceMappingURL=index.26516f77.js.map
+//# sourceMappingURL=index.e74eb398.js.map
