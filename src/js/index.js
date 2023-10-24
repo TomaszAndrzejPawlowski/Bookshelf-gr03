@@ -71,40 +71,51 @@ fetchBooks('some-category')
     const booksContainer = document.getElementById('booksList');
 
     data.forEach(category => {
-      const categoryBooksList = document.createElement('ul');
-      booksContainer.appendChild(categoryBooksList);
+      // tworzy sekcję dla danej kategorii
+      const categorySection = document.createElement('div');
+      categorySection.className = 'category-section';
 
-      // Utwórz jeden przycisk "See more" dla całego zestawu książek
-      const seeMoreButton = document.createElement('button');
-      seeMoreButton.className = 'category-button';
-      seeMoreButton.innerText = 'See more';
-
-      // Utwórz jedną sekcję z napisem <h2>${category.list_name}</h2> dla całego zestawu książek
       const categoryTitle = document.createElement('h2');
       categoryTitle.innerHTML = category.list_name;
-      categoryBooksList.appendChild(categoryTitle);
+      categorySection.appendChild(categoryTitle);
 
-      category.books.forEach(book => {
+      const categoryBooksList = document.createElement('ul');
+
+      category.books.slice(0, 5).forEach(book => {
         const bookItem = document.createElement('li');
-        bookItem.innerHTML = `
-          <div>
-            <img src="${book.book_image}" alt="${book.title}" />
-            <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
-          </div>
-        `;
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+        const image = document.createElement('img');
+        image.src = book.book_image;
+        image.alt = book.title;
+        const h3 = document.createElement('h3');
+        h3.textContent = book.title;
+        const p = document.createElement('p');
+        p.textContent = `Author: ${book.author}`;
+
+        imageContainer.appendChild(image);
+        bookItem.appendChild(imageContainer);
+        bookItem.appendChild(h3);
+        bookItem.appendChild(p);
         categoryBooksList.appendChild(bookItem);
       });
 
-      // Dodaj przycisk "See more" dla całego zestawu książek
-      categoryBooksList.appendChild(seeMoreButton);
+      categorySection.appendChild(categoryBooksList);
+
+      // Dodanie przycisku "See more" dla całego zestawu książek
+      const seeMoreButton = document.createElement('button');
+      seeMoreButton.className = 'category-button';
+      seeMoreButton.innerText = 'See more';
+      categorySection.appendChild(seeMoreButton);
+
+      // Dodaj sekcję kategorii do kontenera
+      booksContainer.appendChild(categorySection);
     });
   })
   .catch(error => {
     // Obsługa błędów
     console.error('Error in promise chain:', error);
   });
-//////////////////////////////////////
 
 // ksiaki w best selerss, po kliknieciu w best selerss
 function renderCategoriesWithBooks(categoriesData) {
