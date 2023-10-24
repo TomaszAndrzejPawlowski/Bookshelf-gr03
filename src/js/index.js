@@ -1,6 +1,6 @@
 import '../sass/main.scss';
 import '../sass/partials/_header.scss';
-
+import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
@@ -187,39 +187,7 @@ function renderBooks(booksData, category) {
         try {
           const bookDetails = await fetchBookDetails(book._id);
 
-          const bookCard = document.createElement('div');
-          bookCard.classList.add('book-card');
-
-          bookCard.innerHTML = `<div class="modal-card-container">
-          <div class="book-card">
-            <span class="close-button" title="Close">&times;</span>
-            <img src="${bookDetails.book_image}" alt="${bookDetails.title}" />
-            <h2>${bookDetails.title}</h2>
-            <p>Author: ${bookDetails.author}</p>
-            <p>Description: ${bookDetails.description}</p>
-            <p>Amazon Product URL: <a href="${bookDetails.amazon_product_url}" target="_blank">${
-            bookDetails.amazon_product_url
-          }</a></p>
-            <ul>
-              ${bookDetails.buy_links
-                .map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`)
-                .join('')}
-            </ul>
-            <button class="add-to-cart-button" data-book-id="${
-              bookDetails._id
-            }">Add to Cart</button>
-            </div></div>
-          `;
-
-          const closeButton = bookCard.querySelector('.close-button');
-          closeButton.addEventListener('click', () => {
-            bookCardContainer.innerHTML = ''; // Close the modal
-          });
-
-          const addToCartButton = bookCard.querySelector('.add-to-cart-button');
-          addToCartButton.addEventListener('click', () => {
-            console.log('Book added/removed from the cart!');
-          });
+          const bookCard = createBookCard(bookDetails);
 
           bookCardContainer.appendChild(bookCard);
         } catch (error) {
