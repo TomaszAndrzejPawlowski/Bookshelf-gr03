@@ -16,6 +16,7 @@ const inputName = document.querySelector('.modal_input-name');
 const inputEmail = document.querySelector('.modal_input-mail');
 const InputPass = document.querySelector('.modal_input-pass');
 const modalBtn = document.querySelector('.modal_btn');
+const hamburgerOpenBtn = document.querySelector('.hamburger_open');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -29,6 +30,7 @@ themeSwitch.addEventListener('change', () => {
   logoDark.style.display = 'none';
   header.style.backgroundColor = '#f6f6f6';
   modal.style.backgroundColor = '#f6f6f6';
+  modal.style.border = '2px solid black';
   field.style.backgroudColor = '#f6f6f6';
   nameField.style.backgroundColor = '#f6f6f6';
   nameField.style.border = '2px solid black';
@@ -41,6 +43,7 @@ themeSwitch.addEventListener('change', () => {
   InputPass.style.backgroundColor = '#f6f6f6';
   closeModalBtn.style.backgroundColor = '#f6f6f6';
   modalBtn.style.backgroundColor = 'black';
+  hamburgerOpenBtn.style.backgroundColor = '#f6f6f6';
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
@@ -49,6 +52,7 @@ themeSwitch.addEventListener('change', () => {
     logoDark.style.display = 'block';
     logoLight.style.display = 'none';
     modal.style.backgroundColor = '#333';
+    modal.style.border = '2px solid #f6f6f6';
     field.style.backgroudColor = '#333';
     nameField.style.backgroundColor = '#333';
     nameField.style.border = '2px solid white';
@@ -63,6 +67,7 @@ themeSwitch.addEventListener('change', () => {
     closeModalBtn.style.backgroundColor = '#333';
     modalBtn.style.backgroundColor = '#f6f6f6';
     modalBtn.style.color = 'black';
+    hamburgerOpenBtn.style.backgroundColor = '#333';
   }
 });
 
