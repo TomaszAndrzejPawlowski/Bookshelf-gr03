@@ -17,12 +17,18 @@ const inputEmail = document.querySelector('.modal_input-mail');
 const InputPass = document.querySelector('.modal_input-pass');
 const modalBtn = document.querySelector('.modal_btn');
 const hamburgerOpenBtn = document.querySelector('.hamburger_open');
+const hamburgerCloseBtn = document.querySelector('.hamburger_close');
+const modalMobile = document.querySelector('.modal_mobile');
+const modalSignupMobile = document.querySelector('.modal_signup-mobile');
+const buttonMobileModal = document.querySelector('.btn_log-out-mobile');
+const buttonMobileModalClose = document.querySelector('.modal_singup_close-mobile');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
 
+  localStorage.setItem('darkMode', isDarkMode.toString());
   switchLight.style.display = 'block';
   switchDark.style.display = 'none';
   openModalBtn.style.backgroundColor = '#f6f6f6';
@@ -76,4 +82,25 @@ openModalBtn.addEventListener('click', () => {
 });
 closeModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
+});
+
+hamburgerOpenBtn.addEventListener('click', () => {
+  modalMobile.style.opacity = 1;
+  hamburgerOpenBtn.style.opacity = 0;
+  hamburgerCloseBtn.style.display = 'block';
+});
+
+hamburgerCloseBtn.addEventListener('click', () => {
+  modalMobile.style.opacity = 0;
+  hamburgerOpenBtn.style.opacity = 1;
+  hamburgerCloseBtn.style.display = 'none';
+});
+
+buttonMobileModal.addEventListener('click', () => {
+  modalSignupMobile.style.display = 'block';
+  modalMobile.style.opacity = 0;
+});
+
+buttonMobileModalClose.addEventListener('click', () => {
+  modalSignupMobile.style.display = 'none';
 });
