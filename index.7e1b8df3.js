@@ -5,19 +5,22 @@ let t;var e,r,n,o,i,s=globalThis;function a(t){let e=document.createElement("div
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg></button>
+            <div class="popup-image-desc">
             <div>
                 <img class="popup-img" src="${t.book_image}" alt="${t.title}" />
             </div>
             <div class="popup-authorandtitle">
                 <h2 class="popup-title">${t.title}</h2>
                 <p class="popup-author">Author: ${t.author}</p>
+                <p class="popup-desc"> ${t.description}</p>
             </div>
-
-    <div class="modal-button-position">
-        <button class="add-to-cart-button" data-book-id="${t._id}">add to shopping list</button>
-    </div>
-    </div>
-    </div>
+            </div>
+          <div class="modal-button-position">
+                  <button class="add-to-cart-button" data-book-id="${t._id}">add to shopping list</button>
+          </div>
+        </div>
+        
+      </div>
   `;let r=e.querySelector(".modal-close-button");r.addEventListener("click",()=>{let t=document.getElementById("bookCardContainer");t.innerHTML="";// Zamykanie modalu
 });let n=e.querySelector(".add-to-cart-button");n.addEventListener("click",()=>{console.log("Książka dodana/usunięta z koszyka!")});// Otwieranie modala z wygenerowanym bookCard
 let o=document.getElementById("bookCardContainer");return o.innerHTML="",o.appendChild(e),e}function l(t,e){return function(){return t.apply(e,arguments)}}// utils is a library of generic helper functions non-specific to axios
@@ -565,6 +568,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.5589ee17.js.map
+});*///# sourceMappingURL=index.7e1b8df3.js.map
 
-//# sourceMappingURL=index.5589ee17.js.map
+//# sourceMappingURL=index.7e1b8df3.js.map
