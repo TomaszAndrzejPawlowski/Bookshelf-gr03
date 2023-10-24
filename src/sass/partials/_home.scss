@@ -1,3 +1,5 @@
+@import '../utils/mixins';
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,9 +8,8 @@ body {
 }
 
 .home {
-  display: flex;
-  
-  flex-wrap: wrap;
+  //display: flex; 
+  //flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
@@ -17,10 +18,12 @@ body {
 }
 
 .left-section {
-  display: flex;
-  flex-direction: column;
-  width: 356px;
-  height: 100%;
+  //display: flex;
+  //flex-direction: column;
+  padding:  0 50px;
+  
+  width: 335px;
+  height: 628px;
 }
 
 .categories-title{
@@ -87,20 +90,19 @@ body {
 
 //best sellers books title
 .main-title{
- color: black;
-  font-size: 48px;
+  
+  white-space: nowrap;
+  color: black;
+  width: 360px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -4%;
-  line-height: 52px;
-  text-align: left;
-  padding: 0 0 40px 0;
+  line-height: 38px;
+  text-align: center;
+  padding: 0 0 40px 80px;
 }
 .books {
-   color: #4f2ee8;
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -4%;
-  line-height: 52px;
+    color: #4f2ee8;
 }
 
 
@@ -108,7 +110,7 @@ body {
 .books-list-block {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 356px);
+  //width: calc(100% - 356px);
   padding: 10px;
   max-width: 1196px; /* 996px + 5*20px margin */
   justify-content: space-between;
@@ -123,7 +125,7 @@ body {
 }
 
 .books-list-block li {
-  flex: 0 0 calc(20% - 20px); /* Każda sekcja zajmuje 20% szerokości z odstępem */
+  //flex: 0 0 calc(20% - 20px); /* Każda sekcja zajmuje 20% szerokości z odstępem */
   margin-right: 20px; /* Odstęp między sekcjami */
   margin-bottom: 20px; /* Odstęp pionowy między sekcjami */
   //padding: 10px;
@@ -132,8 +134,25 @@ body {
 }
 
 
+.image-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  
+}
 
-.book-card img {
-  width: 180px; /* Ustawienie szerokości obrazka na 180px */
-  object-fit: cover; /* Dopasowanie obrazka do wymiarów */
+
+.image-container {
+  // Dla tabletów (szerokość powyżej 768px)
+  @include tablet {
+    width: 218px; /* Szerokość obrazków dla tabletów */
+  }
+
+  // Dla ekranów desktop (szerokość powyżej 1200px)
+  @include desktop {
+    width: 180px; /* Szerokość obrazków dla ekranów desktop */
+  }
+
+  // Dla innych przypadków (domyślnie)
+  width: 335px; /* Domyślna szerokość obrazków */
 }
