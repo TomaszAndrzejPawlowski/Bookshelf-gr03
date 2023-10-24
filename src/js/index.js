@@ -88,17 +88,29 @@ fetchBooks('some-category')
         const image = document.createElement('img');
         image.src = book.book_image;
         image.alt = book.title;
+
+        //nowy fragment - kontener na tytuł i autora
+        const detailsContainer = document.createElement('div'); // Kontener na tytuł i autora
+        detailsContainer.className = 'book-details'; // klasa do kontenera na potrzeby stylizacji
+
         const h3 = document.createElement('h3');
         h3.textContent = book.title;
         const p = document.createElement('p');
         p.textContent = `Author: ${book.author}`;
 
+        // dodatkowo:
+        detailsContainer.appendChild(h3);
+        detailsContainer.appendChild(p);
+
         imageContainer.appendChild(image);
         bookItem.appendChild(imageContainer);
-        bookItem.appendChild(h3);
-        bookItem.appendChild(p);
+        bookItem.appendChild(detailsContainer); // kontener z tytułem i autorem
+        //bookItem.appendChild(p);
         categoryBooksList.appendChild(bookItem);
       });
+
+      // Dodaje klasę "category-list" do elementu <ul>
+      categoryBooksList.classList.add('category-list');
 
       categorySection.appendChild(categoryBooksList);
 

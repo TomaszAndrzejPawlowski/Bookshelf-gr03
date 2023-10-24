@@ -106,41 +106,22 @@ body {
 }
 
 
-//list of books
-.books-list-block {
-  display: flex;
-  flex-wrap: wrap;
-  //width: calc(100% - 356px);
-  padding: 10px;
-  max-width: 1196px; /* 996px + 5*20px margin */
-  justify-content: space-between;
-}
-
-.books-list-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.books-list-block li {
-  //flex: 0 0 calc(20% - 20px); /* Każda sekcja zajmuje 20% szerokości z odstępem */
-  margin-right: 20px; /* Odstęp między sekcjami */
-  margin-bottom: 20px; /* Odstęp pionowy między sekcjami */
-  //padding: 10px;
-  text-align: center;
-  max-width: 180px; /* Maksymalna szerokość sekcji z książkami */
-}
+//usunąłem stylowanie .block-list 
 
 
 .image-container {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  
+  list-style: none;
 }
 
+
+.category-list {
+display: flex;
+list-style: none;
+overflow: hidden;
+}
 
 .image-container {
   // Dla tabletów (szerokość powyżej 768px)
