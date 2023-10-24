@@ -1,4 +1,5 @@
 import '../sass/main.scss';
+import './shoppingList';
 import '../sass/partials/_header.scss';
 import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
