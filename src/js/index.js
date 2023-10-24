@@ -80,25 +80,121 @@ fetchBooks('some-category')
       categorySection.appendChild(categoryTitle);
 
       const categoryBooksList = document.createElement('ul');
+      
+        if (window.innerWidth <= 768) {
+          category.books.slice(0, 1).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
 
-      category.books.slice(0, 5).forEach(book => {
-        const bookItem = document.createElement('li');
-        const imageContainer = document.createElement('div');
-        imageContainer.className = 'image-container';
-        const image = document.createElement('img');
-        image.src = book.book_image;
-        image.alt = book.title;
-        const h3 = document.createElement('h3');
-        h3.textContent = book.title;
-        const p = document.createElement('p');
-        p.textContent = `Author: ${book.author}`;
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
 
-        imageContainer.appendChild(image);
-        bookItem.appendChild(imageContainer);
-        bookItem.appendChild(h3);
-        bookItem.appendChild(p);
-        categoryBooksList.appendChild(bookItem);
-      });
+            // ////////////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        } else if (window.innerWidth > 768 && window.innerWidth <= 1200) {
+          category.books.slice(0, 3).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
+
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
+
+            // /////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        } else {
+          category.books.slice(0, 5).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
+
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
+
+            // /////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        }
+      
+  
 
       categorySection.appendChild(categoryBooksList);
 
@@ -139,7 +235,26 @@ function renderCategoriesWithBooks(categoriesData) {
       `;
       categoryBooksList.appendChild(bookItem);
       bookItem.addEventListener('click', handleSeeMoreButtonClick);
+
+      // /////////
+      //Modal, ten sam kod dodany w 4 miejscach
+      bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      // /////////
     });
+    
   });
 }
 document.getElementById('bestSellers').addEventListener('click', async event => {
