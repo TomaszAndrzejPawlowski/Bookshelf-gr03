@@ -1,6 +1,7 @@
 import '../sass/main.scss';
 import './shoppingList';
-
+import '../sass/partials/_header.scss';
+import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
@@ -71,40 +72,150 @@ fetchBooks('some-category')
     const booksContainer = document.getElementById('booksList');
 
     data.forEach(category => {
-      const categoryBooksList = document.createElement('ul');
-      booksContainer.appendChild(categoryBooksList);
+      // tworzy sekcję dla danej kategorii
+      const categorySection = document.createElement('div');
+      categorySection.className = 'category-section';
 
-      // Utwórz jeden przycisk "See more" dla całego zestawu książek
+      const categoryTitle = document.createElement('h2');
+      categoryTitle.innerHTML = category.list_name;
+      categorySection.appendChild(categoryTitle);
+
+      const categoryBooksList = document.createElement('ul');
+      
+        if (window.innerWidth <= 768) {
+          category.books.slice(0, 1).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
+
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
+
+            // ////////////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        } else if (window.innerWidth > 768 && window.innerWidth <= 1200) {
+          category.books.slice(0, 3).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
+
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
+
+            // /////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        } else {
+          category.books.slice(0, 5).forEach(book => {
+            const bookItem = document.createElement('li');
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const image = document.createElement('img');
+            image.src = book.book_image;
+            image.alt = book.title;
+            const h3 = document.createElement('h3');
+            h3.textContent = book.title;
+            const p = document.createElement('p');
+            p.textContent = `Author: ${book.author}`;
+
+            imageContainer.appendChild(image);
+            bookItem.appendChild(imageContainer);
+            bookItem.appendChild(h3);
+            bookItem.appendChild(p);
+            categoryBooksList.appendChild(bookItem);
+
+            // /////////
+            //Modal, ten sam kod dodany w 4 miejscach
+            bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+            });
+            // /////////
+          });
+        }
+      
+  
+
+      // Dodaje klasę "category-list" do elementu <ul>
+      categoryBooksList.classList.add('category-list');
+
+      categorySection.appendChild(categoryBooksList);
+
+      // Dodanie przycisku "See more" dla całego zestawu książek
       const seeMoreButton = document.createElement('button');
       seeMoreButton.className = 'category-button';
       seeMoreButton.innerText = 'See more';
+      categorySection.appendChild(seeMoreButton);
 
-      // Utwórz jedną sekcję z napisem <h2>${category.list_name}</h2> dla całego zestawu książek
-      const categoryTitle = document.createElement('h2');
-      categoryTitle.innerHTML = category.list_name;
-      categoryBooksList.appendChild(categoryTitle);
-
-      category.books.forEach(book => {
-        const bookItem = document.createElement('li');
-        bookItem.innerHTML = `
-          <div>
-            <img src="${book.book_image}" alt="${book.title}" />
-            <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
-          </div>
-        `;
-        categoryBooksList.appendChild(bookItem);
-      });
-
-      // Dodaj przycisk "See more" dla całego zestawu książek
-      categoryBooksList.appendChild(seeMoreButton);
+      // Dodaj sekcję kategorii do kontenera
+      booksContainer.appendChild(categorySection);
     });
   })
   .catch(error => {
     // Obsługa błędów
     console.error('Error in promise chain:', error);
   });
-//////////////////////////////////////
 
 // ksiaki w best selerss, po kliknieciu w best selerss
 function renderCategoriesWithBooks(categoriesData) {
@@ -128,7 +239,26 @@ function renderCategoriesWithBooks(categoriesData) {
       `;
       categoryBooksList.appendChild(bookItem);
       bookItem.addEventListener('click', handleSeeMoreButtonClick);
+
+      // /////////
+      //Modal, ten sam kod dodany w 4 miejscach
+      bookItem.addEventListener('click', async () => {
+        const bookCardContainer = document.getElementById('bookCardContainer');
+        bookCardContainer.innerHTML = '';
+
+        try {
+          const bookDetails = await fetchBookDetails(book._id);
+
+          const bookCard = createBookCard(bookDetails);
+
+          bookCardContainer.appendChild(bookCard);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      // /////////
     });
+    
   });
 }
 document.getElementById('bestSellers').addEventListener('click', async event => {
@@ -176,39 +306,7 @@ function renderBooks(booksData, category) {
         try {
           const bookDetails = await fetchBookDetails(book._id);
 
-          const bookCard = document.createElement('div');
-          bookCard.classList.add('book-card');
-
-          bookCard.innerHTML = `<div class="modal-card-container">
-          <div class="book-card">
-            <span class="close-button" title="Close">&times;</span>
-            <img src="${bookDetails.book_image}" alt="${bookDetails.title}" />
-            <h2>${bookDetails.title}</h2>
-            <p>Author: ${bookDetails.author}</p>
-            <p>Description: ${bookDetails.description}</p>
-            <p>Amazon Product URL: <a href="${bookDetails.amazon_product_url}" target="_blank">${
-            bookDetails.amazon_product_url
-          }</a></p>
-            <ul>
-              ${bookDetails.buy_links
-                .map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`)
-                .join('')}
-            </ul>
-            <button class="add-to-cart-button" data-book-id="${
-              bookDetails._id
-            }">Add to Cart</button>
-            </div></div>
-          `;
-
-          const closeButton = bookCard.querySelector('.close-button');
-          closeButton.addEventListener('click', () => {
-            bookCardContainer.innerHTML = ''; // Close the modal
-          });
-
-          const addToCartButton = bookCard.querySelector('.add-to-cart-button');
-          addToCartButton.addEventListener('click', () => {
-            console.log('Book added/removed from the cart!');
-          });
+          const bookCard = createBookCard(bookDetails);
 
           bookCardContainer.appendChild(bookCard);
         } catch (error) {
