@@ -21,9 +21,9 @@ export function createBookCard(bookDetails) {
             </div>
           <div class="modal-button-position">
                   <button class="add-to-cart-button" data-book-id="${bookDetails._id}">add to shopping list</button>
+                  <p class="add-to-cart-message"></p>
           </div>
         </div>
-        
       </div>
   `;
 
@@ -34,11 +34,30 @@ export function createBookCard(bookDetails) {
   });
 
   const addToCartButton = bookCard.querySelector('.add-to-cart-button');
+  const addToCartMessage = bookCard.querySelector('.add-to-cart-message');
+
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+  const bookId = bookDetails._id;
+  if (shoppingList.includes(bookId)) {
+    addToCartButton.textContent = 'remove from list';
+  }
+
   addToCartButton.addEventListener('click', () => {
-    console.log('Książka dodana/usunięta z koszyka!');
+    if (shoppingList.includes(bookId)) {
+      const index = shoppingList.indexOf(bookId);
+      shoppingList.splice(index, 1);
+      addToCartButton.textContent = 'add to shopping list';
+      addToCartMessage.textContent = 'The book has been removed from the shopping list.';
+    } else {
+      shoppingList.push(bookId);
+      addToCartButton.textContent = 'remove from list';
+      addToCartMessage.textContent =
+        'Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list."';
+    }
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+    console.log('Lista zakupów w localStorage:', shoppingList);
   });
 
-  // Otwieranie modala z wygenerowanym bookCard
   const bookCardContainer = document.getElementById('bookCardContainer');
   bookCardContainer.innerHTML = '';
   bookCardContainer.appendChild(bookCard);
