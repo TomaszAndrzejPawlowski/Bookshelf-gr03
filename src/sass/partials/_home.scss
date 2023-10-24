@@ -8,8 +8,6 @@ body {
 }
 
 .home {
-  //display: flex; 
-  //flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
@@ -18,10 +16,7 @@ body {
 }
 
 .left-section {
-  //display: flex;
-  //flex-direction: column;
   padding:  0 50px;
-  
   width: 335px;
   height: 628px;
 }
@@ -122,18 +117,55 @@ display: flex;
 list-style: none;
 overflow: hidden;
 }
+.category-list li{
+
+}
 
 .image-container {
   // Dla tabletów (szerokość powyżej 768px)
   @include tablet {
     width: 218px; /* Szerokość obrazków dla tabletów */
+    height: 316px;
+    object-fit: contain;
   }
 
   // Dla ekranów desktop (szerokość powyżej 1200px)
   @include desktop {
     width: 180px; /* Szerokość obrazków dla ekranów desktop */
+    height: 256px;
+    object-fit: contain;
   }
 
   // Dla innych przypadków (domyślnie)
   width: 335px; /* Domyślna szerokość obrazków */
+  height: 485px;
+  object-fit: contain;
+}
+
+//stylizacja tytułu i autora
+.book-title {
+color:#111111;  
+font-size: 16px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: -4%;
+padding: 14px 0 4px 0;
+}
+
+.book-author {
+color:#b4afaf;  
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: -4%;
+}
+
+.category-title {
+  color:#b4afaf;  
+font-size: 14px;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 3%;
 }
