@@ -196,6 +196,9 @@ fetchBooks('some-category')
       
   
 
+      // Dodaje klasę "category-list" do elementu <ul>
+      categoryBooksList.classList.add('category-list');
+
       categorySection.appendChild(categoryBooksList);
 
       // Dodanie przycisku "See more" dla całego zestawu książek
