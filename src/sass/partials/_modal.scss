@@ -13,18 +13,16 @@
 
 /* CSS for the modal */
 .popup {
-  padding: 20px;
+  padding: 40px 24px;
   width: 335px;
   border-radius: 18px;
   border: 2px solid #111;
   background: #fff;
-  padding: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden; /* Dodaj overflow, aby zawartość mogła być przewijana */
   @include tablet {
     width: 579px;
-    display: flex;
   }
 }
 
@@ -47,15 +45,11 @@
 /* Add to cart button styles (optional) */
 .add-to-cart-button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #fff;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   cursor: pointer;
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #111;
 
   font-family: DM Sans;
@@ -65,10 +59,17 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.14px;
   text-transform: uppercase;
+  @include tablet {
+    min-width: 499px;
+    padding: 20px 0;
+    font-size: 18px;
+    line-height: 1.33;
+  }
 }
 
 .add-to-cart-button:hover {
   background-color: #0056b3;
+  color: #fff;
 }
 
 img {
@@ -79,10 +80,10 @@ img {
 .popup-img {
   width: 287px;
   height: 408px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   @include tablet {
-    width: 192px;
     height: 281px;
+    margin-bottom: 0px;
   }
 }
 
@@ -92,8 +93,14 @@ img {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 18px; /* 112.5% */
+  line-height: 18px;
   letter-spacing: -0.64px;
+  @include tablet {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.96px;
+    margin-bottom: 5px;
+  }
 }
 .popup-author {
   color: #b4afaf;
@@ -103,6 +110,13 @@ img {
   font-weight: 400;
   line-height: 14px; /* 116.667% */
   letter-spacing: -0.48px;
+  margin-bottom: 18px;
+  @include tablet {
+    font-size: 14px;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.56px;
+    margin-bottom: 20px;
+  }
 }
 .modal-button-position {
   display: flex;
@@ -110,4 +124,21 @@ img {
 }
 .popup-authorandtitle {
   display: block;
+}
+.popup-desc {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  margin-bottom: 20px;
+}
+.popup-image-desc {
+  @include tablet {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
 }
