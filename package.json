@@ -5,7 +5,7 @@
   "homepage": "https://tomaszandrzejpawlowski.github.io/Bookshelf-gr03",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url Bookshelf-gr03"
+    "build": "parcel build src/*.html --public-url /Bookshelf-gr03/"
   },
   "repository": {
     "type": "git",

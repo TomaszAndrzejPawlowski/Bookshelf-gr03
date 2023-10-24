@@ -1,4 +1,5 @@
 import '../sass/main.scss';
+import '../sass/partials/_header.scss';
 
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
@@ -67,35 +68,54 @@ function handleSeeMoreButtonClick(event) {
 // Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
 fetchBooks('some-category')
   .then(data => {
-    //console.log('Data Received:', data);
-
     const booksContainer = document.getElementById('booksList');
 
     data.forEach(category => {
-      const categoryBooksList = document.createElement('ul');
-      booksContainer.appendChild(categoryBooksList);
+      // tworzy sekcję dla danej kategorii
+      const categorySection = document.createElement('div');
+      categorySection.className = 'category-section';
 
-      category.books.forEach(book => {
+      const categoryTitle = document.createElement('h2');
+      categoryTitle.innerHTML = category.list_name;
+      categorySection.appendChild(categoryTitle);
+
+      const categoryBooksList = document.createElement('ul');
+
+      category.books.slice(0, 5).forEach(book => {
         const bookItem = document.createElement('li');
-        bookItem.innerHTML = `
-          <div>
-            <h2>${category.list_name}</h2>
-            <img src="${book.book_image}" alt="${book.title}" />
-            <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
-            <button class="category-button">See more</button>
-          </div>
-        `;
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+        const image = document.createElement('img');
+        image.src = book.book_image;
+        image.alt = book.title;
+        const h3 = document.createElement('h3');
+        h3.textContent = book.title;
+        const p = document.createElement('p');
+        p.textContent = `Author: ${book.author}`;
+
+        imageContainer.appendChild(image);
+        bookItem.appendChild(imageContainer);
+        bookItem.appendChild(h3);
+        bookItem.appendChild(p);
         categoryBooksList.appendChild(bookItem);
-        bookItem.addEventListener('click', handleSeeMoreButtonClick);
       });
+
+      categorySection.appendChild(categoryBooksList);
+
+      // Dodanie przycisku "See more" dla całego zestawu książek
+      const seeMoreButton = document.createElement('button');
+      seeMoreButton.className = 'category-button';
+      seeMoreButton.innerText = 'See more';
+      categorySection.appendChild(seeMoreButton);
+
+      // Dodaj sekcję kategorii do kontenera
+      booksContainer.appendChild(categorySection);
     });
   })
   .catch(error => {
     // Obsługa błędów
     console.error('Error in promise chain:', error);
   });
-//////////////////////////////////////
 
 // ksiaki w best selerss, po kliknieciu w best selerss
 function renderCategoriesWithBooks(categoriesData) {
