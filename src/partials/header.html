@@ -9,27 +9,46 @@
             ><img class="logo_dark" src="images/logo_dark.svg" width="100" height="100"
           /></a>
         </div>
-        <div class="modal_signup">
-          <button class="modal_singup_close" type="submit">
-            <img src="images/icon_x-close.svg" width="24" height="24" />
+        <div class="modal_signup is_hidden" data-modal>
+          <button class="modal_singup_close" type="submit" data-modal-close>
+            <img src="./images/icon_x-close.svg" width="24" height="24" />
           </button>
           <form class="modal_signup-form">
-            <fieldset class="modal_signup-field">
+            <fieldset class="modal_signup-field-name">
               <label class="modal_signup-name" for="username">NAME</label>
-              <input class="modal__input" type="text" name="username" id="username" />
+              <input class="modal_input-name" type="text" name="username" id="username" />
             </fieldset>
-            <fieldset class="modal_signup-field">
+            <fieldset class="modal_signup-field-email">
               <label class="modal_signup-email" for="usermail">EMAIL</label>
-              <input class="modal__input" type="email" name="usermail" id="usermail" />
+              <input class="modal_input-mail" type="email" name="usermail" id="usermail" />
+              <img
+                class="modal_input-icon"
+                src="./images/icon_mail-02.svg"
+                width="18"
+                height="18"
+              />
             </fieldset>
-            <fieldset class="modal_signup-field">
+            <fieldset class="modal_signup-field-pass">
               <label class="modal_signup-password">PASSWORD</label>
-              <input class="modal__input" type="password" name="password" id="password" />
+
+              <input
+                class="modal_input-pass"
+                type="password"
+                name="password"
+                id="password"
+                autocomplete="off"
+              />
+              <img
+                class="modal_input-icon"
+                src="./images/icon_lock-02.svg"
+                width="20"
+                height="20"
+              />
             </fieldset>
             <button type="submit" class="modal_btn">SIGN UP</button>
-            <ul>
-              <a href=""><li>SIGN UP</li></a>
-              <a href=""><li>SIGN IN</li></a>
+            <ul class="modal_list">
+              <a class="modal_link" href=""><li>SIGN UP</li></a>
+              <a class="modal_link" href=""><li>SIGN IN</li></a>
             </ul>
           </form>
         </div>
