@@ -94,6 +94,7 @@ fetchBooks('some-category')
 
       const categoryTitle = document.createElement('h2');
       categoryTitle.innerHTML = category.list_name;
+      categoryTitle.classList.add('category-title'); // Dodałem klasę 'category-title'
       categorySection.appendChild(categoryTitle);
 
       const categoryBooksList = document.createElement('ul');
@@ -110,6 +111,7 @@ fetchBooks('some-category')
           h3.textContent = book.title;
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
+
 
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
@@ -147,6 +149,7 @@ fetchBooks('some-category')
           h3.textContent = book.title;
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
+
 
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
