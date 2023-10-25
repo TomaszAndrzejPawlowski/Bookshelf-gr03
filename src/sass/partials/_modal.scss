@@ -2,67 +2,150 @@
 .modal-card-container {
   position: fixed;
   top: 0;
-  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto; /* Dodaj overflow, aby umożliwić przewijanie */
 }
 
 /* CSS for the modal */
-.book-card {
-  width: 90%; /* Dostosuj szerokość modala do ekranu mobilnego */
-  max-width: 300px; /* Ogranicz maksymalną szerokość */
-  top: 30%;
-  margin: 20px;
-  background: white;
-  border-radius: 5px;
-  padding: 20px;
+.popup {
+  padding: 40px 24px;
+  width: 335px;
+  border-radius: 18px;
+  border: 2px solid #111;
+  background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
   position: relative;
   overflow: hidden; /* Dodaj overflow, aby zawartość mogła być przewijana */
+  @include tablet {
+    width: 579px;
+  }
 }
 
 /* Close button styles */
-.close-button {
+.modal-close-button {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 24px;
   color: #555;
+  background-color: transparent;
+  border: none;
 }
 
 .close-button:hover {
-  color: #000;
+  fill: #0056b3;
 }
 
 /* Add to cart button styles (optional) */
 .add-to-cart-button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  background-color: #fff;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
   cursor: pointer;
   margin-top: 10px;
+  color: #111;
+  margin-bottom: 8px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  @include tablet {
+    min-width: 499px;
+    padding: 20px 0;
+    font-size: 18px;
+    line-height: 1.33;
+  }
 }
 
 .add-to-cart-button:hover {
   background-color: #0056b3;
-}
-
-.modalDiv {
-  position: fixed;
+  color: #fff;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.popup-img {
+  width: 287px;
+  height: 408px;
+  margin-bottom: 18px;
+  @include tablet {
+    height: 281px;
+    margin-bottom: 0px;
+  }
+}
+
+.popup-title {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  @include tablet {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.96px;
+    margin-bottom: 5px;
+  }
+}
+.popup-author {
+  color: #b4afaf;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.48px;
+  margin-bottom: 18px;
+  @include tablet {
+    font-size: 14px;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.56px;
+    margin-bottom: 20px;
+  }
+}
+.modal-button-position {
+  color: rgba(17, 17, 17, 0.5);
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 120% */
+  letter-spacing: -0.4px;
+  display: block;
+}
+.popup-authorandtitle {
+  display: block;
+}
+.popup-desc {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  margin-bottom: 20px;
+}
+.popup-image-desc {
+  @include tablet {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
 }
