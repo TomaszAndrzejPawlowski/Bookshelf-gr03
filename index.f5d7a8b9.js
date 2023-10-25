@@ -1,5 +1,5 @@
 let t;var e,r,n,o,i,s=globalThis;function a(t){return t&&t.__esModule?t.default:t}function l(t,e){return function(){return t.apply(e,arguments)}}// utils is a library of generic helper functions non-specific to axios
-const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(e=Object.create(null),t=>{let r=u.call(t);return e[r]||(e[r]=r.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),p=t=>e=>typeof e===t,{isArray:d}=Array,m=p("undefined"),g=h("ArrayBuffer"),y=p("string"),b=p("function"),E=p("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},A=h("Date"),S=h("File"),C=h("Blob"),O=h("FileList"),R=h("URLSearchParams");/**
+const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(e=Object.create(null),t=>{let r=u.call(t);return e[r]||(e[r]=r.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),p=t=>e=>typeof e===t,{isArray:d}=Array,m=p("undefined"),g=h("ArrayBuffer"),y=p("string"),b=p("function"),E=p("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},A=h("Date"),S=h("File"),C=h("Blob"),O=h("FileList"),L=h("URLSearchParams");/**
  * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
@@ -13,9 +13,9 @@ const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(e=Object.create(
  *
  * @param {Boolean} [allOwnKeys = false]
  * @returns {any}
- */function L(t,e,{allOwnKeys:r=!1}={}){let n,o;// Don't bother if no value provided
+ */function R(t,e,{allOwnKeys:r=!1}={}){let n,o;// Don't bother if no value provided
 if(null!=t){if("object"!=typeof t&&/*eslint no-param-reassign:0*/(t=[t]),d(t))for(n=0,o=t.length;n<o;n++)e.call(null,t[n],n,t);else{let o;// Iterate over object keys
-let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function T(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const B=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:s,k=t=>!m(t)&&t!==B,U=(r="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>r&&t instanceof r),_=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};L(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",I="0123456789",F={DIGIT:I,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+I},D=h("AsyncFunction");var M={isArray:d,isArrayBuffer:g,isBuffer:/**
+let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function T(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const k=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:s,B=t=>!m(t)&&t!==k,U=(r="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>r&&t instanceof r),_=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};R(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",I="0123456789",F={DIGIT:I,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+I},D=h("AsyncFunction");var M={isArray:d,isArrayBuffer:g,isBuffer:/**
  * Determine if a value is a Buffer
  *
  * @param {*} val The value to test
@@ -28,7 +28,7 @@ let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:A,isFile:S,isBlob:C,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:R,isTypedArray:U,isFileList:O,forEach:L,merge:/**
+ */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:A,isFile:S,isBlob:C,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:L,isTypedArray:U,isFileList:O,forEach:R,merge:/**
  * Accepts varargs expecting each argument to be an object, then
  * immutably merges the properties of each object and returns result.
  *
@@ -45,15 +45,15 @@ let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)
  * @param {Object} obj1 Object to merge
  *
  * @returns {Object} Result of all merge properties
- */function t(){let{caseless:e}=k(this)&&this||{},r={},n=(n,o)=>{let i=e&&T(r,o)||o;v(r[i])&&v(n)?r[i]=t(r[i],n):v(n)?r[i]=t({},n):d(n)?r[i]=n.slice():r[i]=n};for(let t=0,e=arguments.length;t<e;t++)arguments[t]&&L(arguments[t],n);return r},extend:(t,e,r,{allOwnKeys:n}={})=>(L(e,(e,n)=>{r&&b(e)?t[n]=l(e,r):t[n]=e},{allOwnKeys:n}),t),trim:t=>t.trim?t.trim():t.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),stripBOM:t=>(65279===t.charCodeAt(0)&&(t=t.slice(1)),t),inherits:(t,e,r,n)=>{t.prototype=Object.create(e.prototype,n),t.prototype.constructor=t,Object.defineProperty(t,"super",{value:e.prototype}),r&&Object.assign(t.prototype,r)},toFlatObject:(t,e,r,n)=>{let o,i,s;let a={};// eslint-disable-next-line no-eq-null,eqeqeq
+ */function t(){let{caseless:e}=B(this)&&this||{},r={},n=(n,o)=>{let i=e&&T(r,o)||o;v(r[i])&&v(n)?r[i]=t(r[i],n):v(n)?r[i]=t({},n):d(n)?r[i]=n.slice():r[i]=n};for(let t=0,e=arguments.length;t<e;t++)arguments[t]&&R(arguments[t],n);return r},extend:(t,e,r,{allOwnKeys:n}={})=>(R(e,(e,n)=>{r&&b(e)?t[n]=l(e,r):t[n]=e},{allOwnKeys:n}),t),trim:t=>t.trim?t.trim():t.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),stripBOM:t=>(65279===t.charCodeAt(0)&&(t=t.slice(1)),t),inherits:(t,e,r,n)=>{t.prototype=Object.create(e.prototype,n),t.prototype.constructor=t,Object.defineProperty(t,"super",{value:e.prototype}),r&&Object.assign(t.prototype,r)},toFlatObject:(t,e,r,n)=>{let o,i,s;let a={};// eslint-disable-next-line no-eq-null,eqeqeq
 if(e=e||{},null==t)return e;do{for(i=(o=Object.getOwnPropertyNames(t)).length;i-- >0;)s=o[i],(!n||n(s,t,e))&&!a[s]&&(e[s]=t[s],a[s]=!0);t=!1!==r&&c(t)}while(t&&(!r||r(t,e))&&t!==Object.prototype)return e},kindOf:f,kindOfTest:h,endsWith:(t,e,r)=>{t=String(t),(void 0===r||r>t.length)&&(r=t.length),r-=e.length;let n=t.indexOf(e,r);return -1!==n&&n===r},toArray:t=>{if(!t)return null;if(d(t))return t;let e=t.length;if(!E(e))return null;let r=Array(e);for(;e-- >0;)r[e]=t[e];return r},forEachEntry:(t,e)=>{let r;let n=t&&t[Symbol.iterator],o=n.call(t);for(;(r=o.next())&&!r.done;){let n=r.value;e.call(t,n[0],n[1])}},matchAll:(t,e)=>{let r;let n=[];for(;null!==(r=t.exec(e));)n.push(r);return n},isHTMLForm:_,hasOwnProperty:x,hasOwnProp:x,reduceDescriptors:j,freezeMethods:t=>{j(t,(e,r)=>{// skip restricted props in strict mode
-if(b(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(b(n)){if(e.enumerable=!1,"writable"in e){e.writable=!1;return}e.set||(e.set=()=>{throw Error("Can not rewrite read-only method '"+r+"'")})}})},toObjectSet:(t,e)=>{let r={};return(t=>{t.forEach(t=>{r[t]=!0})})(d(t)?t:String(t).split(e)),r},toCamelCase:t=>t.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function(t,e,r){return e.toUpperCase()+r}),noop:()=>{},toFiniteNumber:(t,e)=>Number.isFinite(t=+t)?t:e,findKey:T,global:B,isContextDefined:k,ALPHABET:F,generateString:(t=16,e=F.ALPHA_DIGIT)=>{let r="",{length:n}=e;for(;t--;)r+=e[Math.random()*n|0];return r},isSpecCompliantForm:/**
+if(b(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(b(n)){if(e.enumerable=!1,"writable"in e){e.writable=!1;return}e.set||(e.set=()=>{throw Error("Can not rewrite read-only method '"+r+"'")})}})},toObjectSet:(t,e)=>{let r={};return(t=>{t.forEach(t=>{r[t]=!0})})(d(t)?t:String(t).split(e)),r},toCamelCase:t=>t.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function(t,e,r){return e.toUpperCase()+r}),noop:()=>{},toFiniteNumber:(t,e)=>Number.isFinite(t=+t)?t:e,findKey:T,global:k,isContextDefined:B,ALPHABET:F,generateString:(t=16,e=F.ALPHA_DIGIT)=>{let r="",{length:n}=e;for(;t--;)r+=e[Math.random()*n|0];return r},isSpecCompliantForm:/**
  * If the thing is a FormData object, return true, otherwise return false.
  *
  * @param {unknown} thing - The thing to check.
  *
  * @returns {boolean}
- */function(t){return!!(t&&b(t.append)&&"FormData"===t[Symbol.toStringTag]&&t[Symbol.iterator])},toJSONObject:t=>{let e=Array(10),r=(t,n)=>{if(w(t)){if(e.indexOf(t)>=0)return;if(!("toJSON"in t)){e[n]=t;let o=d(t)?[]:{};return L(t,(t,e)=>{let i=r(t,n+1);m(i)||(o[e]=i)}),e[n]=void 0,o}}return t};return r(t,0)},isAsyncFn:D,isThenable:t=>t&&(w(t)||b(t))&&b(t.then)&&b(t.catch)};/**
+ */function(t){return!!(t&&b(t.append)&&"FormData"===t[Symbol.toStringTag]&&t[Symbol.iterator])},toJSONObject:t=>{let e=Array(10),r=(t,n)=>{if(w(t)){if(e.indexOf(t)>=0)return;if(!("toJSON"in t)){e[n]=t;let o=d(t)?[]:{};return R(t,(t,e)=>{let i=r(t,n+1);m(i)||(o[e]=i)}),e[n]=void 0,o}}return t};return r(t,0)},isAsyncFn:D,isThenable:t=>t&&(w(t)||b(t))&&b(t.then)&&b(t.catch)};/**
  * Create an Error with the specified message, config, error code, request and response.
  *
  * @param {string} message The error message.
@@ -210,7 +210,7 @@ var tv=function(){for(var t="0123456789abcdef",e=Array(256),r=0;r<16;++r)for(var
  *
  * @returns {string} The path to the current key.
  */function tC(t,e,r){return t?t.concat(e).map(function(t,e){return(// eslint-disable-next-line no-param-reassign
-t=tS(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tO=M.toFlatObject(M,{},null,function(t){return/^is[A-Z]/.test(t)});var tR=/**
+t=tS(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tO=M.toFlatObject(M,{},null,function(t){return/^is[A-Z]/.test(t)});var tL=/**
  * Convert a data object to FormData
  *
  * @param {Object} obj
@@ -252,21 +252,21 @@ r=tS(r),a.forEach(function(t,n){M.isUndefined(t)||null===t||e.append(!0===s?tC([
  * @param {string} str - The string to encode.
  *
  * @returns {string} The encoded string.
- */function tL(t){let e={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\x00"};return encodeURIComponent(t).replace(/[!'()~]|%20|%00/g,function(t){return e[t]})}/**
+ */function tR(t){let e={"!":"%21","'":"%27","(":"%28",")":"%29","~":"%7E","%20":"+","%00":"\x00"};return encodeURIComponent(t).replace(/[!'()~]|%20|%00/g,function(t){return e[t]})}/**
  * It takes a params object and converts it to a FormData object
  *
  * @param {Object<string, any>} params - The parameters to be converted to a FormData object.
  * @param {Object<string, any>} options - The options object passed to the Axios constructor.
  *
  * @returns {void}
- */function tT(t,e){this._pairs=[],t&&tR(t,this,e)}const tB=tT.prototype;/**
+ */function tT(t,e){this._pairs=[],t&&tL(t,this,e)}const tk=tT.prototype;/**
  * It replaces all instances of the characters `:`, `$`, `,`, `+`, `[`, and `]` with their
  * URI encoded counterparts
  *
  * @param {string} val The value to be encoded.
  *
  * @returns {string} The encoded value.
- */function tk(t){return encodeURIComponent(t).replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,"+").replace(/%5B/gi,"[").replace(/%5D/gi,"]")}function tU(t,e,r){let n;/*eslint no-param-reassign:0*/if(!e)return t;let o=r&&r.encode||tk,i=r&&r.serialize;if(n=i?i(e,r):M.isURLSearchParams(e)?e.toString():new tT(e,r).toString(o)){let e=t.indexOf("#");-1!==e&&(t=t.slice(0,e)),t+=(-1===t.indexOf("?")?"?":"&")+n}return t}tB.append=function(t,e){this._pairs.push([t,e])},tB.toString=function(t){let e=t?function(e){return t.call(this,e,tL)}:tL;return this._pairs.map(function(t){return e(t[0])+"="+e(t[1])},"").join("&")};var t_=class{constructor(){this.handlers=[]}/**
+ */function tB(t){return encodeURIComponent(t).replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,"+").replace(/%5B/gi,"[").replace(/%5D/gi,"]")}function tU(t,e,r){let n;/*eslint no-param-reassign:0*/if(!e)return t;let o=r&&r.encode||tB,i=r&&r.serialize;if(n=i?i(e,r):M.isURLSearchParams(e)?e.toString():new tT(e,r).toString(o)){let e=t.indexOf("#");-1!==e&&(t=t.slice(0,e)),t+=(-1===t.indexOf("?")?"?":"&")+n}return t}tk.append=function(t,e){this._pairs.push([t,e])},tk.toString=function(t){let e=t?function(e){return t.call(this,e,tR)}:tR;return this._pairs.map(function(t){return e(t[0])+"="+e(t[1])},"").join("&")};var t_=class{constructor(){this.handlers=[]}/**
    * Add a new interceptor to the stack
    *
    * @param {Function} fulfilled The function to handle `then` for a `Promise`
@@ -321,7 +321,7 @@ self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tD=
  * @param {Array<any>} arr - The array to convert to an object.
  *
  * @returns An object with the same keys and values as the array.
- */function(t){let e,r;let n={},o=Object.keys(t),i=o.length;for(e=0;e<i;e++)n[r=o[e]]=t[r];return n}(n[i])),!s}(M.matchAll(/\w+|\[(\w*)]/g,t).map(t=>"[]"===t[0]?"":t[1]||t[0]),r,e,0)}),e}return null};const tH={transitional:tx,adapter:["xhr","http"],transformRequest:[function(t,e){let r;let n=e.getContentType()||"",o=n.indexOf("application/json")>-1,i=M.isObject(t);i&&M.isHTMLForm(t)&&(t=new FormData(t));let s=M.isFormData(t);if(s)return o&&o?JSON.stringify(tM(t)):t;if(M.isArrayBuffer(t)||M.isBuffer(t)||M.isStream(t)||M.isFile(t)||M.isBlob(t))return t;if(M.isArrayBufferView(t))return t.buffer;if(M.isURLSearchParams(t))return e.setContentType("application/x-www-form-urlencoded;charset=utf-8",!1),t.toString();if(i){if(n.indexOf("application/x-www-form-urlencoded")>-1){var a,l;return(a=t,l=this.formSerializer,tR(a,new tD.classes.URLSearchParams,Object.assign({visitor:function(t,e,r,n){return tD.isNode&&M.isBuffer(t)?(this.append(e,t.toString("base64")),!1):n.defaultVisitor.apply(this,arguments)}},l))).toString()}if((r=M.isFileList(t))||n.indexOf("multipart/form-data")>-1){let e=this.env&&this.env.FormData;return tR(r?{"files[]":t}:t,e&&new e,this.formSerializer)}}return i||o?(e.setContentType("application/json",!1),/**
+ */function(t){let e,r;let n={},o=Object.keys(t),i=o.length;for(e=0;e<i;e++)n[r=o[e]]=t[r];return n}(n[i])),!s}(M.matchAll(/\w+|\[(\w*)]/g,t).map(t=>"[]"===t[0]?"":t[1]||t[0]),r,e,0)}),e}return null};const tH={transitional:tx,adapter:["xhr","http"],transformRequest:[function(t,e){let r;let n=e.getContentType()||"",o=n.indexOf("application/json")>-1,i=M.isObject(t);i&&M.isHTMLForm(t)&&(t=new FormData(t));let s=M.isFormData(t);if(s)return o&&o?JSON.stringify(tM(t)):t;if(M.isArrayBuffer(t)||M.isBuffer(t)||M.isStream(t)||M.isFile(t)||M.isBlob(t))return t;if(M.isArrayBufferView(t))return t.buffer;if(M.isURLSearchParams(t))return e.setContentType("application/x-www-form-urlencoded;charset=utf-8",!1),t.toString();if(i){if(n.indexOf("application/x-www-form-urlencoded")>-1){var a,l;return(a=t,l=this.formSerializer,tL(a,new tD.classes.URLSearchParams,Object.assign({visitor:function(t,e,r,n){return tD.isNode&&M.isBuffer(t)?(this.append(e,t.toString("base64")),!1):n.defaultVisitor.apply(this,arguments)}},l))).toString()}if((r=M.isFileList(t))||n.indexOf("multipart/form-data")>-1){let e=this.env&&this.env.FormData;return tL(r?{"files[]":t}:t,e&&new e,this.formSerializer)}}return i||o?(e.setContentType("application/json",!1),/**
  * It takes a string, tries to parse it, and if it fails, it returns the stringified version
  * of the input
  *
@@ -474,7 +474,7 @@ const eh=/**
  */function t(e){let r=new eu(e),n=l(eu.prototype.request,r);return M.extend(n,eu.prototype,r,{allOwnKeys:!0}),M.extend(n,r,null,{allOwnKeys:!0}),// Factory for creating new instances
 n.create=function(r){return t(en(e,r))},n}(tH);// Expose Axios class to allow class inheritance
 eh.Axios=eu,// Expose Cancel & CancelToken
-eh.CanceledError=tQ,eh.CancelToken=ec,eh.isCancel=tX,eh.VERSION=eo,eh.toFormData=tR,// Expose AxiosError class
+eh.CanceledError=tQ,eh.CancelToken=ec,eh.isCancel=tX,eh.VERSION=eo,eh.toFormData=tL,// Expose AxiosError class
 eh.AxiosError=H,// alias for CanceledError for backward compatibility
 eh.Cancel=eh.CanceledError,// Expose all/spread
 eh.all=function(t){return Promise.all(t)},eh.spread=function(t){return function(e){return t.apply(null,e)}},// Expose isAxiosError
@@ -482,11 +482,11 @@ eh.isAxiosError=function(t){return M.isObject(t)&&!0===t.isAxiosError},// Expose
 eh.mergeConfig=en,eh.AxiosHeaders=tG,eh.formToJSON=t=>tM(M.isHTMLForm(t)?new FormData(t):t),eh.getAdapter=t9.getAdapter,eh.HttpStatusCode=ef,eh.default=eh;// This module is intended to unwrap Axios default export as named.
 // Keep top-level export same with static properties
 // so that it can keep same with es module or cjs
-const{Axios:ep,AxiosError:ed,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eA,toFormData:eS,AxiosHeaders:eC,HttpStatusCode:eO,formToJSON:eR,getAdapter:eL,mergeConfig:eT}=eh;async function eB(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
-async function ek(t){let e=`https://books-backend.p.goit.global/books/${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch book details");let r=t.data;//console.log(bookDetails);
+const{Axios:ep,AxiosError:ed,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eA,toFormData:eS,AxiosHeaders:eC,HttpStatusCode:eO,formToJSON:eL,getAdapter:eR,mergeConfig:eT}=eh;async function ek(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
+async function eB(t){let e=`https://books-backend.p.goit.global/books/${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch book details");let r=t.data;//console.log(bookDetails);
 return r}catch(t){// można obsługę błędu - np. wyświetlenie komunikatu dla użytkownika
 throw console.error("Error fetching book details:",t),Error("Failed to fetch book details")}}async function eU(){try{let t=await eh.get("https://books-backend.p.goit.global/books/category-list");return t.data}catch(t){throw console.error("Error fetching categories:",t),Error("Failed to fetch categories")}}async function e_(t){try{let t=await eh.get("https://books-backend.p.goit.global/books/top-books");if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}localStorage.setItem("id",JSON.stringify(["643282b1e85766588626a0ba","643282b2e85766588626a0f2","643282b2e85766588626a158","643282b2e85766588626a152"]));const ex=document.getElementById("shoppBookList");//funcka do pobierania dancyh oraz do tworzenia pojedynczego elementu
-async function eN(t){let e=await ek(t);!// tworzy pojedynczy element li
+async function eN(t){let e=await eB(t);!// tworzy pojedynczy element li
 function({bookDetails:t}){let e=`<li class="shopList-item">
   <button class="remove-button" type="button" book-id="${t._id}"><svg class="remove-button__icon">
   <use href="../images/icons.svg#icon-icon_dump"></use>
@@ -542,7 +542,7 @@ function(){let t=localStorage.getItem("id"),e=JSON.parse(t);if(0===e.length){let
 //export { fetchBooksData, renderBooks };
 const eV=document.getElementById("charitiesSlider");//////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
-function eK(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&eB(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),eX.textContent=e,eY(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
+function eK(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&ek(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),eX.textContent=e,eY(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
 function eG(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,r.appendChild(n);let o=document.createElement("ul");r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
         <div>                    
@@ -552,7 +552,7 @@ function eG(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEa
         </div>
       `,o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await ek(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 });// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
 let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>eK(t.list_name))})}////////////////////////////
 function eY(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
@@ -561,27 +561,27 @@ function eY(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&
           <h3>${t.title}</h3>
           <p>Author: ${t.author}</p>
         </div>
-      `,e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await ek(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}}),r.appendChild(e)});else{let t=document.createElement("p");t.textContent="No books found in this category.",r.appendChild(t)}}eJ.forEach(t=>{let e=document.createElement("div");e.innerHTML=`<a href="${t.url}" target="_blank">${t.title}</a>`,eV.appendChild(e)}),eU().then(t=>{//console.log('Categories Received:', categoriesData);
+      `,e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}}),r.appendChild(e)});else{let t=document.createElement("p");t.textContent="No books found in this category.",r.appendChild(t)}}eJ.forEach(t=>{let e=document.createElement("div");e.innerHTML=`<a href="${t.url}" target="_blank">${t.title}</a>`,eV.appendChild(e)}),eU().then(t=>{//console.log('Categories Received:', categoriesData);
 !////////////////////////////
 // lista kategorii
 function(t){let e=document.getElementById("categoriesList");t.forEach(t=>{let r=document.createElement("li");r.classList.add("category"),/// kategoria - powiekszona trzcionka po wyborze
 //li.classList.add('selected-category');
 r.textContent=t.list_name,e.appendChild(r)})}(t)}).catch(t=>{// Obsługa błędów
 console.error("Error in promise chain:",t)}),e_("some-category").then(t=>{let e=document.getElementById("booksList");t.forEach(t=>{// tworzy sekcję dla danej kategorii
-let r=document.createElement("div");r.className="category-section";let n=document.createElement("h2");n.innerHTML=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");window.innerWidth<=768?t.books.slice(0,1).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title;let s=document.createElement("p");s.textContent=`Author: ${t.author}`,r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// ////////////////
+let r=document.createElement("div");r.className="category-section";let n=document.createElement("h2");n.innerHTML=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");window.innerWidth<=768?t.books.slice(0,1).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// ////////////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await ek(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
-}):window.innerWidth>768&&window.innerWidth<=1200?t.books.slice(0,3).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title;let s=document.createElement("p");s.textContent=`Author: ${t.author}`,r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+}):window.innerWidth>768&&window.innerWidth<=1200?t.books.slice(0,3).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await ek(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
-}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title;let s=document.createElement("p");s.textContent=`Author: ${t.author}`,r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await ek(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=ej(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }),// Dodaje klasę "category-list" do elementu <ul>
 o.classList.add("category-list"),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
 let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),i.addEventListener("click",()=>eK(t.list_name)),// Dodaj sekcję kategorii do kontenera
 e.appendChild(r)})}).catch(t=>{// Obsługa błędów
-console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("Best Sellers Books"===e)try{let t=await e_("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",eG(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}else{let t=await e_(e);document.getElementById("bestSellersHeader").textContent=e,eG(t,"booksList")}}}),document.querySelectorAll(".category");const eX=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await eB(t);// usuwamy klasę selected-category od wszystkich kategorii
+console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("Best Sellers Books"===e)try{let t=await e_("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",eG(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}else{let t=await e_(e);document.getElementById("bestSellersHeader").textContent=e,eG(t,"booksList")}}}),document.querySelectorAll(".category");const eX=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await ek(t);// usuwamy klasę selected-category od wszystkich kategorii
 document.querySelectorAll(".category, .categoryTop").forEach(t=>{t.classList.remove("selected-category")}),eX.textContent=t,eY(r,t),// dodana  klasa selected-category tylko do klikniętej kategorii
 e.classList.add("selected-category")}});///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ciemny motyw
@@ -594,6 +594,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.a8c4e38e.js.map
+});*///# sourceMappingURL=index.f5d7a8b9.js.map
 
-//# sourceMappingURL=index.a8c4e38e.js.map
+//# sourceMappingURL=index.f5d7a8b9.js.map
