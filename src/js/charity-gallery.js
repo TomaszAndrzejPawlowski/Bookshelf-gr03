@@ -1,4 +1,4 @@
-import support1 from '/src/images/images-support/support1.svg';
+import support1 from '/src/images/images-support/1org.svg';
 import support2 from '/src/images/images-support/support2.svg';
 import support3 from '/src/images/images-support/support3.svg';
 import support4 from '/src/images/images-support/support4.svg';
