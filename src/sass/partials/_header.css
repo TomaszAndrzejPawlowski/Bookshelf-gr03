@@ -7,6 +7,10 @@ body {
   visibility: hidden;
 }
 
+.icon_light {
+  display: block;
+}
+
 .modal_signup-mobile {
   display: none;
 }
