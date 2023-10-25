@@ -11,48 +11,78 @@ import support9 from '/src/images/images-support/support9.svg';
 export const charities = [
   // ... (fundacje charytatywne)
   {
-    title: 'Save the Children',
+    title: '',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
     img: support1,
   },
   {
-    title: 'Project HOPE',
+    title: '',
     url: 'https://www.projecthope.org/country/ukraine/',
     img: support2,
   },
   {
-    title: 'UNITED24',
-    url: 'https://u24.gov.ua/uk',
+    title: '',
+    url: 'https://internationalmedicalcorps.org/country/ukraine/',
     img: support3,
   },
   {
-    title: 'International Medical Corps',
-    url: 'https://internationalmedicalcorps.org/country/ukraine/',
+    title: '',
+    url: 'https://www.razomforukraine.org/',
     img: support4,
   },
   {
-    title: 'Medicins Sans Frontieres',
-    url: 'https://www.msf.org/ukraine',
+    title: '',
+    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
     img: support5,
   },
   {
-    title: 'RAZOM',
-    url: 'https://www.razomforukraine.org/',
+    title: '',
+    url: 'https://prytulafoundation.org/en',
     img: support6,
   },
   {
-    title: 'Action against hunger',
-    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
+    title: '',
+    
+    url: 'https://www.msf.org/ukraine',
     img: support7,
   },
   {
-    title: 'World vision',
+    title: '',
     url: 'https://www.wvi.org/emergencies/ukraine',
     img: support8,
   },
   {
-    title: 'Serhiy Prytula Charity Foundation',
-    url: 'https://prytulafoundation.org/en',
+    title: '',
+    url: 'https://u24.gov.ua/uk',
     img: support9,
   },
 ];
+
+const charitiesSlider = document.getElementById('charitiesSlider');
+
+while (charitiesSlider.firstChild) {
+    charitiesSlider.removeChild(charitiesSlider.firstChild);
+}
+
+charities.forEach(charity => {
+    const link = document.createElement('a');
+    link.href = charity.url;
+    link.target = "_blank";
+
+    const div = document.createElement('div');
+    div.classList.add("charity-item");
+
+    const img = document.createElement('img');
+    img.src = charity.img;
+    img.alt = charity.title;
+
+    const title = document.createElement('div');
+    title.textContent = charity.title;
+    title.classList.add("charity-title"); // Dodanie klasy do elementu tytułu
+
+    div.appendChild(img);
+    div.appendChild(title);
+    link.appendChild(div);
+
+    charitiesSlider.appendChild(link);
+});
