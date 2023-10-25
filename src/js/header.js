@@ -28,6 +28,11 @@ const iconWhiteMail = document.querySelector('.modal_input-icon-mail-white');
 const iconWhitePass = document.querySelector('.modal_input-icon-pass-white');
 const iconMobileMail = document.querySelector('.modal_input-icon-mobile-white');
 const iconMobilePass = document.querySelector('.modal_input-icon-mobile--white');
+const lightClose = document.querySelector('.hamburger_close-img');
+const darkClose = document.querySelector('.img_dark-close');
+const alignLight = document.querySelector('.hamburger_open-svg');
+const alignDark = document.querySelector('.hamburger_open-svg-white');
+
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -62,6 +67,11 @@ themeSwitch.addEventListener('change', () => {
   iconPass.style.display = 'block';
   iconWhiteMail.style.display = 'none';
   iconWhitePass.style.display = 'none';
+  lightClose.style.display = 'block';
+  darkClose.style.display = 'none';
+  alignLight.style.display = 'block';
+  alignDark.style.display = 'none';
+
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
@@ -91,6 +101,10 @@ themeSwitch.addEventListener('change', () => {
     iconPass.style.display = 'none';
     iconWhiteMail.style.display = 'block';
     iconWhitePass.style.display = 'block';
+    lightClose.style.display = 'none';
+    darkClose.style.display = 'block';
+    alignLight.style.display = 'none';
+    alignDark.style.display = 'block';
   }
 });
 
@@ -103,7 +117,7 @@ closeModalBtn.addEventListener('click', () => {
 
 hamburgerOpenBtn.addEventListener('click', () => {
   modalMobile.style.opacity = 1;
-  hamburgerOpenBtn.style.opacity = 0;
+  hamburgerOpenBtn.style.display = 'none';
   hamburgerCloseBtn.style.display = 'block';
 });
 
@@ -116,8 +130,15 @@ hamburgerCloseBtn.addEventListener('click', () => {
 buttonMobileModal.addEventListener('click', () => {
   modalSignupMobile.style.display = 'block';
   modalMobile.style.opacity = 0;
+  // if ((modalSignupMobile.style.display = 'block')) {
+  //   hamburgerCloseBtn.style.display = 'block';
+  //   hamburgerOpenBtn.style.display = 'none';
+  // }
 });
 
 buttonMobileModalClose.addEventListener('click', () => {
   modalSignupMobile.style.display = 'none';
+  hamburgerCloseBtn.style.display = 'none';
+
+  hamburgerOpenBtn.style.display = 'block';
 });

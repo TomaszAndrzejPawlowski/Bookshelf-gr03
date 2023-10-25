@@ -142,18 +142,18 @@ body {
 }
 
 .book-author {
-  color: #b4afaf;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -4%;
-  padding-bottom: 20px;
+color:#b4afaf;  
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: -4%;
+padding-bottom: 20px;
 }
 
 .category-section {
   margin-left: 20px;
-  margin-bottom: 20px;
+margin-bottom: 20px;
 }
 
 .category-title {
@@ -166,16 +166,15 @@ body {
 }
 
 .category-list {
-  display: grid;
+  display: grid;  
   justify-items: center;
-  align-items: stretch; // był flex
-  grid-template-columns: 1fr; // dodane
+align-items: stretch;                       // był flex
+  grid-template-columns: 1fr;            // dodane
   list-style: none;
   overflow: hidden;
 
-  @include tablet {
-    // dla tablet i desktop dodane
-    grid-template-columns: repeat(3, 1fr);
+  @include tablet {                       // dla tablet i desktop dodane
+    grid-template-columns: repeat(3, 1fr); 
   }
 
   @include desktop {
