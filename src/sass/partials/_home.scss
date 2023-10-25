@@ -1,4 +1,4 @@
-@import '../utils/mixins';
+@importategory-list '../utils/mixins';
 
 body {
   font-family: Arial, sans-serif;
@@ -8,7 +8,7 @@ body {
 }
 
 .home {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
   padding: 20px;
@@ -124,7 +124,7 @@ body {
 }
 
 
-//usunąłem stylowanie .block-list 
+
 
 
 .image-container {
@@ -154,6 +154,11 @@ letter-spacing: -4%;
 padding-bottom: 20px;
 }
 
+.category-section {
+  margin-left: 20px;
+margin-bottom: 20px;
+}
+
 .category-title {
   color:#b4afaf;  
 font-size: 14px;
@@ -163,18 +168,25 @@ line-height: 24px;
 letter-spacing: 3%;
 }
 
-
 .category-list {
-  display: grid;                         // był flex
+  display: grid;  
+  justify-items: center;
+align-items: stretch;                       // był flex
   grid-template-columns: 1fr;            // dodane
   list-style: none;
   overflow: hidden;
+
   @include tablet {                       // dla tablet i desktop dodane
     grid-template-columns: repeat(3, 1fr); 
   }
   @include desktop {
     grid-template-columns: repeat(5, 1fr);
   }
+}
+
+.category-button {
+  position: absolute;
+  margin-left: 58%;
 }
 
 .image-container {
