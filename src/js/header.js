@@ -22,6 +22,12 @@ const modalMobile = document.querySelector('.modal_mobile');
 const modalSignupMobile = document.querySelector('.modal_signup-mobile');
 const buttonMobileModal = document.querySelector('.btn_log-out-mobile');
 const buttonMobileModalClose = document.querySelector('.modal_singup_close-mobile');
+const iconMail = document.querySelector('.modal_input-icon-mail');
+const iconPass = document.querySelector('.modal_input-icon-pass');
+const iconWhiteMail = document.querySelector('.modal_input-icon-mail-white');
+const iconWhitePass = document.querySelector('.modal_input-icon-pass-white');
+const iconMobileMail = document.querySelector('.modal_input-icon-mobile-white');
+const iconMobilePass = document.querySelector('.modal_input-icon-mobile--white');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -49,7 +55,13 @@ themeSwitch.addEventListener('change', () => {
   InputPass.style.backgroundColor = '#f6f6f6';
   closeModalBtn.style.backgroundColor = '#f6f6f6';
   modalBtn.style.backgroundColor = 'black';
+  modalBtn.style.color = '#f6f6f6';
   hamburgerOpenBtn.style.backgroundColor = '#f6f6f6';
+  hamburgerCloseBtn.style.backgroundColor = '#f6f6f6';
+  iconMail.style.display = 'block';
+  iconPass.style.display = 'block';
+  iconWhiteMail.style.display = 'none';
+  iconWhitePass.style.display = 'none';
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
@@ -73,7 +85,12 @@ themeSwitch.addEventListener('change', () => {
     closeModalBtn.style.backgroundColor = '#333';
     modalBtn.style.backgroundColor = '#f6f6f6';
     modalBtn.style.color = 'black';
+    hamburgerCloseBtn.style.backgroundColor = '#333';
     hamburgerOpenBtn.style.backgroundColor = '#333';
+    iconMail.style.display = 'none';
+    iconPass.style.display = 'none';
+    iconWhiteMail.style.display = 'block';
+    iconWhitePass.style.display = 'block';
   }
 });
 
