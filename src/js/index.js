@@ -8,12 +8,12 @@ import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from '.
 //export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
 
-// fundacje charytatywne
-charities.forEach(charity => {
-  const div = document.createElement('div');
-  div.innerHTML = `<a href="${charity.url}" target="_blank">${charity.title}</a>`;
-  charitiesSlider.appendChild(div);
-});
+// fundacje charytatywne  -  wyłączono sekcję 
+//charities.forEach(charity => {
+//  const div = document.createElement('div');
+//  div.innerHTML = `<a href="${charity.url}" target="_blank">${charity.title}</a>`;
+//  charitiesSlider.appendChild(div);
+//});
 ////////////////////////////
 
 // lista kategorii
