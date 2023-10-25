@@ -44,21 +44,37 @@ fetchCategories()
 //////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
 function handleSeeMoreButtonClick(event) {
-  const button = event.target.closest('.category-button');
-  if (button) {
-    const bookItem = button.closest('li');
-    const selectedCategory = bookItem.querySelector('h2').textContent;
+  let selectedCategory;
+
+  if (typeof event === 'string') {
+    selectedCategory = event;
+  } else {
+    const button = event.target.closest('.category-button');
+    if (button) {
+      const categoryContainer = button.closest('.category-container');
+
+      if (categoryContainer && categoryContainer.querySelector('h2')) {
+        selectedCategory = categoryContainer.querySelector('h2').textContent;
+      }
+    }
+  }
+
+  if (selectedCategory) {
     fetchBooksData(selectedCategory)
       .then(booksData => {
-        document.querySelectorAll('.category, .categoryTop, .category-button').forEach(element => {
-          element.classList.remove('selected-category');
+        document.querySelectorAll('.category-container').forEach(container => {
+          container.classList.remove('selected-category');
+        });
+
+        const categoryContainers = document.querySelectorAll('.category-container');
+        categoryContainers.forEach(container => {
+          if (container.textContent.includes(selectedCategory)) {
+            container.classList.add('selected-category');
+          }
         });
 
         bestSellersHeader.textContent = selectedCategory;
         renderBooks(booksData, selectedCategory);
-
-        // dodana klasa selected-category tylko do klikniętej kategorii
-        bookItem.classList.add('selected-category');
       })
       .catch(error => {
         console.error('Error fetching books data:', error);
@@ -93,10 +109,10 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodanie klasy "book-title" do tytułu
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodanie klasy "book-author" do autora
+
+
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
           bookItem.appendChild(h3);
@@ -131,10 +147,10 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodanie klasy "book-title" do tytułu
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodanie klasy "book-author" do autora
+
+
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
           bookItem.appendChild(h3);
@@ -169,10 +185,9 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodanie klasy "book-title" do tytułu
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodanie klasy "book-author" do autora
+
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
           bookItem.appendChild(h3);
@@ -209,6 +224,7 @@ fetchBooks('some-category')
       seeMoreButton.className = 'category-button';
       seeMoreButton.innerText = 'See more';
       categorySection.appendChild(seeMoreButton);
+      seeMoreButton.addEventListener('click', () => handleSeeMoreButtonClick(category.list_name));
 
       // Dodaj sekcję kategorii do kontenera
       booksContainer.appendChild(categorySection);
@@ -218,29 +234,35 @@ fetchBooks('some-category')
     // Obsługa błędów
     console.error('Error in promise chain:', error);
   });
-
+// funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
 function renderCategoriesWithBooks(categoriesData) {
   const booksContainer = document.getElementById('booksList');
   booksContainer.innerHTML = '';
 
   categoriesData.forEach(category => {
+    const categoryContainer = document.createElement('div');
+    categoryContainer.classList.add('category-container');
+    booksContainer.appendChild(categoryContainer);
+
+    const categoryTitle = document.createElement('h2');
+    categoryTitle.textContent = category.list_name;
+    categoryContainer.appendChild(categoryTitle);
+
     const categoryBooksList = document.createElement('ul');
-    booksContainer.appendChild(categoryBooksList);
+    categoryContainer.appendChild(categoryBooksList);
 
     category.books.forEach(book => {
       const bookItem = document.createElement('li');
       bookItem.innerHTML = `
-        <div>
-          <h2>${category.list_name}</h2>          
+        <div>                    
           <img src="${book.book_image}" alt="${book.title}" />
           <h3>${book.title}</h3>
           <p>Author: ${book.author}</p>
-          <button class="category-button">See more</button>
         </div>
       `;
+
       categoryBooksList.appendChild(bookItem);
-      bookItem.addEventListener('click', handleSeeMoreButtonClick);
 
       // /////////
       //Modal, ten sam kod dodany w 4 miejscach
@@ -260,9 +282,17 @@ function renderCategoriesWithBooks(categoriesData) {
       });
       // /////////
     });
-    
+
+    // Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
+    const seeMoreButton = document.createElement('button');
+    seeMoreButton.textContent = 'See more';
+    seeMoreButton.classList.add('category-button');
+    categoryContainer.appendChild(seeMoreButton);
+
+    seeMoreButton.addEventListener('click', () => handleSeeMoreButtonClick(category.list_name));
   });
 }
+
 document.getElementById('bestSellers').addEventListener('click', async event => {
   if (event.target.tagName === 'LI') {
     const selectedCategory = event.target.textContent;
