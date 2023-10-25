@@ -1,199 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<header>
+  <div class="header_wrapper">
+    <div class="logo">
+      <a href=""
+        ><img class="logo_light" src="./images/logo_light.svg" width="100" height="100"
+      /></a>
+      <a href=""><img class="logo_dark" src="./images/logo_dark.svg" width="100" height="100" /></a>
+    </div>
+    <div class="modal_signup is_hidden" data-modal>
+      <button class="modal_singup_close" type="submit" data-modal-close>
+        <img src="./images/icon_x-close.svg" width="24" height="24" />
+      </button>
+      <form class="modal_signup-form">
+        <fieldset class="modal_signup-field-name">
+          <label class="modal_signup-name" for="username">NAME</label>
+          <input class="modal_input-name" type="text" name="username" id="username" />
+        </fieldset>
+        <fieldset class="modal_signup-field-email">
+          <label class="modal_signup-email" for="usermail">EMAIL</label>
+          <input class="modal_input-mail" type="email" name="usermail" id="usermail" />
+          <img
+            class="modal_input-icon-mail"
+            src="./images/icon_mail-02.svg"
+            width="18"
+            height="18"
+          />
+          <img
+            class="modal_input-icon-mail-white"
+            src="./images/mail-02-white.svg"
+            width="18"
+            height="18"
+          />
+        </fieldset>
+        <fieldset class="modal_signup-field-pass">
+          <label class="modal_signup-password">PASSWORD</label>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../sass/utils/_mixins.scss" />
-    <link rel="stylesheet" type="text/css" href="./sass/partials/_header.scss" />
+          <input
+            class="modal_input-pass"
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="off"
+          />
+          <img
+            class="modal_input-icon-pass"
+            src="./images/icon_lock-02.svg"
+            width="20"
+            height="20"
+          />
+          <img
+            class="modal_input-icon-pass-white"
+            src="./images/lock-02-white.svg"
+            width="20"
+            height="20"
+          />
+        </fieldset>
+        <button type="submit" class="modal_btn">SIGN UP</button>
+        <ul class="modal_list">
+          <a class="modal_link" href=""><li>SIGN UP</li></a>
+          <a class="modal_link" href=""><li>SIGN IN</li></a>
+        </ul>
+      </form>
+    </div>
+    <div class="modal_mobile">
+      <button type="submit" class="btn_log-out-mobile">
+        <img src="./images/button_sign_up.svg" width="118" height="48" />
+      </button>
+      <div class="img_css-mobile"></div>
+    </div>
+    <div class="modal_signup-mobile">
+      <button class="modal_singup_close-mobile" type="submit" data-modal-close>
+        <img src="./images/icon-x-close-white.svg" width="24" height="24" />
+      </button>
+      <form class="modal_signup-form-mobile">
+        <fieldset class="modal_signup-field-name-mobile">
+          <label class="modal_signup-name-mobile" for="username">NAME</label>
+          <input class="modal_input-name-mobile" type="text" name="username" id="usernamemobile" />
+        </fieldset>
+        <fieldset class="modal_signup-field-email-mobile">
+          <label class="modal_signup-email-mobile" for="usermail">EMAIL</label>
+          <input class="modal_input-mail-mobile" type="email" name="usermail" id="usermailmobile" />
+          <img
+            class="modal_input-icon-mobile-mail"
+            src="./images/mail-02-white.svg"
+            width="18"
+            height="18"
+          />
+        </fieldset>
+        <fieldset class="modal_signup-field-pass-mobile">
+          <label class="modal_signup-password-mobile">PASSWORD</label>
 
-    <style></style>
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <div class="header_wrapper">
-        <div class="logo">
-          <a href=""
-            ><img class="logo_light" src="./images/logo_light.svg" width="100" height="100"
-          /></a>
-          <a href=""
-            ><img class="logo_dark" src="./images/logo_dark.svg" width="100" height="100"
-          /></a>
-        </div>
-        <div class="modal_signup is_hidden" data-modal>
-          <button class="modal_singup_close" type="submit" data-modal-close>
-            <img src="./images/icon_x-close.svg" width="24" height="24" />
-          </button>
-          <form class="modal_signup-form">
-            <fieldset class="modal_signup-field-name">
-              <label class="modal_signup-name" for="username">NAME</label>
-              <input class="modal_input-name" type="text" name="username" id="username" />
-            </fieldset>
-            <fieldset class="modal_signup-field-email">
-              <label class="modal_signup-email" for="usermail">EMAIL</label>
-              <input class="modal_input-mail" type="email" name="usermail" id="usermail" />
-              <img
-                class="modal_input-icon-mail"
-                src="./images/icon_mail-02.svg"
-                width="18"
-                height="18"
-              />
-              <img
-                class="modal_input-icon-mail-white"
-                src="./images/mail-02-white.svg"
-                width="18"
-                height="18"
-              />
-            </fieldset>
-            <fieldset class="modal_signup-field-pass">
-              <label class="modal_signup-password">PASSWORD</label>
+          <input
+            class="modal_input-pass-mobile"
+            type="password"
+            name="password"
+            id="passwordmobile"
+            autocomplete="off"
+          />
+          <img
+            class="modal_input-icon-mobile-pass"
+            src="./images/lock-02-white.svg"
+            width="20"
+            height="20"
+          />
+        </fieldset>
+        <button type="submit" class="modal_btn-submit-mobile">SIGN UP</button>
+        <ul class="modal_list-mobile">
+          <a class="modal_link-mobile" href=""><li>SIGN UP</li></a>
+          <a class="modal_link-mobile" href=""><li>SIGN IN</li></a>
+        </ul>
+      </form>
+    </div>
 
-              <input
-                class="modal_input-pass"
-                type="password"
-                name="password"
-                id="password"
-                autocomplete="off"
-              />
-              <img
-                class="modal_input-icon-pass"
-                src="./images/icon_lock-02.svg"
-                width="20"
-                height="20"
-              />
-              <img
-                class="modal_input-icon-pass-white"
-                src="./images/lock-02-white.svg"
-                width="20"
-                height="20"
-              />
-            </fieldset>
-            <button type="submit" class="modal_btn">SIGN UP</button>
-            <ul class="modal_list">
-              <a class="modal_link" href=""><li>SIGN UP</li></a>
-              <a class="modal_link" href=""><li>SIGN IN</li></a>
-            </ul>
-          </form>
-        </div>
-        <div class="modal_mobile">
-          <button type="submit" class="btn_log-out-mobile">
-            <img src="./images/button_sign_up.svg" width="118" height="48" />
-          </button>
-          <div class="img_css-mobile"></div>
-        </div>
-        <div class="modal_signup-mobile">
-          <button class="modal_singup_close-mobile" type="submit" data-modal-close>
-            <img src="./images/icon_x-close.svg" width="24" height="24" />
-          </button>
-          <form class="modal_signup-form-mobile">
-            <fieldset class="modal_signup-field-name-mobile">
-              <label class="modal_signup-name-mobile" for="username">NAME</label>
-              <input
-                class="modal_input-name-mobile"
-                type="text"
-                name="username"
-                id="usernamemobile"
-              />
-            </fieldset>
-            <fieldset class="modal_signup-field-email-mobile">
-              <label class="modal_signup-email-mobile" for="usermail">EMAIL</label>
-              <input
-                class="modal_input-mail-mobile"
-                type="email"
-                name="usermail"
-                id="usermailmobile"
-              />
-              <img
-                class="modal_input-icon-mobile-mail"
-                src="./images/mail-02-white.svg"
-                width="18"
-                height="18"
-              />
-            </fieldset>
-            <fieldset class="modal_signup-field-pass-mobile">
-              <label class="modal_signup-password-mobile">PASSWORD</label>
-
-              <input
-                class="modal_input-pass-mobile"
-                type="password"
-                name="password"
-                id="passwordmobile"
-                autocomplete="off"
-              />
-              <img
-                class="modal_input-icon-mobile-pass"
-                src="./images/lock-02-white.svg"
-                width="20"
-                height="20"
-              />
-            </fieldset>
-            <button type="submit" class="modal_btn-submit-mobile">SIGN UP</button>
-            <ul class="modal_list-mobile">
-              <a class="modal_link-mobile" href=""><li>SIGN UP</li></a>
-              <a class="modal_link-mobile" href=""><li>SIGN IN</li></a>
-            </ul>
-          </form>
-        </div>
-
-        <div class="home_shopping_list">
-          <span class="home_text">HOME</span>
-          <div class="shoping-list_text">
-            <p>SHOPPING&nbspLIST</p>
-            <img class="lock-icon" src="./images/icon-cart.svg" width="24" height="24" />
-          </div>
-
-          <!-- <img class="lock-icon" src="../images/icon_lock-02.svg" width="24" height="24" /> -->
-        </div>
-
-        <div class="switcher_button">
-          <label class="switch">
-            <input type="checkbox" id="themeSwitch" />
-
-            <img class="light_mode" src="./images/icon_Switcher 2.svg" width="48" height="48" />
-            <img class="dark_mode" src="./images/icon_Switcher 3.svg" width="48" height="48" />
-          </label>
-        </div>
-        <div class="button_login">
-          <button type="submit" class="btn_log-in" data-modal-open>
-            <img src="./images/button_sign_up.svg" width="184" height="48" />
-          </button>
-          <button type="submit" class="btn_log-out-desktop">
-            <img src="./images/button_log_out_desktop.svg" width="184" height="48" />
-          </button>
-        </div>
-        <div class="mobile_nav">
-          <button type="submit" class="hamburger_open">
-            <img
-              class="hamburger_open-svg"
-              src="./images/icon_align-left.svg"
-              width="48"
-              height="48"
-            />
-            <!-- <img
-              class="hamburger_open-hover"
-              src="./images/icon_align-lef_hovert.svg"
-              width="48"
-              height="48"
-            /> -->
-          </button>
-          <button type="submit" class="hamburger_close">
-            <img
-              class="hamburger_close-img"
-              src="./images/icon_x-close.svg"
-              width="48"
-              height="48"
-            />
-            <!-- <img
-              class="hamburger_close-hover"
-              src="./images/icon_x-close_hover.svg"
-              width="48"
-              height="48"
-            /> -->
-          </button>
-        </div>
+    <div class="home_shopping_list">
+      <span class="home_text">HOME</span>
+      <div class="shoping-list_text">
+        <p>SHOPPING&nbspLIST</p>
+        <img class="lock-icon" src="./images/icon-cart.svg" width="24" height="24" />
       </div>
-    </header>
-    <script src="./js/header.js"></script>
-  </body>
-</html>
+
+      <!-- <img class="lock-icon" src="../images/icon_lock-02.svg" width="24" height="24" /> -->
+    </div>
+
+    <div class="switcher_button">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitch" />
+
+        <img class="light_mode" src="./images/icon_Switcher 2.svg" width="48" height="48" />
+        <img class="dark_mode" src="./images/icon_Switcher 3.svg" width="48" height="48" />
+      </label>
+    </div>
+    <div class="button_login">
+      <button type="submit" class="btn_log-in" data-modal-open>
+        <img src="./images/button_sign_up.svg" width="184" height="48" />
+      </button>
+      <button type="submit" class="btn_log-out-desktop">
+        <img src="./images/button_log_out_desktop.svg" width="184" height="48" />
+      </button>
+    </div>
+    <div class="mobile_nav">
+      <button type="submit" class="hamburger_open">
+        <img class="hamburger_open-svg" src="./images/icon_align-left.svg" width="48" height="48" />
+        <img
+          class="hamburger_open-svg-white"
+          src="./images/align-left-white.svg"
+          width="48"
+          height="48"
+        />
+      </button>
+      <button type="submit" class="hamburger_close">
+        <img class="hamburger_close-img" src="./images/icon_x-close.svg" width="48" height="48" />
+        <img class="img_dark-close" src="./images/icon-x-close-white.svg" width="48" height="48" />
+      </button>
+    </div>
+  </div>
+</header>
+<script src="./js/header.js"></script>
