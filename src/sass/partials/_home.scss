@@ -172,8 +172,9 @@ letter-spacing: 0.03em;
 }
 
 
-//próba ustawienia bloków strony home
-.category-list {
+//próba ustawienia bloków strony home 
+
+.category-list  {
   display: grid;                         // był flex
   grid-template-columns: 1fr;            // dodane
   list-style: none;
