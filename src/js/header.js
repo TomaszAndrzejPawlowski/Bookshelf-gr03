@@ -34,7 +34,8 @@ const alignLight = document.querySelector('.hamburger_open-svg');
 const alignDark = document.querySelector('.hamburger_open-svg-white');
 const iconLight = document.querySelector('.icon_light');
 const iconDark = document.querySelector('.icon_dark');
-
+const cartLight = document.querySelector('.lock-icon');
+const cartDark = document.querySelector('.lock_icon-dark');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -75,6 +76,8 @@ themeSwitch.addEventListener('change', () => {
   alignDark.style.display = 'none';
   iconLight.style.display = 'block';
   iconDark.style.display = 'none';
+  cartLight.style.display = 'block';
+  cartDark.style.display = 'none';
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
@@ -110,6 +113,8 @@ themeSwitch.addEventListener('change', () => {
     alignDark.style.display = 'block';
     iconLight.style.display = 'none';
     iconDark.style.display = 'block';
+    cartLight.style.display = 'none';
+    cartDark.style.display = 'block';
   }
 });
 
