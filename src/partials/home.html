@@ -1,26 +1,44 @@
-<section class="home">
-
-<div class="left-section" >
+<section >
+<div class="home">
+    <div class="left-section" >
   <div class="categories-block">
-    <h2>Categories</h2>
+    <h2 class="categories-title">ALL CATEGORIES</h2>
     <ul class="categories-list" id="categoriesList">
-      <li class="categoryTop" id="bestSellers">Best Sellers Books</li>
+      <li class="categoryTop" id="bestSellers">Best Sellers Books </li>
       <!-- Dynamicznie wypełniane za pomocą JavaScript -->
     </ul>
   </div>
 
-  <div class="charities-slider-block">
+  <!--<div class="charities-slider-block">
     <h2>Charities</h2>
-    <div class="charities-slider" id="charitiesSlider">
-      <!-- Dynamicznie wypełniane za pomocą JavaScript -->
+    <div class="charities-slider" id="charitiesSlider"></div>
+  </div>-->
     </div>
-  </div>
-</div >
-  <div class="books-list-block">
-    <h2 id="bestSellersHeader">Best Sellers Books</h2>
+    <div class="slider container">
+      <div class="slider_main">
+        
+          <div class="slider_head">Support Ukraine 
+              <svg class="slider_head-logo" >
+                  <use href="/src/images/herb.svg#icon-emblem"></use>
+              </svg>
+          </div>
+          <div class="slider_items" id="charitiesSlider">
+              
+          </div>
+      </div>
+      <div class="arrow" onclick="scrollSlider()">
+          <i class="fas fa-chevron-up"></i> <!-- Strzałka do góry -->
+      </div>
+    </div>
+    </div>
+    <div class="books-list-block">
+    <h2 class="main-title" id="bestSellersHeader">Best Sellers <span class="books">Books</span></Books></h2>
     <ul class="books-list" id="booksList">
       <!-- dynamicznie wypełniane JavaScript -->
     </ul>
+    <button class="category-button">See more</button>
   </div>
+</div> 
   <div id="bookCardContainer"></div>
 </section>
+<script src="/src/js/swipper.js"></script>

@@ -1,0 +1,79 @@
+.slider {
+    width: 335px; // szerokość slidera
+    height: 460px; // wysokość slidera
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 16px;
+    background: $backgroundSlider;
+    color: #ccc;
+    @include tablet {
+        width: 335px; // szerokość slidera
+        height: 474px; // wysokość slidera
+    }
+
+    @include desktop {
+        width: 356px; // szerokość slidera
+        height: 474px; // wysokość slidera
+    }
+    
+    &_head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        align-items: center;
+        font-family: DM Sans;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.04em;
+        text-align: left;
+        color: white;  
+        margin-top: 20px;
+        z-index: 100;
+         
+    }
+    &_head-logo {
+        fill: white;
+        width: 20px;
+        height: 32px;
+        margin-left: 20px;
+    }
+
+    &_main {
+        width: 100%;
+        height: 85%;
+        overflow: hidden;
+        position: relative; 
+    }
+
+    &_items {
+        width: 100%;
+        position: absolute;
+        transition: transform 0.5s ease;
+    }
+
+    &_item {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        
+    }
+}
+
+
+.charity-title {
+    display: none;
+    visibility: hidden;
+}
+
+.charity-item{
+   margin-top: 25px;
+   margin-bottom: 20px;
+}
+.charity-item img {
+    margin-left: 40px;
+    height: 32px;
+}
