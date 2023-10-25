@@ -99,6 +99,7 @@ fetchBooks('some-category')
 
       const categoryBooksList = document.createElement('ul');
 
+
       if (window.innerWidth <= 768) {
         category.books.slice(0, 1).forEach(book => {
           const bookItem = document.createElement('li');
@@ -109,9 +110,11 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
+          h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
+
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
-
+          p.classList.add('book-author'); // Dodaj klasę "book-author" do elementu p
 
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
@@ -147,9 +150,11 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
+          h3.classList.add('book-title'); // Dodano klasę "book-title" do elementu h3
+
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
-
+          p.classList.add('book-author'); // Dodano klasę "book-author" do elementu p
 
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);
@@ -185,8 +190,11 @@ fetchBooks('some-category')
           image.alt = book.title;
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
+          h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
+
           const p = document.createElement('p');
           p.textContent = `Author: ${book.author}`;
+          p.classList.add('book-author'); // Dodaj klasę "book-author" do elementu p
 
           imageContainer.appendChild(image);
           bookItem.appendChild(imageContainer);

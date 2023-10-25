@@ -13,10 +13,33 @@ body {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
+
+  @include tablet {                      
+     
+  }
+  @include desktop {
+    display: flex;
+  }
 }
 
+//dodanie klasy common-container obejmującej listę gatunków i slider support
+.common-container {
+    @include tablet {                      
+     //display: inline-flex;
+  }
+  @include desktop {
+    
+  }
+}
+
+.book-list-block {
+   @include desktop {
+    padding-left: 40px;
+  }
+}
+
+
 .left-section {
-  padding:  0 50px;
   width: 335px;
   height: 628px;
 }
@@ -51,7 +74,7 @@ body {
 
 
 
-
+/*  stylizacja listy kategorii */
 .categories-block {
   overflow-y: scroll;
   width: 356px;
@@ -111,14 +134,47 @@ body {
   list-style: none;
 }
 
+//stylizacja tytułu i autora
+.book-title {
+color:#111111;  
+font-size: 16px;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: -4%;
+padding: 14px 0 4px 0;
+}
+
+.book-author {
+color:#b4afaf;  
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: -4%;
+padding-bottom: 20px;
+}
+
+.category-title {
+  color:#b4afaf;  
+font-size: 14px;
+font-style: italic;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 3%;
+}
+
 
 .category-list {
-display: flex;
-list-style: none;
-overflow: hidden;
-}
-.category-list li{
-
+  display: grid;                         // był flex
+  grid-template-columns: 1fr;            // dodane
+  list-style: none;
+  overflow: hidden;
+  @include tablet {                       // dla tablet i desktop dodane
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  @include desktop {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .image-container {
@@ -142,30 +198,3 @@ overflow: hidden;
   object-fit: contain;
 }
 
-//stylizacja tytułu i autora
-.book-title {
-color:#111111;  
-font-size: 16px;
-font-weight: 700;
-line-height: 18px;
-letter-spacing: -4%;
-padding: 14px 0 4px 0;
-}
-
-.book-author {
-color:#b4afaf;  
-font-size: 12px;
-font-style: italic;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: -4%;
-}
-
-.category-title {
-  color:#b4afaf;  
-font-size: 14px;
-font-style: italic;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 3%;
-}
