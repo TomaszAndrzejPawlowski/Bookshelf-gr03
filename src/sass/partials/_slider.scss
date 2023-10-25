@@ -7,6 +7,8 @@
     border-radius: 16px;
     background: $backgroundSlider;
     color: #ccc;
+    margin-left: -10px;
+    margin-right: 10px;
     @include tablet {
         width: 335px; // szerokość slidera
         height: 474px; // wysokość slidera
