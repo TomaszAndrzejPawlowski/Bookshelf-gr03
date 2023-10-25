@@ -44,14 +44,15 @@ async function createShoppingCard(id) {
 function creatSchoppingList() {
   const booksIdArray = localStorage.getItem('shoppingList');
   const parsedArrayofBook = JSON.parse(booksIdArray);
-
-  if (parsedArrayofBook.length === 0) {
-    const emptyTemplate = document.querySelector('.empty-shopping-list');
-    emptyTemplate.classList.add('visible');
-    return;
-  } else {
-    parsedArrayofBook.forEach(e => createShoppingCard(e));
-  }
+  
+    if (parsedArrayofBook === null) {
+      const emptyTemplate = document.querySelector('.empty-shopping-list');
+      emptyTemplate.classList.add('visible');
+      return;
+    } else {
+      parsedArrayofBook.forEach(e => createShoppingCard(e));
+    }
+  
 }
 
 creatSchoppingList();
