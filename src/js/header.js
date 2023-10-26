@@ -26,13 +26,16 @@ const iconMail = document.querySelector('.modal_input-icon-mail');
 const iconPass = document.querySelector('.modal_input-icon-pass');
 const iconWhiteMail = document.querySelector('.modal_input-icon-mail-white');
 const iconWhitePass = document.querySelector('.modal_input-icon-pass-white');
-const iconMobileMail = document.querySelector('.modal_input-icon-mobile-white');
-const iconMobilePass = document.querySelector('.modal_input-icon-mobile--white');
+const iconMobileMail = document.querySelector('.modal_input-icon-mobile-mail-white');
+const iconMobilePass = document.querySelector('.modal_input-icon-mobile-pass-white');
 const lightClose = document.querySelector('.hamburger_close-img');
 const darkClose = document.querySelector('.img_dark-close');
 const alignLight = document.querySelector('.hamburger_open-svg');
 const alignDark = document.querySelector('.hamburger_open-svg-white');
-
+const iconLight = document.querySelector('.icon_light');
+const iconDark = document.querySelector('.icon_dark');
+const cartLight = document.querySelector('.lock-icon');
+const cartDark = document.querySelector('.lock_icon-dark');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -71,7 +74,10 @@ themeSwitch.addEventListener('change', () => {
   darkClose.style.display = 'none';
   alignLight.style.display = 'block';
   alignDark.style.display = 'none';
-
+  iconLight.style.display = 'block';
+  iconDark.style.display = 'none';
+  cartLight.style.display = 'block';
+  cartDark.style.display = 'none';
   if (isDarkMode === true) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
@@ -105,6 +111,10 @@ themeSwitch.addEventListener('change', () => {
     darkClose.style.display = 'block';
     alignLight.style.display = 'none';
     alignDark.style.display = 'block';
+    iconLight.style.display = 'none';
+    iconDark.style.display = 'block';
+    cartLight.style.display = 'none';
+    cartDark.style.display = 'block';
   }
 });
 
@@ -123,22 +133,17 @@ hamburgerOpenBtn.addEventListener('click', () => {
 
 hamburgerCloseBtn.addEventListener('click', () => {
   modalMobile.style.opacity = 0;
-  hamburgerOpenBtn.style.opacity = 1;
+  hamburgerOpenBtn.style.display = 'block';
   hamburgerCloseBtn.style.display = 'none';
 });
 
 buttonMobileModal.addEventListener('click', () => {
   modalSignupMobile.style.display = 'block';
   modalMobile.style.opacity = 0;
-  // if ((modalSignupMobile.style.display = 'block')) {
-  //   hamburgerCloseBtn.style.display = 'block';
-  //   hamburgerOpenBtn.style.display = 'none';
-  // }
 });
 
 buttonMobileModalClose.addEventListener('click', () => {
   modalSignupMobile.style.display = 'none';
   hamburgerCloseBtn.style.display = 'none';
-
   hamburgerOpenBtn.style.display = 'block';
 });
