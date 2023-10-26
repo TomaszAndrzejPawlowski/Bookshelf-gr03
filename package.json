@@ -5,7 +5,7 @@
   "homepage": "https://tomaszandrzejpawlowski.github.io/Bookshelf-gr03",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url Bookshelf-gr03"
+    "build": "parcel build src/*.html --public-url /Bookshelf-gr03/"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "url": "https://github.com/TomaszAndrzejPawlowski/Bookshelf-gr03.git/issues"
   },
   "dependencies": {
-    "axios": "^1.5.1"
+    "axios": "^1.5.1",
+    "swiper": "^11.0.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",

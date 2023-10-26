@@ -6,70 +6,207 @@ body {
 }
 
 .home {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
+
+  @include tablet {}
+
+  @include desktop {
+    display: flex;
+  }
 }
+
+//dodanie klasy common-container obejmującej listę gatunków i slider support
+.common-container {
+  @include tablet {
+    //display: inline-flex;
+  }
+
+  @include desktop {}
+}
+
+.book-list-block {
+  @include desktop {
+    padding-left: 40px;
+  }
+}
+
 
 .left-section {
-  display: flex;
-  flex-direction: column;
-  width: 356px;
-  height: 100%;
+  width: 335px;
+  height: 628px;
 }
 
+.categories-title {
+  color: #4f2ee8;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 167px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: e9e9e0;
+}
+
+
+
+/*  stylizacja listy kategorii */
 .categories-block {
-  padding-right: 20px;
   overflow-y: scroll;
   width: 356px;
   height: 472px;
+
 }
 
-charities-slider-block {
-  padding: 0 20px;
+.categories-block li {
+  color: #202024;
+  font-size: 18px;
+  list-style: none;
+  line-height: 32px;
+  padding: 18px 0;
+  cursor: pointer;
+}
+
+.categories-block li:hover {
+  color: var(--violet);
+  font-size: 18px;
+  list-style: none;
+  line-height: 32px;
+  padding: 18px 0;
+  cursor: pointer;
+}
+
+.charities-slider-block {
+  padding: 142px 20px 0 20px;
   width: 356px;
 }
 
-.books-list-block {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(100% - 356px);
-  padding: 10px;
-  max-width: 1196px; /* 996px + 5*20px margin */
-  justify-content: space-between;
-}
 
-.books-list-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
+//best sellers books title
+.main-title {
 
-.books-list-block li {
-  flex: 0 0 calc(20% - 20px); /* Każda sekcja zajmuje 20% szerokości z odstępem */
-  margin-right: 20px; /* Odstęp między sekcjami */
-  margin-bottom: 20px; /* Odstęp pionowy między sekcjami */
-  border: 1px solid #ddd; /* Ramka dla każdej sekcji */
-  padding: 10px;
+  white-space: nowrap;
+  color: black;
+  width: 360px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -4%;
+  line-height: 38px;
   text-align: center;
-  max-width: 180px; /* Maksymalna szerokość sekcji z książkami */
+  padding: 0 0 40px 80px;
 }
 
-.book-card {
-  width: 996px;
-  height: 426px;
+.books {
+  color: #4f2ee8;
 }
 
-.book-card img {
-  width: 180px; /* Ustawienie szerokości obrazka na 180px */
-  height: 256px; /* Ustawienie wysokości obrazka na 256px */
-  object-fit: cover; /* Dopasowanie obrazka do wymiarów */
+
+
+
+
+.image-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  list-style: none;
+}
+
+//stylizacja tytułu i autora
+.book-title {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -4%;
+  padding: 14px 0 4px 0;
+}
+
+.book-author {
+color:#b4afaf;  
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: -4%;
+padding-bottom: 20px;
+}
+
+.category-section {
+  margin-left: 20px;
+margin-bottom: 20px;
+}
+
+.category-title {
+  color: #b4afaf;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 3%;
+}
+
+.category-list {
+  display: grid;  
+  justify-items: center;
+align-items: stretch;                       // był flex
+  grid-template-columns: 1fr;            // dodane
+  list-style: none;
+  overflow: hidden;
+
+  @include tablet {                       // dla tablet i desktop dodane
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.category-button {
+  position: absolute;
+}
+
+.image-container {
+
+  // Dla tabletów (szerokość powyżej 768px)
+  @include tablet {
+    width: 218px;
+    /* Szerokość obrazków dla tabletów */
+    height: 316px;
+    object-fit: contain;
+  }
+
+  // Dla ekranów desktop (szerokość powyżej 1200px)
+  @include desktop {
+    width: 180px;
+    /* Szerokość obrazków dla ekranów desktop */
+    height: 256px;
+    object-fit: contain;
+  }
+
+  // Dla innych przypadków (domyślnie)
+  width: 335px;
+  /* Domyślna szerokość obrazków */
+  height: 485px;
+  object-fit: contain;
 }
