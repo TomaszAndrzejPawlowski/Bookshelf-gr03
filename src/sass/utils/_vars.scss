@@ -1,51 +1,50 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --black: #111111;
-    --black_1: #202024;
-    --grey:#b4afaf;
-    --lighygrey:#e0e0e0;
-    --violet:#4f2ee8;
-    --white:#ffffff;
+  --black: #111111;
+  --black_1: #202024;
+  --grey: #b4afaf;
+  --lighygrey: #e0e0e0;
+  --violet: #4f2ee8;
+  --white: #ffffff;
 
-    --font-size-extrabig: 48px;
-    --font-size-big: 32px;
-    --font-size-normal: 22px;
-    --font-size-normal_1: 18px;
-    --font-size-small: 16px;
-    --fint-size-small_1: 14px;
-    --font-size-small_2: 12px;
+  --font-size-extrabig: 48px;
+  --font-size-big: 32px;
+  --font-size-normal: 22px;
+  --font-size-normal_1: 18px;
+  --font-size-small: 16px;
+  --fint-size-small_1: 14px;
+  --font-size-small_2: 12px;
 }
 
 img {
-    border-radius:8px;
-    
+  border-radius: 8px;
 }
 
 h3 {
-  color:#111111;  
-font-size: 16px;
-font-weight: 700;
-line-height: 18px;
-letter-spacing: -4%;
-padding: 14px 0 4px 0;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -4%;
+  padding: 14px 0 4px 0;
 }
 
 p {
-    color:#b4afaf;  
-font-size: 12px;
-font-style: italic;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: -4%;
-padding-bottom: 20px;
-
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -4%;
+  padding-bottom: 20px;
 }
 
 ////---slider///
-$mainColorSlider: #4F2EE8;
-$backgroundSlider: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+$mainColorSlider: #4f2ee8;
+$backgroundSlider: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%)
+  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;

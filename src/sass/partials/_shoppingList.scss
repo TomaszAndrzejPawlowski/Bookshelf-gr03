@@ -36,6 +36,10 @@
   width: 28px;
   height: 28px;
 }
+.remove-button__icon {
+  width: 16px;
+  height: 16px;
+}
 
 .shopList-item__wrapp {
   display: flex;
@@ -56,11 +60,11 @@
   flex-direction: column;
 }
 .shopList-item__information > h1 {
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   color: var(--black);
   font-size: var(--font-size-small);
   font-weight: 700;
-  line-height: 18px;
+  line-height: 1.13;
   letter-spacing: -0.64px;
   text-transform: uppercase;
   overflow: hidden;
@@ -73,25 +77,28 @@
   color: var(--grey);
   font-size: var(--font-size-small_2);
   font-weight: 400;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.36px;
   padding-bottom: 8px;
-  max-width: 165px;
+  max-width: 155px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .shopList-item__summary {
-  width: 193px;
-  height: 68px;
+  display: block;
+  min-width: 193px;
+  min-height: 68px;
+  margin: 0 auto;
+  margin-bottom: 14px;
 }
 
 .shopList-item__summary > p {
   color: var(--black);
   font-size: var(--fint-size-small_1);
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.29;
   letter-spacing: -0.56px;
   max-width: 180px;
   height: 54px;
@@ -112,30 +119,32 @@
   font-size: var(--font-size-small_2);
   font-style: italic;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: -0.48px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100px;
 }
 
 .shopList-item__icons {
   display: flex;
-  width: 92px;
-  height: 27px;
+  gap: 8px;
+  align-items: center;
 }
-
 
 .shopList-item__icons > a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-shopping {
+  border-radius: 0;
 }
 
 .empty-shopping-list {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   display: none;
+  gap: 14px;
 }
 
 .empty-shopping-list__title {
@@ -143,11 +152,10 @@
   text-align: center;
   font-size: var(--fint-size-small_1);
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.29;
   letter-spacing: -0.28px;
-  width: 244px;
-  padding-bottom: 14px;
-  padding-top: 140px;
+  max-width: 230px;
+  padding-top: 120px;
 }
 
 .visible {
@@ -155,14 +163,6 @@
 }
 
 @include tablet {
-  .empty-shopping-list__title {
-    padding-bottom: 20px;
-    padding-top: 140px;
-    font-size: var(--font-size-normal_1);
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -0.64px;
-  }
   .shopList-item {
     padding: 24px;
     gap: 24px;
@@ -195,25 +195,51 @@
   .shopList-item__summary {
     width: 508px;
     min-height: 53px;
+    margin-bottom: 35px;
   }
   .shopList-item__summary > p {
     max-width: 508px;
   }
 
   .shopList-item__author {
-    max-width: 200px;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .aple-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .amazon-icon {
+    width: 48px;
+    height: 15px;
+  }
+
+  .shopList-item__icons {
+    gap: 18px;
+  }
+
+  .empty-shopping-list {
+    gap: 20px;
   }
   .empty-shopping-list__title {
     font-size: var(--font-size-normal_1);
-    line-height: 24px;
+    line-height: 1.33;
     letter-spacing: -0.36px;
-    width: 349px;
-    padding-bottom: 20px;
+    max-width: 350px;
     padding-top: 140px;
+  }
+
+  .empty-shopping-list__img {
+    width: 322px;
+    height: 241px;
   }
 }
 
-@include desktop {  
+@include desktop {
   .shopList-item {
     gap: 24px;
     width: 996px;
@@ -229,15 +255,14 @@
   }
 
   .shopList-item__summary {
-    width: 808px;
-    height: 53px;
-    margin-bottom: 48px;
-    padding-bottom: 0px;
-  }
-
-  .shopList-item__summary > p {
-    max-width: 508px;
+    min-width: 808px;
+    min-height: 53px;
+    margin-bottom: 0px;
     padding-top: 14px;
+    padding-bottom: 35px;
+  }
+  .shopList-item__summary > p {
+    max-width: 100%;
   }
 
   .shopList-item__author {
@@ -247,7 +272,7 @@
   .empty-shopping-list__title {
     font-size: var(--font-size-normal_1);
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.33;
     letter-spacing: -0.36px;
     width: 349px;
   }
