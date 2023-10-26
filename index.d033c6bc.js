@@ -545,7 +545,7 @@ const eG=document.getElementById("charitiesSlider");////////////////////////////
 // funkcja oblsugi button 'See more'
 function eY(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&eT(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),eZ.textContent=e,eQ(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
-function eX(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,r.appendChild(n);let o=document.createElement("ul");r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
+function eX(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <div>                    
           <img src="${t.book_image}" alt="${t.title}" />
           <h3>${t.title}</h3>
@@ -578,7 +578,7 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 }):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
 e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
-}),// Dodaje klasę "category-list" do elementu <ul>
+}),// Dodanie klasę "category-list" do elementu <ul>
 o.classList.add("category-list"),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
 let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),i.addEventListener("click",()=>eY(t.list_name)),// Dodaj sekcję kategorii do kontenera
 e.appendChild(r)})}).catch(t=>{// Obsługa błędów
@@ -595,6 +595,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.449b8c4a.js.map
+});*///# sourceMappingURL=index.d033c6bc.js.map
 
-//# sourceMappingURL=index.449b8c4a.js.map
+//# sourceMappingURL=index.d033c6bc.js.map
