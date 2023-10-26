@@ -30,7 +30,7 @@ export function createBookCard(bookDetails) {
   const closeButton = bookCard.querySelector('.modal-close-button');
   closeButton.addEventListener('click', () => {
     const bookCardContainer = document.getElementById('bookCardContainer');
-    bookCardContainer.innerHTML = ''; // Zamykanie modalu
+    bookCardContainer.innerHTML = '';
   });
 
   const addToCartButton = bookCard.querySelector('.add-to-cart-button');
@@ -61,6 +61,24 @@ export function createBookCard(bookDetails) {
   const bookCardContainer = document.getElementById('bookCardContainer');
   bookCardContainer.innerHTML = '';
   bookCardContainer.appendChild(bookCard);
+
+  function closeModalOnEscape(event) {
+    if (event.key === 'Escape') {
+      const bookCardContainer = document.getElementById('bookCardContainer');
+      bookCardContainer.innerHTML = '';
+    }
+  }
+
+  document.addEventListener('keydown', closeModalOnEscape);
+
+  function closeModalOnClickOutside(event) {
+    if (event.target.classList.contains('modal-card-container')) {
+      const bookCardContainer = document.getElementById('bookCardContainer');
+      bookCardContainer.innerHTML = '';
+    }
+  }
+
+  document.addEventListener('click', closeModalOnClickOutside);
 
   return bookCard;
 }

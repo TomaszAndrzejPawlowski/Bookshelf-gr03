@@ -5,6 +5,12 @@ body {
 .is_hidden {
   visibility: hidden;
 }
+.icon_light {
+  display: block;
+}
+.lock-icon {
+  display: block;
+}
 .modal_signup-mobile {
   display: none;
 }
@@ -299,6 +305,7 @@ body {
     right: 6;
     top: 10;
   }
+
   #themeSwitch {
     margin-right: 3em;
     margin-top: 0.2em;
