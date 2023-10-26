@@ -222,7 +222,7 @@ fetchBooks('some-category')
         });
       }
 
-      // Dodaje klasę "category-list" do elementu <ul>
+      // Dodanie klasę "category-list" do elementu <ul>
       categoryBooksList.classList.add('category-list');
 
       categorySection.appendChild(categoryBooksList);
@@ -255,13 +255,16 @@ function renderCategoriesWithBooks(categoriesData) {
 
     const categoryTitle = document.createElement('h2');
     categoryTitle.textContent = category.list_name;
+    categoryTitle.classList.add('category-title');
     categoryContainer.appendChild(categoryTitle);
 
     const categoryBooksList = document.createElement('ul');
+    categoryBooksList.classList.add('books-list');
     categoryContainer.appendChild(categoryBooksList);
 
     category.books.forEach(book => {
       const bookItem = document.createElement('li');
+      bookItem.classList.add('book-item');
       bookItem.innerHTML = `
         <div>                    
           <img src="${book.book_image}" alt="${book.title}" />
