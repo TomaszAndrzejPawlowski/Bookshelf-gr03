@@ -1,5 +1,5 @@
 let t;function e(t){return t&&t.__esModule?t.default:t}var r,n,o,i,s,a=globalThis;function l(t,e){return function(){return t.apply(e,arguments)}}// utils is a library of generic helper functions non-specific to axios
-const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(null),t=>{let e=u.call(t);return r[e]||(r[e]=e.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),d=t=>e=>typeof e===t,{isArray:p}=Array,m=d("undefined"),g=h("ArrayBuffer"),y=d("string"),b=d("function"),E=d("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},C=h("Date"),A=h("File"),S=h("Blob"),L=h("FileList"),O=h("URLSearchParams");/**
+const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(null),t=>{let e=u.call(t);return r[e]||(r[e]=e.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),d=t=>e=>typeof e===t,{isArray:p}=Array,m=d("undefined"),g=h("ArrayBuffer"),y=d("string"),b=d("function"),E=d("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},A=h("Date"),S=h("File"),C=h("Blob"),L=h("FileList"),O=h("URLSearchParams");/**
  * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
@@ -15,7 +15,7 @@ const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(
  * @returns {any}
  */function R(t,e,{allOwnKeys:r=!1}={}){let n,o;// Don't bother if no value provided
 if(null!=t){if("object"!=typeof t&&/*eslint no-param-reassign:0*/(t=[t]),p(t))for(n=0,o=t.length;n<o;n++)e.call(null,t[n],n,t);else{let o;// Iterate over object keys
-let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function k(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const T=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:a,B=t=>!m(t)&&t!==T,U=(n="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>n&&t instanceof n),_=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};R(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",I="0123456789",F={DIGIT:I,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+I},M=h("AsyncFunction");var D={isArray:p,isArrayBuffer:g,isBuffer:/**
+let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function k(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const T=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:a,B=t=>!m(t)&&t!==T,_=(n="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>n&&t instanceof n),U=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};R(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",I="0123456789",F={DIGIT:I,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+I},D=h("AsyncFunction");var H={isArray:p,isArrayBuffer:g,isBuffer:/**
  * Determine if a value is a Buffer
  *
  * @param {*} val The value to test
@@ -28,7 +28,7 @@ let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:C,isFile:A,isBlob:S,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:O,isTypedArray:U,isFileList:L,forEach:R,merge:/**
+ */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:A,isFile:S,isBlob:C,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:O,isTypedArray:_,isFileList:L,forEach:R,merge:/**
  * Accepts varargs expecting each argument to be an object, then
  * immutably merges the properties of each object and returns result.
  *
@@ -46,14 +46,14 @@ let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)
  *
  * @returns {Object} Result of all merge properties
  */function t(){let{caseless:e}=B(this)&&this||{},r={},n=(n,o)=>{let i=e&&k(r,o)||o;v(r[i])&&v(n)?r[i]=t(r[i],n):v(n)?r[i]=t({},n):p(n)?r[i]=n.slice():r[i]=n};for(let t=0,e=arguments.length;t<e;t++)arguments[t]&&R(arguments[t],n);return r},extend:(t,e,r,{allOwnKeys:n}={})=>(R(e,(e,n)=>{r&&b(e)?t[n]=l(e,r):t[n]=e},{allOwnKeys:n}),t),trim:t=>t.trim?t.trim():t.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),stripBOM:t=>(65279===t.charCodeAt(0)&&(t=t.slice(1)),t),inherits:(t,e,r,n)=>{t.prototype=Object.create(e.prototype,n),t.prototype.constructor=t,Object.defineProperty(t,"super",{value:e.prototype}),r&&Object.assign(t.prototype,r)},toFlatObject:(t,e,r,n)=>{let o,i,s;let a={};// eslint-disable-next-line no-eq-null,eqeqeq
-if(e=e||{},null==t)return e;do{for(i=(o=Object.getOwnPropertyNames(t)).length;i-- >0;)s=o[i],(!n||n(s,t,e))&&!a[s]&&(e[s]=t[s],a[s]=!0);t=!1!==r&&c(t)}while(t&&(!r||r(t,e))&&t!==Object.prototype)return e},kindOf:f,kindOfTest:h,endsWith:(t,e,r)=>{t=String(t),(void 0===r||r>t.length)&&(r=t.length),r-=e.length;let n=t.indexOf(e,r);return -1!==n&&n===r},toArray:t=>{if(!t)return null;if(p(t))return t;let e=t.length;if(!E(e))return null;let r=Array(e);for(;e-- >0;)r[e]=t[e];return r},forEachEntry:(t,e)=>{let r;let n=t&&t[Symbol.iterator],o=n.call(t);for(;(r=o.next())&&!r.done;){let n=r.value;e.call(t,n[0],n[1])}},matchAll:(t,e)=>{let r;let n=[];for(;null!==(r=t.exec(e));)n.push(r);return n},isHTMLForm:_,hasOwnProperty:x,hasOwnProp:x,reduceDescriptors:j,freezeMethods:t=>{j(t,(e,r)=>{// skip restricted props in strict mode
+if(e=e||{},null==t)return e;do{for(i=(o=Object.getOwnPropertyNames(t)).length;i-- >0;)s=o[i],(!n||n(s,t,e))&&!a[s]&&(e[s]=t[s],a[s]=!0);t=!1!==r&&c(t)}while(t&&(!r||r(t,e))&&t!==Object.prototype)return e},kindOf:f,kindOfTest:h,endsWith:(t,e,r)=>{t=String(t),(void 0===r||r>t.length)&&(r=t.length),r-=e.length;let n=t.indexOf(e,r);return -1!==n&&n===r},toArray:t=>{if(!t)return null;if(p(t))return t;let e=t.length;if(!E(e))return null;let r=Array(e);for(;e-- >0;)r[e]=t[e];return r},forEachEntry:(t,e)=>{let r;let n=t&&t[Symbol.iterator],o=n.call(t);for(;(r=o.next())&&!r.done;){let n=r.value;e.call(t,n[0],n[1])}},matchAll:(t,e)=>{let r;let n=[];for(;null!==(r=t.exec(e));)n.push(r);return n},isHTMLForm:U,hasOwnProperty:x,hasOwnProp:x,reduceDescriptors:j,freezeMethods:t=>{j(t,(e,r)=>{// skip restricted props in strict mode
 if(b(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(b(n)){if(e.enumerable=!1,"writable"in e){e.writable=!1;return}e.set||(e.set=()=>{throw Error("Can not rewrite read-only method '"+r+"'")})}})},toObjectSet:(t,e)=>{let r={};return(t=>{t.forEach(t=>{r[t]=!0})})(p(t)?t:String(t).split(e)),r},toCamelCase:t=>t.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function(t,e,r){return e.toUpperCase()+r}),noop:()=>{},toFiniteNumber:(t,e)=>Number.isFinite(t=+t)?t:e,findKey:k,global:T,isContextDefined:B,ALPHABET:F,generateString:(t=16,e=F.ALPHA_DIGIT)=>{let r="",{length:n}=e;for(;t--;)r+=e[Math.random()*n|0];return r},isSpecCompliantForm:/**
  * If the thing is a FormData object, return true, otherwise return false.
  *
  * @param {unknown} thing - The thing to check.
  *
  * @returns {boolean}
- */function(t){return!!(t&&b(t.append)&&"FormData"===t[Symbol.toStringTag]&&t[Symbol.iterator])},toJSONObject:t=>{let e=Array(10),r=(t,n)=>{if(w(t)){if(e.indexOf(t)>=0)return;if(!("toJSON"in t)){e[n]=t;let o=p(t)?[]:{};return R(t,(t,e)=>{let i=r(t,n+1);m(i)||(o[e]=i)}),e[n]=void 0,o}}return t};return r(t,0)},isAsyncFn:M,isThenable:t=>t&&(w(t)||b(t))&&b(t.then)&&b(t.catch)};/**
+ */function(t){return!!(t&&b(t.append)&&"FormData"===t[Symbol.toStringTag]&&t[Symbol.iterator])},toJSONObject:t=>{let e=Array(10),r=(t,n)=>{if(w(t)){if(e.indexOf(t)>=0)return;if(!("toJSON"in t)){e[n]=t;let o=p(t)?[]:{};return R(t,(t,e)=>{let i=r(t,n+1);m(i)||(o[e]=i)}),e[n]=void 0,o}}return t};return r(t,0)},isAsyncFn:D,isThenable:t=>t&&(w(t)||b(t))&&b(t.then)&&b(t.catch)};/**
  * Create an Error with the specified message, config, error code, request and response.
  *
  * @param {string} message The error message.
@@ -63,12 +63,12 @@ if(b(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(
  * @param {Object} [response] The response.
  *
  * @returns {Error} The created error.
- */function H(t,e,r,n,o){Error.call(this),Error.captureStackTrace?Error.captureStackTrace(this,this.constructor):this.stack=Error().stack,this.message=t,this.name="AxiosError",e&&(this.code=e),r&&(this.config=r),n&&(this.request=n),o&&(this.response=o)}D.inherits(H,Error,{toJSON:function(){return{// Standard
+ */function M(t,e,r,n,o){Error.call(this),Error.captureStackTrace?Error.captureStackTrace(this,this.constructor):this.stack=Error().stack,this.message=t,this.name="AxiosError",e&&(this.code=e),r&&(this.config=r),n&&(this.request=n),o&&(this.response=o)}H.inherits(M,Error,{toJSON:function(){return{// Standard
 message:this.message,name:this.name,// Microsoft
 description:this.description,number:this.number,// Mozilla
 fileName:this.fileName,lineNumber:this.lineNumber,columnNumber:this.columnNumber,stack:this.stack,// Axios
-config:D.toJSONObject(this.config),code:this.code,status:this.response&&this.response.status?this.response.status:null}}});const q=H.prototype,z={};["ERR_BAD_OPTION_VALUE","ERR_BAD_OPTION","ECONNABORTED","ETIMEDOUT","ERR_NETWORK","ERR_FR_TOO_MANY_REDIRECTS","ERR_DEPRECATED","ERR_BAD_RESPONSE","ERR_BAD_REQUEST","ERR_CANCELED","ERR_NOT_SUPPORT","ERR_INVALID_URL"].forEach(t=>{z[t]={value:t}}),Object.defineProperties(H,z),Object.defineProperty(q,"isAxiosError",{value:!0}),// eslint-disable-next-line func-names
-H.from=(t,e,r,n,o,i)=>{let s=Object.create(q);return D.toFlatObject(t,s,function(t){return t!==Error.prototype},t=>"isAxiosError"!==t),H.call(s,t.message,e,r,n,o),s.cause=t,s.name=t.name,i&&Object.assign(s,i),s},o=function(t){// go through the array every three bytes, we'll deal with trailing stuff later
+config:H.toJSONObject(this.config),code:this.code,status:this.response&&this.response.status?this.response.status:null}}});const q=M.prototype,z={};["ERR_BAD_OPTION_VALUE","ERR_BAD_OPTION","ECONNABORTED","ETIMEDOUT","ERR_NETWORK","ERR_FR_TOO_MANY_REDIRECTS","ERR_DEPRECATED","ERR_BAD_RESPONSE","ERR_BAD_REQUEST","ERR_CANCELED","ERR_NOT_SUPPORT","ERR_INVALID_URL"].forEach(t=>{z[t]={value:t}}),Object.defineProperties(M,z),Object.defineProperty(q,"isAxiosError",{value:!0}),// eslint-disable-next-line func-names
+M.from=(t,e,r,n,o,i)=>{let s=Object.create(q);return H.toFlatObject(t,s,function(t){return t!==Error.prototype},t=>"isAxiosError"!==t),M.call(s,t.message,e,r,n,o),s.cause=t,s.name=t.name,i&&Object.assign(s,i),s},o=function(t){// go through the array every three bytes, we'll deal with trailing stuff later
 for(var e,r=t.length,n=r%3// if we have 1 byte left, pad 2 bytes
 ,o=[],i=0,s=r-n;i<s;i+=16383// must be multiple of 3
 )o.push(function(t,e,r){for(var n,o=[],i=e;i<r;i+=3)o.push($[(n=(t[i]<<16&16711680)+(t[i+1]<<8&65280)+(255&t[i+2]))>>18&63]+$[n>>12&63]+$[n>>6&63]+$[63&n]);return o.join("")}(t,i,i+16383>s?s:i+16383));return 1===n?o.push($[(e=t[r-1])>>2]+$[e<<4&63]+"=="):2===n&&o.push($[(e=(t[r-2]<<8)+t[r-1])>>10]+$[e>>4&63]+$[e<<2&63]+"="),o.join("")};for(var $=[],J=[],W="undefined"!=typeof Uint8Array?Uint8Array:Array,V="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",K=0,G=V.length;K<G;++K)$[K]=V[K],J[V.charCodeAt(K)]=K;// Support decoding URL-safe base64 strings, as Node.js does.
@@ -195,13 +195,13 @@ var tv=function(){for(var t="0123456789abcdef",e=Array(256),r=0;r<16;++r)for(var
  * @param {string} thing - The object or array to be visited.
  *
  * @returns {boolean}
- */function tC(t){return D.isPlainObject(t)||D.isArray(t)}/**
+ */function tA(t){return H.isPlainObject(t)||H.isArray(t)}/**
  * It removes the brackets from the end of a string
  *
  * @param {string} key - The key of the parameter.
  *
  * @returns {string} the key without the brackets.
- */function tA(t){return D.endsWith(t,"[]")?t.slice(0,-2):t}/**
+ */function tS(t){return H.endsWith(t,"[]")?t.slice(0,-2):t}/**
  * It takes a path, a key, and a boolean, and returns a string
  *
  * @param {string} path - The path to the current key.
@@ -209,8 +209,8 @@ var tv=function(){for(var t="0123456789abcdef",e=Array(256),r=0;r<16;++r)for(var
  * @param {string} dots - If true, the key will be rendered with dots instead of brackets.
  *
  * @returns {string} The path to the current key.
- */function tS(t,e,r){return t?t.concat(e).map(function(t,e){return(// eslint-disable-next-line no-param-reassign
-t=tA(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tL=D.toFlatObject(D,{},null,function(t){return/^is[A-Z]/.test(t)});var tO=/**
+ */function tC(t,e,r){return t?t.concat(e).map(function(t,e){return(// eslint-disable-next-line no-param-reassign
+t=tS(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tL=H.toFlatObject(H,{},null,function(t){return/^is[A-Z]/.test(t)});var tO=/**
  * Convert a data object to FormData
  *
  * @param {Object} obj
@@ -230,10 +230,10 @@ t=tA(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tL=D.toFlatObject(D,{},null,
  * @param {Object<string, any>} options
  *
  * @returns
- */function(t,e,r){if(!D.isObject(t))throw TypeError("target must be an object");// eslint-disable-next-line no-param-reassign
+ */function(t,e,r){if(!H.isObject(t))throw TypeError("target must be an object");// eslint-disable-next-line no-param-reassign
 e=e||new FormData,// eslint-disable-next-line no-param-reassign
-r=D.toFlatObject(r,{metaTokens:!0,dots:!1,indexes:!1},!1,function(t,e){// eslint-disable-next-line no-eq-null,eqeqeq
-return!D.isUndefined(e[t])});let n=r.metaTokens,o=r.visitor||c,i=r.dots,s=r.indexes,a=r.Blob||"undefined"!=typeof Blob&&Blob,l=a&&D.isSpecCompliantForm(e);if(!D.isFunction(o))throw TypeError("visitor must be a function");function u(t){if(null===t)return"";if(D.isDate(t))return t.toISOString();if(!l&&D.isBlob(t))throw new H("Blob is not supported. Use a Buffer instead.");return D.isArrayBuffer(t)||D.isTypedArray(t)?l&&"function"==typeof Blob?new Blob([t]):Q.from(t):t}/**
+r=H.toFlatObject(r,{metaTokens:!0,dots:!1,indexes:!1},!1,function(t,e){// eslint-disable-next-line no-eq-null,eqeqeq
+return!H.isUndefined(e[t])});let n=r.metaTokens,o=r.visitor||c,i=r.dots,s=r.indexes,a=r.Blob||"undefined"!=typeof Blob&&Blob,l=a&&H.isSpecCompliantForm(e);if(!H.isFunction(o))throw TypeError("visitor must be a function");function u(t){if(null===t)return"";if(H.isDate(t))return t.toISOString();if(!l&&H.isBlob(t))throw new M("Blob is not supported. Use a Buffer instead.");return H.isArrayBuffer(t)||H.isTypedArray(t)?l&&"function"==typeof Blob?new Blob([t]):Q.from(t):t}/**
    * Default visitor.
    *
    * @param {*} value
@@ -242,10 +242,10 @@ return!D.isUndefined(e[t])});let n=r.metaTokens,o=r.visitor||c,i=r.dots,s=r.inde
    * @this {FormData}
    *
    * @returns {boolean} return true to visit the each prop of the value recursively
-   */function c(t,r,o){let a=t;if(t&&!o&&"object"==typeof t){if(D.endsWith(r,"{}"))// eslint-disable-next-line no-param-reassign
+   */function c(t,r,o){let a=t;if(t&&!o&&"object"==typeof t){if(H.endsWith(r,"{}"))// eslint-disable-next-line no-param-reassign
 r=n?r:r.slice(0,-2),// eslint-disable-next-line no-param-reassign
-t=JSON.stringify(t);else{var l;if(D.isArray(t)&&(l=t,D.isArray(l)&&!l.some(tC))||(D.isFileList(t)||D.endsWith(r,"[]"))&&(a=D.toArray(t)))return(// eslint-disable-next-line no-param-reassign
-r=tA(r),a.forEach(function(t,n){D.isUndefined(t)||null===t||e.append(!0===s?tS([r],n,i):null===s?r:r+"[]",u(t))}),!1)}}return!!tC(t)||(e.append(tS(o,r,i),u(t)),!1)}let f=[],h=Object.assign(tL,{defaultVisitor:c,convertValue:u,isVisitable:tC});if(!D.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!D.isUndefined(r)){if(-1!==f.indexOf(r))throw Error("Circular reference detected in "+n.join("."));f.push(r),D.forEach(r,function(r,i){let s=!(D.isUndefined(r)||null===r)&&o.call(e,r,D.isString(i)?i.trim():i,n,h);!0===s&&t(r,n?n.concat(i):[i])}),f.pop()}}(t),e};/**
+t=JSON.stringify(t);else{var l;if(H.isArray(t)&&(l=t,H.isArray(l)&&!l.some(tA))||(H.isFileList(t)||H.endsWith(r,"[]"))&&(a=H.toArray(t)))return(// eslint-disable-next-line no-param-reassign
+r=tS(r),a.forEach(function(t,n){H.isUndefined(t)||null===t||e.append(!0===s?tC([r],n,i):null===s?r:r+"[]",u(t))}),!1)}}return!!tA(t)||(e.append(tC(o,r,i),u(t)),!1)}let f=[],h=Object.assign(tL,{defaultVisitor:c,convertValue:u,isVisitable:tA});if(!H.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!H.isUndefined(r)){if(-1!==f.indexOf(r))throw Error("Circular reference detected in "+n.join("."));f.push(r),H.forEach(r,function(r,i){let s=!(H.isUndefined(r)||null===r)&&o.call(e,r,H.isString(i)?i.trim():i,n,h);!0===s&&t(r,n?n.concat(i):[i])}),f.pop()}}(t),e};/**
  * It encodes a string by replacing all characters that are not in the unreserved set with
  * their percent-encoded equivalents
  *
@@ -266,7 +266,7 @@ r=tA(r),a.forEach(function(t,n){D.isUndefined(t)||null===t||e.append(!0===s?tS([
  * @param {string} val The value to be encoded.
  *
  * @returns {string} The encoded value.
- */function tB(t){return encodeURIComponent(t).replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,"+").replace(/%5B/gi,"[").replace(/%5D/gi,"]")}function tU(t,e,r){let n;/*eslint no-param-reassign:0*/if(!e)return t;let o=r&&r.encode||tB,i=r&&r.serialize;if(n=i?i(e,r):D.isURLSearchParams(e)?e.toString():new tk(e,r).toString(o)){let e=t.indexOf("#");-1!==e&&(t=t.slice(0,e)),t+=(-1===t.indexOf("?")?"?":"&")+n}return t}tT.append=function(t,e){this._pairs.push([t,e])},tT.toString=function(t){let e=t?function(e){return t.call(this,e,tR)}:tR;return this._pairs.map(function(t){return e(t[0])+"="+e(t[1])},"").join("&")};var t_=class{constructor(){this.handlers=[]}/**
+ */function tB(t){return encodeURIComponent(t).replace(/%3A/gi,":").replace(/%24/g,"$").replace(/%2C/gi,",").replace(/%20/g,"+").replace(/%5B/gi,"[").replace(/%5D/gi,"]")}function t_(t,e,r){let n;/*eslint no-param-reassign:0*/if(!e)return t;let o=r&&r.encode||tB,i=r&&r.serialize;if(n=i?i(e,r):H.isURLSearchParams(e)?e.toString():new tk(e,r).toString(o)){let e=t.indexOf("#");-1!==e&&(t=t.slice(0,e)),t+=(-1===t.indexOf("?")?"?":"&")+n}return t}tT.append=function(t,e){this._pairs.push([t,e])},tT.toString=function(t){let e=t?function(e){return t.call(this,e,tR)}:tR;return this._pairs.map(function(t){return e(t[0])+"="+e(t[1])},"").join("&")};var tU=class{constructor(){this.handlers=[]}/**
    * Add a new interceptor to the stack
    *
    * @param {Function} fulfilled The function to handle `then` for a `Promise`
@@ -292,7 +292,7 @@ r=tA(r),a.forEach(function(t,n){D.isUndefined(t)||null===t||e.append(!0===s?tS([
    * @param {Function} fn The function to call for each interceptor
    *
    * @returns {void}
-   */forEach(t){D.forEach(this.handlers,function(e){null!==e&&t(e)})}},tx={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tN="undefined"!=typeof URLSearchParams?URLSearchParams:tk,tj="undefined"!=typeof FormData?FormData:null,tP="undefined"!=typeof Blob?Blob:null;/**
+   */forEach(t){H.forEach(this.handlers,function(e){null!==e&&t(e)})}},tx={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tN="undefined"!=typeof URLSearchParams?URLSearchParams:tk,tj="undefined"!=typeof FormData?FormData:null,tP="undefined"!=typeof Blob?Blob:null;/**
  * Determine if we're running in a standard browser environment
  *
  * This allows axios to run in a web worker, and react-native.
@@ -309,19 +309,19 @@ r=tA(r),a.forEach(function(t,n){D.isUndefined(t)||null===t||e.append(!0===s?tS([
  *
  * @returns {boolean}
  */const tI=("undefined"==typeof navigator||"ReactNative"!==(t=navigator.product)&&"NativeScript"!==t&&"NS"!==t)&&"undefined"!=typeof window&&"undefined"!=typeof document,tF="undefined"!=typeof WorkerGlobalScope&&// eslint-disable-next-line no-undef
-self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tM={classes:{URLSearchParams:tN,FormData:tj,Blob:tP},isStandardBrowserEnv:tI,isStandardBrowserWebWorkerEnv:tF,protocols:["http","https","file","blob","url","data"]},tD=/**
+self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tD={classes:{URLSearchParams:tN,FormData:tj,Blob:tP},isStandardBrowserEnv:tI,isStandardBrowserWebWorkerEnv:tF,protocols:["http","https","file","blob","url","data"]},tH=/**
  * It takes a FormData object and returns a JavaScript object
  *
  * @param {string} formData The FormData object to convert to JSON.
  *
  * @returns {Object<string, any> | null} The converted object.
- */function(t){if(D.isFormData(t)&&D.isFunction(t.entries)){let e={};return D.forEachEntry(t,(t,r)=>{!function t(e,r,n,o){let i=e[o++],s=Number.isFinite(+i),a=o>=e.length;if(i=!i&&D.isArray(n)?n.length:i,a)return D.hasOwnProp(n,i)?n[i]=[n[i],r]:n[i]=r,!s;n[i]&&D.isObject(n[i])||(n[i]=[]);let l=t(e,r,n[i],o);return l&&D.isArray(n[i])&&(n[i]=/**
+ */function(t){if(H.isFormData(t)&&H.isFunction(t.entries)){let e={};return H.forEachEntry(t,(t,r)=>{!function t(e,r,n,o){let i=e[o++],s=Number.isFinite(+i),a=o>=e.length;if(i=!i&&H.isArray(n)?n.length:i,a)return H.hasOwnProp(n,i)?n[i]=[n[i],r]:n[i]=r,!s;n[i]&&H.isObject(n[i])||(n[i]=[]);let l=t(e,r,n[i],o);return l&&H.isArray(n[i])&&(n[i]=/**
  * Convert an array to an object.
  *
  * @param {Array<any>} arr - The array to convert to an object.
  *
  * @returns An object with the same keys and values as the array.
- */function(t){let e,r;let n={},o=Object.keys(t),i=o.length;for(e=0;e<i;e++)n[r=o[e]]=t[r];return n}(n[i])),!s}(D.matchAll(/\w+|\[(\w*)]/g,t).map(t=>"[]"===t[0]?"":t[1]||t[0]),r,e,0)}),e}return null};const tH={transitional:tx,adapter:["xhr","http"],transformRequest:[function(t,e){let r;let n=e.getContentType()||"",o=n.indexOf("application/json")>-1,i=D.isObject(t);i&&D.isHTMLForm(t)&&(t=new FormData(t));let s=D.isFormData(t);if(s)return o&&o?JSON.stringify(tD(t)):t;if(D.isArrayBuffer(t)||D.isBuffer(t)||D.isStream(t)||D.isFile(t)||D.isBlob(t))return t;if(D.isArrayBufferView(t))return t.buffer;if(D.isURLSearchParams(t))return e.setContentType("application/x-www-form-urlencoded;charset=utf-8",!1),t.toString();if(i){if(n.indexOf("application/x-www-form-urlencoded")>-1){var a,l;return(a=t,l=this.formSerializer,tO(a,new tM.classes.URLSearchParams,Object.assign({visitor:function(t,e,r,n){return tM.isNode&&D.isBuffer(t)?(this.append(e,t.toString("base64")),!1):n.defaultVisitor.apply(this,arguments)}},l))).toString()}if((r=D.isFileList(t))||n.indexOf("multipart/form-data")>-1){let e=this.env&&this.env.FormData;return tO(r?{"files[]":t}:t,e&&new e,this.formSerializer)}}return i||o?(e.setContentType("application/json",!1),/**
+ */function(t){let e,r;let n={},o=Object.keys(t),i=o.length;for(e=0;e<i;e++)n[r=o[e]]=t[r];return n}(n[i])),!s}(H.matchAll(/\w+|\[(\w*)]/g,t).map(t=>"[]"===t[0]?"":t[1]||t[0]),r,e,0)}),e}return null};const tM={transitional:tx,adapter:["xhr","http"],transformRequest:[function(t,e){let r;let n=e.getContentType()||"",o=n.indexOf("application/json")>-1,i=H.isObject(t);i&&H.isHTMLForm(t)&&(t=new FormData(t));let s=H.isFormData(t);if(s)return o&&o?JSON.stringify(tH(t)):t;if(H.isArrayBuffer(t)||H.isBuffer(t)||H.isStream(t)||H.isFile(t)||H.isBlob(t))return t;if(H.isArrayBufferView(t))return t.buffer;if(H.isURLSearchParams(t))return e.setContentType("application/x-www-form-urlencoded;charset=utf-8",!1),t.toString();if(i){if(n.indexOf("application/x-www-form-urlencoded")>-1){var a,l;return(a=t,l=this.formSerializer,tO(a,new tD.classes.URLSearchParams,Object.assign({visitor:function(t,e,r,n){return tD.isNode&&H.isBuffer(t)?(this.append(e,t.toString("base64")),!1):n.defaultVisitor.apply(this,arguments)}},l))).toString()}if((r=H.isFileList(t))||n.indexOf("multipart/form-data")>-1){let e=this.env&&this.env.FormData;return tO(r?{"files[]":t}:t,e&&new e,this.formSerializer)}}return i||o?(e.setContentType("application/json",!1),/**
  * It takes a string, tries to parse it, and if it fails, it returns the stringified version
  * of the input
  *
@@ -330,12 +330,12 @@ self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tM=
  * @param {Function} encoder - A function that takes a value and returns a string.
  *
  * @returns {string} A stringified version of the rawValue.
- */function(t,e,r){if(D.isString(t))try{return(0,JSON.parse)(t),D.trim(t)}catch(t){if("SyntaxError"!==t.name)throw t}return(0,JSON.stringify)(t)}(t)):t}],transformResponse:[function(t){let e=this.transitional||tH.transitional,r=e&&e.forcedJSONParsing,n="json"===this.responseType;if(t&&D.isString(t)&&(r&&!this.responseType||n)){let r=e&&e.silentJSONParsing;try{return JSON.parse(t)}catch(t){if(!r&&n){if("SyntaxError"===t.name)throw H.from(t,H.ERR_BAD_RESPONSE,this,null,this.response);throw t}}}return t}],/**
+ */function(t,e,r){if(H.isString(t))try{return(0,JSON.parse)(t),H.trim(t)}catch(t){if("SyntaxError"!==t.name)throw t}return(0,JSON.stringify)(t)}(t)):t}],transformResponse:[function(t){let e=this.transitional||tM.transitional,r=e&&e.forcedJSONParsing,n="json"===this.responseType;if(t&&H.isString(t)&&(r&&!this.responseType||n)){let r=e&&e.silentJSONParsing;try{return JSON.parse(t)}catch(t){if(!r&&n){if("SyntaxError"===t.name)throw M.from(t,M.ERR_BAD_RESPONSE,this,null,this.response);throw t}}}return t}],/**
    * A timeout in milliseconds to abort a request. If set to 0 (default) a
    * timeout is not created.
-   */timeout:0,xsrfCookieName:"XSRF-TOKEN",xsrfHeaderName:"X-XSRF-TOKEN",maxContentLength:-1,maxBodyLength:-1,env:{FormData:tM.classes.FormData,Blob:tM.classes.Blob},validateStatus:function(t){return t>=200&&t<300},headers:{common:{Accept:"application/json, text/plain, */*","Content-Type":void 0}}};D.forEach(["delete","get","head","post","put","patch"],t=>{tH.headers[t]={}});// RawAxiosHeaders whose duplicates are ignored by node
+   */timeout:0,xsrfCookieName:"XSRF-TOKEN",xsrfHeaderName:"X-XSRF-TOKEN",maxContentLength:-1,maxBodyLength:-1,env:{FormData:tD.classes.FormData,Blob:tD.classes.Blob},validateStatus:function(t){return t>=200&&t<300},headers:{common:{Accept:"application/json, text/plain, */*","Content-Type":void 0}}};H.forEach(["delete","get","head","post","put","patch"],t=>{tM.headers[t]={}});// RawAxiosHeaders whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
-const tq=D.toObjectSet(["age","authorization","content-length","content-type","etag","expires","from","host","if-modified-since","if-unmodified-since","last-modified","location","max-forwards","proxy-authorization","referer","retry-after","user-agent"]);var /**
+const tq=H.toObjectSet(["age","authorization","content-length","content-type","etag","expires","from","host","if-modified-since","if-unmodified-since","last-modified","location","max-forwards","proxy-authorization","referer","retry-after","user-agent"]);var /**
  * Parse headers into an object
  *
  * ```
@@ -348,7 +348,7 @@ const tq=D.toObjectSet(["age","authorization","content-length","content-type","e
  * @param {String} rawHeaders Headers needing to be parsed
  *
  * @returns {Object} Headers parsed into an object
- */tz=t=>{let e,r,n;let o={};return t&&t.split("\n").forEach(function(t){n=t.indexOf(":"),e=t.substring(0,n).trim().toLowerCase(),r=t.substring(n+1).trim(),!e||o[e]&&tq[e]||("set-cookie"===e?o[e]?o[e].push(r):o[e]=[r]:o[e]=o[e]?o[e]+", "+r:r)}),o};const t$=Symbol("internals");function tJ(t){return t&&String(t).trim().toLowerCase()}function tW(t){return!1===t||null==t?t:D.isArray(t)?t.map(tW):String(t)}const tV=t=>/^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(t.trim());function tK(t,e,r,n,o){if(D.isFunction(n))return n.call(this,e,r);if(o&&(e=r),D.isString(e)){if(D.isString(n))return -1!==e.indexOf(n);if(D.isRegExp(n))return n.test(e)}}class tG{constructor(t){t&&this.set(t)}set(t,e,r){let n=this;function o(t,e,r){let o=tJ(e);if(!o)throw Error("header name must be a non-empty string");let i=D.findKey(n,o);i&&void 0!==n[i]&&!0!==r&&(void 0!==r||!1===n[i])||(n[i||e]=tW(t))}let i=(t,e)=>D.forEach(t,(t,r)=>o(t,r,e));return D.isPlainObject(t)||t instanceof this.constructor?i(t,e):D.isString(t)&&(t=t.trim())&&!tV(t)?i(tz(t),e):null!=t&&o(e,t,r),this}get(t,e){if(t=tJ(t)){let r=D.findKey(this,t);if(r){let t=this[r];if(!e)return t;if(!0===e)return function(t){let e;let r=Object.create(null),n=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;for(;e=n.exec(t);)r[e[1]]=e[2];return r}(t);if(D.isFunction(e))return e.call(this,t,r);if(D.isRegExp(e))return e.exec(t);throw TypeError("parser must be boolean|regexp|function")}}}has(t,e){if(t=tJ(t)){let r=D.findKey(this,t);return!!(r&&void 0!==this[r]&&(!e||tK(this,this[r],r,e)))}return!1}delete(t,e){let r=this,n=!1;function o(t){if(t=tJ(t)){let o=D.findKey(r,t);o&&(!e||tK(r,r[o],o,e))&&(delete r[o],n=!0)}}return D.isArray(t)?t.forEach(o):o(t),n}clear(t){let e=Object.keys(this),r=e.length,n=!1;for(;r--;){let o=e[r];(!t||tK(this,this[o],o,t,!0))&&(delete this[o],n=!0)}return n}normalize(t){let e=this,r={};return D.forEach(this,(n,o)=>{let i=D.findKey(r,o);if(i){e[i]=tW(n),delete e[o];return}let s=t?o.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,(t,e,r)=>e.toUpperCase()+r):String(o).trim();s!==o&&delete e[o],e[s]=tW(n),r[s]=!0}),this}concat(...t){return this.constructor.concat(this,...t)}toJSON(t){let e=Object.create(null);return D.forEach(this,(r,n)=>{null!=r&&!1!==r&&(e[n]=t&&D.isArray(r)?r.join(", "):r)}),e}[Symbol.iterator](){return Object.entries(this.toJSON())[Symbol.iterator]()}toString(){return Object.entries(this.toJSON()).map(([t,e])=>t+": "+e).join("\n")}get[Symbol.toStringTag](){return"AxiosHeaders"}static from(t){return t instanceof this?t:new this(t)}static concat(t,...e){let r=new this(t);return e.forEach(t=>r.set(t)),r}static accessor(t){let e=this[t$]=this[t$]={accessors:{}},r=e.accessors,n=this.prototype;function o(t){let e=tJ(t);r[e]||(!function(t,e){let r=D.toCamelCase(" "+e);["get","set","has"].forEach(n=>{Object.defineProperty(t,n+r,{value:function(t,r,o){return this[n].call(this,e,t,r,o)},configurable:!0})})}(n,t),r[e]=!0)}return D.isArray(t)?t.forEach(o):o(t),this}}function tY(t,e){let r=this||tH,n=e||r,o=tG.from(n.headers),i=n.data;return D.forEach(t,function(t){i=t.call(r,i,o.normalize(),e?e.status:void 0)}),o.normalize(),i}function tX(t){return!!(t&&t.__CANCEL__)}/**
+ */tz=t=>{let e,r,n;let o={};return t&&t.split("\n").forEach(function(t){n=t.indexOf(":"),e=t.substring(0,n).trim().toLowerCase(),r=t.substring(n+1).trim(),!e||o[e]&&tq[e]||("set-cookie"===e?o[e]?o[e].push(r):o[e]=[r]:o[e]=o[e]?o[e]+", "+r:r)}),o};const t$=Symbol("internals");function tJ(t){return t&&String(t).trim().toLowerCase()}function tW(t){return!1===t||null==t?t:H.isArray(t)?t.map(tW):String(t)}const tV=t=>/^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(t.trim());function tK(t,e,r,n,o){if(H.isFunction(n))return n.call(this,e,r);if(o&&(e=r),H.isString(e)){if(H.isString(n))return -1!==e.indexOf(n);if(H.isRegExp(n))return n.test(e)}}class tG{constructor(t){t&&this.set(t)}set(t,e,r){let n=this;function o(t,e,r){let o=tJ(e);if(!o)throw Error("header name must be a non-empty string");let i=H.findKey(n,o);i&&void 0!==n[i]&&!0!==r&&(void 0!==r||!1===n[i])||(n[i||e]=tW(t))}let i=(t,e)=>H.forEach(t,(t,r)=>o(t,r,e));return H.isPlainObject(t)||t instanceof this.constructor?i(t,e):H.isString(t)&&(t=t.trim())&&!tV(t)?i(tz(t),e):null!=t&&o(e,t,r),this}get(t,e){if(t=tJ(t)){let r=H.findKey(this,t);if(r){let t=this[r];if(!e)return t;if(!0===e)return function(t){let e;let r=Object.create(null),n=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;for(;e=n.exec(t);)r[e[1]]=e[2];return r}(t);if(H.isFunction(e))return e.call(this,t,r);if(H.isRegExp(e))return e.exec(t);throw TypeError("parser must be boolean|regexp|function")}}}has(t,e){if(t=tJ(t)){let r=H.findKey(this,t);return!!(r&&void 0!==this[r]&&(!e||tK(this,this[r],r,e)))}return!1}delete(t,e){let r=this,n=!1;function o(t){if(t=tJ(t)){let o=H.findKey(r,t);o&&(!e||tK(r,r[o],o,e))&&(delete r[o],n=!0)}}return H.isArray(t)?t.forEach(o):o(t),n}clear(t){let e=Object.keys(this),r=e.length,n=!1;for(;r--;){let o=e[r];(!t||tK(this,this[o],o,t,!0))&&(delete this[o],n=!0)}return n}normalize(t){let e=this,r={};return H.forEach(this,(n,o)=>{let i=H.findKey(r,o);if(i){e[i]=tW(n),delete e[o];return}let s=t?o.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,(t,e,r)=>e.toUpperCase()+r):String(o).trim();s!==o&&delete e[o],e[s]=tW(n),r[s]=!0}),this}concat(...t){return this.constructor.concat(this,...t)}toJSON(t){let e=Object.create(null);return H.forEach(this,(r,n)=>{null!=r&&!1!==r&&(e[n]=t&&H.isArray(r)?r.join(", "):r)}),e}[Symbol.iterator](){return Object.entries(this.toJSON())[Symbol.iterator]()}toString(){return Object.entries(this.toJSON()).map(([t,e])=>t+": "+e).join("\n")}get[Symbol.toStringTag](){return"AxiosHeaders"}static from(t){return t instanceof this?t:new this(t)}static concat(t,...e){let r=new this(t);return e.forEach(t=>r.set(t)),r}static accessor(t){let e=this[t$]=this[t$]={accessors:{}},r=e.accessors,n=this.prototype;function o(t){let e=tJ(t);r[e]||(!function(t,e){let r=H.toCamelCase(" "+e);["get","set","has"].forEach(n=>{Object.defineProperty(t,n+r,{value:function(t,r,o){return this[n].call(this,e,t,r,o)},configurable:!0})})}(n,t),r[e]=!0)}return H.isArray(t)?t.forEach(o):o(t),this}}function tY(t,e){let r=this||tM,n=e||r,o=tG.from(n.headers),i=n.data;return H.forEach(t,function(t){i=t.call(r,i,o.normalize(),e?e.status:void 0)}),o.normalize(),i}function tX(t){return!!(t&&t.__CANCEL__)}/**
  * A `CanceledError` is an object that is thrown when an operation is canceled.
  *
  * @param {string=} message The message.
@@ -356,8 +356,8 @@ const tq=D.toObjectSet(["age","authorization","content-length","content-type","e
  * @param {Object=} request The request.
  *
  * @returns {CanceledError} The created error.
- */function tQ(t,e,r){H.call(this,null==t?"canceled":t,H.ERR_CANCELED,e,r),this.name="CanceledError"}tG.accessor(["Content-Type","Content-Length","Accept","Accept-Encoding","User-Agent","Authorization"]),D.reduceDescriptors(tG.prototype,({value:t},e)=>{let r=e[0].toUpperCase()+e.slice(1);// map `set` => `Set`
-return{get:()=>t,set(t){this[r]=t}}}),D.freezeMethods(tG),D.inherits(tQ,H,{__CANCEL__:!0});var tZ=tM.isStandardBrowserEnv?{write:function(t,e,r,n,o,i){let s=[];s.push(t+"="+encodeURIComponent(e)),D.isNumber(r)&&s.push("expires="+new Date(r).toGMTString()),D.isString(n)&&s.push("path="+n),D.isString(o)&&s.push("domain="+o),!0===i&&s.push("secure"),document.cookie=s.join("; ")},read:function(t){let e=document.cookie.match(RegExp("(^|;\\s*)("+t+")=([^;]*)"));return e?decodeURIComponent(e[3]):null},remove:function(t){this.write(t,"",Date.now()-864e5)}}:{write:function(){},read:function(){return null},remove:function(){}};function t0(t,e){return t&&!/^([a-z][a-z\d+\-.]*:)?\/\//i.test(e)?e?t.replace(/\/+$/,"")+"/"+e.replace(/^\/+/,""):t:e}var t1=tM.isStandardBrowserEnv?// whether the request URL is of the same origin as current location.
+ */function tQ(t,e,r){M.call(this,null==t?"canceled":t,M.ERR_CANCELED,e,r),this.name="CanceledError"}tG.accessor(["Content-Type","Content-Length","Accept","Accept-Encoding","User-Agent","Authorization"]),H.reduceDescriptors(tG.prototype,({value:t},e)=>{let r=e[0].toUpperCase()+e.slice(1);// map `set` => `Set`
+return{get:()=>t,set(t){this[r]=t}}}),H.freezeMethods(tG),H.inherits(tQ,M,{__CANCEL__:!0});var tZ=tD.isStandardBrowserEnv?{write:function(t,e,r,n,o,i){let s=[];s.push(t+"="+encodeURIComponent(e)),H.isNumber(r)&&s.push("expires="+new Date(r).toGMTString()),H.isString(n)&&s.push("path="+n),H.isString(o)&&s.push("domain="+o),!0===i&&s.push("secure"),document.cookie=s.join("; ")},read:function(t){let e=document.cookie.match(RegExp("(^|;\\s*)("+t+")=([^;]*)"));return e?decodeURIComponent(e[3]):null},remove:function(t){this.write(t,"",Date.now()-864e5)}}:{write:function(){},read:function(){return null},remove:function(){}};function t0(t,e){return t&&!/^([a-z][a-z\d+\-.]*:)?\/\//i.test(e)?e?t.replace(/\/+$/,"")+"/"+e.replace(/^\/+/,""):t:e}var t1=tD.isStandardBrowserEnv?// whether the request URL is of the same origin as current location.
 function(){let t;let e=/(msie|trident)/i.test(navigator.userAgent),r=document.createElement("a");/**
     * Parse a URL to discover it's components
     *
@@ -370,48 +370,48 @@ r.setAttribute("href",n),n=r.href),r.setAttribute("href",n),{href:r.href,protoco
     *
     * @param {String} requestURL The URL to test
     * @returns {boolean} True if URL shares the same origin, otherwise false
-    */return t=n(window.location.href),function(e){let r=D.isString(e)?n(e):e;return r.protocol===t.protocol&&r.host===t.host}}():function(){return!0},t2=/**
+    */return t=n(window.location.href),function(e){let r=H.isString(e)?n(e):e;return r.protocol===t.protocol&&r.host===t.host}}():function(){return!0},t2=/**
  * Calculate data maxRate
  * @param {Number} [samplesCount= 10]
  * @param {Number} [min= 1000]
  * @returns {Function}
- */function(t,e){let r;t=t||10;let n=Array(t),o=Array(t),i=0,s=0;return e=void 0!==e?e:1e3,function(a){let l=Date.now(),u=o[s];r||(r=l),n[i]=a,o[i]=l;let c=s,f=0;for(;c!==i;)f+=n[c++],c%=t;if((i=(i+1)%t)===s&&(s=(s+1)%t),l-r<e)return;let h=u&&l-u;return h?Math.round(1e3*f/h):void 0}};function t3(t,e){let r=0,n=t2(50,250);return o=>{let i=o.loaded,s=o.lengthComputable?o.total:void 0,a=i-r,l=n(a),u=i<=s;r=i;let c={loaded:i,total:s,progress:s?i/s:void 0,bytes:a,rate:l||void 0,estimated:l&&s&&u?(s-i)/l:void 0,event:o};c[e?"download":"upload"]=!0,t(c)}}const t6="undefined"!=typeof XMLHttpRequest;var t8=t6&&function(t){return new Promise(function(e,r){let n,o,i=t.data,s=tG.from(t.headers).normalize(),a=t.responseType;function l(){t.cancelToken&&t.cancelToken.unsubscribe(n),t.signal&&t.signal.removeEventListener("abort",n)}D.isFormData(i)&&(tM.isStandardBrowserEnv||tM.isStandardBrowserWebWorkerEnv?s.setContentType(!1):s.getContentType(/^\s*multipart\/form-data/)?D.isString(o=s.getContentType())&&s.setContentType(o.replace(/^\s*(multipart\/form-data);+/,"$1")):s.setContentType("multipart/form-data"));let u=new XMLHttpRequest;// HTTP basic authentication
+ */function(t,e){let r;t=t||10;let n=Array(t),o=Array(t),i=0,s=0;return e=void 0!==e?e:1e3,function(a){let l=Date.now(),u=o[s];r||(r=l),n[i]=a,o[i]=l;let c=s,f=0;for(;c!==i;)f+=n[c++],c%=t;if((i=(i+1)%t)===s&&(s=(s+1)%t),l-r<e)return;let h=u&&l-u;return h?Math.round(1e3*f/h):void 0}};function t6(t,e){let r=0,n=t2(50,250);return o=>{let i=o.loaded,s=o.lengthComputable?o.total:void 0,a=i-r,l=n(a),u=i<=s;r=i;let c={loaded:i,total:s,progress:s?i/s:void 0,bytes:a,rate:l||void 0,estimated:l&&s&&u?(s-i)/l:void 0,event:o};c[e?"download":"upload"]=!0,t(c)}}const t8="undefined"!=typeof XMLHttpRequest;var t5=t8&&function(t){return new Promise(function(e,r){let n,o,i=t.data,s=tG.from(t.headers).normalize(),a=t.responseType;function l(){t.cancelToken&&t.cancelToken.unsubscribe(n),t.signal&&t.signal.removeEventListener("abort",n)}H.isFormData(i)&&(tD.isStandardBrowserEnv||tD.isStandardBrowserWebWorkerEnv?s.setContentType(!1):s.getContentType(/^\s*multipart\/form-data/)?H.isString(o=s.getContentType())&&s.setContentType(o.replace(/^\s*(multipart\/form-data);+/,"$1")):s.setContentType("multipart/form-data"));let u=new XMLHttpRequest;// HTTP basic authentication
 if(t.auth){let e=t.auth.username||"",r=t.auth.password?unescape(encodeURIComponent(t.auth.password)):"";s.set("Authorization","Basic "+btoa(e+":"+r))}let c=t0(t.baseURL,t.url);function f(){if(!u)return;// Prepare the response
-let n=tG.from("getAllResponseHeaders"in u&&u.getAllResponseHeaders()),o=a&&"text"!==a&&"json"!==a?u.response:u.responseText,i={data:o,status:u.status,statusText:u.statusText,headers:n,config:t,request:u};!function(t,e,r){let n=r.config.validateStatus;!r.status||!n||n(r.status)?t(r):e(new H("Request failed with status code "+r.status,[H.ERR_BAD_REQUEST,H.ERR_BAD_RESPONSE][Math.floor(r.status/100)-4],r.config,r.request,r))}(function(t){e(t),l()},function(t){r(t),l()},i),// Clean up request
+let n=tG.from("getAllResponseHeaders"in u&&u.getAllResponseHeaders()),o=a&&"text"!==a&&"json"!==a?u.response:u.responseText,i={data:o,status:u.status,statusText:u.statusText,headers:n,config:t,request:u};!function(t,e,r){let n=r.config.validateStatus;!r.status||!n||n(r.status)?t(r):e(new M("Request failed with status code "+r.status,[M.ERR_BAD_REQUEST,M.ERR_BAD_RESPONSE][Math.floor(r.status/100)-4],r.config,r.request,r))}(function(t){e(t),l()},function(t){r(t),l()},i),// Clean up request
 u=null}// Add xsrf header
 // This is only done if running in a standard browser environment.
 // Specifically not if we're in a web worker, or react-native.
-if(u.open(t.method.toUpperCase(),tU(c,t.params,t.paramsSerializer),!0),// Set the request timeout in MS
+if(u.open(t.method.toUpperCase(),t_(c,t.params,t.paramsSerializer),!0),// Set the request timeout in MS
 u.timeout=t.timeout,"onloadend"in u?u.onloadend=f:u.onreadystatechange=function(){u&&4===u.readyState&&(0!==u.status||u.responseURL&&0===u.responseURL.indexOf("file:"))&&// readystate handler is calling before onerror or ontimeout handlers,
 // so we should call onloadend on the next 'tick'
 setTimeout(f)},// Handle browser request cancellation (as opposed to a manual cancellation)
-u.onabort=function(){u&&(r(new H("Request aborted",H.ECONNABORTED,t,u)),// Clean up request
+u.onabort=function(){u&&(r(new M("Request aborted",M.ECONNABORTED,t,u)),// Clean up request
 u=null)},// Handle low level network errors
 u.onerror=function(){// Real errors are hidden from us by the browser
 // onerror should only fire if it's a network error
-r(new H("Network Error",H.ERR_NETWORK,t,u)),// Clean up request
+r(new M("Network Error",M.ERR_NETWORK,t,u)),// Clean up request
 u=null},// Handle timeout
-u.ontimeout=function(){let e=t.timeout?"timeout of "+t.timeout+"ms exceeded":"timeout exceeded",n=t.transitional||tx;t.timeoutErrorMessage&&(e=t.timeoutErrorMessage),r(new H(e,n.clarifyTimeoutError?H.ETIMEDOUT:H.ECONNABORTED,t,u)),// Clean up request
-u=null},tM.isStandardBrowserEnv){// Add xsrf header
+u.ontimeout=function(){let e=t.timeout?"timeout of "+t.timeout+"ms exceeded":"timeout exceeded",n=t.transitional||tx;t.timeoutErrorMessage&&(e=t.timeoutErrorMessage),r(new M(e,n.clarifyTimeoutError?M.ETIMEDOUT:M.ECONNABORTED,t,u)),// Clean up request
+u=null},tD.isStandardBrowserEnv){// Add xsrf header
 let e=(t.withCredentials||t1(c))&&t.xsrfCookieName&&tZ.read(t.xsrfCookieName);e&&s.set(t.xsrfHeaderName,e)}// Remove Content-Type if data is undefined
-void 0===i&&s.setContentType(null),"setRequestHeader"in u&&D.forEach(s.toJSON(),function(t,e){u.setRequestHeader(e,t)}),D.isUndefined(t.withCredentials)||(u.withCredentials=!!t.withCredentials),a&&"json"!==a&&(u.responseType=t.responseType),"function"==typeof t.onDownloadProgress&&u.addEventListener("progress",t3(t.onDownloadProgress,!0)),"function"==typeof t.onUploadProgress&&u.upload&&u.upload.addEventListener("progress",t3(t.onUploadProgress)),(t.cancelToken||t.signal)&&(// Handle cancellation
+void 0===i&&s.setContentType(null),"setRequestHeader"in u&&H.forEach(s.toJSON(),function(t,e){u.setRequestHeader(e,t)}),H.isUndefined(t.withCredentials)||(u.withCredentials=!!t.withCredentials),a&&"json"!==a&&(u.responseType=t.responseType),"function"==typeof t.onDownloadProgress&&u.addEventListener("progress",t6(t.onDownloadProgress,!0)),"function"==typeof t.onUploadProgress&&u.upload&&u.upload.addEventListener("progress",t6(t.onUploadProgress)),(t.cancelToken||t.signal)&&(// Handle cancellation
 // eslint-disable-next-line func-names
-n=e=>{u&&(r(!e||e.type?new tQ(null,t,u):e),u.abort(),u=null)},t.cancelToken&&t.cancelToken.subscribe(n),t.signal&&(t.signal.aborted?n():t.signal.addEventListener("abort",n)));let h=function(t){let e=/^([-+\w]{1,25})(:?\/\/|:)/.exec(t);return e&&e[1]||""}(c);if(h&&-1===tM.protocols.indexOf(h)){r(new H("Unsupported protocol "+h+":",H.ERR_BAD_REQUEST,t));return}// Send the request
-u.send(i||null)})};const t5={http:null,xhr:t8};D.forEach(t5,(t,e)=>{if(t){try{Object.defineProperty(t,"name",{value:e})}catch(t){// eslint-disable-next-line no-empty
-}Object.defineProperty(t,"adapterName",{value:e})}});const t4=t=>`- ${t}`,t9=t=>D.isFunction(t)||null===t||!1===t;var t7={getAdapter:t=>{let e,r;t=D.isArray(t)?t:[t];let{length:n}=t,o={};for(let i=0;i<n;i++){let n;if(r=e=t[i],!t9(e)&&void 0===(r=t5[(n=String(e)).toLowerCase()]))throw new H(`Unknown adapter '${n}'`);if(r)break;o[n||"#"+i]=r}if(!r){let t=Object.entries(o).map(([t,e])=>`adapter ${t} `+(!1===e?"is not supported by the environment":"is not available in the build"));throw new H("There is no suitable adapter to dispatch the request "+(n?t.length>1?"since :\n"+t.map(t4).join("\n"):" "+t4(t[0]):"as no adapter specified"),"ERR_NOT_SUPPORT")}return r},adapters:t5};/**
+n=e=>{u&&(r(!e||e.type?new tQ(null,t,u):e),u.abort(),u=null)},t.cancelToken&&t.cancelToken.subscribe(n),t.signal&&(t.signal.aborted?n():t.signal.addEventListener("abort",n)));let h=function(t){let e=/^([-+\w]{1,25})(:?\/\/|:)/.exec(t);return e&&e[1]||""}(c);if(h&&-1===tD.protocols.indexOf(h)){r(new M("Unsupported protocol "+h+":",M.ERR_BAD_REQUEST,t));return}// Send the request
+u.send(i||null)})};const t3={http:null,xhr:t5};H.forEach(t3,(t,e)=>{if(t){try{Object.defineProperty(t,"name",{value:e})}catch(t){// eslint-disable-next-line no-empty
+}Object.defineProperty(t,"adapterName",{value:e})}});const t4=t=>`- ${t}`,t7=t=>H.isFunction(t)||null===t||!1===t;var t9={getAdapter:t=>{let e,r;t=H.isArray(t)?t:[t];let{length:n}=t,o={};for(let i=0;i<n;i++){let n;if(r=e=t[i],!t7(e)&&void 0===(r=t3[(n=String(e)).toLowerCase()]))throw new M(`Unknown adapter '${n}'`);if(r)break;o[n||"#"+i]=r}if(!r){let t=Object.entries(o).map(([t,e])=>`adapter ${t} `+(!1===e?"is not supported by the environment":"is not available in the build"));throw new M("There is no suitable adapter to dispatch the request "+(n?t.length>1?"since :\n"+t.map(t4).join("\n"):" "+t4(t[0]):"as no adapter specified"),"ERR_NOT_SUPPORT")}return r},adapters:t3};/**
  * Throws a `CanceledError` if cancellation has been requested.
  *
  * @param {Object} config The config that is to be used for the request
  *
  * @returns {void}
  */function et(t){if(t.cancelToken&&t.cancelToken.throwIfRequested(),t.signal&&t.signal.aborted)throw new tQ(null,t)}function ee(t){et(t),t.headers=tG.from(t.headers),// Transform request data
-t.data=tY.call(t,t.transformRequest),-1!==["post","put","patch"].indexOf(t.method)&&t.headers.setContentType("application/x-www-form-urlencoded",!1);let e=t7.getAdapter(t.adapter||tH.adapter);return e(t).then(function(e){return et(t),// Transform response data
+t.data=tY.call(t,t.transformRequest),-1!==["post","put","patch"].indexOf(t.method)&&t.headers.setContentType("application/x-www-form-urlencoded",!1);let e=t9.getAdapter(t.adapter||tM.adapter);return e(t).then(function(e){return et(t),// Transform response data
 e.data=tY.call(t,t.transformResponse,e),e.headers=tG.from(e.headers),e},function(e){return!tX(e)&&(et(t),e&&e.response&&(e.response.data=tY.call(t,t.transformResponse,e.response),e.response.headers=tG.from(e.response.headers))),Promise.reject(e)})}const er=t=>t instanceof tG?t.toJSON():t;function en(t,e){// eslint-disable-next-line no-param-reassign
-e=e||{};let r={};function n(t,e,r){return D.isPlainObject(t)&&D.isPlainObject(e)?D.merge.call({caseless:r},t,e):D.isPlainObject(e)?D.merge({},e):D.isArray(e)?e.slice():e}// eslint-disable-next-line consistent-return
-function o(t,e,r){return D.isUndefined(e)?D.isUndefined(t)?void 0:n(void 0,t,r):n(t,e,r)}// eslint-disable-next-line consistent-return
-function i(t,e){if(!D.isUndefined(e))return n(void 0,e)}// eslint-disable-next-line consistent-return
-function s(t,e){return D.isUndefined(e)?D.isUndefined(t)?void 0:n(void 0,t):n(void 0,e)}// eslint-disable-next-line consistent-return
-function a(r,o,i){return i in e?n(r,o):i in t?n(void 0,r):void 0}let l={url:i,method:i,data:i,baseURL:s,transformRequest:s,transformResponse:s,paramsSerializer:s,timeout:s,timeoutMessage:s,withCredentials:s,adapter:s,responseType:s,xsrfCookieName:s,xsrfHeaderName:s,onUploadProgress:s,onDownloadProgress:s,decompress:s,maxContentLength:s,maxBodyLength:s,beforeRedirect:s,transport:s,httpAgent:s,httpsAgent:s,cancelToken:s,socketPath:s,responseEncoding:s,validateStatus:a,headers:(t,e)=>o(er(t),er(e),!0)};return D.forEach(Object.keys(Object.assign({},t,e)),function(n){let i=l[n]||o,s=i(t[n],e[n],n);D.isUndefined(s)&&i!==a||(r[n]=s)}),r}const eo="1.5.1",ei={};// eslint-disable-next-line func-names
+e=e||{};let r={};function n(t,e,r){return H.isPlainObject(t)&&H.isPlainObject(e)?H.merge.call({caseless:r},t,e):H.isPlainObject(e)?H.merge({},e):H.isArray(e)?e.slice():e}// eslint-disable-next-line consistent-return
+function o(t,e,r){return H.isUndefined(e)?H.isUndefined(t)?void 0:n(void 0,t,r):n(t,e,r)}// eslint-disable-next-line consistent-return
+function i(t,e){if(!H.isUndefined(e))return n(void 0,e)}// eslint-disable-next-line consistent-return
+function s(t,e){return H.isUndefined(e)?H.isUndefined(t)?void 0:n(void 0,t):n(void 0,e)}// eslint-disable-next-line consistent-return
+function a(r,o,i){return i in e?n(r,o):i in t?n(void 0,r):void 0}let l={url:i,method:i,data:i,baseURL:s,transformRequest:s,transformResponse:s,paramsSerializer:s,timeout:s,timeoutMessage:s,withCredentials:s,adapter:s,responseType:s,xsrfCookieName:s,xsrfHeaderName:s,onUploadProgress:s,onDownloadProgress:s,decompress:s,maxContentLength:s,maxBodyLength:s,beforeRedirect:s,transport:s,httpAgent:s,httpsAgent:s,cancelToken:s,socketPath:s,responseEncoding:s,validateStatus:a,headers:(t,e)=>o(er(t),er(e),!0)};return H.forEach(Object.keys(Object.assign({},t,e)),function(n){let i=l[n]||o,s=i(t[n],e[n],n);H.isUndefined(s)&&i!==a||(r[n]=s)}),r}const eo="1.5.1",ei={};// eslint-disable-next-line func-names
 ["object","boolean","number","function","string","symbol"].forEach((t,e)=>{ei[t]=function(r){return typeof r===t||"a"+(e<1?"n ":" ")+t}});const es={};/**
  * Transitional option validator
  *
@@ -421,7 +421,7 @@ function a(r,o,i){return i in e?n(r,o):i in t?n(void 0,r):void 0}let l={url:i,me
  *
  * @returns {function}
  */ei.transitional=function(t,e,r){function n(t,e){return"[Axios v"+eo+"] Transitional option '"+t+"'"+e+(r?". "+r:"")}// eslint-disable-next-line func-names
-return(r,o,i)=>{if(!1===t)throw new H(n(o," has been removed"+(e?" in "+e:"")),H.ERR_DEPRECATED);return e&&!es[o]&&(es[o]=!0,// eslint-disable-next-line no-console
+return(r,o,i)=>{if(!1===t)throw new M(n(o," has been removed"+(e?" in "+e:"")),M.ERR_DEPRECATED);return e&&!es[o]&&(es[o]=!0,// eslint-disable-next-line no-console
 console.warn(n(o," has been deprecated since v"+e+" and will be removed in the near future"))),!t||t(r,o,i)}};var ea={assertOptions:/**
  * Assert object's properties type
  *
@@ -430,23 +430,23 @@ console.warn(n(o," has been deprecated since v"+e+" and will be removed in the n
  * @param {boolean?} allowUnknown
  *
  * @returns {object}
- */function(t,e,r){if("object"!=typeof t)throw new H("options must be an object",H.ERR_BAD_OPTION_VALUE);let n=Object.keys(t),o=n.length;for(;o-- >0;){let i=n[o],s=e[i];if(s){let e=t[i],r=void 0===e||s(e,i,t);if(!0!==r)throw new H("option "+i+" must be "+r,H.ERR_BAD_OPTION_VALUE);continue}if(!0!==r)throw new H("Unknown option "+i,H.ERR_BAD_OPTION)}},validators:ei};const el=ea.validators;/**
+ */function(t,e,r){if("object"!=typeof t)throw new M("options must be an object",M.ERR_BAD_OPTION_VALUE);let n=Object.keys(t),o=n.length;for(;o-- >0;){let i=n[o],s=e[i];if(s){let e=t[i],r=void 0===e||s(e,i,t);if(!0!==r)throw new M("option "+i+" must be "+r,M.ERR_BAD_OPTION_VALUE);continue}if(!0!==r)throw new M("Unknown option "+i,M.ERR_BAD_OPTION)}},validators:ei};const el=ea.validators;/**
  * Create a new instance of Axios
  *
  * @param {Object} instanceConfig The default config for the instance
  *
  * @return {Axios} A new instance of Axios
- */class eu{constructor(t){this.defaults=t,this.interceptors={request:new t_,response:new t_}}/**
+ */class eu{constructor(t){this.defaults=t,this.interceptors={request:new tU,response:new tU}}/**
    * Dispatch a request
    *
    * @param {String|Object} configOrUrl The config specific for this request (merged with this.defaults)
    * @param {?Object} config
    *
    * @returns {Promise} The Promise to be fulfilled
-   */request(t,e){let r,n;"string"==typeof t?(e=e||{}).url=t:e=t||{},e=en(this.defaults,e);let{transitional:o,paramsSerializer:i,headers:s}=e;void 0!==o&&ea.assertOptions(o,{silentJSONParsing:el.transitional(el.boolean),forcedJSONParsing:el.transitional(el.boolean),clarifyTimeoutError:el.transitional(el.boolean)},!1),null!=i&&(D.isFunction(i)?e.paramsSerializer={serialize:i}:ea.assertOptions(i,{encode:el.function,serialize:el.function},!0)),// Set config.method
+   */request(t,e){let r,n;"string"==typeof t?(e=e||{}).url=t:e=t||{},e=en(this.defaults,e);let{transitional:o,paramsSerializer:i,headers:s}=e;void 0!==o&&ea.assertOptions(o,{silentJSONParsing:el.transitional(el.boolean),forcedJSONParsing:el.transitional(el.boolean),clarifyTimeoutError:el.transitional(el.boolean)},!1),null!=i&&(H.isFunction(i)?e.paramsSerializer={serialize:i}:ea.assertOptions(i,{encode:el.function,serialize:el.function},!0)),// Set config.method
 e.method=(e.method||this.defaults.method||"get").toLowerCase();// Flatten headers
-let a=s&&D.merge(s.common,s[e.method]);s&&D.forEach(["delete","get","head","post","put","patch","common"],t=>{delete s[t]}),e.headers=tG.concat(a,s);// filter out skipped interceptors
-let l=[],u=!0;this.interceptors.request.forEach(function(t){("function"!=typeof t.runWhen||!1!==t.runWhen(e))&&(u=u&&t.synchronous,l.unshift(t.fulfilled,t.rejected))});let c=[];this.interceptors.response.forEach(function(t){c.push(t.fulfilled,t.rejected)});let f=0;if(!u){let t=[ee.bind(this),void 0];for(t.unshift.apply(t,l),t.push.apply(t,c),n=t.length,r=Promise.resolve(e);f<n;)r=r.then(t[f++],t[f++]);return r}n=l.length;let h=e;for(f=0;f<n;){let t=l[f++],e=l[f++];try{h=t(h)}catch(t){e.call(this,t);break}}try{r=ee.call(this,h)}catch(t){return Promise.reject(t)}for(f=0,n=c.length;f<n;)r=r.then(c[f++],c[f++]);return r}getUri(t){t=en(this.defaults,t);let e=t0(t.baseURL,t.url);return tU(e,t.params,t.paramsSerializer)}}D.forEach(["delete","get","head","options"],function(t){/*eslint func-names:0*/eu.prototype[t]=function(e,r){return this.request(en(r||{},{method:t,url:e,data:(r||{}).data}))}}),D.forEach(["post","put","patch"],function(t){/*eslint func-names:0*/function e(e){return function(r,n,o){return this.request(en(o||{},{method:t,headers:e?{"Content-Type":"multipart/form-data"}:{},url:r,data:n}))}}eu.prototype[t]=e(),eu.prototype[t+"Form"]=e(!0)});/**
+let a=s&&H.merge(s.common,s[e.method]);s&&H.forEach(["delete","get","head","post","put","patch","common"],t=>{delete s[t]}),e.headers=tG.concat(a,s);// filter out skipped interceptors
+let l=[],u=!0;this.interceptors.request.forEach(function(t){("function"!=typeof t.runWhen||!1!==t.runWhen(e))&&(u=u&&t.synchronous,l.unshift(t.fulfilled,t.rejected))});let c=[];this.interceptors.response.forEach(function(t){c.push(t.fulfilled,t.rejected)});let f=0;if(!u){let t=[ee.bind(this),void 0];for(t.unshift.apply(t,l),t.push.apply(t,c),n=t.length,r=Promise.resolve(e);f<n;)r=r.then(t[f++],t[f++]);return r}n=l.length;let h=e;for(f=0;f<n;){let t=l[f++],e=l[f++];try{h=t(h)}catch(t){e.call(this,t);break}}try{r=ee.call(this,h)}catch(t){return Promise.reject(t)}for(f=0,n=c.length;f<n;)r=r.then(c[f++],c[f++]);return r}getUri(t){t=en(this.defaults,t);let e=t0(t.baseURL,t.url);return t_(e,t.params,t.paramsSerializer)}}H.forEach(["delete","get","head","options"],function(t){/*eslint func-names:0*/eu.prototype[t]=function(e,r){return this.request(en(r||{},{method:t,url:e,data:(r||{}).data}))}}),H.forEach(["post","put","patch"],function(t){/*eslint func-names:0*/function e(e){return function(r,n,o){return this.request(en(o||{},{method:t,headers:e?{"Content-Type":"multipart/form-data"}:{},url:r,data:n}))}}eu.prototype[t]=e(),eu.prototype[t+"Form"]=e(!0)});/**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
  *
  * @param {Function} executor The executor function.
@@ -471,27 +471,25 @@ const eh=/**
  * @param {Object} defaultConfig The default config for the instance
  *
  * @returns {Axios} A new instance of Axios
- */function t(e){let r=new eu(e),n=l(eu.prototype.request,r);return D.extend(n,eu.prototype,r,{allOwnKeys:!0}),D.extend(n,r,null,{allOwnKeys:!0}),// Factory for creating new instances
-n.create=function(r){return t(en(e,r))},n}(tH);// Expose Axios class to allow class inheritance
+ */function t(e){let r=new eu(e),n=l(eu.prototype.request,r);return H.extend(n,eu.prototype,r,{allOwnKeys:!0}),H.extend(n,r,null,{allOwnKeys:!0}),// Factory for creating new instances
+n.create=function(r){return t(en(e,r))},n}(tM);// Expose Axios class to allow class inheritance
 eh.Axios=eu,// Expose Cancel & CancelToken
 eh.CanceledError=tQ,eh.CancelToken=ec,eh.isCancel=tX,eh.VERSION=eo,eh.toFormData=tO,// Expose AxiosError class
-eh.AxiosError=H,// alias for CanceledError for backward compatibility
+eh.AxiosError=M,// alias for CanceledError for backward compatibility
 eh.Cancel=eh.CanceledError,// Expose all/spread
 eh.all=function(t){return Promise.all(t)},eh.spread=function(t){return function(e){return t.apply(null,e)}},// Expose isAxiosError
-eh.isAxiosError=function(t){return D.isObject(t)&&!0===t.isAxiosError},// Expose mergeConfig
-eh.mergeConfig=en,eh.AxiosHeaders=tG,eh.formToJSON=t=>tD(D.isHTMLForm(t)?new FormData(t):t),eh.getAdapter=t7.getAdapter,eh.HttpStatusCode=ef,eh.default=eh;// This module is intended to unwrap Axios default export as named.
+eh.isAxiosError=function(t){return H.isObject(t)&&!0===t.isAxiosError},// Expose mergeConfig
+eh.mergeConfig=en,eh.AxiosHeaders=tG,eh.formToJSON=t=>tH(H.isHTMLForm(t)?new FormData(t):t),eh.getAdapter=t9.getAdapter,eh.HttpStatusCode=ef,eh.default=eh;// This module is intended to unwrap Axios default export as named.
 // Keep top-level export same with static properties
 // so that it can keep same with es module or cjs
-const{Axios:ed,AxiosError:ep,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eC,toFormData:eA,AxiosHeaders:eS,HttpStatusCode:eL,formToJSON:eO,getAdapter:eR,mergeConfig:ek}=eh;async function eT(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
+const{Axios:ed,AxiosError:ep,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eA,toFormData:eS,AxiosHeaders:eC,HttpStatusCode:eL,formToJSON:eO,getAdapter:eR,mergeConfig:ek}=eh;async function eT(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
 async function eB(t){let e=`https://books-backend.p.goit.global/books/${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch book details");let r=t.data;//console.log(bookDetails);
 return r}catch(t){// można obsługę błędu - np. wyświetlenie komunikatu dla użytkownika
-throw console.error("Error fetching book details:",t),Error("Failed to fetch book details")}}async function eU(){try{let t=await eh.get("https://books-backend.p.goit.global/books/category-list");return t.data}catch(t){throw console.error("Error fetching categories:",t),Error("Failed to fetch categories")}}async function e_(t){try{let t=await eh.get("https://books-backend.p.goit.global/books/top-books");if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}var ex={};ex=new URL("book.eff40568.png",import.meta.url).toString();var eN={};eN=new URL("amazon.8d9e86b1.png",import.meta.url).toString();const ej=document.getElementById("shoppBookList");//funkcja do pobierania dancyh oraz do tworzenia pojedynczego elementu
-async function eP(t){let r=await eB(t);!//tworzenie pojedynczej karty książki
-function({bookDetails:t}){console.log(1,t);let r=`<li class="shopList-item">
+throw console.error("Error fetching book details:",t),Error("Failed to fetch book details")}}async function e_(){try{let t=await eh.get("https://books-backend.p.goit.global/books/category-list");return t.data}catch(t){throw console.error("Error fetching categories:",t),Error("Failed to fetch categories")}}async function eU(t){try{let t=await eh.get("https://books-backend.p.goit.global/books/top-books");if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}var ex={};ex=new URL("book.eff40568.png",import.meta.url).toString();var eN={};eN=new URL("amazon.8d9e86b1.png",import.meta.url).toString();var ej={};ej=new URL("trash.12ed25ac.svg",import.meta.url).toString();const eP=document.getElementById("shoppBookList");//funkcja do pobierania dancyh oraz do tworzenia pojedynczego elementu
+async function eI(t){let r=await eB(t);!//tworzenie pojedynczej karty książki
+function({bookDetails:t}){let r=`<li class="shopList-item">
   <button class="remove-button" type="button"><p class="bookId">${t._id}</p>
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-  <path d="M6 2H10M2 4H14M12.6667 4L12.1991 11.0129C12.129 12.065 12.0939 12.5911 11.8667 12.99C11.6666 13.3412 11.3648 13.6235 11.0011 13.7998C10.588 14 10.0607 14 9.00623 14H6.99377C5.93927 14 5.41202 14 4.99889 13.7998C4.63517 13.6235 4.33339 13.3412 4.13332 12.99C3.90607 12.5911 3.871 12.065 3.80086 11.0129L3.33333 4M6.66667 7V10.3333M9.33333 7V10.3333" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
+  <img class="remove-button__icon" alt="trash icon" src=${/*@__PURE__*/e(ej)}/>
 </button>
 <div class="shopList-item__wrapp">
 <img class="shopList-item__photo" src=${t.book_image} alt="book photo" loading="lazy"/>
@@ -506,15 +504,15 @@ function({bookDetails:t}){console.log(1,t);let r=`<li class="shopList-item">
 <p class="shopList-item__author">${t.author}</p>   
 <div class="shopList-item__icons">
 <a href=${t.amazon_product_url} target="_blank" rel="noopener noreferrer nofollow">
-<img width="32" height:"11" src=${/*@__PURE__*/e(eN)} />
+<img alt ="amazon icon" class="icon-shopping amazon-icon" width="32" height:"11" src=${/*@__PURE__*/e(eN)} />
 </a>  
 <a href=${t.buy_links[1].url} target="_blank">
-<img src=${/*@__PURE__*/e(ex)} width="16" height="16"   rel="noopener noreferrer nofollow"/>
+<img class="icon-shopping aple-icon" src=${/*@__PURE__*/e(ex)} width="16" height="16" alt="aple icon"  rel="noopener noreferrer nofollow"/>
 </a>  
 </div>
 </div>
 </div>
-</li>`;ej.innerHTML+=r}({bookDetails:r})}function eI(t){let e=document.createElement("div");e.classList.add("book-card"),e.innerHTML=`
+</li>`;eP.innerHTML+=r}({bookDetails:r})}function eF(t){let e=document.createElement("div");e.classList.add("book-card"),e.innerHTML=`
     <div class="modal-card-container">
         <div class="popup">
             <button class="modal-close-button">
@@ -537,15 +535,36 @@ function({bookDetails:t}){console.log(1,t);let r=`<li class="shopList-item">
           </div>
         </div>
       </div>
-  `;let r=e.querySelector(".modal-close-button");r.addEventListener("click",()=>{let t=document.getElementById("bookCardContainer");t.innerHTML=""});let n=e.querySelector(".add-to-cart-button"),o=e.querySelector(".add-to-cart-message"),i=JSON.parse(localStorage.getItem("shoppingList"))||[],s=t._id;i.includes(s)&&(n.textContent="remove from list"),n.addEventListener("click",()=>{if(i.includes(s)){let t=i.indexOf(s);i.splice(t,1),n.textContent="add to shopping list",o.textContent="The book has been removed from the shopping list."}else i.push(s),n.textContent="remove from list",o.textContent='Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list."';localStorage.setItem("shoppingList",JSON.stringify(i)),console.log("Lista zakup\xf3w w localStorage:",i)});let a=document.getElementById("bookCardContainer");return a.innerHTML="",a.appendChild(e),document.addEventListener("keydown",function(t){if("Escape"===t.key){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),document.addEventListener("click",function(t){if(t.target.classList.contains("modal-card-container")){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),e}!//funckja do tworzenia całej sekcji shopping list
-function(){let t=localStorage.getItem("shoppingList"),e=JSON.parse(t);if(null===e){let t=document.querySelector(".empty-shopping-list");t.classList.add("visible");return}e.forEach(t=>eP(t))}();var eF={};eF=new URL("1org.11712742.svg",import.meta.url).toString();var eM={};eM=new URL("support2.6d865306.svg",import.meta.url).toString();var eD={};eD=new URL("support3.a3ca15ad.svg",import.meta.url).toString();var eH={};eH=new URL("support4.16605e64.svg",import.meta.url).toString();var eq={};eq=new URL("support5.0237806b.svg",import.meta.url).toString();var ez={};ez=new URL("support6.2b2d4d01.svg",import.meta.url).toString();var e$={};e$=new URL("support7.30f6f4bc.svg",import.meta.url).toString();var eJ={};eJ=new URL("support8.c13591df.svg",import.meta.url).toString();var eW={};eW=new URL("support9.217f8265.svg",import.meta.url).toString();const eV=[// ... (fundacje charytatywne)
-{title:"",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/e(eF)},{title:"",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/e(eM)},{title:"",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/e(eD)},{title:"",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/e(eH)},{title:"",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/e(eq)},{title:"",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/e(ez)},{title:"",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/e(e$)},{title:"",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/e(eJ)},{title:"",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/e(eW)}],eK=document.getElementById("charitiesSlider");for(;eK.firstChild;)eK.removeChild(eK.firstChild);eV.forEach(t=>{let e=document.createElement("a");e.href=t.url,e.target="_blank";let r=document.createElement("div");r.classList.add("charity-item");let n=document.createElement("img");n.src=t.img,n.alt=t.title;let o=document.createElement("div");o.textContent=t.title,o.classList.add("charity-title"),r.appendChild(n),r.appendChild(o),e.appendChild(r),eK.appendChild(e)});//import { handleSeeMoreButtonClick } from './indexCallbacks';
+  `;let r=e.querySelector(".modal-close-button");r.addEventListener("click",()=>{let t=document.getElementById("bookCardContainer");t.innerHTML=""});let n=e.querySelector(".add-to-cart-button"),o=e.querySelector(".add-to-cart-message"),i=JSON.parse(localStorage.getItem("shoppingList"))||[],s=t._id;i.includes(s)&&(n.textContent="remove from list"),n.addEventListener("click",()=>{if(i.includes(s)){let t=i.indexOf(s);i.splice(t,1),n.textContent="add to shopping list",o.textContent="The book has been removed from the shopping list."}else i.push(s),n.textContent="remove from list",o.textContent='Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list."';localStorage.setItem("shoppingList",JSON.stringify(i)),console.log("Lista zakup\xf3w w localStorage:",i)});let a=document.getElementById("bookCardContainer");return a.innerHTML="",a.appendChild(e),document.addEventListener("keydown",function(t){if("Escape"===t.key){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),document.addEventListener("click",function(t){if(t.target.classList.contains("modal-card-container")){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),e}!// function test() {
+//   const booksIdArray = localStorage.getItem('shoppingList');
+//   const parsedArrayofBook = JSON.parse(booksIdArray);
+//   return parsedArrayofBook;
+// }
+// function test2(parsedArrayofBookaaaa) {
+//   if (parsedArrayofBookaaaa === null) {
+//     const emptyTemplate = document.querySelector('.empty-shopping-list');
+//     emptyTemplate.classList.add('visible');
+//     return;
+//   } else {
+//     parsedArrayofBookaaaa.forEach(e => createShoppingCard(e));
+//   }
+// }
+// async function creatSchoppingList() {
+//   const parsedArrayofBookaaaa = await test();
+//   console.log(parsedArrayofBookaaaa);
+//   await test2(parsedArrayofBookaaaa);
+//   const trash = document.querySelector('.remove-button');
+//   console.log(trash);
+// }
+// funckja do tworzenia całej sekcji shopping list
+function(){let t=localStorage.getItem("shoppingList"),e=JSON.parse(t);if(console.log(e),null===e||0===e.length){let t=document.querySelector(".empty-shopping-list");t.classList.add("visible");return}e.forEach(t=>eI(t))}();var eD={};eD=new URL("1org.11712742.svg",import.meta.url).toString();var eH={};eH=new URL("support2.6d865306.svg",import.meta.url).toString();var eM={};eM=new URL("support3.a3ca15ad.svg",import.meta.url).toString();var eq={};eq=new URL("support4.16605e64.svg",import.meta.url).toString();var ez={};ez=new URL("support5.0237806b.svg",import.meta.url).toString();var e$={};e$=new URL("support6.2b2d4d01.svg",import.meta.url).toString();var eJ={};eJ=new URL("support7.30f6f4bc.svg",import.meta.url).toString();var eW={};eW=new URL("support8.c13591df.svg",import.meta.url).toString();var eV={};eV=new URL("support9.217f8265.svg",import.meta.url).toString();const eK=[// ... (fundacje charytatywne)
+{title:"",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/e(eD)},{title:"",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/e(eH)},{title:"",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/e(eM)},{title:"",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/e(eq)},{title:"",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/e(ez)},{title:"",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/e(e$)},{title:"",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/e(eJ)},{title:"",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/e(eW)},{title:"",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/e(eV)}],eG=document.getElementById("charitiesSlider");for(;eG.firstChild;)eG.removeChild(eG.firstChild);eK.forEach(t=>{let e=document.createElement("a");e.href=t.url,e.target="_blank";let r=document.createElement("div");r.classList.add("charity-item");let n=document.createElement("img");n.src=t.img,n.alt=t.title;let o=document.createElement("div");o.textContent=t.title,o.classList.add("charity-title"),r.appendChild(n),r.appendChild(o),e.appendChild(r),eG.appendChild(e)});//import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
-const eG=document.getElementById("charitiesSlider");//////////////////////////////////////////////////
+const eY=document.getElementById("charitiesSlider");//////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
-function eY(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&eT(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),eZ.textContent=e,eQ(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
+function eX(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&eT(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),e0.textContent=e,eZ(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
-function eX(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
+function eQ(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <div>                    
           <img src="${t.book_image}" alt="${t.title}" />
           <h3>${t.title}</h3>
@@ -553,37 +572,37 @@ function eX(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEa
         </div>
       `,o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 });// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
-let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>eY(t.list_name))})}////////////////////////////
-function eQ(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
+let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>eX(t.list_name))})}////////////////////////////
+function eZ(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
         <div>             
           <img src="${t.book_image}" alt="${t.title}" />
           <h3>${t.title}</h3>
           <p>Author: ${t.author}</p>
         </div>
-      `,e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}}),r.appendChild(e)});else{let t=document.createElement("p");t.textContent="No books found in this category.",r.appendChild(t)}}eV.forEach(t=>{let e=document.createElement("div");e.innerHTML=`<a href="${t.url}" target="_blank">${t.title}</a>`,eG.appendChild(e)}),eU().then(t=>{//console.log('Categories Received:', categoriesData);
+      `,e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}}),r.appendChild(e)});else{let t=document.createElement("p");t.textContent="No books found in this category.",r.appendChild(t)}}eK.forEach(t=>{let e=document.createElement("div");e.innerHTML=`<a href="${t.url}" target="_blank">${t.title}</a>`,eY.appendChild(e)}),e_().then(t=>{//console.log('Categories Received:', categoriesData);
 !////////////////////////////
 // lista kategorii
 function(t){let e=document.getElementById("categoriesList");t.forEach(t=>{let r=document.createElement("li");r.classList.add("category"),/// kategoria - powiekszona trzcionka po wyborze
 //li.classList.add('selected-category');
 r.textContent=t.list_name,e.appendChild(r)})}(t)}).catch(t=>{// Obsługa błędów
-console.error("Error in promise chain:",t)}),e_("some-category").then(t=>{let e=document.getElementById("booksList");t.forEach(t=>{// tworzy sekcję dla danej kategorii
+console.error("Error in promise chain:",t)}),eU("some-category").then(t=>{let e=document.getElementById("booksList");t.forEach(t=>{// tworzy sekcję dla danej kategorii
 let r=document.createElement("div");r.className="category-section";let n=document.createElement("h2");n.innerHTML=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");window.innerWidth<=768?t.books.slice(0,1).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// ////////////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }):window.innerWidth>768&&window.innerWidth<=1200?t.books.slice(0,3).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
-e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eI(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
+e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }),// Dodanie klasę "category-list" do elementu <ul>
 o.classList.add("category-list"),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
-let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),i.addEventListener("click",()=>eY(t.list_name)),// Dodaj sekcję kategorii do kontenera
+let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),i.addEventListener("click",()=>eX(t.list_name)),// Dodaj sekcję kategorii do kontenera
 e.appendChild(r)})}).catch(t=>{// Obsługa błędów
-console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("Best Sellers Books"===e)try{let t=await e_("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",eX(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}else{let t=await e_(e);document.getElementById("bestSellersHeader").textContent=e,eX(t,"booksList")}}}),document.querySelectorAll(".category");const eZ=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await eT(t);// usuwamy klasę selected-category od wszystkich kategorii
-document.querySelectorAll(".category, .categoryTop").forEach(t=>{t.classList.remove("selected-category")}),eZ.textContent=t,eQ(r,t),// dodana  klasa selected-category tylko do klikniętej kategorii
+console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("Best Sellers Books"===e)try{let t=await eU("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",eQ(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}else{let t=await eU(e);document.getElementById("bestSellersHeader").textContent=e,eQ(t,"booksList")}}}),document.querySelectorAll(".category");const e0=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await eT(t);// usuwamy klasę selected-category od wszystkich kategorii
+document.querySelectorAll(".category, .categoryTop").forEach(t=>{t.classList.remove("selected-category")}),e0.textContent=t,eZ(r,t),// dodana  klasa selected-category tylko do klikniętej kategorii
 e.classList.add("selected-category")}});///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ciemny motyw
 /*const themeSwitch = document.getElementById('themeSwitch');
@@ -595,6 +614,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.d033c6bc.js.map
+});*///# sourceMappingURL=index.52a0bffa.js.map
 
-//# sourceMappingURL=index.d033c6bc.js.map
+//# sourceMappingURL=index.52a0bffa.js.map
