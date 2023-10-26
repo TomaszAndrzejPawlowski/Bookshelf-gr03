@@ -12,7 +12,9 @@ body {
   padding: 20px;
   border: 1px solid #ddd;
 
-  @include tablet {}
+  @include tablet {
+         
+  }
 
   @include desktop {
     display: flex;
@@ -21,17 +23,30 @@ body {
 
 //dodanie klasy common-container obejmującej listę gatunków i slider support
 .common-container {
+      display: flex;
+      flex-direction:column;
+
   @include tablet {
-    //display: inline-flex;
+    flex-direction:row;
   }
 
-  @include desktop {}
+  @include desktop {
+    flex-direction: column;
+  }
 }
 
 .book-list-block {
   @include desktop {
-    padding-left: 40px;
+    padding-left: 120px;
   }
+}
+
+
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: baseline;
+    list-style: none;
 }
 
 
@@ -102,24 +117,22 @@ body {
 }
 
 
-//best sellers books title
+//category books title
 .main-title {
-
+  color:#111111;
   white-space: nowrap;
-  color: black;
-  width: 360px;
+  max-width: 400px;
   font-size: 32px;
   font-weight: 700;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
   line-height: 38px;
-  text-align: center;
-  padding: 0 0 40px 80px;
+  text-align: left;
+  padding: 0 0 40px 30px;
 }
 
-.books {
-  color: #4f2ee8;
-}
-
+.main-title :last-child {
+    color: #4F2EE8;
+  }
 
 
 
@@ -137,7 +150,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
   padding: 14px 0 4px 0;
 }
 
@@ -147,13 +160,14 @@ font-size: 12px;
 font-style: italic;
 font-weight: 400;
 line-height: 14px;
-letter-spacing: -4%;
+letter-spacing: -0.04em;
 padding-bottom: 20px;
 }
 
 .category-section {
-  margin-left: 20px;
-margin-bottom: 20px;
+  
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .category-title {
@@ -162,12 +176,15 @@ margin-bottom: 20px;
   font-style: italic;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 3%;
+  letter-spacing: 0.03em;
+  margin: 10px 0;
+  
 }
 
 .category-list {
   display: grid;  
-  justify-items: center;
+  //justify-items: center;
+justify-content: space-evenly;  
 align-items: stretch;                       // był flex
   grid-template-columns: 1fr;            // dodane
   list-style: none;
