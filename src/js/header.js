@@ -37,9 +37,7 @@ const iconDark = document.querySelector('.icon_dark');
 const cartLight = document.querySelector('.lock-icon');
 const cartDark = document.querySelector('.lock_icon-dark');
 const stefanBtn = document.querySelector('.stefan_btn');
-const btnLog = document.querySelector('.button_login');
 const stefanName = document.querySelector('.stefan_name');
-const divLinkHeader = document.querySelector('.home_shopping_list');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -53,7 +51,6 @@ themeSwitch.addEventListener('change', () => {
   logoLight.style.display = 'block';
   logoDark.style.display = 'none';
   header.style.backgroundColor = '#f6f6f6';
-  divLinkHeader.style.color = 'black';
   modal.style.backgroundColor = '#f6f6f6';
   modal.style.border = '2px solid black';
   field.style.backgroudColor = '#f6f6f6';
@@ -95,7 +92,7 @@ themeSwitch.addEventListener('change', () => {
     field.style.backgroudColor = '#333';
     nameField.style.backgroundColor = '#333';
     nameField.style.border = '2px solid white';
-    divLinkHeader.style.color = '#f6f6f6';
+
     emailField.style.backgroundColor = '#333';
     emailField.style.border = '2px solid white';
     passField.style.backgroundColor = '#333';
@@ -173,7 +170,7 @@ modalBtn.addEventListener('click', e => {
 stefanBtn.addEventListener('click', e => {
   e.preventDefault();
   stefanBtn.style.visibility = 'hidden';
-  // stefanBtn.style.marginRight = '500px';
+
   openModalBtn.style.display = 'block';
   window.location.reload(true);
 });

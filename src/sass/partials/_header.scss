@@ -360,6 +360,7 @@
   padding-bottom: 40px;
 }
 .modal_link {
+  margin-top: -40px;
   text-decoration: none;
   color: grey;
   display: flex;
@@ -449,8 +450,8 @@
   }
   .modal_signup-mobile {
     display: none;
-    width: 335px;
-    // height: 384px;
+    width: 100vw;
+    height: 384px;
     border-radius: 18px;
     position: absolute;
 
@@ -458,10 +459,6 @@
     margin: 0 auto;
     background-color: #333;
     z-index: 105;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
   }
 
   .modal_signup-form-mobile {
@@ -587,7 +584,6 @@
   .modal_link-mobile {
     text-decoration: none;
     color: grey;
-    display: flex;
   }
   .modal_singup_close-mobile {
     position: absolute;
