@@ -1,5 +1,5 @@
-import apleIcon from '../images/apple.png';
-import amazonIcon from '../images/amazon.png';
+import apleIcon from '../images/apple.svg';
+import amazonIcon from '../images/amazon.svg';
 export function createBookCard(bookDetails) {
   const bookCard = document.createElement('div');
   bookCard.classList.add('book-card');
