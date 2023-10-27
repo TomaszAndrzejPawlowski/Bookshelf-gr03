@@ -1,5 +1,4 @@
-/* CSS for the modal container */
-.modal-card-container {
+.popup-card-container {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,24 +9,20 @@
   justify-content: center;
   align-items: center;
 }
-
-/* CSS for the modal */
 .popup {
   padding: 40px 24px;
   width: 335px;
   border-radius: 18px;
-  border: 2px solid #111;
+  border: 2px solid var(--black);
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
-  overflow: hidden; /* Dodaj overflow, aby zawartość mogła być przewijana */
+  overflow: hidden;
   @include tablet {
     width: 579px;
   }
 }
-
-/* Close button styles */
-.modal-close-button {
+.popup-close-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -37,21 +32,17 @@
   background-color: transparent;
   border: none;
 }
-
 .close-button:hover {
   fill: #0056b3;
 }
 
-/* Add to cart button styles (optional) */
 .add-to-cart-button {
   padding: 10px 20px;
   background-color: #fff;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   cursor: pointer;
-  margin-top: 10px;
-  color: #111;
-  margin-bottom: 8px;
+  color: var(--black);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -66,16 +57,9 @@
     line-height: 1.33;
   }
 }
-
 .add-to-cart-button:hover {
   background-color: #0056b3;
   color: #fff;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 .popup-img {
   width: 287px;
@@ -86,7 +70,6 @@ img {
     margin-bottom: 0px;
   }
 }
-
 .popup-title {
   color: #111;
   font-family: DM Sans;
@@ -118,7 +101,7 @@ img {
     margin-bottom: 20px;
   }
 }
-.modal-button-position {
+.popup-button-position {
   color: rgba(17, 17, 17, 0.5);
   text-align: center;
   font-family: DM Sans;
@@ -138,7 +121,7 @@ img {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
+  line-height: 14px;
   letter-spacing: -0.56px;
   margin-bottom: 20px;
 }
@@ -148,4 +131,11 @@ img {
     gap: 24px;
     margin-bottom: 40px;
   }
+}
+.popup-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
 }
