@@ -74,7 +74,3 @@ async function createSchoppingList() {
 }
 
 createSchoppingList();
-
-{
-  /* <img alt ="amazon icon" class="icon-shopping amazon-icon" width="32" height:"11" src=${amazonIcon} /> */
-}
