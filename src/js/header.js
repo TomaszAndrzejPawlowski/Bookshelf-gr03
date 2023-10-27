@@ -36,6 +36,10 @@ const iconLight = document.querySelector('.icon_light');
 const iconDark = document.querySelector('.icon_dark');
 const cartLight = document.querySelector('.lock-icon');
 const cartDark = document.querySelector('.lock_icon-dark');
+const stefanBtn = document.querySelector('.stefan_btn');
+const btnLog = document.querySelector('.button_login');
+const stefanName = document.querySelector('.stefan_name');
+const divLinkHeader = document.querySelector('.home_shopping_list');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -49,6 +53,7 @@ themeSwitch.addEventListener('change', () => {
   logoLight.style.display = 'block';
   logoDark.style.display = 'none';
   header.style.backgroundColor = '#f6f6f6';
+  divLinkHeader.style.color = 'black';
   modal.style.backgroundColor = '#f6f6f6';
   modal.style.border = '2px solid black';
   field.style.backgroudColor = '#f6f6f6';
@@ -90,7 +95,7 @@ themeSwitch.addEventListener('change', () => {
     field.style.backgroudColor = '#333';
     nameField.style.backgroundColor = '#333';
     nameField.style.border = '2px solid white';
-
+    divLinkHeader.style.color = '#f6f6f6';
     emailField.style.backgroundColor = '#333';
     emailField.style.border = '2px solid white';
     passField.style.backgroundColor = '#333';
@@ -146,4 +151,29 @@ buttonMobileModalClose.addEventListener('click', () => {
   modalSignupMobile.style.display = 'none';
   hamburgerCloseBtn.style.display = 'none';
   hamburgerOpenBtn.style.display = 'block';
+});
+
+modalBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const userMail = document.getElementById('usermail').value;
+  const password = document.getElementById('password').value;
+  if (username || userMail || password) {
+    alert('log in!');
+
+    modal.style.display = ' none';
+    openModalBtn.style.display = 'none';
+    stefanBtn.style.visibility = 'visible';
+    stefanName.textContent = username;
+  } else {
+    alert('false');
+  }
+});
+
+stefanBtn.addEventListener('click', e => {
+  e.preventDefault();
+  stefanBtn.style.visibility = 'hidden';
+  // stefanBtn.style.marginRight = '500px';
+  openModalBtn.style.display = 'block';
+  window.location.reload(true);
 });
