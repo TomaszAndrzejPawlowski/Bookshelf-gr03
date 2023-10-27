@@ -1,33 +1,33 @@
-/* CSS for the modal container */
-.modal-card-container {
+.popup-card-container {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 20;
+  background-color: #1116;
+  padding: 94px 15px;
   position: fixed;
   top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 0;
 }
-
-/* CSS for the modal */
 .popup {
-  padding: 40px 24px;
-  width: 335px;
+  z-index: 30;
+  min-width: 300px;
+  max-width: 600px;
+  /* max-height: 100vh; */
+  color: var(--black);
+  background-color: var(--white);
+  border: 2px solid var(--black);
   border-radius: 18px;
-  border: 2px solid #111;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden; /* Dodaj overflow, aby zawartość mogła być przewijana */
-  @include tablet {
-    width: 579px;
-  }
+  padding: 40px 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
-
-/* Close button styles */
-.modal-close-button {
+.popup-close-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -37,21 +37,17 @@
   background-color: transparent;
   border: none;
 }
-
 .close-button:hover {
-  fill: #0056b3;
+  fill: var(--violet);
 }
 
-/* Add to cart button styles (optional) */
 .add-to-cart-button {
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid var(--violet);
   cursor: pointer;
-  margin-top: 10px;
-  color: #111;
-  margin-bottom: 8px;
+  color: var(--black);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -66,29 +62,23 @@
     line-height: 1.33;
   }
 }
-
 .add-to-cart-button:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  background-color: var(--violet);
+  color: var(--white);
 }
 .popup-img {
-  width: 287px;
-  height: 408px;
-  margin-bottom: 18px;
+  max-width: 287px;
+  min-height: 408px;
+  border: none;
+  margin-bottom: 14px;
+
   @include tablet {
     height: 281px;
     margin-bottom: 0px;
   }
 }
-
 .popup-title {
-  color: #111;
+  color: var(--black);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -103,7 +93,7 @@ img {
   }
 }
 .popup-author {
-  color: #b4afaf;
+  color: var(--grey);
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -118,7 +108,7 @@ img {
     margin-bottom: 20px;
   }
 }
-.modal-button-position {
+.popup-button-position {
   color: rgba(17, 17, 17, 0.5);
   text-align: center;
   font-family: DM Sans;
@@ -133,12 +123,12 @@ img {
   display: block;
 }
 .popup-desc {
-  color: #111;
+  color: var(--black);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
+  line-height: 14px;
   letter-spacing: -0.56px;
   margin-bottom: 20px;
 }
@@ -148,4 +138,23 @@ img {
     gap: 24px;
     margin-bottom: 40px;
   }
+}
+.popup-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.add-to-cart-message {
+  max-width: 242px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: var(--lighygrey);
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
 }

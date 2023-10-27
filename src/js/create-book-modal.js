@@ -1,11 +1,13 @@
+import apleIcon from '../images/book.png';
+import amazonIcon from '../images/amazon.png';
 export function createBookCard(bookDetails) {
   const bookCard = document.createElement('div');
   bookCard.classList.add('book-card');
 
   bookCard.innerHTML = `
-    <div class="modal-card-container">
+    <div class="popup-card-container">
         <div class="popup">
-            <button class="modal-close-button">
+            <button class="popup-close-button">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg></button>
@@ -17,9 +19,20 @@ export function createBookCard(bookDetails) {
                 <h2 class="popup-title">${bookDetails.title}</h2>
                 <p class="popup-author">Author: ${bookDetails.author}</p>
                 <p class="popup-desc"> ${bookDetails.description}</p>
+                <ul class="popup-list">
+                  <li>
+                    <a href=${bookDetails.amazon_product_url} target="_blank" rel="noopener noreferrer nofollow">
+                    <img alt ="amazon icon" class="icon-shopping amazon-icon" width="32" height:"11" src=${amazonIcon} />
+                    </a></li>
+                  <li>
+                    <a href=${bookDetails.buy_links[1].url} target="_blank">
+                    <img class="icon-shopping aple-icon" src=${apleIcon} width="16" height="16" alt="aple icon"  rel="noopener noreferrer nofollow"/>
+                    </a>
+                  </li>
+                </ul>
             </div>
             </div>
-          <div class="modal-button-position">
+          <div class="popup-button-position">
                   <button class="add-to-cart-button" data-book-id="${bookDetails._id}">add to shopping list</button>
                   <p class="add-to-cart-message"></p>
           </div>
@@ -27,7 +40,7 @@ export function createBookCard(bookDetails) {
       </div>
   `;
 
-  const closeButton = bookCard.querySelector('.modal-close-button');
+  const closeButton = bookCard.querySelector('.popup-close-button');
   closeButton.addEventListener('click', () => {
     const bookCardContainer = document.getElementById('bookCardContainer');
     bookCardContainer.innerHTML = '';
@@ -72,7 +85,7 @@ export function createBookCard(bookDetails) {
   document.addEventListener('keydown', closeModalOnEscape);
 
   function closeModalOnClickOutside(event) {
-    if (event.target.classList.contains('modal-card-container')) {
+    if (event.target.classList.contains('popup-card-container')) {
       const bookCardContainer = document.getElementById('bookCardContainer');
       bookCardContainer.innerHTML = '';
     }
