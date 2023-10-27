@@ -25,9 +25,11 @@ body {
 .common-container {
       display: flex;
       flex-direction:column;
+      align-items:center;
 
   @include tablet {
     flex-direction:row;
+    justify-content: space-around;
   }
 
   @include desktop {
@@ -45,14 +47,34 @@ body {
 .books-list {
     display: flex;
     flex-wrap: wrap;
-    justify-items: baseline;
+    justify-content: space-around;
     list-style: none;
+
+    @include tablet {
+    flex-direction:row;
+
+      .list-element {
+      width: 218px;
+      height: 366px;
+      //padding:0 10px;
+    }
+  }
+    @include desktop {
+    flex-direction: row;
+
+    .list-element {
+      width: 180px;
+      height: 306px;
+      padding:0 10px;
+      justify-content: center;
+    }
+  }
 }
 
 
 .left-section {
   width: 335px;
-  height: 628px;
+  height: 528px;
 }
 
 .categories-title {
@@ -127,7 +149,7 @@ body {
   letter-spacing: -0.04em;
   line-height: 38px;
   text-align: left;
-  padding: 0 0 40px 30px;
+  padding: 40px 0 40px 20px;
 }
 
 .main-title :last-child {
