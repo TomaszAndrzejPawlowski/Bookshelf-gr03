@@ -1,5 +1,5 @@
 let t;function e(t){return t&&t.__esModule?t.default:t}var r,n,o,i,s,a=globalThis;function l(t,e){return function(){return t.apply(e,arguments)}}// utils is a library of generic helper functions non-specific to axios
-const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(null),t=>{let e=u.call(t);return r[e]||(r[e]=e.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),d=t=>e=>typeof e===t,{isArray:p}=Array,m=d("undefined"),g=h("ArrayBuffer"),y=d("string"),b=d("function"),E=d("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},A=h("Date"),S=h("File"),C=h("Blob"),L=h("FileList"),O=h("URLSearchParams");/**
+const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(null),t=>{let e=u.call(t);return r[e]||(r[e]=e.slice(8,-1).toLowerCase())}),h=t=>(t=t.toLowerCase(),e=>f(e)===t),d=t=>e=>typeof e===t,{isArray:p}=Array,m=d("undefined"),g=h("ArrayBuffer"),y=d("string"),b=d("function"),E=d("number"),w=t=>null!==t&&"object"==typeof t,v=t=>{if("object"!==f(t))return!1;let e=c(t);return(null===e||e===Object.prototype||null===Object.getPrototypeOf(e))&&!(Symbol.toStringTag in t)&&!(Symbol.iterator in t)},S=h("Date"),A=h("File"),C=h("Blob"),L=h("FileList"),O=h("URLSearchParams");/**
  * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
@@ -15,7 +15,7 @@ const{toString:u}=Object.prototype,{getPrototypeOf:c}=Object,f=(r=Object.create(
  * @returns {any}
  */function R(t,e,{allOwnKeys:r=!1}={}){let n,o;// Don't bother if no value provided
 if(null!=t){if("object"!=typeof t&&/*eslint no-param-reassign:0*/(t=[t]),p(t))for(n=0,o=t.length;n<o;n++)e.call(null,t[n],n,t);else{let o;// Iterate over object keys
-let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function k(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const T=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:a,B=t=>!m(t)&&t!==T,_=(n="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>n&&t instanceof n),U=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};R(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",I="0123456789",F={DIGIT:I,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+I},D=h("AsyncFunction");var H={isArray:p,isArrayBuffer:g,isBuffer:/**
+let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)o=i[n],e.call(null,t[o],o,t)}}}function k(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),o=n.length;for(;o-- >0;)if(e===(r=n[o]).toLowerCase())return r;return null}const T=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:a,B=t=>!m(t)&&t!==T,_=(n="undefined"!=typeof Uint8Array&&c(Uint8Array),t=>n&&t instanceof n),U=h("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=h("RegExp"),j=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};R(r,(r,o)=>{let i;!1!==(i=e(r,o,t))&&(n[o]=i||r)}),Object.defineProperties(t,n)},I="abcdefghijklmnopqrstuvwxyz",P="0123456789",F={DIGIT:P,ALPHA:I,ALPHA_DIGIT:I+I.toUpperCase()+P},D=h("AsyncFunction");var H={isArray:p,isArrayBuffer:g,isBuffer:/**
  * Determine if a value is a Buffer
  *
  * @param {*} val The value to test
@@ -28,7 +28,7 @@ let i=r?Object.getOwnPropertyNames(t):Object.keys(t),s=i.length;for(n=0;n<s;n++)
  * @param {*} val The value to test
  *
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:A,isFile:S,isBlob:C,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:O,isTypedArray:_,isFileList:L,forEach:R,merge:/**
+ */function(t){return"undefined"!=typeof ArrayBuffer&&ArrayBuffer.isView?ArrayBuffer.isView(t):t&&t.buffer&&g(t.buffer)},isString:y,isNumber:E,isBoolean:t=>!0===t||!1===t,isObject:w,isPlainObject:v,isUndefined:m,isDate:S,isFile:A,isBlob:C,isRegExp:N,isFunction:b,isStream:t=>w(t)&&b(t.pipe),isURLSearchParams:O,isTypedArray:_,isFileList:L,forEach:R,merge:/**
  * Accepts varargs expecting each argument to be an object, then
  * immutably merges the properties of each object and returns result.
  *
@@ -67,11 +67,11 @@ if(b(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(
 message:this.message,name:this.name,// Microsoft
 description:this.description,number:this.number,// Mozilla
 fileName:this.fileName,lineNumber:this.lineNumber,columnNumber:this.columnNumber,stack:this.stack,// Axios
-config:H.toJSONObject(this.config),code:this.code,status:this.response&&this.response.status?this.response.status:null}}});const q=M.prototype,z={};["ERR_BAD_OPTION_VALUE","ERR_BAD_OPTION","ECONNABORTED","ETIMEDOUT","ERR_NETWORK","ERR_FR_TOO_MANY_REDIRECTS","ERR_DEPRECATED","ERR_BAD_RESPONSE","ERR_BAD_REQUEST","ERR_CANCELED","ERR_NOT_SUPPORT","ERR_INVALID_URL"].forEach(t=>{z[t]={value:t}}),Object.defineProperties(M,z),Object.defineProperty(q,"isAxiosError",{value:!0}),// eslint-disable-next-line func-names
+config:H.toJSONObject(this.config),code:this.code,status:this.response&&this.response.status?this.response.status:null}}});const q=M.prototype,$={};["ERR_BAD_OPTION_VALUE","ERR_BAD_OPTION","ECONNABORTED","ETIMEDOUT","ERR_NETWORK","ERR_FR_TOO_MANY_REDIRECTS","ERR_DEPRECATED","ERR_BAD_RESPONSE","ERR_BAD_REQUEST","ERR_CANCELED","ERR_NOT_SUPPORT","ERR_INVALID_URL"].forEach(t=>{$[t]={value:t}}),Object.defineProperties(M,$),Object.defineProperty(q,"isAxiosError",{value:!0}),// eslint-disable-next-line func-names
 M.from=(t,e,r,n,o,i)=>{let s=Object.create(q);return H.toFlatObject(t,s,function(t){return t!==Error.prototype},t=>"isAxiosError"!==t),M.call(s,t.message,e,r,n,o),s.cause=t,s.name=t.name,i&&Object.assign(s,i),s},o=function(t){// go through the array every three bytes, we'll deal with trailing stuff later
 for(var e,r=t.length,n=r%3// if we have 1 byte left, pad 2 bytes
 ,o=[],i=0,s=r-n;i<s;i+=16383// must be multiple of 3
-)o.push(function(t,e,r){for(var n,o=[],i=e;i<r;i+=3)o.push($[(n=(t[i]<<16&16711680)+(t[i+1]<<8&65280)+(255&t[i+2]))>>18&63]+$[n>>12&63]+$[n>>6&63]+$[63&n]);return o.join("")}(t,i,i+16383>s?s:i+16383));return 1===n?o.push($[(e=t[r-1])>>2]+$[e<<4&63]+"=="):2===n&&o.push($[(e=(t[r-2]<<8)+t[r-1])>>10]+$[e>>4&63]+$[e<<2&63]+"="),o.join("")};for(var $=[],J=[],W="undefined"!=typeof Uint8Array?Uint8Array:Array,V="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",K=0,G=V.length;K<G;++K)$[K]=V[K],J[V.charCodeAt(K)]=K;// Support decoding URL-safe base64 strings, as Node.js does.
+)o.push(function(t,e,r){for(var n,o=[],i=e;i<r;i+=3)o.push(z[(n=(t[i]<<16&16711680)+(t[i+1]<<8&65280)+(255&t[i+2]))>>18&63]+z[n>>12&63]+z[n>>6&63]+z[63&n]);return o.join("")}(t,i,i+16383>s?s:i+16383));return 1===n?o.push(z[(e=t[r-1])>>2]+z[e<<4&63]+"=="):2===n&&o.push(z[(e=(t[r-2]<<8)+t[r-1])>>10]+z[e>>4&63]+z[e<<2&63]+"="),o.join("")};for(var z=[],J=[],W="undefined"!=typeof Uint8Array?Uint8Array:Array,V="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",K=0,G=V.length;K<G;++K)z[K]=V[K],J[V.charCodeAt(K)]=K;// Support decoding URL-safe base64 strings, as Node.js does.
 // See: https://en.wikipedia.org/wiki/Base64#URL_applications
 J["-".charCodeAt(0)]=62,J["_".charCodeAt(0)]=63,i=function(t,e,r,n,o){var i,s,a=8*o-n-1,l=(1<<a)-1,u=l>>1,c=-7,f=r?o-1:0,h=r?-1:1,d=t[e+f];for(f+=h,i=d&(1<<-c)-1,d>>=-c,c+=a;c>0;i=256*i+t[e+f],f+=h,c-=8);for(s=i&(1<<-c)-1,i>>=-c,c+=n;c>0;s=256*s+t[e+f],f+=h,c-=8);if(0===i)i=1-u;else{if(i===l)return s?NaN:(d?-1:1)*(1/0);s+=Math.pow(2,n),i-=u}return(d?-1:1)*s*Math.pow(2,i-n)},s=function(t,e,r,n,o,i){var s,a,l,u=8*i-o-1,c=(1<<u)-1,f=c>>1,h=23===o?5960464477539062e-23:0,d=n?0:i-1,p=n?1:-1,m=e<0||0===e&&1/e<0?1:0;for(isNaN(e=Math.abs(e))||e===1/0?(a=isNaN(e)?1:0,s=c):(s=Math.floor(Math.log(e)/Math.LN2),e*(l=Math.pow(2,-s))<1&&(s--,l*=2),s+f>=1?e+=h/l:e+=h*Math.pow(2,1-f),e*l>=2&&(s++,l/=2),s+f>=c?(a=0,s=c):s+f>=1?(a=(e*l-1)*Math.pow(2,o),s+=f):(a=e*Math.pow(2,f-1)*Math.pow(2,o),s=0));o>=8;t[r+d]=255&a,d+=p,a/=256,o-=8);for(s=s<<o|a,u+=o;u>0;t[r+d]=255&s,d+=p,s/=256,u-=8);t[r+d-p]|=128*m};var Y="function"==typeof Symbol&&"function"// eslint-disable-line dot-notation
 ==typeof Symbol.for?Symbol.for("nodejs.util.inspect.custom")// eslint-disable-line dot-notation
@@ -195,13 +195,13 @@ var tv=function(){for(var t="0123456789abcdef",e=Array(256),r=0;r<16;++r)for(var
  * @param {string} thing - The object or array to be visited.
  *
  * @returns {boolean}
- */function tA(t){return H.isPlainObject(t)||H.isArray(t)}/**
+ */function tS(t){return H.isPlainObject(t)||H.isArray(t)}/**
  * It removes the brackets from the end of a string
  *
  * @param {string} key - The key of the parameter.
  *
  * @returns {string} the key without the brackets.
- */function tS(t){return H.endsWith(t,"[]")?t.slice(0,-2):t}/**
+ */function tA(t){return H.endsWith(t,"[]")?t.slice(0,-2):t}/**
  * It takes a path, a key, and a boolean, and returns a string
  *
  * @param {string} path - The path to the current key.
@@ -210,7 +210,7 @@ var tv=function(){for(var t="0123456789abcdef",e=Array(256),r=0;r<16;++r)for(var
  *
  * @returns {string} The path to the current key.
  */function tC(t,e,r){return t?t.concat(e).map(function(t,e){return(// eslint-disable-next-line no-param-reassign
-t=tS(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tL=H.toFlatObject(H,{},null,function(t){return/^is[A-Z]/.test(t)});var tO=/**
+t=tA(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}const tL=H.toFlatObject(H,{},null,function(t){return/^is[A-Z]/.test(t)});var tO=/**
  * Convert a data object to FormData
  *
  * @param {Object} obj
@@ -244,8 +244,8 @@ return!H.isUndefined(e[t])});let n=r.metaTokens,o=r.visitor||c,i=r.dots,s=r.inde
    * @returns {boolean} return true to visit the each prop of the value recursively
    */function c(t,r,o){let a=t;if(t&&!o&&"object"==typeof t){if(H.endsWith(r,"{}"))// eslint-disable-next-line no-param-reassign
 r=n?r:r.slice(0,-2),// eslint-disable-next-line no-param-reassign
-t=JSON.stringify(t);else{var l;if(H.isArray(t)&&(l=t,H.isArray(l)&&!l.some(tA))||(H.isFileList(t)||H.endsWith(r,"[]"))&&(a=H.toArray(t)))return(// eslint-disable-next-line no-param-reassign
-r=tS(r),a.forEach(function(t,n){H.isUndefined(t)||null===t||e.append(!0===s?tC([r],n,i):null===s?r:r+"[]",u(t))}),!1)}}return!!tA(t)||(e.append(tC(o,r,i),u(t)),!1)}let f=[],h=Object.assign(tL,{defaultVisitor:c,convertValue:u,isVisitable:tA});if(!H.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!H.isUndefined(r)){if(-1!==f.indexOf(r))throw Error("Circular reference detected in "+n.join("."));f.push(r),H.forEach(r,function(r,i){let s=!(H.isUndefined(r)||null===r)&&o.call(e,r,H.isString(i)?i.trim():i,n,h);!0===s&&t(r,n?n.concat(i):[i])}),f.pop()}}(t),e};/**
+t=JSON.stringify(t);else{var l;if(H.isArray(t)&&(l=t,H.isArray(l)&&!l.some(tS))||(H.isFileList(t)||H.endsWith(r,"[]"))&&(a=H.toArray(t)))return(// eslint-disable-next-line no-param-reassign
+r=tA(r),a.forEach(function(t,n){H.isUndefined(t)||null===t||e.append(!0===s?tC([r],n,i):null===s?r:r+"[]",u(t))}),!1)}}return!!tS(t)||(e.append(tC(o,r,i),u(t)),!1)}let f=[],h=Object.assign(tL,{defaultVisitor:c,convertValue:u,isVisitable:tS});if(!H.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!H.isUndefined(r)){if(-1!==f.indexOf(r))throw Error("Circular reference detected in "+n.join("."));f.push(r),H.forEach(r,function(r,i){let s=!(H.isUndefined(r)||null===r)&&o.call(e,r,H.isString(i)?i.trim():i,n,h);!0===s&&t(r,n?n.concat(i):[i])}),f.pop()}}(t),e};/**
  * It encodes a string by replacing all characters that are not in the unreserved set with
  * their percent-encoded equivalents
  *
@@ -292,7 +292,7 @@ r=tS(r),a.forEach(function(t,n){H.isUndefined(t)||null===t||e.append(!0===s?tC([
    * @param {Function} fn The function to call for each interceptor
    *
    * @returns {void}
-   */forEach(t){H.forEach(this.handlers,function(e){null!==e&&t(e)})}},tx={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tN="undefined"!=typeof URLSearchParams?URLSearchParams:tk,tj="undefined"!=typeof FormData?FormData:null,tP="undefined"!=typeof Blob?Blob:null;/**
+   */forEach(t){H.forEach(this.handlers,function(e){null!==e&&t(e)})}},tx={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tN="undefined"!=typeof URLSearchParams?URLSearchParams:tk,tj="undefined"!=typeof FormData?FormData:null,tI="undefined"!=typeof Blob?Blob:null;/**
  * Determine if we're running in a standard browser environment
  *
  * This allows axios to run in a web worker, and react-native.
@@ -308,8 +308,8 @@ r=tS(r),a.forEach(function(t,n){H.isUndefined(t)||null===t||e.append(!0===s?tC([
  *  navigator.product -> 'NativeScript' or 'NS'
  *
  * @returns {boolean}
- */const tI=("undefined"==typeof navigator||"ReactNative"!==(t=navigator.product)&&"NativeScript"!==t&&"NS"!==t)&&"undefined"!=typeof window&&"undefined"!=typeof document,tF="undefined"!=typeof WorkerGlobalScope&&// eslint-disable-next-line no-undef
-self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tD={classes:{URLSearchParams:tN,FormData:tj,Blob:tP},isStandardBrowserEnv:tI,isStandardBrowserWebWorkerEnv:tF,protocols:["http","https","file","blob","url","data"]},tH=/**
+ */const tP=("undefined"==typeof navigator||"ReactNative"!==(t=navigator.product)&&"NativeScript"!==t&&"NS"!==t)&&"undefined"!=typeof window&&"undefined"!=typeof document,tF="undefined"!=typeof WorkerGlobalScope&&// eslint-disable-next-line no-undef
+self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tD={classes:{URLSearchParams:tN,FormData:tj,Blob:tI},isStandardBrowserEnv:tP,isStandardBrowserWebWorkerEnv:tF,protocols:["http","https","file","blob","url","data"]},tH=/**
  * It takes a FormData object and returns a JavaScript object
  *
  * @param {string} formData The FormData object to convert to JSON.
@@ -348,7 +348,7 @@ const tq=H.toObjectSet(["age","authorization","content-length","content-type","e
  * @param {String} rawHeaders Headers needing to be parsed
  *
  * @returns {Object} Headers parsed into an object
- */tz=t=>{let e,r,n;let o={};return t&&t.split("\n").forEach(function(t){n=t.indexOf(":"),e=t.substring(0,n).trim().toLowerCase(),r=t.substring(n+1).trim(),!e||o[e]&&tq[e]||("set-cookie"===e?o[e]?o[e].push(r):o[e]=[r]:o[e]=o[e]?o[e]+", "+r:r)}),o};const t$=Symbol("internals");function tJ(t){return t&&String(t).trim().toLowerCase()}function tW(t){return!1===t||null==t?t:H.isArray(t)?t.map(tW):String(t)}const tV=t=>/^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(t.trim());function tK(t,e,r,n,o){if(H.isFunction(n))return n.call(this,e,r);if(o&&(e=r),H.isString(e)){if(H.isString(n))return -1!==e.indexOf(n);if(H.isRegExp(n))return n.test(e)}}class tG{constructor(t){t&&this.set(t)}set(t,e,r){let n=this;function o(t,e,r){let o=tJ(e);if(!o)throw Error("header name must be a non-empty string");let i=H.findKey(n,o);i&&void 0!==n[i]&&!0!==r&&(void 0!==r||!1===n[i])||(n[i||e]=tW(t))}let i=(t,e)=>H.forEach(t,(t,r)=>o(t,r,e));return H.isPlainObject(t)||t instanceof this.constructor?i(t,e):H.isString(t)&&(t=t.trim())&&!tV(t)?i(tz(t),e):null!=t&&o(e,t,r),this}get(t,e){if(t=tJ(t)){let r=H.findKey(this,t);if(r){let t=this[r];if(!e)return t;if(!0===e)return function(t){let e;let r=Object.create(null),n=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;for(;e=n.exec(t);)r[e[1]]=e[2];return r}(t);if(H.isFunction(e))return e.call(this,t,r);if(H.isRegExp(e))return e.exec(t);throw TypeError("parser must be boolean|regexp|function")}}}has(t,e){if(t=tJ(t)){let r=H.findKey(this,t);return!!(r&&void 0!==this[r]&&(!e||tK(this,this[r],r,e)))}return!1}delete(t,e){let r=this,n=!1;function o(t){if(t=tJ(t)){let o=H.findKey(r,t);o&&(!e||tK(r,r[o],o,e))&&(delete r[o],n=!0)}}return H.isArray(t)?t.forEach(o):o(t),n}clear(t){let e=Object.keys(this),r=e.length,n=!1;for(;r--;){let o=e[r];(!t||tK(this,this[o],o,t,!0))&&(delete this[o],n=!0)}return n}normalize(t){let e=this,r={};return H.forEach(this,(n,o)=>{let i=H.findKey(r,o);if(i){e[i]=tW(n),delete e[o];return}let s=t?o.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,(t,e,r)=>e.toUpperCase()+r):String(o).trim();s!==o&&delete e[o],e[s]=tW(n),r[s]=!0}),this}concat(...t){return this.constructor.concat(this,...t)}toJSON(t){let e=Object.create(null);return H.forEach(this,(r,n)=>{null!=r&&!1!==r&&(e[n]=t&&H.isArray(r)?r.join(", "):r)}),e}[Symbol.iterator](){return Object.entries(this.toJSON())[Symbol.iterator]()}toString(){return Object.entries(this.toJSON()).map(([t,e])=>t+": "+e).join("\n")}get[Symbol.toStringTag](){return"AxiosHeaders"}static from(t){return t instanceof this?t:new this(t)}static concat(t,...e){let r=new this(t);return e.forEach(t=>r.set(t)),r}static accessor(t){let e=this[t$]=this[t$]={accessors:{}},r=e.accessors,n=this.prototype;function o(t){let e=tJ(t);r[e]||(!function(t,e){let r=H.toCamelCase(" "+e);["get","set","has"].forEach(n=>{Object.defineProperty(t,n+r,{value:function(t,r,o){return this[n].call(this,e,t,r,o)},configurable:!0})})}(n,t),r[e]=!0)}return H.isArray(t)?t.forEach(o):o(t),this}}function tY(t,e){let r=this||tM,n=e||r,o=tG.from(n.headers),i=n.data;return H.forEach(t,function(t){i=t.call(r,i,o.normalize(),e?e.status:void 0)}),o.normalize(),i}function tX(t){return!!(t&&t.__CANCEL__)}/**
+ */t$=t=>{let e,r,n;let o={};return t&&t.split("\n").forEach(function(t){n=t.indexOf(":"),e=t.substring(0,n).trim().toLowerCase(),r=t.substring(n+1).trim(),!e||o[e]&&tq[e]||("set-cookie"===e?o[e]?o[e].push(r):o[e]=[r]:o[e]=o[e]?o[e]+", "+r:r)}),o};const tz=Symbol("internals");function tJ(t){return t&&String(t).trim().toLowerCase()}function tW(t){return!1===t||null==t?t:H.isArray(t)?t.map(tW):String(t)}const tV=t=>/^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(t.trim());function tK(t,e,r,n,o){if(H.isFunction(n))return n.call(this,e,r);if(o&&(e=r),H.isString(e)){if(H.isString(n))return -1!==e.indexOf(n);if(H.isRegExp(n))return n.test(e)}}class tG{constructor(t){t&&this.set(t)}set(t,e,r){let n=this;function o(t,e,r){let o=tJ(e);if(!o)throw Error("header name must be a non-empty string");let i=H.findKey(n,o);i&&void 0!==n[i]&&!0!==r&&(void 0!==r||!1===n[i])||(n[i||e]=tW(t))}let i=(t,e)=>H.forEach(t,(t,r)=>o(t,r,e));return H.isPlainObject(t)||t instanceof this.constructor?i(t,e):H.isString(t)&&(t=t.trim())&&!tV(t)?i(t$(t),e):null!=t&&o(e,t,r),this}get(t,e){if(t=tJ(t)){let r=H.findKey(this,t);if(r){let t=this[r];if(!e)return t;if(!0===e)return function(t){let e;let r=Object.create(null),n=/([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;for(;e=n.exec(t);)r[e[1]]=e[2];return r}(t);if(H.isFunction(e))return e.call(this,t,r);if(H.isRegExp(e))return e.exec(t);throw TypeError("parser must be boolean|regexp|function")}}}has(t,e){if(t=tJ(t)){let r=H.findKey(this,t);return!!(r&&void 0!==this[r]&&(!e||tK(this,this[r],r,e)))}return!1}delete(t,e){let r=this,n=!1;function o(t){if(t=tJ(t)){let o=H.findKey(r,t);o&&(!e||tK(r,r[o],o,e))&&(delete r[o],n=!0)}}return H.isArray(t)?t.forEach(o):o(t),n}clear(t){let e=Object.keys(this),r=e.length,n=!1;for(;r--;){let o=e[r];(!t||tK(this,this[o],o,t,!0))&&(delete this[o],n=!0)}return n}normalize(t){let e=this,r={};return H.forEach(this,(n,o)=>{let i=H.findKey(r,o);if(i){e[i]=tW(n),delete e[o];return}let s=t?o.trim().toLowerCase().replace(/([a-z\d])(\w*)/g,(t,e,r)=>e.toUpperCase()+r):String(o).trim();s!==o&&delete e[o],e[s]=tW(n),r[s]=!0}),this}concat(...t){return this.constructor.concat(this,...t)}toJSON(t){let e=Object.create(null);return H.forEach(this,(r,n)=>{null!=r&&!1!==r&&(e[n]=t&&H.isArray(r)?r.join(", "):r)}),e}[Symbol.iterator](){return Object.entries(this.toJSON())[Symbol.iterator]()}toString(){return Object.entries(this.toJSON()).map(([t,e])=>t+": "+e).join("\n")}get[Symbol.toStringTag](){return"AxiosHeaders"}static from(t){return t instanceof this?t:new this(t)}static concat(t,...e){let r=new this(t);return e.forEach(t=>r.set(t)),r}static accessor(t){let e=this[tz]=this[tz]={accessors:{}},r=e.accessors,n=this.prototype;function o(t){let e=tJ(t);r[e]||(!function(t,e){let r=H.toCamelCase(" "+e);["get","set","has"].forEach(n=>{Object.defineProperty(t,n+r,{value:function(t,r,o){return this[n].call(this,e,t,r,o)},configurable:!0})})}(n,t),r[e]=!0)}return H.isArray(t)?t.forEach(o):o(t),this}}function tY(t,e){let r=this||tM,n=e||r,o=tG.from(n.headers),i=n.data;return H.forEach(t,function(t){i=t.call(r,i,o.normalize(),e?e.status:void 0)}),o.normalize(),i}function tX(t){return!!(t&&t.__CANCEL__)}/**
  * A `CanceledError` is an object that is thrown when an operation is canceled.
  *
  * @param {string=} message The message.
@@ -482,37 +482,10 @@ eh.isAxiosError=function(t){return H.isObject(t)&&!0===t.isAxiosError},// Expose
 eh.mergeConfig=en,eh.AxiosHeaders=tG,eh.formToJSON=t=>tH(H.isHTMLForm(t)?new FormData(t):t),eh.getAdapter=t9.getAdapter,eh.HttpStatusCode=ef,eh.default=eh;// This module is intended to unwrap Axios default export as named.
 // Keep top-level export same with static properties
 // so that it can keep same with es module or cjs
-const{Axios:ed,AxiosError:ep,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eA,toFormData:eS,AxiosHeaders:eC,HttpStatusCode:eL,formToJSON:eO,getAdapter:eR,mergeConfig:ek}=eh;async function eT(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
+const{Axios:ed,AxiosError:ep,CanceledError:em,isCancel:eg,CancelToken:ey,VERSION:eb,all:eE,Cancel:ew,isAxiosError:ev,spread:eS,toFormData:eA,AxiosHeaders:eC,HttpStatusCode:eL,formToJSON:eO,getAdapter:eR,mergeConfig:ek}=eh;async function eT(t){let e=`https://books-backend.p.goit.global/books/category?category=${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}//////////////////////////////////////////////////////////////////////// karty ksiazki po id///////////////////////////////////
 async function eB(t){let e=`https://books-backend.p.goit.global/books/${t}`;try{let t=await eh.get(e);if(200!==t.status)throw Error("Failed to fetch book details");let r=t.data;//console.log(bookDetails);
 return r}catch(t){// można obsługę błędu - np. wyświetlenie komunikatu dla użytkownika
-throw console.error("Error fetching book details:",t),Error("Failed to fetch book details")}}async function e_(){try{let t=await eh.get("https://books-backend.p.goit.global/books/category-list");return t.data}catch(t){throw console.error("Error fetching categories:",t),Error("Failed to fetch categories")}}async function eU(t){try{let t=await eh.get("https://books-backend.p.goit.global/books/top-books");if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}var ex={};ex=new URL("book.eff40568.png",import.meta.url).toString();var eN={};eN=new URL("amazon.8d9e86b1.png",import.meta.url).toString();var ej={};ej=new URL("trash.12ed25ac.svg",import.meta.url).toString();const eP=document.getElementById("shoppBookList");//funkcja do pobierania dancyh oraz do tworzenia pojedynczego elementu
-async function eI(t){let r=await eB(t);!//tworzenie pojedynczej karty książki
-function({bookDetails:t}){let r=`<li class="shopList-item">
-  <button class="remove-button" type="button"><p class="bookId">${t._id}</p>
-  <img class="remove-button__icon" alt="trash icon" src=${/*@__PURE__*/e(ej)}/>
-</button>
-<div class="shopList-item__wrapp">
-<img class="shopList-item__photo" src=${t.book_image} alt="book photo" loading="lazy"/>
-</div>
-<div class="shopList-item__information">
-<h1>${t.title}</h1>
-<p class="shopList-item__category">${t.list_name}</p>
-<div class="shopList-item__summary"> 
-<p>${t.description}</p>       
-</div>
-<div class="shopList-item__wrapper">
-<p class="shopList-item__author">${t.author}</p>   
-<div class="shopList-item__icons">
-<a href=${t.amazon_product_url} target="_blank" rel="noopener noreferrer nofollow">
-<img alt ="amazon icon" class="icon-shopping amazon-icon" width="32" height:"11" src=${/*@__PURE__*/e(eN)} />
-</a>  
-<a href=${t.buy_links[1].url} target="_blank">
-<img class="icon-shopping aple-icon" src=${/*@__PURE__*/e(ex)} width="16" height="16" alt="aple icon"  rel="noopener noreferrer nofollow"/>
-</a>  
-</div>
-</div>
-</div>
-</li>`;eP.innerHTML+=r}({bookDetails:r})}function eF(t){let e=document.createElement("div");e.classList.add("book-card"),e.innerHTML=`
+throw console.error("Error fetching book details:",t),Error("Failed to fetch book details")}}async function e_(){try{let t=await eh.get("https://books-backend.p.goit.global/books/category-list");return t.data}catch(t){throw console.error("Error fetching categories:",t),Error("Failed to fetch categories")}}async function eU(t){try{let t=await eh.get("https://books-backend.p.goit.global/books/top-books");if(200!==t.status)throw Error("Failed to fetch books");return t.data}catch(t){throw console.error("Error fetching books:",t),Error("Failed to fetch books")}}var ex={};ex=new URL("apple.eccc0cef.svg",import.meta.url).toString();var eN={};eN=new URL("amazon.3527c8ee.svg",import.meta.url).toString();var ej={};ej=new URL("trash.12ed25ac.svg",import.meta.url).toString();const eI=document.getElementById("shoppBookList");function eP(t){if(t.preventDefault(),t.target.dataset.book_id){let e=t.target.dataset.book_id,r=JSON.parse(localStorage.getItem("shoppingList")),n=r.indexOf(e);console.log(n),r.splice(n,1),localStorage.setItem("shoppingList",JSON.stringify(r));let o=JSON.parse(localStorage.getItem("shoppingList"));if(0===o.length){let t=document.querySelector(".empty-shopping-list");t.classList.add("visible")}let i=document.getElementById(e);i.remove()}}function eF(t){let e=document.createElement("div");e.classList.add("book-card"),e.innerHTML=`
     <div class="modal-card-container">
         <div class="popup">
             <button class="modal-close-button">
@@ -535,30 +508,34 @@ function({bookDetails:t}){let r=`<li class="shopList-item">
           </div>
         </div>
       </div>
-  `;let r=e.querySelector(".modal-close-button");r.addEventListener("click",()=>{let t=document.getElementById("bookCardContainer");t.innerHTML=""});let n=e.querySelector(".add-to-cart-button"),o=e.querySelector(".add-to-cart-message"),i=JSON.parse(localStorage.getItem("shoppingList"))||[],s=t._id;i.includes(s)&&(n.textContent="remove from list"),n.addEventListener("click",()=>{if(i.includes(s)){let t=i.indexOf(s);i.splice(t,1),n.textContent="add to shopping list",o.textContent="The book has been removed from the shopping list."}else i.push(s),n.textContent="remove from list",o.textContent='Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list."';localStorage.setItem("shoppingList",JSON.stringify(i)),console.log("Lista zakup\xf3w w localStorage:",i)});let a=document.getElementById("bookCardContainer");return a.innerHTML="",a.appendChild(e),document.addEventListener("keydown",function(t){if("Escape"===t.key){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),document.addEventListener("click",function(t){if(t.target.classList.contains("modal-card-container")){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),e}!// function test() {
-//   const booksIdArray = localStorage.getItem('shoppingList');
-//   const parsedArrayofBook = JSON.parse(booksIdArray);
-//   return parsedArrayofBook;
-// }
-// function test2(parsedArrayofBookaaaa) {
-//   if (parsedArrayofBookaaaa === null) {
-//     const emptyTemplate = document.querySelector('.empty-shopping-list');
-//     emptyTemplate.classList.add('visible');
-//     return;
-//   } else {
-//     parsedArrayofBookaaaa.forEach(e => createShoppingCard(e));
-//   }
-// }
-// async function creatSchoppingList() {
-//   const parsedArrayofBookaaaa = await test();
-//   console.log(parsedArrayofBookaaaa);
-//   await test2(parsedArrayofBookaaaa);
-//   const trash = document.querySelector('.remove-button');
-//   console.log(trash);
-// }
-// funckja do tworzenia całej sekcji shopping list
-function(){let t=localStorage.getItem("shoppingList"),e=JSON.parse(t);if(console.log(e),null===e||0===e.length){let t=document.querySelector(".empty-shopping-list");t.classList.add("visible");return}e.forEach(t=>eI(t))}();var eD={};eD=new URL("1org.11712742.svg",import.meta.url).toString();var eH={};eH=new URL("support2.6d865306.svg",import.meta.url).toString();var eM={};eM=new URL("support3.a3ca15ad.svg",import.meta.url).toString();var eq={};eq=new URL("support4.16605e64.svg",import.meta.url).toString();var ez={};ez=new URL("support5.0237806b.svg",import.meta.url).toString();var e$={};e$=new URL("support6.2b2d4d01.svg",import.meta.url).toString();var eJ={};eJ=new URL("support7.30f6f4bc.svg",import.meta.url).toString();var eW={};eW=new URL("support8.c13591df.svg",import.meta.url).toString();var eV={};eV=new URL("support9.217f8265.svg",import.meta.url).toString();const eK=[// ... (fundacje charytatywne)
-{title:"",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/e(eD)},{title:"",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/e(eH)},{title:"",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/e(eM)},{title:"",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/e(eq)},{title:"",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/e(ez)},{title:"",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/e(e$)},{title:"",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/e(eJ)},{title:"",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/e(eW)},{title:"",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/e(eV)}],eG=document.getElementById("charitiesSlider");for(;eG.firstChild;)eG.removeChild(eG.firstChild);eK.forEach(t=>{let e=document.createElement("a");e.href=t.url,e.target="_blank";let r=document.createElement("div");r.classList.add("charity-item");let n=document.createElement("img");n.src=t.img,n.alt=t.title;let o=document.createElement("div");o.textContent=t.title,o.classList.add("charity-title"),r.appendChild(n),r.appendChild(o),e.appendChild(r),eG.appendChild(e)});//import { handleSeeMoreButtonClick } from './indexCallbacks';
+  `;let r=e.querySelector(".modal-close-button");r.addEventListener("click",()=>{let t=document.getElementById("bookCardContainer");t.innerHTML=""});let n=e.querySelector(".add-to-cart-button"),o=e.querySelector(".add-to-cart-message"),i=JSON.parse(localStorage.getItem("shoppingList"))||[],s=t._id;i.includes(s)&&(n.textContent="remove from list"),n.addEventListener("click",()=>{if(i.includes(s)){let t=i.indexOf(s);i.splice(t,1),n.textContent="add to shopping list",o.textContent="The book has been removed from the shopping list."}else i.push(s),n.textContent="remove from list",o.textContent='Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list."';localStorage.setItem("shoppingList",JSON.stringify(i)),console.log("Lista zakup\xf3w w localStorage:",i)});let a=document.getElementById("bookCardContainer");return a.innerHTML="",a.appendChild(e),document.addEventListener("keydown",function(t){if("Escape"===t.key){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),document.addEventListener("click",function(t){if(t.target.classList.contains("modal-card-container")){let t=document.getElementById("bookCardContainer");t.innerHTML=""}}),e}!async function(){let t=localStorage.getItem("shoppingList"),r=JSON.parse(t);if(null===r||0===r.length){let t=document.querySelector(".empty-shopping-list");t.classList.add("visible");return}r.forEach(async t=>{let r=await eB(t);!//tworzenie pojedynczej karty książki
+function(t){let r=`<li class="shopList-item" id="${t._id}">
+  <button class="remove-button" type="button" data-book_id="${t._id}">
+  <img class="remove-button__icon" alt="trash icon" src=${/*@__PURE__*/e(ej)} data-book_id="${t._id}"/>
+</button>
+<div class="shopList-item__wrapp">
+<img class="shopList-item__photo" src=${t.book_image} alt="book photo" loading="lazy"/>
+</div>
+<div class="shopList-item__information">
+<h1>${t.title}</h1>
+<p class="shopList-item__category">${t.list_name}</p>
+<div class="shopList-item__summary">
+<p>${t.description}</p>
+</div>
+<div class="shopList-item__wrapper">
+<p class="shopList-item__author">${t.author}</p>
+<div class="shopList-item__icons">
+<a href=${t.amazon_product_url} target="_blank" rel="noreferrer nofollow">
+<img class="amazon-icon icon-shopping" alt="amazon-icon" src=${/*@__PURE__*/e(eN)} />
+</a>
+<a href=${t.buy_links[1].url} target="_blank" rel="noopener noreferrer nofollow">
+<img class="apple-icon icon-shopping" alt="apple-icon" src=${/*@__PURE__*/e(ex)} />
+</a>
+</div>
+</div>
+</div>
+</li>`;eI.innerHTML+=r}(r)}),eI.addEventListener("click",eP)}();var eD={};eD=new URL("1org.11712742.svg",import.meta.url).toString();var eH={};eH=new URL("support2.6d865306.svg",import.meta.url).toString();var eM={};eM=new URL("support3.a3ca15ad.svg",import.meta.url).toString();var eq={};eq=new URL("support4.16605e64.svg",import.meta.url).toString();var e$={};e$=new URL("support5.0237806b.svg",import.meta.url).toString();var ez={};ez=new URL("support6.2b2d4d01.svg",import.meta.url).toString();var eJ={};eJ=new URL("support7.30f6f4bc.svg",import.meta.url).toString();var eW={};eW=new URL("support8.c13591df.svg",import.meta.url).toString();var eV={};eV=new URL("support9.217f8265.svg",import.meta.url).toString();const eK=[// ... (fundacje charytatywne)
+{title:"",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/e(eD)},{title:"",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/e(eH)},{title:"",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/e(eM)},{title:"",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/e(eq)},{title:"",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/e(e$)},{title:"",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/e(ez)},{title:"",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/e(eJ)},{title:"",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/e(eW)},{title:"",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/e(eV)}],eG=document.getElementById("charitiesSlider");for(;eG.firstChild;)eG.removeChild(eG.firstChild);eK.forEach(t=>{let e=document.createElement("a");e.href=t.url,e.target="_blank";let r=document.createElement("div");r.classList.add("charity-item");let n=document.createElement("img");n.src=t.img,n.alt=t.title;let o=document.createElement("div");o.textContent=t.title,o.classList.add("charity-title"),r.appendChild(n),r.appendChild(o),e.appendChild(r),eG.appendChild(e)});//import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
 const eY=document.getElementById("charitiesSlider");//////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
@@ -614,6 +591,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.52a0bffa.js.map
+});*///# sourceMappingURL=index.ea2cbc49.js.map
 
-//# sourceMappingURL=index.52a0bffa.js.map
+//# sourceMappingURL=index.ea2cbc49.js.map
