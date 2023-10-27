@@ -1,4 +1,4 @@
-import apleIcon from '../images/book.png';
+import apleIcon from '../images/apple.png';
 import amazonIcon from '../images/amazon.png';
 export function createBookCard(bookDetails) {
   const bookCard = document.createElement('div');
