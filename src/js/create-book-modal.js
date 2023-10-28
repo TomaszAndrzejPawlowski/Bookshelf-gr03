@@ -1,7 +1,7 @@
 import apleIcon from '../images/apple.svg';
 import amazonIcon from '../images/amazon.svg';
 import barnesAndNoble from '../images/barnesandnoble_logo.svg';
-import booksAMillion from '../images/booksamillion_logo.svg'; //logo zaciągnięte ale strona w api jest błędna więc chyba można pominąć
+import booksAMillion from '../images/booksamillion_logo.svg';
 import bookshop from '../images/bookshop.png';
 import indieBound from '../images/indiebound_logo.svg';
 
@@ -37,6 +37,11 @@ export function createBookCard(bookDetails) {
                   <li>
                     <a href=${bookDetails.buy_links[2].url} target="_blank">
                     <img class="icon-shopping aple-icon" src=${barnesAndNoble} width="16" height="16" alt="Barnes And Noble icon"  rel="noopener noreferrer nofollow"/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href=${bookDetails.buy_links[3].url} target="_blank">
+                    <img class="icon-shopping aple-icon" src=${booksAMillion} width="16" height="16" alt="Books a Million icon"  rel="noopener noreferrer nofollow"/>
                     </a>
                   </li>
                   <li>
