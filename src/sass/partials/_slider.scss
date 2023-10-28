@@ -80,3 +80,52 @@
     margin-left: 40px;
     height: 32px;
 }
+
+
+
+.scroll-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    background-color: #4F2EE8;
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    @include desktop {
+        bottom: 20px;
+        right: 5px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+    }
+    @include tablet {
+        bottom: 20px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+  }
+  
+  .scroll-btn i {
+    margin: 5px;
+    @include desktop {
+        margin: 10px;
+    }
+    @include tablet {
+        margin: 10px;
+    }
+  }
+  
+  
+  .scroll-btn:hover {
+    background-color: white;
+    color: black;
+    border:2px inset #4F2EE8;
+    opacity: 0.8;
+  }
