@@ -99,7 +99,6 @@ fetchBooks('some-category')
 
       const categoryBooksList = document.createElement('ul');
 
-
       if (window.innerWidth <= 768) {
         category.books.slice(0, 1).forEach(book => {
           const bookItem = document.createElement('li');
@@ -306,9 +305,10 @@ function renderCategoriesWithBooks(categoriesData) {
 
 document.getElementById('bestSellers').addEventListener('click', async event => {
   if (event.target.tagName === 'LI') {
-    const selectedCategory = event.target.textContent;
+    let selectedCategory = event.target.textContent;
 
-    if (selectedCategory === 'Best Sellers Books') {
+    if (selectedCategory.toUpperCase() === 'ALL CATEGORIES') {
+      selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
         document.getElementById('bestSellersHeader').textContent = 'Best Sellers Books';
