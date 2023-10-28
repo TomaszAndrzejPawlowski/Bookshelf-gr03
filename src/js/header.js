@@ -36,6 +36,8 @@ const iconLight = document.querySelector('.icon_light');
 const iconDark = document.querySelector('.icon_dark');
 const cartLight = document.querySelector('.lock-icon');
 const cartDark = document.querySelector('.lock_icon-dark');
+const stefanBtn = document.querySelector('.stefan_btn');
+const stefanName = document.querySelector('.stefan_name');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -146,4 +148,29 @@ buttonMobileModalClose.addEventListener('click', () => {
   modalSignupMobile.style.display = 'none';
   hamburgerCloseBtn.style.display = 'none';
   hamburgerOpenBtn.style.display = 'block';
+});
+
+modalBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const userMail = document.getElementById('usermail').value;
+  const password = document.getElementById('password').value;
+  if (username || userMail || password) {
+    alert('log in!');
+
+    modal.style.display = ' none';
+    openModalBtn.style.display = 'none';
+    stefanBtn.style.visibility = 'visible';
+    stefanName.textContent = username;
+  } else {
+    alert('false');
+  }
+});
+
+stefanBtn.addEventListener('click', e => {
+  e.preventDefault();
+  stefanBtn.style.visibility = 'hidden';
+
+  openModalBtn.style.display = 'block';
+  window.location.reload(true);
 });
