@@ -564,10 +564,10 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 });// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
 let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>eX(t.list_name))})}////////////////////////////
 function eZ(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
-        <div>             
+        <div class="list-element">             
           <img src="${t.book_image}" alt="${t.title}" />
-          <h3>${t.title}</h3>
-          <p>Author: ${t.author}</p>
+          <h3 class="book-title">${t.title}</h3>
+          <p class="book-author">Author: ${t.author}</p>
         </div>
       `,e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eB(t._id),n=eF(r);e.appendChild(n)}catch(t){console.error(t)}}),r.appendChild(e)});else{let t=document.createElement("p");t.textContent="No books found in this category.",r.appendChild(t)}}eK.forEach(t=>{let e=document.createElement("div");e.innerHTML=`<a href="${t.url}" target="_blank">${t.title}</a>`,eY.appendChild(e)}),e_().then(t=>{//console.log('Categories Received:', categoriesData);
 !////////////////////////////
@@ -602,6 +602,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.3f4d981d.js.map
+});*///# sourceMappingURL=index.17dc7dd0.js.map
 
-//# sourceMappingURL=index.3f4d981d.js.map
+//# sourceMappingURL=index.17dc7dd0.js.map
