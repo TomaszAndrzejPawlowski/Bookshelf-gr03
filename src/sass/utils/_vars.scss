@@ -25,6 +25,16 @@ img {
   border-radius: 8px;
 }
 
+.visible-flex {
+  display: flex;
+}
+.visible-block {
+  display: block;
+}
+.novisible {
+  display: none;
+}
+
 ////---slider///
 $mainColorSlider: #4f2ee8;
 $backgroundSlider: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%)

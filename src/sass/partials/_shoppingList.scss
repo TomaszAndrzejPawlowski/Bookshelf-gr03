@@ -1,3 +1,7 @@
+.shopping-list {
+  display: none;
+}
+
 .shoplist {
   display: flex;
   flex-direction: column;
@@ -126,7 +130,7 @@
 .shopList-item__icons {
   display: flex;
   gap: 8px;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .shopList-item__icons > a {
@@ -136,6 +140,28 @@
 
 .icon-shopping {
   border-radius: 0;
+}
+
+.amazon-icon {
+  transition: transform 200ms;
+  width: 32px;
+  height: 11px;
+}
+
+.amazon-icon:hover,
+.amazon-icon:focus {
+  transform: scale(1.1);
+}
+
+.apple-icon {
+  transition: transform 200ms;
+  width: 16px;
+  height: 16px;
+}
+
+.apple-icon:hover,
+.apple-icon:focus {
+  transform: scale(1.1);
 }
 
 .empty-shopping-list {
@@ -208,9 +234,9 @@
     text-overflow: ellipsis;
   }
 
-  .aple-icon {
-    width: 27px;
-    height: 27px;
+  .shopList-item__icons {
+    gap: 18px;
+    align-items: center;
   }
 
   .amazon-icon {
@@ -218,8 +244,9 @@
     height: 15px;
   }
 
-  .shopList-item__icons {
-    gap: 18px;
+  .apple-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .empty-shopping-list {

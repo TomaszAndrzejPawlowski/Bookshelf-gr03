@@ -4,7 +4,6 @@ body {
   background-color: #f2f2f2;
 }
 
-
 .home {
   max-width: 1440px;
   margin: 0 auto;
@@ -13,7 +12,6 @@ body {
   border: 1px solid #ddd;
 
   @include tablet {
-         
   }
 
   @include desktop {
@@ -43,7 +41,6 @@ body {
   }
 }
 
-
 .books-list {
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +68,6 @@ body {
   }
 }
 
-
 .left-section {
   width: 335px;
   height: 528px;
@@ -96,7 +92,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
+  background: #e0e0e0;
   border-radius: 10px;
 }
 
@@ -105,14 +101,11 @@ body {
   background: e9e9e0;
 }
 
-
-
 /*  stylizacja listy kategorii */
 .categories-block {
   overflow-y: scroll;
   width: 356px;
   height: 472px;
-
 }
 
 .categories-block li {
@@ -138,10 +131,9 @@ body {
   width: 356px;
 }
 
-
 //category books title
 .main-title {
-  color:#111111;
+  color: #111111;
   white-space: nowrap;
   max-width: 400px;
   font-size: 32px;
@@ -153,11 +145,8 @@ body {
 }
 
 .main-title :last-child {
-    color: #4F2EE8;
-  }
-
-
-
+  color: #4f2ee8;
+}
 
 .image-container {
   display: flex;
@@ -177,17 +166,16 @@ body {
 }
 
 .book-author {
-color:#b4afaf;  
-font-size: 12px;
-font-style: italic;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: -0.04em;
-padding-bottom: 20px;
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  padding-bottom: 20px;
 }
 
 .category-section {
-  
   margin-left: 10px;
   margin-bottom: 10px;
 }
@@ -200,20 +188,20 @@ padding-bottom: 20px;
   line-height: 24px;
   letter-spacing: 0.03em;
   margin: 10px 0;
-  
 }
 
 .category-list {
-  display: grid;  
+  display: grid;
   //justify-items: center;
-justify-content: space-evenly;  
-align-items: stretch;                       // był flex
-  grid-template-columns: 1fr;            // dodane
+  justify-content: space-evenly;
+  align-items: stretch; // był flex
+  grid-template-columns: 1fr; // dodane
   list-style: none;
   overflow: hidden;
 
-  @include tablet {                       // dla tablet i desktop dodane
-    grid-template-columns: repeat(3, 1fr); 
+  @include tablet {
+    // dla tablet i desktop dodane
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @include desktop {
@@ -222,11 +210,28 @@ align-items: stretch;                       // był flex
 }
 
 .category-button {
-  position: absolute;
+  position: relative;
+  border-radius: 40px;
+  border: 2px solid;
+  border-color: #4f2ee8;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 14px 28px 14px 28px;
+  background-color: transparent;
+  right: -200px;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  @include desktop {
+    margin-top: 32px;
+    left: 850px;
+  }
 }
 
 .image-container {
-
   // Dla tabletów (szerokość powyżej 768px)
   @include tablet {
     width: 218px;
