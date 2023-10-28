@@ -4,6 +4,8 @@ import '../sass/partials/_header.scss';
 import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
+import './swipper';
+import './scroll-up';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
