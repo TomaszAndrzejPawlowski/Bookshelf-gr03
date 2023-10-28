@@ -335,10 +335,10 @@ function renderBooks(booksData, category) {
       const bookItem = document.createElement('li');
 
       bookItem.innerHTML = `
-        <div>             
+        <div class="list-element">             
           <img src="${book.book_image}" alt="${book.title}" />
-          <h3>${book.title}</h3>
-          <p>Author: ${book.author}</p>
+          <h3 class="book-title">${book.title}</h3>
+          <p class="book-author">Author: ${book.author}</p>
         </div>
       `;
 
