@@ -1,5 +1,10 @@
 import apleIcon from '../images/apple.svg';
 import amazonIcon from '../images/amazon.svg';
+import barnesAndNoble from '../images/barnesandnoble_logo.svg';
+import booksAMillion from '../images/booksamillion_logo.svg'; //logo zaciągnięte ale strona w api jest błędna więc chyba można pominąć
+import bookshop from '../images/bookshop.png';
+import indieBound from '../images/indiebound_logo.svg';
+
 export function createBookCard(bookDetails) {
   const bookCard = document.createElement('div');
   bookCard.classList.add('book-card');
@@ -29,6 +34,21 @@ export function createBookCard(bookDetails) {
                     <img class="icon-shopping aple-icon" src=${apleIcon} width="16" height="16" alt="aple icon"  rel="noopener noreferrer nofollow"/>
                     </a>
                   </li>
+                  <li>
+                    <a href=${bookDetails.buy_links[2].url} target="_blank">
+                    <img class="icon-shopping aple-icon" src=${barnesAndNoble} width="16" height="16" alt="Barnes And Noble icon"  rel="noopener noreferrer nofollow"/>
+                    </a>
+                  </li>
+                  <li>
+                  <a href=${bookDetails.buy_links[4].url} target="_blank">
+                  <img class="icon-shopping aple-icon" src=${bookshop} width="16" height="16" alt="Bookshop icon"  rel="noopener noreferrer nofollow"/>
+                  </a>
+                </li>
+                <li>
+                  <a href=${bookDetails.buy_links[5].url} target="_blank">
+                  <img class="icon-shopping aple-icon" src=${indieBound} width="25" height="25" alt="IndieBound icon"  rel="noopener noreferrer nofollow"/>
+                  </a>
+                </li>
                 </ul>
             </div>
             </div>
