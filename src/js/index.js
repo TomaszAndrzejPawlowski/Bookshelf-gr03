@@ -188,6 +188,8 @@ fetchBooks('some-category')
           const image = document.createElement('img');
           image.src = book.book_image;
           image.alt = book.title;
+          image.height = '256';
+          image.width = '180';
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
           h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
@@ -267,7 +269,7 @@ function renderCategoriesWithBooks(categoriesData) {
       bookItem.classList.add('book-item');
       bookItem.innerHTML = `
         <div>                    
-          <img src="${book.book_image}" alt="${book.title}" />
+          <img src="${book.book_image}" width="180px" height="256px" alt="${book.title}" />
           <h3>${book.title}</h3>
           <p>Author: ${book.author}</p>
         </div>
@@ -336,7 +338,7 @@ function renderBooks(booksData, category) {
 
       bookItem.innerHTML = `
         <div class="list-element">             
-          <img src="${book.book_image}" alt="${book.title}" />
+          <img class="list-element__img" src="${book.book_image}" alt="${book.title}" />
           <h3 class="book-title">${book.title}</h3>
           <p class="book-author">Author: ${book.author}</p>
         </div>

@@ -27,7 +27,7 @@ body {
 
   @include tablet {
     flex-direction:row;
-    justify-content: space-around;
+    // justify-content: space-around;
   }
 
   @include desktop {
@@ -46,24 +46,37 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
-
+    flex-direction: column;
+    align-items: center;
     @include tablet {
     flex-direction:row;
-
-      .list-element {
-      width: 218px;
-      height: 366px;
-      //padding:0 10px;
-    }
   }
     @include desktop {
     flex-direction: row;
+  }
+}
 
-    .list-element {
+.list-element {
+  // width: 380px;
+
+  @include tablet {
+    width: 230px;
+  }
+  @include desktop { 
+    width: 180px;
+    padding: 0 10px; 
+    justify-content: center; 
+  }
+  &__img {
+    width: 335px;
+    height: 485px;
+    @include tablet {
+      width: 218px;
+      height: 316px;
+    }
+    @include desktop {
       width: 180px;
-      height: 306px;
-      padding:0 10px;
-      justify-content: center;
+      height: 256px;
     }
   }
 }
