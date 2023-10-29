@@ -1,5 +1,5 @@
 .is_hidden {
-  visibility: hidden;
+  display: none;
 }
 .icon_light {
   display: block;
@@ -51,8 +51,14 @@
 .logo_dark {
   display: none;
 }
+.light_mode {
+  width: 40px;
+  height: 24px;
+}
 .dark_mode {
   display: none;
+  width: 40px;
+  height: 24px;
 }
 .btn_log-out-desktop {
   display: none;
@@ -156,11 +162,20 @@
 .lock-icon {
   margin-left: 5%;
 }
-// .switcher_button {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+
+.menu_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10;
+}
+
+.switcher_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #themeSwitch {
   display: flex;
@@ -168,46 +183,43 @@
   justify-content: center;
   opacity: 0;
 }
-.menu_flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 20;
-}
 .button_login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
+  margin-left: 20px;
   background-color: inherit;
 }
 .stefan_btn {
-  visibility: hidden;
+  display: none;
   width: 184px;
   height: 48px;
   background-color: #4f2ee8;
   border-radius: 150px 150px 150px 150px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   border: 1px solid black;
   gap: 40px;
 }
 .stefan {
+  position: absolute;
+  top: 8;
+  left: 5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .stefan_name {
+  position: absolute;
+  top: 12;
+  left: 60;
+  color: white;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 .arrow_stefan {
+  position: absolute;
+  top: 9;
+  right: 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,19 +233,26 @@
   fill: white;
 }
 .modal_signup {
+  position: absolute;
+  z-index: 5;
+  top: 70;
+  background-color: #f6f6f6;
   width: 579px;
+  border-radius: 150px 150px 150px 150px;
+  height: 100px;
+}
+.modal_signup-wrapper {
+  width: inherit;
 
   border: 2px solid black;
   border-radius: 18px;
-  position: absolute;
-  z-index: 5;
-  top: 100%;
-  background-color: #f6f6f6;
+
+  background-color: inherit;
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
-
 .modal_signup-form {
   position: relative;
   display: flex;
@@ -381,7 +400,7 @@
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
   .is_hidden {
-    visibility: hidden;
+    display: none;
   }
 
   .header_wrapper {
@@ -451,6 +470,9 @@
     margin-left: 5%;
     background-color: #4f2ee8;
     border: none;
+  }
+  .modal_signup {
+    display: none;
   }
   .modal_signup-mobile {
     display: none;
