@@ -172,7 +172,7 @@ modalBtn.addEventListener('click', e => {
 
     modal.style.display = ' none';
     openModalBtn.style.display = 'none';
-    stefanBtn.style.visibility = 'visible';
+    stefanBtn.style.display = 'block';
     stefanName.textContent = username;
   } else {
     alert('false');
@@ -181,7 +181,7 @@ modalBtn.addEventListener('click', e => {
 
 stefanBtn.addEventListener('click', e => {
   e.preventDefault();
-  stefanBtn.style.visibility = 'hidden';
+  stefanBtn.style.display = 'none';
 
   openModalBtn.style.display = 'block';
   window.location.reload(true);
