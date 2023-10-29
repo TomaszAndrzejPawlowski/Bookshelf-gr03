@@ -609,7 +609,7 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 o.classList.add("category-list"),r.appendChild(o);// Dodanie przycisku "See more" dla całego zestawu książek
 let i=document.createElement("button");i.className="category-button",i.innerText="See more",r.appendChild(i),i.addEventListener("click",()=>e1(t.list_name)),// Dodaj sekcję kategorii do kontenera
 e.appendChild(r)})}).catch(t=>{// Obsługa błędów
-console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("ALL CATEGORIES"===e.toUpperCase()){e="Best Sellers Book";try{let t=await eU("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",e2(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}}else{let t=await eU(e);document.getElementById("bestSellersHeader").textContent=e,e2(t,"booksList")}}}),document.querySelectorAll(".category");const e8=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await e_(t);// usuwamy klasę selected-category od wszystkich kategorii
+console.error("Error in promise chain:",t)}),document.getElementById("bestSellers").addEventListener("click",async t=>{if("LI"===t.target.tagName){let e=t.target.textContent;if("All categories"===e){e="Best Sellers Book";try{let t=await eU("best-sellers");document.getElementById("bestSellersHeader").textContent="Best Sellers Books",e2(t,"booksList")}catch(t){console.error("Error fetching best sellers:",t),alert("Failed to fetch best sellers. Please try again.")}}else{let t=await eU(e);document.getElementById("bestSellersHeader").textContent=e,e2(t,"booksList")}}}),document.querySelectorAll(".category");const e8=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async t=>{let e=t.target.closest(".category, .categoryTop");if(e){let t=e.textContent,r=await e_(t);// usuwamy klasę selected-category od wszystkich kategorii
 document.querySelectorAll(".category, .categoryTop").forEach(t=>{t.classList.remove("selected-category")}),e8.textContent=t,e6(r,t),// dodana  klasa selected-category tylko do klikniętej kategorii
 e.classList.add("selected-category")}});///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ciemny motyw
@@ -622,6 +622,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.a4ae77de.js.map
+});*///# sourceMappingURL=index.59770029.js.map
 
-//# sourceMappingURL=index.a4ae77de.js.map
+//# sourceMappingURL=index.59770029.js.map
