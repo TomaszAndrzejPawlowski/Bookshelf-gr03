@@ -28,10 +28,13 @@ body {
   @include tablet {
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 60px;
   }
 
   @include desktop {
     flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0;
   }
 }
 
@@ -88,10 +91,10 @@ body {
   }
 }
 
-.left-section {
-  width: 335px;
-  height: 528px;
-}
+// .left-section {
+//   width: 335px;
+//   height: 528px;
+// }
 
 .categories-title {
   color: #4f2ee8;
@@ -124,25 +127,44 @@ body {
 /*  stylizacja listy kategorii */
 .categories-block {
   overflow-y: scroll;
-  width: 356px;
-  height: 472px;
+  width: 335px;
+  height: 228px;
+  margin-bottom: 40px;
+  @include tablet {
+    width: 337px;
+    height: 472px;
+    margin-bottom: 0px;
+  }
+  @include desktop {
+    width: 356px;
+    height: 472px;
+    margin-bottom: 86px;
+  }
 }
 
 .categories-block li {
   //color: #202024;
   font-size: 18px;
   list-style: none;
-  line-height: 32px;
-  padding: 18px 0;
+  line-height: 18px;
+  padding: 12px 0;
   cursor: pointer;
+  @include tablet {
+      padding: 18px 0;
+      line-height: 24px;
+    }
+}
+.categories-block li:first-child {
+  padding-top: 0;
+}
+.categories-block li:last-child {
+  padding-bottom: 0;
 }
 
 .categories-block li:hover {
   color: var(--violet);
   font-size: 18px;
   list-style: none;
-  line-height: 32px;
-  padding: 18px 0;
   cursor: pointer;
 }
 
