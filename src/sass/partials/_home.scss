@@ -23,19 +23,25 @@ body {
 .common-container {
       display: flex;
       flex-direction:column;
-      align-items:center;
+      height: 1032px;
+  align-items:center;
 
   @include tablet {
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-around;
+    height: 500px;
   }
 
   @include desktop {
     flex-direction: column;
+    height: 1000px;
   }
 }
 
 .book-list-block {
+
+   display: flex;
+  
   @include desktop {
     padding-left: 120px;
   }
@@ -62,15 +68,18 @@ body {
     .list-element {
       width: 180px;
       height: 306px;
-      padding:0 10px;
+      padding: 0 10px;
       justify-content: center;
     }
   }
 }
 
+
+
+
 .left-section {
   width: 335px;
-  height: 528px;
+  height: 472px;
 }
 
 .categories-title {
@@ -127,7 +136,7 @@ body {
 }
 
 .charities-slider-block {
-  padding: 142px 20px 0 20px;
+  //padding: 142px 20px 0 20px;
   width: 356px;
 }
 
@@ -144,9 +153,6 @@ body {
   padding: 40px 0 40px 20px;
 }
 
-.main-title :last-child {
-  color: #4f2ee8;
-}
 
 .image-container {
   display: flex;
@@ -163,6 +169,19 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   padding: 14px 0 4px 0;
+
+  @include tablet {
+    width: 316px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @include desktop {
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .book-author {
@@ -173,11 +192,23 @@ body {
   line-height: 14px;
   letter-spacing: -0.04em;
   padding-bottom: 20px;
+
+   @include tablet {
+    max-width: 316px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @include desktop {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .category-section {
   margin-left: 10px;
   margin-bottom: 10px;
+  margin-right: 24px;
 }
 
 .category-title {
