@@ -1,9 +1,12 @@
 let isScrolled = false;
 
+const arrow = document.querySelector('.arrow');
+arrow.addEventListener('click', scrollSlider);
+
 function scrollSlider() {
     const slider = document.getElementById('charitiesSlider');
     const sliderItemHeight = slider.children[0].offsetHeight;
-    const scrollAmount = 6 * sliderItemHeight; // Przewiń o wysokość 3 elementów
+    const scrollAmount = 5 * sliderItemHeight; // Przewiń o wysokość 6 elementów
 
     if (!isScrolled) {
         slider.style.transform = `translateY(-${scrollAmount}px)`;

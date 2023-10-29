@@ -311,7 +311,7 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
   if (event.target.tagName === 'LI') {
     let selectedCategory = event.target.textContent;
 
-    if (selectedCategory.toUpperCase() === 'ALL CATEGORIES') {
+    if (selectedCategory === 'All categories') {
       selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
