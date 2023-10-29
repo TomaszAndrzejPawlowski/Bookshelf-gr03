@@ -4,74 +4,77 @@
       <a href=""><img class="logo_light" src="./images/logo_light.svg" /></a>
       <a href=""><img class="logo_dark" src="./images/logo_dark.svg" /></a>
     </div>
-    <div class="modal_signup is_hidden" data-modal>
-      <button class="modal_singup_close" type="submit" data-modal-close>
-        <img class="icon_light" src="./images/icon_x-close.svg" width="40" height="24" />
-        <img class="icon_dark" src="./images/icon-x-close-white.svg" width="40" height="24" />
-      </button>
-      <form class="modal_signup-form">
-        <fieldset class="modal_signup-field-name">
-          <!-- <label class="modal_signup-name" for="username">NAME</label> -->
-          <input
-            class="modal_input-name"
-            type="text"
-            name="username"
-            id="username"
-            placeholder="NAME"
-          />
-        </fieldset>
-        <fieldset class="modal_signup-field-email">
-          <!-- <label class="modal_signup-email" for="usermail">EMAIL</label> -->
-          <input
-            class="modal_input-mail"
-            type="email"
-            name="usermail"
-            id="usermail"
-            placeholder="EMAIL"
-          />
-          <img
-            class="modal_input-icon-mail"
-            src="./images/icon_mail-02.svg"
-            width="28"
-            height="28"
-          />
-          <img
-            class="modal_input-icon-mail-white"
-            src="./images/mail-02-white.svg"
-            width="28"
-            height="28"
-          />
-        </fieldset>
-        <fieldset class="modal_signup-field-pass">
-          <!-- <label class="modal_signup-password">PASSWORD</label> -->
 
-          <input
-            class="modal_input-pass"
-            type="password"
-            name="password"
-            id="password"
-            autocomplete="off"
-            placeholder="PASSWORD"
-          />
-          <img
-            class="modal_input-icon-pass"
-            src="./images/icon_lock-02.svg"
-            width="28"
-            height="28"
-          />
-          <img
-            class="modal_input-icon-pass-white"
-            src="./images/lock-02-white.svg"
-            width="28"
-            height="28"
-          />
-        </fieldset>
-        <button type="submit" class="modal_btn">SIGN IN</button>
-        <ul class="modal_list">
-          <a class="modal_link" href=""><li>SIGN UP</li></a>
-          <a class="modal_link" href=""><li>SIGN IN</li></a>
-        </ul>
-      </form>
+    <div class="modal_signup is_hidden" data-modal>
+      <div class="modal_signup-wrapper">
+        <button class="modal_singup_close" type="submit" data-modal-close>
+          <img class="icon_light" src="./images/icon_x-close.svg" width="40" height="24" />
+          <img class="icon_dark" src="./images/icon-x-close-white.svg" width="40" height="24" />
+        </button>
+        <form class="modal_signup-form">
+          <fieldset class="modal_signup-field-name">
+            <!-- <label class="modal_signup-name" for="username">NAME</label> -->
+            <input
+              class="modal_input-name"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="NAME"
+            />
+          </fieldset>
+          <fieldset class="modal_signup-field-email">
+            <!-- <label class="modal_signup-email" for="usermail">EMAIL</label> -->
+            <input
+              class="modal_input-mail"
+              type="email"
+              name="usermail"
+              id="usermail"
+              placeholder="EMAIL"
+            />
+            <img
+              class="modal_input-icon-mail"
+              src="./images/icon_mail-02.svg"
+              width="28"
+              height="28"
+            />
+            <img
+              class="modal_input-icon-mail-white"
+              src="./images/mail-02-white.svg"
+              width="28"
+              height="28"
+            />
+          </fieldset>
+          <fieldset class="modal_signup-field-pass">
+            <!-- <label class="modal_signup-password">PASSWORD</label> -->
+
+            <input
+              class="modal_input-pass"
+              type="password"
+              name="password"
+              id="password"
+              autocomplete="off"
+              placeholder="PASSWORD"
+            />
+            <img
+              class="modal_input-icon-pass"
+              src="./images/icon_lock-02.svg"
+              width="28"
+              height="28"
+            />
+            <img
+              class="modal_input-icon-pass-white"
+              src="./images/lock-02-white.svg"
+              width="28"
+              height="28"
+            />
+          </fieldset>
+          <button type="submit" class="modal_btn">SIGN IN</button>
+          <ul class="modal_list">
+            <a class="modal_link" href=""><li>SIGN UP</li></a>
+            <a class="modal_link" href=""><li>SIGN IN</li></a>
+          </ul>
+        </form>
+      </div>
     </div>
     <div class="modal_mobile">
       <div class="modal_mobile-flex">
@@ -164,6 +167,7 @@
           <img src="./images/button_sign_up.svg" width="184" height="48" />
         </button>
       </div>
+
       <button type="submit" class="stefan_btn">
         <img class="stefan" src="./images/stephen.svg" width="30" height="30" />
         <span class="stefan_name">-</span
