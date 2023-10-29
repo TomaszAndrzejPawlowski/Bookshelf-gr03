@@ -1,3 +1,12 @@
+@import '../utils/mixins';
+.mobile_nav {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
 .is_hidden {
   visibility: hidden;
 }
@@ -15,6 +24,29 @@
 }
 .modal_signup-mobile {
   display: none;
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+.modal_signup-form-mobile {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+.modal_singup_close-mobile {
+  @include tablet {
+      display: none;
+    }
+  
+    @include desktop {
+      display: none;
+    }
 }
 .modal_input-icon-pass-white {
   display: none;
