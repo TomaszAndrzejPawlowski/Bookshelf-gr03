@@ -60,17 +60,9 @@
 .hamburger_open-svg-white {
   display: none;
 }
-.backdrop {
-  visibility: visible;
-  position: fixed;
-  display: flex;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(106, 82, 190);
 
-  z-index: 2;
+.img_dark-close {
+  display: none;
 }
 
 .dark-mode {
@@ -120,6 +112,7 @@
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
   background-color: #f6f6f6;
+  z-index: 101;
 }
 
 .logo {
@@ -264,9 +257,20 @@
 .lock-icon {
   fill: white;
 }
+
+.backdrop {
+  position: fixed;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(106, 82, 190);
+  z-index: 10;
+}
 .modal_signup {
   position: absolute;
-  z-index: 5;
+  z-index: 20;
   top: 70;
   background-color: #f6f6f6;
   width: 579px;
@@ -281,7 +285,7 @@
 
   background-color: inherit;
   display: flex;
-
+  z-index: 55;
   align-items: center;
   justify-content: center;
 }
@@ -513,9 +517,10 @@
     border-radius: 18px;
     position: absolute;
     top: 100%;
+    top: 70;
     margin: 0 auto;
     background-color: #333;
-    z-index: 105;
+    z-index: 25;
   }
 
   .modal_signup-form-mobile {
