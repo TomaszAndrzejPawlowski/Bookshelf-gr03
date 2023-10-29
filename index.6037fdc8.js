@@ -584,8 +584,10 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 });// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
 let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>e8(t.list_name))})}////////////////////////////
 function e3(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
-        <div class="list-element">             
-          <img class="list-element__img" src="${t.book_image}" alt="${t.title}" />
+        <div class="category-container">
+          <div class="image-container">         
+            <img src="${t.book_image}" alt="${t.title}" />
+          </div>
           <h3 class="book-title">${t.title}</h3>
           <p class="book-author">Author: ${t.author}</p>
         </div>
@@ -625,6 +627,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.8f57d884.js.map
+});*///# sourceMappingURL=index.6037fdc8.js.map
 
-//# sourceMappingURL=index.8f57d884.js.map
+//# sourceMappingURL=index.6037fdc8.js.map
