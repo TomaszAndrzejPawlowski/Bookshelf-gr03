@@ -181,6 +181,7 @@ modalBtn.addEventListener('click', e => {
     openModalBtn.style.display = 'none';
     stefanBtn.style.display = 'block';
     stefanName.textContent = username;
+    backdrop.style.display = 'none';
   } else {
     alert('false');
   }
