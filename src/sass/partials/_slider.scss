@@ -7,18 +7,16 @@
     border-radius: 16px;
     background: $backgroundSlider;
     color: #ccc;
-    margin-left: -10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
     @include tablet {
         width: 335px; // szerokość slidera
         height: 474px; // wysokość slidera
-        margin-left: 40px;
     }
 
     @include desktop {
         width: 356px; // szerokość slidera
         height: 474px; // wysokość slidera
-        margin-left: 0px;
     }
     
     &_head {
