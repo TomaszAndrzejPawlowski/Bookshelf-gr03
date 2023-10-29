@@ -21,13 +21,13 @@ body {
 
 //dodanie klasy common-container obejmującej listę gatunków i slider support
 .common-container {
-      display: flex;
-      flex-direction:column;
-      align-items:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include tablet {
-    flex-direction:row;
-    // justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   @include desktop {
@@ -42,16 +42,21 @@ body {
 }
 
 .books-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;
-    flex-direction: column;
-    align-items: center;
-    @include tablet {
-    flex-direction:row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+
+  @include tablet {
+    flex-direction: row;
+
+    .list-element {
+      width: 218px;
+      height: 366px;
+      //padding:0 10px;
+    }
   }
-    @include desktop {
+  @include desktop {
     flex-direction: row;
   }
 }
@@ -76,7 +81,9 @@ body {
     }
     @include desktop {
       width: 180px;
-      height: 256px;
+      height: 306px;
+      padding: 0 10px;
+      justify-content: center;
     }
   }
 }
@@ -122,7 +129,7 @@ body {
 }
 
 .categories-block li {
-  color: #202024;
+  //color: #202024;
   font-size: 18px;
   list-style: none;
   line-height: 32px;
@@ -266,4 +273,19 @@ body {
   /* Domyślna szerokość obrazków */
   height: 485px;
   object-fit: contain;
+}
+
+.category {
+  color: #202024;
+}
+.categoryTop {
+  color: #202024;
+}
+.category.selected-category {
+  font-weight: bold;
+  color: #4f2ee8;
+}
+.categoryTop.selected-category {
+  font-weight: bold;
+  color: #4f2ee8;
 }

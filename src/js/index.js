@@ -4,6 +4,8 @@ import '../sass/partials/_header.scss';
 import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
+import './swipper';
+import './scroll-up';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
@@ -98,7 +100,6 @@ fetchBooks('some-category')
       categorySection.appendChild(categoryTitle);
 
       const categoryBooksList = document.createElement('ul');
-
 
       if (window.innerWidth <= 768) {
         category.books.slice(0, 1).forEach(book => {
@@ -308,9 +309,10 @@ function renderCategoriesWithBooks(categoriesData) {
 
 document.getElementById('bestSellers').addEventListener('click', async event => {
   if (event.target.tagName === 'LI') {
-    const selectedCategory = event.target.textContent;
+    let selectedCategory = event.target.textContent;
 
-    if (selectedCategory === 'Best Sellers Books') {
+    if (selectedCategory.toUpperCase() === 'ALL CATEGORIES') {
+      selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
         document.getElementById('bestSellersHeader').textContent = 'Best Sellers Books';
