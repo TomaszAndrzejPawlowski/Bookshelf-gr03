@@ -70,10 +70,10 @@ body {
   @include tablet {
     width: 230px;
   }
-  @include desktop { 
+  @include desktop {
     width: 180px;
-    padding: 0 10px; 
-    justify-content: center; 
+    padding: 0 10px;
+    justify-content: center;
   }
   &__img {
     width: 335px;
@@ -150,9 +150,9 @@ body {
   padding: 12px 0;
   cursor: pointer;
   @include tablet {
-      padding: 18px 0;
-      line-height: 24px;
-    }
+    padding: 18px 0;
+    line-height: 24px;
+  }
 }
 .categories-block li:first-child {
   padding-top: 0;
@@ -306,8 +306,10 @@ body {
 .category.selected-category {
   font-weight: bold;
   color: #4f2ee8;
+  text-transform: uppercase;
 }
 .categoryTop.selected-category {
   font-weight: bold;
   color: #4f2ee8;
+  text-transform: uppercase;
 }
