@@ -574,7 +574,7 @@ function e1(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".cat
 // ksiaki w best selerss, po kliknieciu w best selerss
 function e2(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <div>                    
-          <img src="${t.book_image}" alt="${t.title}" />
+          <img src="${t.book_image}" width="180px" height="256px" alt="${t.title}" />
           <h3>${t.title}</h3>
           <p>Author: ${t.author}</p>
         </div>
@@ -585,7 +585,7 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),r.appendChild(i),i.addEventListener("click",()=>e1(t.list_name))})}////////////////////////////
 function e6(t,e){let r=document.getElementById("booksList");if(r.innerHTML="",t&&t.length>0)t.forEach(t=>{let e=document.createElement("li");e.innerHTML=`
         <div class="list-element">             
-          <img src="${t.book_image}" alt="${t.title}" />
+          <img class="list-element__img" src="${t.book_image}" alt="${t.title}" />
           <h3 class="book-title">${t.title}</h3>
           <p class="book-author">Author: ${t.author}</p>
         </div>
@@ -602,7 +602,7 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 }):window.innerWidth>768&&window.innerWidth<=1200?t.books.slice(0,3).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
 e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eT(t._id),n=e$(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
-}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
+}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li"),r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title,n.height="256",n.width="180";let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
 e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eT(t._id),n=e$(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }),// Dodanie klasę "category-list" do elementu <ul>
@@ -622,6 +622,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.2d47df1a.js.map
+});*///# sourceMappingURL=index.a4ae77de.js.map
 
-//# sourceMappingURL=index.2d47df1a.js.map
+//# sourceMappingURL=index.a4ae77de.js.map
