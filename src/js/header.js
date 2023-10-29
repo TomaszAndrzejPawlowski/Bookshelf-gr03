@@ -1,4 +1,5 @@
 const themeSwitch = document.getElementById('themeSwitch');
+const backdrop = document.querySelector('.backdrop');
 const isDarkMode = localStorage.getItem('darkMode') === 'true';
 const switchLight = document.querySelector('.light_mode');
 const switchDark = document.querySelector('.dark_mode');
@@ -134,9 +135,12 @@ themeSwitch.addEventListener('change', () => {
 
 openModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
+  backdrop.style.display = 'block';
+  modal.style.position = 'fixed';
 });
 closeModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
+  backdrop.style.display = 'none';
 });
 
 hamburgerOpenBtn.addEventListener('click', () => {
@@ -154,12 +158,15 @@ hamburgerCloseBtn.addEventListener('click', () => {
 buttonMobileModal.addEventListener('click', () => {
   modalSignupMobile.style.display = 'block';
   modalMobile.style.display = 'none';
+  backdrop.style.display = 'block';
+  modalSignupMobile.style.position = 'fixed';
 });
 
 buttonMobileModalClose.addEventListener('click', () => {
   modalSignupMobile.style.display = 'none';
   hamburgerCloseBtn.style.display = 'none';
   hamburgerOpenBtn.style.display = 'block';
+  backdrop.style.display = 'none';
 });
 
 modalBtn.addEventListener('click', e => {
