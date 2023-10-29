@@ -4,6 +4,8 @@ import '../sass/partials/_header.scss';
 import { createBookCard } from './create-book-modal';
 import { charities } from './charity-gallery';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
+import './swipper';
+import './scroll-up';
 //import { handleSeeMoreButtonClick } from './indexCallbacks';
 //export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
@@ -99,7 +101,6 @@ fetchBooks('some-category')
 
       const categoryBooksList = document.createElement('ul');
 
-
       if (window.innerWidth <= 768) {
         category.books.slice(0, 1).forEach(book => {
           const bookItem = document.createElement('li');
@@ -188,6 +189,8 @@ fetchBooks('some-category')
           const image = document.createElement('img');
           image.src = book.book_image;
           image.alt = book.title;
+          image.height = '256';
+          image.width = '180';
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
           h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
@@ -267,7 +270,7 @@ function renderCategoriesWithBooks(categoriesData) {
       bookItem.classList.add('book-item');
       bookItem.innerHTML = `
         <div>                    
-          <img src="${book.book_image}" alt="${book.title}" />
+          <img src="${book.book_image}" width="180px" height="256px" alt="${book.title}" />
           <h3>${book.title}</h3>
           <p>Author: ${book.author}</p>
         </div>
@@ -306,9 +309,10 @@ function renderCategoriesWithBooks(categoriesData) {
 
 document.getElementById('bestSellers').addEventListener('click', async event => {
   if (event.target.tagName === 'LI') {
-    const selectedCategory = event.target.textContent;
+    let selectedCategory = event.target.textContent;
 
-    if (selectedCategory === 'Best Sellers Books') {
+    if (selectedCategory === 'All categories') {
+      selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
         document.getElementById('bestSellersHeader').textContent = 'Best Sellers Books';
@@ -338,7 +342,7 @@ function renderBooks(booksData, category) {
         <div class="category-container">
           <div class="image-container">         
             <img src="${book.book_image}" alt="${book.title}" />
-          </div> 
+          </div>
           <h3 class="book-title">${book.title}</h3>
           <p class="book-author">Author: ${book.author}</p>
         </div>
@@ -371,6 +375,10 @@ function renderBooks(booksData, category) {
 ////////////////////////////////////// Dodanie obsługi zdarzenia dla każdej kategorii, dodanie ksiazek z danej kategori, pogrubienie trzcionki kazdej kategori i pierwszej kategoti
 const categoryElements = document.querySelectorAll('.category');
 const bestSellersHeader = document.getElementById('bestSellersHeader');
+function getLastWord(text) {
+  const words = text.split(' ');
+  return words[words.length - 1];
+}
 
 document.getElementById('categoriesList').addEventListener('click', async event => {
   const clickedCategory = event.target.closest('.category, .categoryTop');
@@ -378,16 +386,24 @@ document.getElementById('categoriesList').addEventListener('click', async event 
   if (clickedCategory) {
     const selectedCategory = clickedCategory.textContent;
     const booksData = await fetchBooksData(selectedCategory);
+    const lastWord = getLastWord(selectedCategory);
 
-    // usuwamy klasę selected-category od wszystkich kategorii
-    document.querySelectorAll('.category, .categoryTop').forEach(element => {
-      element.classList.remove('selected-category');
-    });
+    // Usuwa klasę selected-category od wszystkich elementów o klasie 'category' lub 'categoryTop'
+    document
+      .querySelectorAll('.category, .categoryTop')
+      .forEach(element => element.classList.remove('selected-category'));
 
-    bestSellersHeader.textContent = selectedCategory;
+    // Ustawia treść nagłówka
+    bestSellersHeader.innerHTML = `
+  ${selectedCategory.replace(
+    new RegExp(`${lastWord}$`),
+    `<span class="blue-text">${lastWord}</span>`,
+  )}
+`;
+
     renderBooks(booksData, selectedCategory);
 
-    // dodana  klasa selected-category tylko do klikniętej kategorii
+    // Dodaje klasę 'selected-category' tylko do klikniętej kategorii
     clickedCategory.classList.add('selected-category');
   }
 });
