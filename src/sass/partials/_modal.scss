@@ -3,7 +3,7 @@
   height: 100%;
   opacity: 1;
   cursor: pointer;
-  z-index: 20;
+  z-index: 1000;
   background-color: #1116;
   padding: 94px 15px;
   position: fixed;
@@ -67,7 +67,7 @@
   color: var(--white);
 }
 .popup-img {
-  max-width: 287px;
+  max-width: 250px;
   min-height: 408px;
   border: none;
   margin-bottom: 14px;
