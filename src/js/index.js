@@ -373,6 +373,10 @@ function renderBooks(booksData, category) {
 ////////////////////////////////////// Dodanie obsługi zdarzenia dla każdej kategorii, dodanie ksiazek z danej kategori, pogrubienie trzcionki kazdej kategori i pierwszej kategoti
 const categoryElements = document.querySelectorAll('.category');
 const bestSellersHeader = document.getElementById('bestSellersHeader');
+function getLastWord(text) {
+  const words = text.split(' ');
+  return words[words.length - 1];
+}
 
 document.getElementById('categoriesList').addEventListener('click', async event => {
   const clickedCategory = event.target.closest('.category, .categoryTop');
@@ -380,16 +384,24 @@ document.getElementById('categoriesList').addEventListener('click', async event 
   if (clickedCategory) {
     const selectedCategory = clickedCategory.textContent;
     const booksData = await fetchBooksData(selectedCategory);
+    const lastWord = getLastWord(selectedCategory);
 
-    // usuwamy klasę selected-category od wszystkich kategorii
-    document.querySelectorAll('.category, .categoryTop').forEach(element => {
-      element.classList.remove('selected-category');
-    });
+    // Usuwa klasę selected-category od wszystkich elementów o klasie 'category' lub 'categoryTop'
+    document
+      .querySelectorAll('.category, .categoryTop')
+      .forEach(element => element.classList.remove('selected-category'));
 
-    bestSellersHeader.textContent = selectedCategory;
+    // Ustawia treść nagłówka
+    bestSellersHeader.innerHTML = `
+  ${selectedCategory.replace(
+    new RegExp(`${lastWord}$`),
+    `<span class="blue-text">${lastWord}</span>`,
+  )}
+`;
+
     renderBooks(booksData, selectedCategory);
 
-    // dodana  klasa selected-category tylko do klikniętej kategorii
+    // Dodaje klasę 'selected-category' tylko do klikniętej kategorii
     clickedCategory.classList.add('selected-category');
   }
 });
