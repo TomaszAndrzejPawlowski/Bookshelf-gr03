@@ -42,7 +42,10 @@ const stefanName = document.querySelector('.stefan_name');
 const modalInputName = document.querySelector('.modal_input-name');
 const modalInputMail = document.querySelector('.modal_input-mail');
 const modalInputPass = document.querySelector('.modal_input-pass');
-
+const shoppingBtn = document.querySelector('.shopping_link');
+const shoppList = document.querySelector('.shopping-list');
+const bookListBlock = document.querySelector('.books-list-block');
+const leftSection = document.querySelector('.left-section');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -180,4 +183,18 @@ modalBtn.addEventListener('click', e => {
   } else {
     alert('false');
   }
+});
+
+stefanBtn.addEventListener('click', e => {
+  e.preventDefault();
+  stefanBtn.style.display = 'none';
+
+  openModalBtn.style.display = 'block';
+  window.location.reload(true);
+});
+
+shoppingBtn.addEventListener('click', () => {
+  shoppList.style.display = 'flex';
+  bookListBlock.style.display = 'none';
+  leftSection.style.display = 'none';
 });
