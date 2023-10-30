@@ -515,7 +515,7 @@ function(t){let r=`<li class="shopList-item" id="${t._id}">
     <div class="popup-card-container">
         <div class="popup">
             <button class="popup-close-button">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup-iconx">
                 <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg></button>
             <div class="popup-image-desc">
@@ -619,6 +619,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.d98e3d66.js.map
+});*///# sourceMappingURL=index.81228655.js.map
 
-//# sourceMappingURL=index.d98e3d66.js.map
+//# sourceMappingURL=index.81228655.js.map
