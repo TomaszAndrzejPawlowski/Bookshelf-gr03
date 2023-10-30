@@ -604,7 +604,9 @@ e.addEventListener("click",async()=>{let e=document.getElementById("bookCardCont
 }):window.innerWidth>768&&window.innerWidth<=1200?t.books.slice(0,3).forEach(t=>{let e=document.createElement("li");e.className="list-container";let r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
 e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eT(t._id),n=e$(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
-}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li");e.className="list-container";let r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title,n.height="256",n.width="180";let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
+}):t.books.slice(0,5).forEach(t=>{let e=document.createElement("li");e.className="list-container";let r=document.createElement("div");r.className="image-container";let n=document.createElement("img");n.src=t.book_image,n.alt=t.title;//image.height = '256';
+//image.width = '180';
+let i=document.createElement("h3");i.textContent=t.title,i.classList.add("book-title");let s=document.createElement("p");s.textContent=`Author: ${t.author}`,s.classList.add("book-author"),r.appendChild(n),e.appendChild(r),e.appendChild(i),e.appendChild(s),o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
 e.addEventListener("click",async()=>{let e=document.getElementById("bookCardContainer");e.innerHTML="";try{let r=await eT(t._id),n=e$(r);e.appendChild(n)}catch(t){console.error(t)}});// /////////
 }),// Dodanie klasę "category-list" do elementu <ul>
@@ -627,6 +629,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.d1773734.js.map
+});*///# sourceMappingURL=index.eb41c3f9.js.map
 
-//# sourceMappingURL=index.d1773734.js.map
+//# sourceMappingURL=index.eb41c3f9.js.map
