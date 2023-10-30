@@ -20,9 +20,9 @@ const modalBtn = document.querySelector('.modal_btn');
 const hamburgerOpenBtn = document.querySelector('.hamburger_open');
 const hamburgerCloseBtn = document.querySelector('.hamburger_close');
 const modalMobile = document.querySelector('.modal_mobile');
-const modalSignupMobile = document.querySelector('.modal_signup-mobile');
+
 const buttonMobileModal = document.querySelector('.btn_log-out-mobile');
-const buttonMobileModalClose = document.querySelector('.modal_singup_close-mobile');
+
 const iconMail = document.querySelector('.modal_input-icon-mail');
 const iconPass = document.querySelector('.modal_input-icon-pass');
 const iconWhiteMail = document.querySelector('.modal_input-icon-mail-white');
@@ -42,6 +42,7 @@ const stefanName = document.querySelector('.stefan_name');
 const modalInputName = document.querySelector('.modal_input-name');
 const modalInputMail = document.querySelector('.modal_input-mail');
 const modalInputPass = document.querySelector('.modal_input-pass');
+
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -141,6 +142,8 @@ openModalBtn.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
   backdrop.style.display = 'none';
+  hamburgerCloseBtn.style.display = 'none';
+  hamburgerOpenBtn.style.display = 'block';
 });
 
 hamburgerOpenBtn.addEventListener('click', () => {
@@ -156,17 +159,9 @@ hamburgerCloseBtn.addEventListener('click', () => {
 });
 
 buttonMobileModal.addEventListener('click', () => {
-  modalSignupMobile.style.display = 'block';
+  modal.classList.toggle('is_hidden');
   modalMobile.style.display = 'none';
   backdrop.style.display = 'block';
-  modalSignupMobile.style.position = 'fixed';
-});
-
-buttonMobileModalClose.addEventListener('click', () => {
-  modalSignupMobile.style.display = 'none';
-  hamburgerCloseBtn.style.display = 'none';
-  hamburgerOpenBtn.style.display = 'block';
-  backdrop.style.display = 'none';
 });
 
 modalBtn.addEventListener('click', e => {
@@ -185,12 +180,4 @@ modalBtn.addEventListener('click', e => {
   } else {
     alert('false');
   }
-});
-
-stefanBtn.addEventListener('click', e => {
-  e.preventDefault();
-  stefanBtn.style.display = 'none';
-
-  openModalBtn.style.display = 'block';
-  window.location.reload(true);
 });
