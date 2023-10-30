@@ -574,9 +574,9 @@ function e8(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".cat
 // ksiaki w best selerss, po kliknieciu w best selerss
 function e5(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <div>                    
-          <img src="${t.book_image}" width="180px" height="256px" alt="${t.title}" />
-          <h3>${t.title}</h3>
-          <p>Author: ${t.author}</p>
+         <img src="${t.book_image}" width="180px" height="256px" alt="${t.title}" />
+          <h3 class="book-title">${t.title}</h3>
+          <p class="book-author">Author: ${t.author}</p>
         </div>
       `,o.appendChild(e),// /////////
 //Modal, ten sam kod dodany w 4 miejscach
@@ -629,6 +629,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.eb41c3f9.js.map
+});*///# sourceMappingURL=index.b1b10ef5.js.map
 
-//# sourceMappingURL=index.eb41c3f9.js.map
+//# sourceMappingURL=index.b1b10ef5.js.map
