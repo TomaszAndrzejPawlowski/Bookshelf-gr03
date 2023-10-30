@@ -1,3 +1,12 @@
+@import '../utils/mixins';
+.mobile_nav {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
 .is_hidden {
   display: none;
 }
@@ -15,6 +24,29 @@
 }
 .modal_signup-mobile {
   display: none;
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+.modal_signup-form-mobile {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+.modal_singup_close-mobile {
+  @include tablet {
+      display: none;
+    }
+  
+    @include desktop {
+      display: none;
+    }
 }
 .modal_input-icon-pass-white {
   display: none;
@@ -233,9 +265,13 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(106, 82, 190);
+  background-color: #4F2EE8;
   z-index: 15;
+  background-image: radial-gradient(circle at top left,
+        #786be7 1%,
+        #4F2EE8 50%);
 }
+
 .modal_signup {
   position: absolute;
 

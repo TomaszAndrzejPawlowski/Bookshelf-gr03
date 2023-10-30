@@ -21,80 +21,35 @@ body {
 
 //dodanie klasy common-container obejmującej listę gatunków i slider support
 .common-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+    display: flex;
+    flex-direction:column;
+    align-items:center;
   @include tablet {
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 60px;
+    height: 500px;
   }
 
   @include desktop {
     flex-direction: column;
-    justify-content: flex-start;
-    margin-bottom: 0;
+    height: 1000px;
   }
 }
 
-.book-list-block {
-  @include desktop {
-    padding-left: 120px;
+.left-section {
+  width: 335px;
+  height: 228px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  position: relative;
+
+@include tablet {
+  height: 474px;
+      margin-bottom:0px;
   }
 }
 
-.books-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  list-style: none;
-
-  @include tablet {
-    flex-direction: row;
-
-    .list-element {
-      width: 218px;
-      height: 366px;
-      //padding:0 10px;
-    }
-  }
-  @include desktop {
-    flex-direction: row;
-  }
-}
-
-.list-element {
-  // width: 380px;
-
-  @include tablet {
-    width: 230px;
-  }
-  @include desktop {
-    width: 180px;
-    padding: 0 10px;
-    justify-content: center;
-  }
-  &__img {
-    width: 335px;
-    height: 485px;
-    @include tablet {
-      width: 218px;
-      height: 316px;
-    }
-    @include desktop {
-      width: 180px;
-      height: 306px;
-      padding: 0 10px;
-      justify-content: center;
-    }
-  }
-}
-
-// .left-section {
-//   width: 335px;
-//   height: 528px;
-// }
 
 .categories-title {
   color: #4f2ee8;
@@ -124,6 +79,7 @@ body {
   background: e9e9e0;
 }
 
+//------------------------
 /*  stylizacja listy kategorii */
 .categories-block {
   overflow-y: scroll;
@@ -143,7 +99,7 @@ body {
 }
 
 .categories-block li {
-  //color: #202024;
+  
   font-size: 18px;
   list-style: none;
   line-height: 18px;
@@ -169,32 +125,120 @@ body {
 }
 
 .charities-slider-block {
-  padding: 142px 20px 0 20px;
+  //padding: 142px 20px 0 20px;
   width: 356px;
 }
 
-//category books title
+//---stylowanie głównej części okna home i category
+
+.book-list-block {
+    display: flex;
+  @include desktop {
+    padding-left: 120px;
+  }
+}
+
 .main-title {
   color: #111111;
   white-space: nowrap;
-  max-width: 400px;
+  max-width: 700px;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 38px;
   text-align: left;
-  padding: 40px 0 40px 20px;
+  //padding: 40px 0 40px 20px;
+  position:relative;
+  margin: 40px auto;
+
+  @include tablet {
+    font-size: 48px;
+    line-height: 52px;
+    margin: 40px 40px; 
+  }
+
+  @include desktop {
+    font-size: 48px;
+    line-height: 52px;
+    margin: 40px 40px; 
+  }
 }
 
-.main-title :last-child {
+.blue-text {
   color: #4f2ee8;
 }
+
+//klasa do stylowania listy ul określonej kategorii ksążek
+.books_category-list{
+ display: grid;
+  //justify-items: center;
+  justify-items: center;
+  align-items: stretch; // był flex
+  grid-template-columns: 1fr; // dodane
+  margin-right: 10px;
+  list-style: none;
+  overflow: hidden;
+
+  @include tablet {
+    // dla tablet i desktop dodane
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 30px;
+    gap:24px;
+  }
+}
+
+
+//klasa do stylowania kategorii "All categories" - best seller books
+.books-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  
+  @include tablet {
+    flex-direction: row;
+    justify-items: center;
+    flex-wrap: wrap;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    margin-left: 20px;
+  }
+}
+
+
+
 
 .image-container {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
   list-style: none;
+  width: 335px;
+    @include tablet {
+    width: 316px;
+  }
+  @include desktop {
+    width: 180px;
+  }
+}
+
+.image-container img {
+  width: 335px;
+  height: 485px;
+  @include tablet {
+      width: 218px;
+      height: 316px;
+    }
+    @include desktop {
+      width: 180px;
+      height: 256px;
+    }
 }
 
 //stylizacja tytułu i autora
@@ -205,6 +249,19 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   padding: 14px 0 4px 0;
+
+  @include tablet {
+    width: 218px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @include desktop {
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .book-author {
@@ -215,11 +272,39 @@ body {
   line-height: 14px;
   letter-spacing: -0.04em;
   padding-bottom: 20px;
+
+   @include tablet {
+    max-width: 316px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @include desktop {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+
+.category-container{
+
+
+  @include desktop {
+    
+  }
 }
 
 .category-section {
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  @include tablet {
+    width: 100vw;
+  }
+  @include desktop {
+    width: auto;
+  }
 }
 
 .category-title {
@@ -238,6 +323,7 @@ body {
   justify-content: space-evenly;
   align-items: stretch; // był flex
   grid-template-columns: 1fr; // dodane
+  // margin-right: 10px;
   list-style: none;
   overflow: hidden;
 
@@ -248,7 +334,30 @@ body {
 
   @include desktop {
     grid-template-columns: repeat(5, 1fr);
+    gap:24px;
+    margin-left: 10px;
+    justify-items: center;
   }
+}
+.category-list li:nth-child(n+2) {
+  display: none;
+  @include tablet {
+    display: grid;
+  }
+}
+.category-list li:nth-child(n+4) {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: grid;
+  }
+}
+
+
+                  //--obejmuje obrazek , tytuł i autora---
+.list-container{
+  justify-items: scenter;
 }
 
 .category-button {
@@ -262,9 +371,10 @@ body {
   padding: 14px 28px 14px 28px;
   background-color: transparent;
   right: -200px;
-
+  cursor: pointer;
   @include tablet {
     margin-top: 20px;
+    left: 72vw;
   }
 
   @include desktop {
@@ -273,13 +383,23 @@ body {
   }
 }
 
+.category-button:hover {
+  background-color: var(--violet);
+  color: var(--white);
+}
+
 .image-container {
+  width: 335px;
+  /* Domyślna szerokość obrazków */
+  height: 485px;
+  object-fit: contain;
+  
   // Dla tabletów (szerokość powyżej 768px)
   @include tablet {
     width: 218px;
     /* Szerokość obrazków dla tabletów */
     height: 316px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   // Dla ekranów desktop (szerokość powyżej 1200px)
@@ -290,13 +410,12 @@ body {
     object-fit: contain;
   }
 
-  // Dla innych przypadków (domyślnie)
-  width: 335px;
-  /* Domyślna szerokość obrazków */
-  height: 485px;
-  object-fit: contain;
+
 }
 
+
+
+//----ustawienie stylu tytułów w sekcji bocznej
 .category {
   color: #202024;
 }
@@ -313,3 +432,4 @@ body {
   color: #4f2ee8;
   text-transform: uppercase;
 }
+//-----------------------------------------------
