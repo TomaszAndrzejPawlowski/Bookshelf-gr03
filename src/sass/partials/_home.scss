@@ -1,15 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
+  background-color: var(--verylightgrey);
 }
 
 .home {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 20px;
-  border: 1px solid #ddd;
+  
 
   @include desktop {
     display: flex;
@@ -49,7 +49,7 @@ body {
 
 
 .categories-title {
-  color: #4f2ee8;
+  color: var(--dark-violet);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 2%;
@@ -67,13 +67,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
+  background: var(--lightgrey);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: e9e9e0;
+  background: var(--lightgrey);
 }
 
 //------------------------
@@ -136,7 +136,7 @@ body {
 }
 
 .main-title {
-  color: #111111;
+  color: var(--black);
   white-space: nowrap;
   max-width: 700px;
   font-size: 32px;
@@ -144,7 +144,6 @@ body {
   letter-spacing: -0.04em;
   line-height: 38px;
   text-align: left;
-  //padding: 40px 0 40px 20px;
   position:relative;
   margin: 40px auto;
 
@@ -162,16 +161,15 @@ body {
 }
 
 .blue-text {
-  color: #4f2ee8;
+  color: var(--violet);
 }
 
 //klasa do stylowania listy ul określonej kategorii ksążek
 .books_category-list{
- display: grid;
-  //justify-items: center;
+  display: grid;
   justify-items: center;
-  align-items: stretch; // był flex
-  grid-template-columns: 1fr; // dodane
+  align-items: stretch;          // był flex
+  grid-template-columns: 1fr;    // dodane
   margin-right: 10px;
   list-style: none;
   overflow: hidden;
@@ -237,7 +235,7 @@ body {
 
 //stylizacja tytułu i autora
 .book-title {
-  color: #111111;
+  color: var(--black);
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
@@ -259,7 +257,7 @@ body {
 }
 
 .book-author {
-  color: #b4afaf;
+  color: var(--grey);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -292,7 +290,7 @@ body {
 }
 
 .category-title {
-  color: #b4afaf;
+  color: var(--grey);
   font-size: 14px;
   font-style: italic;
   font-weight: 400;
@@ -303,11 +301,9 @@ body {
 
 .category-list {
   display: grid;
-  //justify-items: center;
   justify-content: space-evenly;
-  align-items: stretch; // był flex
+  align-items: stretch;       // był flex
   grid-template-columns: 1fr; // dodane
-  // margin-right: 10px;
   list-style: none;
   overflow: hidden;
 
@@ -323,32 +319,33 @@ body {
     justify-items: center;
   }
 }
+
 .category-list li:nth-child(n+2) {
-  display: none;
-  @include tablet {
+    display: none;
+    @include tablet {
     display: grid;
-  }
+    }
 }
 .category-list li:nth-child(n+4) {
-  @include tablet {
-    display: none;
-  }
-  @include desktop {
-    display: grid;
-  }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: grid;
+    }
 }
 
 
                   //--obejmuje obrazek , tytuł i autora---
 .list-container{
-  justify-items: scenter;
+  justify-items: center;
 }
 
 .category-button {
   position: relative;
   border-radius: 40px;
   border: 2px solid;
-  border-color: #4f2ee8;
+  border-color: var(--violet);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -400,16 +397,16 @@ body {
   color: #202024;
 }
 .categoryTop {
-  color: #202024;
+  color: var(--black_1);
 }
 .category.selected-category {
   font-weight: bold;
-  color: #4f2ee8;
+  color: var(--violet);
   text-transform: uppercase;
 }
 .categoryTop.selected-category {
   font-weight: bold;
-  color: #4f2ee8;
+  color: var(--violet);
   text-transform: uppercase;
 }
 //-----------------------------------------------
