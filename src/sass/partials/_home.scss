@@ -11,9 +11,6 @@ body {
   padding: 20px;
   border: 1px solid #ddd;
 
-  @include tablet {
-  }
-
   @include desktop {
     display: flex;
   }
@@ -211,9 +208,6 @@ body {
   }
 }
 
-
-
-
 .image-container {
   display: flex;
   flex-wrap: nowrap;
@@ -284,16 +278,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-}
-
-
-
-.category-container{
-
-
-  @include desktop {
-    
   }
 }
 
@@ -409,11 +393,7 @@ body {
     height: 256px;
     object-fit: contain;
   }
-
-
 }
-
-
 
 //----ustawienie stylu tytułów w sekcji bocznej
 .category {
