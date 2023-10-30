@@ -144,6 +144,7 @@ fetchBooks('some-category')
       } else if (window.innerWidth > 768 && window.innerWidth <= 1200) {
         category.books.slice(0, 3).forEach(book => {
           const bookItem = document.createElement('li');
+          bookItem.className = 'list-container';
           const imageContainer = document.createElement('div');
           imageContainer.className = 'image-container';
           const image = document.createElement('img');
@@ -184,6 +185,7 @@ fetchBooks('some-category')
       } else {
         category.books.slice(0, 5).forEach(book => {
           const bookItem = document.createElement('li');
+          bookItem.className = 'list-container';
           const imageContainer = document.createElement('div');
           imageContainer.className = 'image-container';
           const image = document.createElement('img');
@@ -337,7 +339,7 @@ function renderBooks(booksData, category) {
   if (booksData && booksData.length > 0) {
     booksData.forEach(book => {
       const bookItem = document.createElement('li');
-
+      bookItem.className = 'list-container';
       bookItem.innerHTML = `
         <div class="category-container">
           <div class="image-container">         
@@ -369,6 +371,13 @@ function renderBooks(booksData, category) {
     const noBooksMessage = document.createElement('p');
     noBooksMessage.textContent = 'No books found in this category.';
     booksContainer.appendChild(noBooksMessage);
+  }
+
+  // Zmiana nazwy klasy sekcji
+  if (category === 'All categories') {
+    booksContainer.classList.replace('books_category-list', 'books-list');
+  } else {
+    booksContainer.classList.replace('books-list', 'books_category-list');
   }
 }
 
