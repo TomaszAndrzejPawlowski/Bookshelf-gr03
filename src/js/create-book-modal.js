@@ -13,7 +13,7 @@ export function createBookCard(bookDetails) {
     <div class="popup-card-container">
         <div class="popup">
             <button class="popup-close-button">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="popup-iconx">
                 <path d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg></button>
             <div class="popup-image-desc">

@@ -33,14 +33,17 @@
   right: 10px;
   cursor: pointer;
   font-size: 24px;
-  color: #555;
   background-color: transparent;
   border: none;
 }
-.close-button:hover {
-  fill: var(--violet);
+button.popup-close-button .popup-iconx path {
+  stroke: var(--black);
+  fill: var(--black);
 }
-
+button.popup-close-button .popup-iconx:hover path {
+  stroke: gold;
+  fill: gold;
+}
 .add-to-cart-button {
   padding: 10px 20px;
   background-color: var(--white);
@@ -150,7 +153,7 @@
   max-width: 242px;
   text-align: center;
   letter-spacing: -0.04em;
-  color: var(--lighygrey);
+  color: rgba(17, 17, 17, 0.5);
   margin-top: 8px;
   margin-left: auto;
   margin-right: auto;
