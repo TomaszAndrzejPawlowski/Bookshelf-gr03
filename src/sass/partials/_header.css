@@ -99,6 +99,10 @@
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
   background-color: #f6f6f6;
+<<<<<<< Updated upstream
+=======
+  z-index: 101;
+>>>>>>> Stashed changes
 }
 
 .logo {
@@ -265,11 +269,16 @@
   width: 100vw;
   height: 100vh;
   background-color: #6a52be;
+<<<<<<< Updated upstream
   z-index: 15;
+=======
+  z-index: 10;
+>>>>>>> Stashed changes
 }
 
 .modal_signup {
   position: absolute;
+<<<<<<< Updated upstream
   left: 0;
   right: 0;
   top: 50;
@@ -281,6 +290,25 @@
   max-width: 579px;
   width: 100%;
   border: 2px solid black;
+=======
+  z-index: 20;
+  top: 70;
+  background-color: #f6f6f6;
+  width: 579px;
+  border-radius: 150px 150px 150px 150px;
+  height: 100px;
+}
+
+.modal_signup-wrapper {
+  width: inherit;
+  border: 2px solid black;
+  border-radius: 18px;
+  background-color: inherit;
+  display: flex;
+  z-index: 55;
+  align-items: center;
+  justify-content: center;
+>>>>>>> Stashed changes
 }
 
 .modal_signup-form {
@@ -294,11 +322,18 @@
 }
 
 .modal_signup-field-name {
+<<<<<<< Updated upstream
   background-color: inherit;
   position: relative;
   border-radius: 150px 150px 150px 150px;
   max-width: 499px;
   width: 80%;
+=======
+  background-color: #f6f6f6;
+  position: relative;
+  border-radius: 150px 150px 150px 150px;
+  width: 499px;
+>>>>>>> Stashed changes
   height: 64px;
   display: flex;
   align-items: center;
@@ -306,11 +341,18 @@
 }
 
 .modal_signup-field-email {
+<<<<<<< Updated upstream
   background-color: inherit;
   border-radius: 150px 150px 150px 150px;
   position: relative;
   max-width: 499px;
   width: 80%;
+=======
+  background-color: #f6f6f6;
+  border-radius: 150px 150px 150px 150px;
+  position: relative;
+  width: 499px;
+>>>>>>> Stashed changes
   height: 64px;
   display: flex;
   align-items: center;
@@ -318,11 +360,18 @@
 }
 
 .modal_signup-field-pass {
+<<<<<<< Updated upstream
   background-color: inherit;
   border-radius: 150px 150px 150px 150px;
   position: relative;
   max-width: 499px;
   width: 80%;
+=======
+  background-color: #f6f6f6;
+  border-radius: 150px 150px 150px 150px;
+  position: relative;
+  width: 499px;
+>>>>>>> Stashed changes
   height: 64px;
   display: flex;
   align-items: center;
@@ -335,8 +384,12 @@
 
 .modal_input-name {
   border: none;
+<<<<<<< Updated upstream
   max-width: 286px;
   width: 60%;
+=======
+  width: 286px;
+>>>>>>> Stashed changes
   height: 24px;
   background-color: #f6f6f6;
   color: black;
@@ -353,8 +406,12 @@
   justify-content: center;
   align-items: center;
   border: none;
+<<<<<<< Updated upstream
   max-width: 286px;
   width: 60%;
+=======
+  width: 286px;
+>>>>>>> Stashed changes
   height: 24px;
   top: 15;
   left: 20;
@@ -368,8 +425,12 @@
   justify-content: center;
   align-items: center;
   border: none;
+<<<<<<< Updated upstream
   max-width: 286px;
   width: 60%;
+=======
+  width: 286px;
+>>>>>>> Stashed changes
   height: 24px;
   background-color: #f6f6f6;
   top: 15;
@@ -388,8 +449,12 @@
 }
 
 .modal_btn {
+<<<<<<< Updated upstream
   max-width: 499px;
   width: 80%;
+=======
+  width: 499px;
+>>>>>>> Stashed changes
   height: 64px;
   background-color: black;
   color: #f6f6f6;
@@ -430,9 +495,18 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+<<<<<<< Updated upstream
 }
 
 .modal_link {
+=======
+  padding-top: 5px;
+  padding-bottom: 40px;
+}
+
+.modal_link {
+  margin-top: -40px;
+>>>>>>> Stashed changes
   text-decoration: none;
   color: grey;
   display: flex;
@@ -443,7 +517,11 @@
   color: #19043a;
 }
 
+<<<<<<< Updated upstream
 @media screen and (max-width: 767px) {
+=======
+@media screen and (max-width: 767px) and (orientation: portrait) {
+>>>>>>> Stashed changes
   .is_hidden {
     display: none;
   }
@@ -508,4 +586,151 @@
     background-color: #4f2ee8;
     border: none;
   }
+<<<<<<< Updated upstream
+=======
+  .modal_signup {
+    display: none;
+  }
+  .modal_signup-mobile {
+    display: none;
+    width: 335px;
+    border-radius: 18px;
+    position: absolute;
+    top: 100%;
+    top: 70;
+    margin: 0 auto;
+    background-color: #333;
+    z-index: 25;
+  }
+  .modal_signup-form-mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 15%;
+    padding: 40px 20px;
+  }
+  .modal_signup-field-name-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .modal_signup-field-email-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .modal_signup-field-pass-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .modal_input-name-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 200px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-mail-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 185px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-pass-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 140px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-icon-mobile-mail {
+    position: absolute;
+    top: 12;
+    right: 16;
+  }
+  .modal_input-icon-mobile-pass {
+    position: absolute;
+    top: 12;
+    right: 16;
+  }
+  .modal_singup_close-mobile {
+    position: absolute;
+    top: 24;
+    right: 24;
+    border: none;
+    background-color: #333;
+    cursor: pointer;
+  }
+  .modal_btn-mobile {
+    width: 499px;
+    height: 64px;
+    background-color: black;
+    color: #333;
+    border-radius: 150px 150px 150px 150px;
+    cursor: pointer;
+  }
+  .modal_list-mobile {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .modal_link-mobile {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+  }
+  .modal_singup_close-mobile {
+    position: absolute;
+    top: 12;
+    right: 12;
+    border: none;
+    background-color: #333;
+    cursor: pointer;
+  }
+  .modal_btn-submit-mobile {
+    width: 295px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 150px 150px 150px 150px;
+    cursor: pointer;
+  }
+>>>>>>> Stashed changes
 }
