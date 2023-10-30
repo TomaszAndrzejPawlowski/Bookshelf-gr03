@@ -38,7 +38,18 @@ body {
 
 .left-section {
   width: 335px;
+  height: 228px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  position: relative;
+
+@include tablet {
+  height: 474px;
+      margin-bottom:0px;
+  }
 }
+
 
 .categories-title {
   color: #4f2ee8;
@@ -88,7 +99,7 @@ body {
 }
 
 .categories-block li {
-  //color: #202024;
+  
   font-size: 18px;
   list-style: none;
   line-height: 18px;
@@ -130,13 +141,31 @@ body {
 .main-title {
   color: #111111;
   white-space: nowrap;
-  max-width: 400px;
+  max-width: 700px;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 38px;
   text-align: left;
-  padding: 40px 0 40px 20px;
+  //padding: 40px 0 40px 20px;
+  position:relative;
+  margin: 40px auto;
+
+  @include tablet {
+    font-size: 48px;
+    line-height: 52px;
+    margin: 40px 40px; 
+  }
+
+  @include desktop {
+    font-size: 48px;
+    line-height: 52px;
+    margin: 40px 40px; 
+  }
+}
+
+.blue-text {
+  color: #4f2ee8;
 }
 
 //klasa do stylowania listy ul określonej kategorii ksążek
@@ -162,9 +191,6 @@ body {
   }
 }
 
-.category-container {
-  
-}
 
 //klasa do stylowania kategorii "All categories" - best seller books
 .books-list {
@@ -173,7 +199,6 @@ body {
   justify-content: space-around;
   list-style: none;
   
-
   @include tablet {
     flex-direction: row;
     justify-items: center;
@@ -193,6 +218,16 @@ body {
   flex-wrap: nowrap;
   overflow: hidden;
   list-style: none;
+  width: 335px;
+
+    @include tablet {
+    width: 316px;
+    
+  }
+  @include desktop {
+    width: 180px;
+
+  }
 }
 
 //stylizacja tytułu i autora

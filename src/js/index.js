@@ -191,8 +191,8 @@ fetchBooks('some-category')
           const image = document.createElement('img');
           image.src = book.book_image;
           image.alt = book.title;
-          image.height = '256';
-          image.width = '180';
+          //image.height = '256';
+          //image.width = '180';
           const h3 = document.createElement('h3');
           h3.textContent = book.title;
           h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
@@ -416,6 +416,8 @@ document.getElementById('categoriesList').addEventListener('click', async event 
     clickedCategory.classList.add('selected-category');
   }
 });
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
