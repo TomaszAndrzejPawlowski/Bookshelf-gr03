@@ -312,10 +312,12 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
     let selectedCategory = event.target.textContent;
 
     if (selectedCategory === 'All categories') {
-      selectedCategory = 'Best Sellers Book';
+      // selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
-        document.getElementById('bestSellersHeader').textContent = 'Best Sellers Books';
+        document.getElementById('bestSellersHeader').innerHTML = `
+          Best Sellers <span class="blue-text">Books</span>
+        `;
         renderCategoriesWithBooks(booksData, 'booksList');
       } catch (error) {
         console.error('Error fetching best sellers:', error);
