@@ -7,18 +7,16 @@
     border-radius: 16px;
     background: $backgroundSlider;
     color: #ccc;
-    margin-left: -10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
     @include tablet {
         width: 335px; // szerokość slidera
         height: 474px; // wysokość slidera
-        margin-left: 40px;
     }
 
     @include desktop {
         width: 356px; // szerokość slidera
         height: 474px; // wysokość slidera
-        margin-left: 0px;
     }
     
     &_head {
@@ -35,6 +33,7 @@
         text-align: left;
         color: white;  
         margin-top: 20px;
+        margin-bottom: 10px;
          
     }
     &_head-logo {
@@ -49,6 +48,12 @@
         height: 85%;
         overflow: hidden;
         position: relative; 
+        @include desktop {
+            height: 85%; 
+        }
+        @include tablet {
+            height: 85%; 
+        }
     }
 
     &_items {
@@ -58,8 +63,6 @@
     }
 
     &_item {
-        height: 50px;
-        line-height: 50px;
         text-align: center;
         color: white;
         
@@ -73,10 +76,72 @@
 }
 
 .charity-item{
-   margin-top: 25px;
+   margin-top: 20px;
    margin-bottom: 20px;
+   @include desktop {
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+   @include tablet {
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
 }
 .charity-item img {
     margin-left: 40px;
     height: 32px;
 }
+
+
+
+.scroll-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4F2EE8;
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 5px inset hwb(252 81% 5% / 0.302);
+    @include desktop {
+        bottom: 20px;
+        right: 10px;
+        cursor: pointer;
+        width: 54px;
+        height: 54px;
+        border: 5px inset hwb(252 81% 5% / 0.302);
+    }
+    @include tablet {
+        bottom: 20px;
+        right: 10px;
+        width: 54px;
+        height: 54px;
+        border: 5px inset hwb(252 81% 5% / 0.302);
+    }
+
+  }
+  
+  .scroll-btn i {
+    margin: 5px;
+    @include desktop {
+        margin: 10px;
+    }
+    @include tablet {
+        margin: 10px;
+    }
+  }
+  
+  
+  .scroll-btn:hover {
+    @include desktop {
+        background-color: white;
+        color: black;
+        border: 5px inset #4F2EE8;
+        opacity: 0.8;
+    }
+  }
