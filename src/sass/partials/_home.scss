@@ -23,7 +23,6 @@ body {
 .common-container {
     display: flex;
     flex-direction:column;
-    height: 1032px;
     align-items:center;
   @include tablet {
     flex-direction: row;
@@ -39,7 +38,6 @@ body {
 
 .left-section {
   width: 335px;
-  height: 472px;
 }
 
 .categories-title {
