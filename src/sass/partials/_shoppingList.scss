@@ -20,9 +20,9 @@
   height: 175px;
   width: 335px;
   border-radius: 16px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  border: 2px solid var(--dark-violet);
   background: var(--white);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px var(--black_2);
   padding: 14px;
 }
 
@@ -174,7 +174,7 @@
 }
 
 .empty-shopping-list__title {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--black_3);
   text-align: center;
   font-size: var(--fint-size-small_1);
   font-weight: 400;
