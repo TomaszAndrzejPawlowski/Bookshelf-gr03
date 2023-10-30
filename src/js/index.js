@@ -10,14 +10,6 @@ import './scroll-up';
 //export { fetchBooksData, renderBooks };
 const charitiesSlider = document.getElementById('charitiesSlider');
 
-// fundacje charytatywne
-// charities.forEach(charity => {
-//   const div = document.createElement('div');
-//   div.innerHTML = `<a href="${charity.url}" target="_blank">${charity.title}</a>`;
-//   charitiesSlider.appendChild(div);
-// });
-////////////////////////////
-
 // lista kategorii
 function renderCategories(categoriesData) {
   const categoriesList = document.getElementById('categoriesList');
@@ -25,8 +17,6 @@ function renderCategories(categoriesData) {
   categoriesData.forEach(category => {
     const li = document.createElement('li');
     li.classList.add('category');
-    /// kategoria - powiekszona trzcionka po wyborze
-    //li.classList.add('selected-category');
 
     li.textContent = category.list_name;
     categoriesList.appendChild(li);
@@ -101,8 +91,8 @@ fetchBooks('some-category')
 
       const categoryBooksList = document.createElement('ul');
 
-      if (window.innerWidth <= 768) {
-        category.books.slice(0, 1).forEach(book => {
+      // if (window.innerWidth <= 768) {
+        category.books.forEach(book => {
           const bookItem = document.createElement('li');
           const imageContainer = document.createElement('div');
           imageContainer.className = 'image-container';
@@ -141,91 +131,6 @@ fetchBooks('some-category')
           });
           // /////////
         });
-      } else if (window.innerWidth > 768 && window.innerWidth <= 1200) {
-        category.books.slice(0, 3).forEach(book => {
-          const bookItem = document.createElement('li');
-          bookItem.className = 'list-container';
-          const imageContainer = document.createElement('div');
-          imageContainer.className = 'image-container';
-          const image = document.createElement('img');
-          image.src = book.book_image;
-          image.alt = book.title;
-          const h3 = document.createElement('h3');
-          h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodano klasę "book-title" do elementu h3
-
-          const p = document.createElement('p');
-          p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodano klasę "book-author" do elementu p
-
-          imageContainer.appendChild(image);
-          bookItem.appendChild(imageContainer);
-          bookItem.appendChild(h3);
-          bookItem.appendChild(p);
-          categoryBooksList.appendChild(bookItem);
-
-          // /////////
-          //Modal, ten sam kod dodany w 4 miejscach
-          bookItem.addEventListener('click', async () => {
-            const bookCardContainer = document.getElementById('bookCardContainer');
-            bookCardContainer.innerHTML = '';
-
-            try {
-              const bookDetails = await fetchBookDetails(book._id);
-
-              const bookCard = createBookCard(bookDetails);
-
-              bookCardContainer.appendChild(bookCard);
-            } catch (error) {
-              console.error(error);
-            }
-          });
-          // /////////
-        });
-      } else {
-        category.books.slice(0, 5).forEach(book => {
-          const bookItem = document.createElement('li');
-          bookItem.className = 'list-container';
-          const imageContainer = document.createElement('div');
-          imageContainer.className = 'image-container';
-          const image = document.createElement('img');
-          image.src = book.book_image;
-          image.alt = book.title;
-          //image.height = '256';
-          //image.width = '180';
-          const h3 = document.createElement('h3');
-          h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
-
-          const p = document.createElement('p');
-          p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodaj klasę "book-author" do elementu p
-
-          imageContainer.appendChild(image);
-          bookItem.appendChild(imageContainer);
-          bookItem.appendChild(h3);
-          bookItem.appendChild(p);
-          categoryBooksList.appendChild(bookItem);
-
-          // /////////
-          //Modal, ten sam kod dodany w 4 miejscach
-          bookItem.addEventListener('click', async () => {
-            const bookCardContainer = document.getElementById('bookCardContainer');
-            bookCardContainer.innerHTML = '';
-
-            try {
-              const bookDetails = await fetchBookDetails(book._id);
-
-              const bookCard = createBookCard(bookDetails);
-
-              bookCardContainer.appendChild(bookCard);
-            } catch (error) {
-              console.error(error);
-            }
-          });
-          // /////////
-        });
-      }
 
       // Dodanie klasę "category-list" do elementu <ul>
       categoryBooksList.classList.add('category-list');
@@ -271,12 +176,12 @@ function renderCategoriesWithBooks(categoriesData) {
       const bookItem = document.createElement('li');
       bookItem.classList.add('book-item');
       bookItem.innerHTML = `
-        <div>                    
+        <div class="image-container">                    
          <img src="${book.book_image}" width="180px" height="256px" alt="${book.title}" />
-          <h3 class="book-title">${book.title}</h3>
-          <p class="book-author">Author: ${book.author}</p>
-        </div>
-      `;
+         </div>
+         <h3 class="book-title">${book.title}</h3>
+         <p class="book-author">Author: ${book.author}</p>
+         `;
 
       categoryBooksList.appendChild(bookItem);
 
