@@ -572,7 +572,7 @@ const e6=document.getElementById("charitiesSlider");////////////////////////////
 // funkcja oblsugi button 'See more'
 function e8(t){let e;if("string"==typeof t)e=t;else{let r=t.target.closest(".category-button");if(r){let t=r.closest(".category-container");t&&t.querySelector("h2")&&(e=t.querySelector("h2").textContent)}}e&&e_(e).then(t=>{document.querySelectorAll(".category-container").forEach(t=>{t.classList.remove("selected-category")});let r=document.querySelectorAll(".category-container");r.forEach(t=>{t.textContent.includes(e)&&t.classList.add("selected-category")}),e4.textContent=e,e3(t,e)}).catch(t=>{console.error("Error fetching books data:",t)})}// funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
-function e5(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-container"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("books-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
+function e5(t){let e=document.getElementById("booksList");e.innerHTML="",t.forEach(t=>{let r=document.createElement("div");r.classList.add("category-section"),e.appendChild(r);let n=document.createElement("h2");n.textContent=t.list_name,n.classList.add("category-title"),r.appendChild(n);let o=document.createElement("ul");o.classList.add("category-list"),r.appendChild(o),t.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <div>                    
          <img src="${t.book_image}" width="180px" height="256px" alt="${t.title}" />
           <h3 class="book-title">${t.title}</h3>
@@ -629,6 +629,6 @@ themeSwitch.addEventListener('change', () => {
   const isDarkMode = themeSwitch.checked;
   document.body.classList.toggle('dark-mode', isDarkMode);
   localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.b1b10ef5.js.map
+});*///# sourceMappingURL=index.91589d24.js.map
 
-//# sourceMappingURL=index.b1b10ef5.js.map
+//# sourceMappingURL=index.91589d24.js.map
