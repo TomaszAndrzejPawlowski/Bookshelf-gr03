@@ -255,7 +255,7 @@ function renderCategoriesWithBooks(categoriesData) {
 
   categoriesData.forEach(category => {
     const categoryContainer = document.createElement('div');
-    categoryContainer.classList.add('category-container');
+    categoryContainer.classList.add('category-section');
     booksContainer.appendChild(categoryContainer);
 
     const categoryTitle = document.createElement('h2');
@@ -264,7 +264,7 @@ function renderCategoriesWithBooks(categoriesData) {
     categoryContainer.appendChild(categoryTitle);
 
     const categoryBooksList = document.createElement('ul');
-    categoryBooksList.classList.add('books-list');
+    categoryBooksList.classList.add('category-list');
     categoryContainer.appendChild(categoryBooksList);
 
     category.books.forEach(book => {
