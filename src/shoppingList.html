@@ -1,0 +1,71 @@
+<!-- <section class="home">
+  <div>
+    <h2 class="main-title" id="bestSellersHeader">Shopping <span class="books">List</span></h2>
+    <ul class="shoplist" id="shoppBookList">
+       <-- dynamicznie wypełniane JavaScript -->
+<!-- </ul>
+    <div class="empty-shopping-list">
+      <p class="empty-shopping-list__title">
+        This page is empty, add some books and proceed to order.
+      </p>
+      <img
+        class="empty-shopping-list__img"
+        src="./images/empty-shopping.svg"
+        alt="four books stacked on top for each other"
+        width="265"
+        height="198"
+      />
+    </div>
+  </div>
+</section>  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>Bookshelf</title> -->
+    <link rel="icon" href="/src/images/favicon.png" type="image/png" />
+
+    <!-- Modern normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!---Strzałka góra-dół  -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Fonty -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/main.scss" />
+  </head>
+
+  <body>
+    <include src="./partials/header.html"></include>
+    <div class="shopping-list">
+      <h2 class="main-title" id="bestSellersHeader">Shopping <span class="books">List</span></h2>
+      <ul class="shoplist" id="shoppBookList">
+        <!-- dynamicznie wypełniane JavaScript -->
+      </ul>
+      <div class="empty-shopping-list">
+        <p class="empty-shopping-list__title">
+          This page is empty, add some books and proceed to order.
+        </p>
+        <img
+          class="empty-shopping-list__img"
+          src="./images/empty-shopping.svg"
+          alt="four books stacked on top for each other"
+          width="265"
+          height="198"
+        />
+      </div>
+    </div>
+  </body>
+</html>
