@@ -112,6 +112,7 @@
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
   background-color: #f6f6f6;
+  z-index: 101;
 }
 
 .logo {
@@ -260,13 +261,12 @@
 .backdrop {
   position: fixed;
   display: none;
-
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   background-color: #4F2EE8;
-  z-index: 15;
+  z-index: 10;
   background-image: radial-gradient(circle at top left,
         #786be7 1%,
         #4F2EE8 50%);
@@ -274,23 +274,25 @@
 
 .modal_signup {
   position: absolute;
-
-  left: 0;
-  right: 0;
-  top: 50;
-  bottom: 50;
-  z-index: 55;
-  margin: 0 auto;
+  z-index: 20;
+  top: 70;
   background-color: #f6f6f6;
-  border-radius: 18px;
-
-  max-width: 579px;
-
-  width: 100%;
+  width: 579px;
+  border-radius: 150px 150px 150px 150px;
+  height: 100px;
+}
+.modal_signup-wrapper {
+  width: inherit;
 
   border: 2px solid black;
-}
+  border-radius: 18px;
 
+  background-color: inherit;
+  display: flex;
+  z-index: 55;
+  align-items: center;
+  justify-content: center;
+}
 .modal_signup-form {
   position: relative;
   display: flex;
@@ -302,11 +304,10 @@
 }
 
 .modal_signup-field-name {
-  background-color: inherit;
+  background-color: #f6f6f6;
   position: relative;
   border-radius: 150px 150px 150px 150px;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -314,22 +315,20 @@
 }
 
 .modal_signup-field-email {
-  background-color: inherit;
+  background-color: #f6f6f6;
   border-radius: 150px 150px 150px 150px;
   position: relative;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .modal_signup-field-pass {
-  background-color: inherit;
+  background-color: #f6f6f6;
   border-radius: 150px 150px 150px 150px;
   position: relative;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -340,8 +339,7 @@
 }
 .modal_input-name {
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   background-color: #f6f6f6;
   color: black;
@@ -357,8 +355,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   top: 15;
   left: 20;
@@ -371,8 +368,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   background-color: #f6f6f6;
   top: 15;
@@ -390,8 +386,7 @@
 }
 
 .modal_btn {
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   background-color: black;
   color: #f6f6f6;
@@ -428,9 +423,12 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
 
+  padding-top: 5px;
+  padding-bottom: 40px;
+}
 .modal_link {
+  margin-top: -40px;
   text-decoration: none;
   color: grey;
   display: flex;
@@ -440,7 +438,7 @@
   color: rgb(25, 4, 58);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
   .is_hidden {
     display: none;
   }
@@ -512,5 +510,153 @@
     margin-left: 5%;
     background-color: #4f2ee8;
     border: none;
+  }
+  .modal_signup {
+    display: none;
+  }
+  .modal_signup-mobile {
+    display: none;
+
+    width: 335px;
+    border-radius: 18px;
+    position: absolute;
+    top: 100%;
+    top: 70;
+    margin: 0 auto;
+    background-color: #333;
+    z-index: 25;
+  }
+
+  .modal_signup-form-mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 15%;
+    padding: 40px 20px;
+  }
+
+  .modal_signup-field-name-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .modal_signup-field-email-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .modal_signup-field-pass-mobile {
+    background-color: #333;
+    border-radius: 150px 150px 150px 150px;
+    width: 295px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .modal_input-name-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 200px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-mail-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 185px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-pass-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 140px;
+    background-color: #333;
+    position: absolute;
+    top: 12;
+    left: 15;
+    color: white;
+  }
+  .modal_input-icon-mobile-mail {
+    position: absolute;
+    top: 12;
+    right: 16;
+  }
+  .modal_input-icon-mobile-pass {
+    position: absolute;
+    top: 12;
+    right: 16;
+  }
+  .modal_singup_close-mobile {
+    position: absolute;
+    top: 24;
+    right: 24;
+    border: none;
+    background-color: #333;
+    cursor: pointer;
+  }
+  .modal_btn-mobile {
+    width: 499px;
+    height: 64px;
+    background-color: black;
+    color: #333;
+    border-radius: 150px 150px 150px 150px;
+    cursor: pointer;
+  }
+  .modal_list-mobile {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .modal_link-mobile {
+    text-decoration: none;
+    color: grey;
+    display: flex;
+  }
+  .modal_singup_close-mobile {
+    position: absolute;
+    top: 12;
+    right: 12;
+    border: none;
+    background-color: #333;
+    cursor: pointer;
+  }
+  .modal_btn-submit-mobile {
+    width: 295px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 150px 150px 150px 150px;
+    cursor: pointer;
   }
 }
