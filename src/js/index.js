@@ -272,9 +272,9 @@ function renderCategoriesWithBooks(categoriesData) {
       bookItem.classList.add('book-item');
       bookItem.innerHTML = `
         <div>                    
-          <img src="${book.book_image}" width="180px" height="256px" alt="${book.title}" />
-          <h3>${book.title}</h3>
-          <p>Author: ${book.author}</p>
+         <img src="${book.book_image}" width="180px" height="256px" alt="${book.title}" />
+          <h3 class="book-title">${book.title}</h3>
+          <p class="book-author">Author: ${book.author}</p>
         </div>
       `;
 
