@@ -78,6 +78,7 @@
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
   background-color: #f6f6f6;
+  z-index: 101;
 }
 
 .logo {
@@ -235,13 +236,15 @@
 .backdrop {
   position: fixed;
   display: none;
-
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(106, 82, 190);
+  background-color: #4F2EE8;
   z-index: 15;
+  background-image: radial-gradient(circle at top left,
+        #786be7 1%,
+        #4F2EE8 50%);
 }
 
 .modal_signup {
@@ -253,16 +256,22 @@
   z-index: 55;
   margin: 0 auto;
   background-color: #f6f6f6;
-  border-radius: 18px;
-
-  max-width: 579px;
-
-  width: 100%;
-
+  width: 579px;
+  border-radius: 150px 150px 150px 150px;
+  height: 100px;
+}
+.modal_signup-wrapper {
+  width: inherit;
   border: 2px solid black;
   z-index: 55;
 }
 
+  background-color: inherit;
+  display: flex;
+  z-index: 55;
+  align-items: center;
+  justify-content: center;
+}
 .modal_signup-form {
   position: relative;
   display: flex;
@@ -274,11 +283,10 @@
 }
 
 .modal_signup-field-name {
-  background-color: inherit;
+  background-color: #f6f6f6;
   position: relative;
   border-radius: 150px 150px 150px 150px;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -286,22 +294,20 @@
 }
 
 .modal_signup-field-email {
-  background-color: inherit;
+  background-color: #f6f6f6;
   border-radius: 150px 150px 150px 150px;
   position: relative;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .modal_signup-field-pass {
-  background-color: inherit;
+  background-color: #f6f6f6;
   border-radius: 150px 150px 150px 150px;
   position: relative;
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -312,8 +318,7 @@
 }
 .modal_input-name {
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   background-color: #f6f6f6;
   color: black;
@@ -329,8 +334,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   top: 15;
   left: 20;
@@ -343,8 +347,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  max-width: 286px;
-  width: 60%;
+  width: 286px;
   height: 24px;
   background-color: #f6f6f6;
   top: 15;
@@ -362,8 +365,7 @@
 }
 
 .modal_btn {
-  max-width: 499px;
-  width: 80%;
+  width: 499px;
   height: 64px;
   background-color: black;
   color: #f6f6f6;
@@ -400,9 +402,12 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
 
+  padding-top: 5px;
+  padding-bottom: 40px;
+}
 .modal_link {
+  margin-top: -40px;
   text-decoration: none;
   color: grey;
   display: flex;
@@ -412,7 +417,7 @@
   color: rgb(25, 4, 58);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
   .is_hidden {
     display: none;
   }
