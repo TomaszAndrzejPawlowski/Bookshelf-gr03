@@ -237,8 +237,11 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(106, 82, 190);
+  background-color: #4F2EE8;
   z-index: 15;
+  background-image: radial-gradient(circle at top left,
+        #786be7 1%,
+        #4F2EE8 50%);
 }
 
 .modal_signup {
