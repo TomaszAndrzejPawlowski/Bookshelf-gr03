@@ -8,7 +8,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background-color: var(--white);
-  padding: 20px;
+  padding: 20px 0;
   
 
   @include desktop {
@@ -128,10 +128,9 @@ body {
 
 //---stylowanie głównej części okna home i category
 
-.book-list-block {
-    display: flex;
-  @include desktop {
-    padding-left: 120px;
+.books-list-block {
+  @include tablet {
+    margin: 0 32px;
   }
 }
 
@@ -145,7 +144,7 @@ body {
   line-height: 38px;
   text-align: left;
   position:relative;
-  margin: 40px auto;
+  margin: 40px 0 40px 20px;
 
   @include tablet {
     font-size: 48px;

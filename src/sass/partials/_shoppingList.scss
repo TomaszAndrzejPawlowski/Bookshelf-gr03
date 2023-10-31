@@ -1,5 +1,12 @@
-.shopping-list {
-  // display: none;
+.title-span {
+  color: var(--violet)
+}
+.shopping-list-container {
+  display: flex;
+}
+
+.shopping-list-container .slider {
+  display: none;
 }
 
 .shoplist {
@@ -24,6 +31,8 @@
   background: var(--white);
   box-shadow: 0px 4px 4px 0px var(--black_2);
   padding: 14px;
+  margin: 0 20px
+
 }
 
 .remove-button {
@@ -189,11 +198,15 @@
 }
 
 @include tablet {
+  .shopping-list-container .slider {
+    display: none;
+  }
   .shopList-item {
     padding: 24px;
     gap: 24px;
     height: 213px;
     width: 704px;
+    margin: 0 32px;
   }
   .remove-button {
     top: 24px;
@@ -267,6 +280,10 @@
 }
 
 @include desktop {
+  .shopping-list-container .slider {
+      display: block;
+      margin: 40px 0 0 24px;
+    }
   .shopList-item {
     gap: 24px;
     width: 996px;
