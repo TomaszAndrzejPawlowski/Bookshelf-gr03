@@ -1,15 +1,19 @@
 .is_hidden {
   display: none;
 }
+
 .icon_light {
   display: block;
 }
+
 .lock-icon {
   display: block;
 }
+
 .modal_mobile {
   display: none;
 }
+
 .lock_icon-dark {
   display: none;
 }
@@ -17,12 +21,15 @@
 .modal_input-icon-pass-white {
   display: none;
 }
+
 .modal_input-icon-pass-white {
   display: none;
 }
+
 .img_dark-close {
   display: none;
 }
+
 .hamburger_open-svg-white {
   display: none;
 }
@@ -30,9 +37,11 @@
 .img_dark-close {
   display: none;
 }
+
 .mobile-nav {
   display: none;
 }
+
 .dark-mode {
   background-color: #333;
   color: #fff;
@@ -41,27 +50,34 @@
 .logo {
   height: 28px;
 }
+
 .logo_dark {
   display: none;
 }
+
 .light_mode {
   width: 40px;
   height: 24px;
 }
+
 .dark_mode {
   display: none;
   width: 40px;
   height: 24px;
 }
+
 .btn_log-out-desktop {
   display: none;
 }
+
 .btn_log-out-mobile {
   display: none;
 }
+
 .hamburger_open {
   display: none;
 }
+
 .hamburger_close {
   display: none;
 }
@@ -88,9 +104,9 @@
   align-items: center;
   justify-content: center;
 }
+
 .home_shopping_list {
   display: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +115,7 @@
   margin-left: 76px;
   cursor: pointer;
 }
+
 .shoping-list_text {
   border: none;
   z-index: 5;
@@ -107,6 +124,7 @@
   justify-content: center;
   color: inherit;
 }
+
 .shopping_link {
   text-decoration: none;
   color: inherit;
@@ -114,19 +132,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
   margin-left: 40px;
   z-index: 5;
 }
+
 .shopping_link:hover::after {
   content: '';
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  // bottom: -13;
-  // left: -25;
   background-color: #eac645;
   width: 180px;
   height: 45px;
@@ -134,6 +150,7 @@
   z-index: -1;
   color: black;
 }
+
 .home_link {
   background-color: inherit;
   text-decoration: none;
@@ -144,28 +161,28 @@
   cursor: pointer;
   position: relative;
 }
+
 .home_text {
   display: flex;
   align-items: center;
   justify-content: center;
   color: inherit;
-
   z-index: 2;
 }
+
 .home_link:hover::after {
   content: '';
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  // top: -13;
-  // left: -10;
   background-color: #eac645;
   width: 70px;
   height: 45px;
   border-radius: 150px 150px 150px 150px;
   z-index: 1;
 }
+
 .lock-icon {
   margin-left: 5%;
 }
@@ -177,6 +194,7 @@
   position: absolute;
   right: 10;
 }
+
 .button_login {
   background-color: inherit;
 }
@@ -206,6 +224,7 @@
   border: 1px solid black;
   gap: 40px;
 }
+
 .stefan {
   position: absolute;
   top: 8;
@@ -214,6 +233,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .stefan_name {
   position: absolute;
   top: 12;
@@ -225,6 +245,7 @@
   justify-content: center;
   text-transform: uppercase;
 }
+
 .arrow_stefan {
   position: absolute;
   top: 9;
@@ -243,7 +264,6 @@
 .backdrop {
   position: fixed;
   display: none;
-
   left: 0;
   top: 0;
   width: 100vw;
@@ -263,11 +283,8 @@
   margin: 0 auto;
   background-color: #f6f6f6;
   border-radius: 18px;
-
   max-width: 579px;
-
   width: 100%;
-
   border: 2px solid black;
   z-index: 55;
 }
@@ -305,6 +322,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .modal_signup-field-pass {
   background-color: inherit;
   border-radius: 150px 150px 150px 150px;
@@ -316,9 +334,11 @@
   align-items: center;
   justify-content: center;
 }
+
 ::placeholder {
   color: inherit;
 }
+
 .modal_input-name {
   border: none;
   max-width: 286px;
@@ -333,6 +353,7 @@
   left: 20;
   position: absolute;
 }
+
 .modal_input-mail {
   display: flex;
   justify-content: center;
@@ -347,6 +368,7 @@
   background-color: #f6f6f6;
   color: black;
 }
+
 .modal_input-pass {
   display: flex;
   justify-content: center;
@@ -361,6 +383,7 @@
   position: absolute;
   color: black;
 }
+
 .modal_singup_close {
   position: absolute;
   top: 15;
@@ -386,23 +409,27 @@
   top: 15;
   right: 40;
 }
+
 .modal_input-icon-mail-white {
   display: none;
   position: absolute;
   top: 15;
   right: 40;
 }
+
 .modal_input-icon-pass {
   position: absolute;
   top: 15;
   right: 40;
 }
+
 .modal_input-icon-pass-white {
   display: none;
   position: absolute;
   top: 15;
   right: 40;
 }
+
 .modal_list {
   list-style-type: none;
   display: flex;
@@ -416,16 +443,16 @@
   color: grey;
   display: flex;
 }
+
 .modal_link:hover {
   text-decoration-line: underline;
-  color: rgb(25, 4, 58);
+  color: #19043a;
 }
 
 @media screen and (max-width: 767px) {
   .is_hidden {
     display: none;
   }
-
   .header_wrapper {
     max-width: 100vw;
     height: 69px;
@@ -437,24 +464,19 @@
     border: 1.5px solid black;
     border-radius: 0px 0px 8px 8px;
   }
-
   .home_shopping_list {
     display: none;
   }
   .button_login {
     display: none;
   }
-
   .hamburger_open {
     display: block;
-
     border: none;
     background-color: inherit;
   }
-
   .hamburger_close {
     display: none;
-
     border: none;
     background-color: inherit;
   }
@@ -467,11 +489,10 @@
   .modal_mobile {
     display: none;
     width: 100vw;
-
     position: absolute;
     top: 70;
     border: 1px solid black;
-    background: linear-gradient(180deg, #4f2ee8 35%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(180deg, #4f2ee8 35%, white 100%);
     z-index: 100;
   }
   .modal_mobile-flex {
@@ -482,10 +503,9 @@
     height: 100vw;
     height: 439px;
     position: relative;
-    background-image: url('/src/images/modal-mobile-books.png');
+    background-image: url("/src/images/modal-mobile-books.png");
     background-repeat: no-repeat;
     background-size: cover;
-
     margin-top: 60%;
   }
   .btn_log-in-mobile {
@@ -514,12 +534,10 @@
     height: 48px;
     background-color: inherit;
     display: flex;
-
     gap: 10px;
     margin-left: 20px;
     margin-top: 15px;
   }
-
   .stefan-mobile {
     display: none;
   }
@@ -528,7 +546,6 @@
     font-size: larger;
     text-transform: uppercase;
   }
-
   .home_shopping_list-mobile {
     display: flex;
     align-items: center;
@@ -539,7 +556,6 @@
     position: relative;
     margin: 50% auto;
   }
-
   .shoping-list_text-mobile {
     color: inherit;
   }
@@ -563,14 +579,12 @@
     border-radius: 150px 150px 150px 150px;
     z-index: -1;
   }
-
   .home_link-mobile {
     display: none;
     background-color: inherit;
     text-decoration: none;
     color: inherit;
   }
-
   .home_text-mobile {
     color: inherit;
   }
