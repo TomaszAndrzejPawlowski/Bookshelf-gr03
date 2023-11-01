@@ -78,7 +78,7 @@
   position: relative;
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
-  background-color: #f6f6f6;
+  background-color: inherit;
 }
 
 .logo {
@@ -168,6 +168,7 @@
 }
 .lock-icon {
   margin-left: 5%;
+  fill: #fff;
 }
 
 .menu_flex {

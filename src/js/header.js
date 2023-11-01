@@ -53,8 +53,8 @@ const stefanNameMobile = document.querySelector('.stefan_name-mobile');
 const imgStefan = document.querySelector('.stefan-mobile');
 const shopLinkMobile = document.querySelector('.shopping_link-mobile');
 const homeLinkMobile = document.querySelector('.home_link-mobile');
-
-const categories = document.querySelector('categories-list');
+const poPup = document.querySelector('.popup');
+const bookCat = document.querySelector('.categories-block');
 
 document.body.classList.toggle('dark-mode', isDarkMode);
 
@@ -68,8 +68,7 @@ themeSwitch.addEventListener('change', () => {
   openModalBtn.style.backgroundColor = '#f6f6f6';
   logoLight.style.display = 'block';
   logoDark.style.display = 'none';
-  header.style.backgroundColor = '#f6f6f6';
-  header.style.color = 'black';
+
   modal.style.backgroundColor = '#f6f6f6';
   modal.style.border = '2px solid black';
   field.style.backgroudColor = '#f6f6f6';
@@ -102,12 +101,21 @@ themeSwitch.addEventListener('change', () => {
   modalInputName.style.color = 'black';
   modalInputMail.style.color = 'black';
   modalInputPass.style.color = 'black';
+  shoppingTextHover.addEventListener('mouseover', () => {
+    shoppingTextHover.style.color = 'black';
+    cartDark.style.display = 'none';
+    cartLight.style.display = 'block';
+  });
+  shoppingTextHover.addEventListener('mouseout', () => {
+    shoppingTextHover.style.color = 'inherit';
+    cartDark.style.display = 'none';
+    cartLight.style.display = 'block';
+  });
 
-  if (isDarkMode === true) {
+  if (isDarkMode) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
-    header.style.backgroundColor = '#333';
-    header.style.color = '#f6f6f6';
+    poPup.style.backgroudColor = 'white';
     openModalBtn.style.backgroundColor = '#333';
     logoDark.style.display = 'block';
     logoLight.style.display = 'none';
@@ -144,6 +152,8 @@ themeSwitch.addEventListener('change', () => {
     modalInputName.style.color = 'white';
     modalInputMail.style.color = 'white';
     modalInputPass.style.color = 'white';
+    poPup.classList.toggle(dark - mode);
+    poPup.style.backgroundColor = 'black';
 
     homeTextHover.addEventListener('mouseover', () => {
       homeTextHover.style.color = 'black';
@@ -154,21 +164,16 @@ themeSwitch.addEventListener('change', () => {
 
     shoppingTextHover.addEventListener('mouseover', () => {
       shoppingTextHover.style.color = 'black';
+      cartDark.style.display = 'none';
+      cartLight.style.display = 'block';
     });
     shoppingTextHover.addEventListener('mouseout', () => {
       shoppingTextHover.style.color = 'inherit';
+      cartDark.style.display = 'block';
+      cartLight.style.display = 'none';
     });
   }
 });
-
-// categoriesData.forEach(li => {
-//   li.addEventListener('mouseover', () => {
-//     li.style.color = '#eac645';
-//   });
-//   li.addEventListener('mouseout', () => {
-//     li.style.color = 'inherit';
-//   });
-// });
 
 openModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
