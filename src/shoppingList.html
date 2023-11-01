@@ -1,23 +1,3 @@
-<!-- <section class="home">
-  <div>
-    <h2 class="main-title" id="bestSellersHeader">Shopping <span class="books">List</span></h2>
-    <ul class="shoplist" id="shoppBookList">
-       <-- dynamicznie wypełniane JavaScript -->
-<!-- </ul>
-    <div class="empty-shopping-list">
-      <p class="empty-shopping-list__title">
-        This page is empty, add some books and proceed to order.
-      </p>
-      <img
-        class="empty-shopping-list__img"
-        src="./images/empty-shopping.svg"
-        alt="four books stacked on top for each other"
-        width="265"
-        height="198"
-      />
-    </div>
-  </div>
-</section>  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,23 +29,30 @@
 
   <body>
     <include src="./partials/header.html"></include>
-    <div class="shopping-list">
-      <h2 class="main-title" id="bestSellersHeader">Shopping <span class="books">List</span></h2>
-      <ul class="shoplist" id="shoppBookList">
-        <!-- dynamicznie wypełniane JavaScript -->
-      </ul>
-      <div class="empty-shopping-list">
-        <p class="empty-shopping-list__title">
-          This page is empty, add some books and proceed to order.
-        </p>
-        <img
-          class="empty-shopping-list__img"
-          src="./images/empty-shopping.svg"
-          alt="four books stacked on top for each other"
-          width="265"
-          height="198"
-        />
+    <div class="shopping-list-container">
+      <include src="./partials/support.html"></include>
+      <div class="shopping-list">
+        <h2 class="main-title" id="bestSellersHeader">
+          Shopping <span class="title-span">List</span>
+        </h2>
+        <ul class="shoplist" id="shoppBookList">
+          <!-- dynamicznie wypełniane JavaScript -->
+        </ul>
+        <div class="empty-shopping-list">
+          <p class="empty-shopping-list__title">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            class="empty-shopping-list__img"
+            src="./images/empty-shopping.svg"
+            alt="four books stacked on top for each other"
+            width="265"
+            height="198"
+          />
+        </div>
       </div>
     </div>
+    <button class="scroll-btn" id="scrollBtn"><i class="fas fa-chevron-up"></i></button>
+    <script src="./shoppingListIndex.js" type="module"></script>
   </body>
 </html>

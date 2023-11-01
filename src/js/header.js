@@ -166,8 +166,10 @@ openModalBtn.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
   backdrop.style.display = 'none';
-  hamburgerCloseBtn.style.display = 'none';
-  hamburgerOpenBtn.style.display = 'block';
+  if (window.innerWidth <= 767) {
+    hamburgerCloseBtn.style.display = 'none';
+    hamburgerOpenBtn.style.display = 'block';
+  }
 });
 
 hamburgerOpenBtn.addEventListener('click', () => {
@@ -228,6 +230,7 @@ shoppingBtn.addEventListener('click', () => {
   leftSection.style.display = 'none';
 });
 
+
 buttonLogOutMobile.addEventListener('click', e => {
   e.preventDefault();
   window.location.reload(true);
@@ -246,3 +249,13 @@ shopLinkMobile.addEventListener('mouseover', () => {
 shopLinkMobile.addEventListener('mouseout', () => {
   shopLinkMobile.style.color = 'white';
 });
+const resizeWindow = () => {
+  if (window.innerWidth >= 768) {
+    hamburgerOpenBtn.style.display = 'none';
+    hamburgerCloseBtn.style.display = 'none';
+  } else if (hamburgerCloseBtn.style.display === 'none') {
+    hamburgerOpenBtn.style.display = 'block';
+  }
+}
+resizeWindow();
+window.addEventListener('resize', resizeWindow);

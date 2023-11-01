@@ -1,5 +1,12 @@
-.shopping-list {
-  // display: none;
+.title-span {
+  color: var(--violet);
+}
+.shopping-list-container {
+  display: flex;
+}
+
+.shopping-list-container .slider {
+  display: none;
 }
 
 .shoplist {
@@ -24,6 +31,7 @@
   background: var(--white);
   box-shadow: 0px 4px 4px 0px var(--black_2);
   padding: 14px;
+  margin: 0 20px;
 }
 
 .remove-button {
@@ -166,10 +174,12 @@
 
 .empty-shopping-list {
   display: flex;
+  position: relative;
+  left: 55px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // display: none;
+  display: none;
   gap: 14px;
 }
 
@@ -181,7 +191,7 @@
   line-height: 1.29;
   letter-spacing: -0.28px;
   max-width: 230px;
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .visible {
@@ -189,11 +199,15 @@
 }
 
 @include tablet {
+  .shopping-list-container .slider {
+    display: none;
+  }
   .shopList-item {
     padding: 24px;
     gap: 24px;
     height: 213px;
     width: 704px;
+    margin: 0 32px;
   }
   .remove-button {
     top: 24px;
@@ -251,13 +265,14 @@
 
   .empty-shopping-list {
     gap: 20px;
+    left: 210px;
   }
   .empty-shopping-list__title {
     font-size: var(--font-size-normal_1);
     line-height: 1.33;
     letter-spacing: -0.36px;
     max-width: 350px;
-    padding-top: 140px;
+    padding-top: 100px;
   }
 
   .empty-shopping-list__img {
@@ -267,6 +282,10 @@
 }
 
 @include desktop {
+  .shopping-list-container .slider {
+    display: block;
+    margin: 40px 0 0 24px;
+  }
   .shopList-item {
     gap: 24px;
     width: 996px;
@@ -296,6 +315,9 @@
     max-width: 100%;
   }
 
+  .empty-shopping-list {
+    left: 350;
+  }
   .empty-shopping-list__title {
     font-size: var(--font-size-normal_1);
     font-weight: 400;
