@@ -7,9 +7,9 @@ body {
 .home {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: var(--white);
+  background-color: inherit;
   padding: 20px 0;
-  
+  color: inherit;
 
   @include desktop {
     display: flex;
@@ -21,6 +21,8 @@ body {
     display: flex;
     flex-direction:column;
     align-items:center;
+    color: inherit;
+
   @include tablet {
     flex-direction: row;
     justify-content: space-around;
@@ -129,13 +131,13 @@ body {
 //---stylowanie głównej części okna home i category
 
 .books-list-block {
+  color: inherit;
   @include tablet {
     margin: 0 32px;
   }
 }
 
 .main-title {
-  color: var(--black);
   white-space: nowrap;
   max-width: 700px;
   font-size: 32px;
@@ -234,7 +236,7 @@ body {
 
 //stylizacja tytułu i autora
 .book-title {
-  color: var(--black);
+  color: inherit;
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
@@ -392,12 +394,6 @@ body {
 }
 
 //----ustawienie stylu tytułów w sekcji bocznej
-.category {
-  color: #202024;
-}
-.categoryTop {
-  color: var(--black_1);
-}
 .category.selected-category {
   font-weight: bold;
   color: var(--violet);
