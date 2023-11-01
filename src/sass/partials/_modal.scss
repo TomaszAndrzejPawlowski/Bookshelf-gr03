@@ -75,6 +75,7 @@ button.popup-close-button .popup-iconx:hover path {
   min-height: 408px;
   border: none;
   margin-bottom: 14px;
+  background-color: inherit;
 
   @include tablet {
     height: 281px;
@@ -161,4 +162,7 @@ button.popup-close-button .popup-iconx:hover path {
   font-size: 10px;
   font-weight: 400;
   line-height: 1.2;
+}
+.dark-mode .popup {
+  background-color: #333;
 }

@@ -120,7 +120,9 @@ body {
   list-style: none;
   cursor: pointer;
 }
-
+.dark-mode .categories-block li:hover {
+  color: #eac645;
+}
 .charities-slider-block {
   //padding: 142px 20px 0 20px;
   width: 356px;
