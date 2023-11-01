@@ -15,8 +15,8 @@
   min-width: 300px;
   max-width: 600px;
   /* max-height: 100vh; */
-  color: var(--black);
-  background-color: var(--white);
+  color: inherit;
+  background-color: inherit;
   border: 2px solid var(--black);
   border-radius: 18px;
   padding: 40px 24px;
@@ -46,7 +46,7 @@ button.popup-close-button .popup-iconx:hover path {
 }
 .add-to-cart-button {
   padding: 10px 20px;
-  background-color: var(--white);
+  background-color: inherit;
   border-radius: 40px;
   border: 2px solid var(--violet);
   cursor: pointer;
@@ -81,7 +81,7 @@ button.popup-close-button .popup-iconx:hover path {
   }
 }
 .popup-title {
-  color: var(--black);
+  color: inherit;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -126,7 +126,7 @@ button.popup-close-button .popup-iconx:hover path {
   display: block;
 }
 .popup-desc {
-  color: var(--black);
+  color: inherit;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
