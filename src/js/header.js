@@ -53,6 +53,9 @@ const stefanNameMobile = document.querySelector('.stefan_name-mobile');
 const imgStefan = document.querySelector('.stefan-mobile');
 const shopLinkMobile = document.querySelector('.shopping_link-mobile');
 const homeLinkMobile = document.querySelector('.home_link-mobile');
+
+const categories = document.querySelector('categories-list');
+
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -146,17 +149,26 @@ themeSwitch.addEventListener('change', () => {
       homeTextHover.style.color = 'black';
     });
     homeTextHover.addEventListener('mouseout', () => {
-      homeTextHover.style.color = 'white';
+      homeTextHover.style.color = 'inherit';
     });
 
     shoppingTextHover.addEventListener('mouseover', () => {
       shoppingTextHover.style.color = 'black';
     });
     shoppingTextHover.addEventListener('mouseout', () => {
-      shoppingTextHover.style.color = 'white';
+      shoppingTextHover.style.color = 'inherit';
     });
   }
 });
+
+// categoriesData.forEach(li => {
+//   li.addEventListener('mouseover', () => {
+//     li.style.color = '#eac645';
+//   });
+//   li.addEventListener('mouseout', () => {
+//     li.style.color = 'inherit';
+//   });
+// });
 
 openModalBtn.addEventListener('click', () => {
   modal.classList.toggle('is_hidden');
@@ -230,7 +242,6 @@ shoppingBtn.addEventListener('click', () => {
   leftSection.style.display = 'none';
 });
 
-
 buttonLogOutMobile.addEventListener('click', e => {
   e.preventDefault();
   window.location.reload(true);
@@ -256,6 +267,6 @@ const resizeWindow = () => {
   } else if (hamburgerCloseBtn.style.display === 'none') {
     hamburgerOpenBtn.style.display = 'block';
   }
-}
+};
 resizeWindow();
 window.addEventListener('resize', resizeWindow);

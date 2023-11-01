@@ -83,45 +83,45 @@ fetchBooks('some-category')
       const categoryBooksList = document.createElement('ul');
 
       // if (window.innerWidth <= 768) {
-        category.books.forEach(book => {
-          const bookItem = document.createElement('li');
-          const imageContainer = document.createElement('div');
-          imageContainer.className = 'image-container';
-          const image = document.createElement('img');
-          image.src = book.book_image;
-          image.alt = book.title;
-          const h3 = document.createElement('h3');
-          h3.textContent = book.title;
-          h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
+      category.books.forEach(book => {
+        const bookItem = document.createElement('li');
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+        const image = document.createElement('img');
+        image.src = book.book_image;
+        image.alt = book.title;
+        const h3 = document.createElement('h3');
+        h3.textContent = book.title;
+        h3.classList.add('book-title'); // Dodaj klasę "book-title" do elementu h3
 
-          const p = document.createElement('p');
-          p.textContent = `Author: ${book.author}`;
-          p.classList.add('book-author'); // Dodaj klasę "book-author" do elementu p
+        const p = document.createElement('p');
+        p.textContent = `Author: ${book.author}`;
+        p.classList.add('book-author'); // Dodaj klasę "book-author" do elementu p
 
-          imageContainer.appendChild(image);
-          bookItem.appendChild(imageContainer);
-          bookItem.appendChild(h3);
-          bookItem.appendChild(p);
-          categoryBooksList.appendChild(bookItem);
+        imageContainer.appendChild(image);
+        bookItem.appendChild(imageContainer);
+        bookItem.appendChild(h3);
+        bookItem.appendChild(p);
+        categoryBooksList.appendChild(bookItem);
 
-          // ////////////////
-          //Modal, ten sam kod dodany w 4 miejscach
-          bookItem.addEventListener('click', async () => {
-            const bookCardContainer = document.getElementById('bookCardContainer');
-            bookCardContainer.innerHTML = '';
+        // ////////////////
+        //Modal, ten sam kod dodany w 4 miejscach
+        bookItem.addEventListener('click', async () => {
+          const bookCardContainer = document.getElementById('bookCardContainer');
+          bookCardContainer.innerHTML = '';
 
-            try {
-              const bookDetails = await fetchBookDetails(book._id);
+          try {
+            const bookDetails = await fetchBookDetails(book._id);
 
-              const bookCard = createBookCard(bookDetails);
+            const bookCard = createBookCard(bookDetails);
 
-              bookCardContainer.appendChild(bookCard);
-            } catch (error) {
-              console.error(error);
-            }
-          });
-          // /////////
+            bookCardContainer.appendChild(bookCard);
+          } catch (error) {
+            console.error(error);
+          }
         });
+        // /////////
+      });
 
       // Dodanie klasę "category-list" do elementu <ul>
       categoryBooksList.classList.add('category-list');
@@ -315,18 +315,24 @@ document.getElementById('categoriesList').addEventListener('click', async event 
   }
 });
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ciemny motyw
-/*const themeSwitch = document.getElementById('themeSwitch');
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
+// const themeSwitch = document.getElementById('themeSwitch');
+// const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-document.body.classList.toggle('dark-mode', isDarkMode);
+// document.body.classList.toggle('dark-mode', isDarkMode);
 
-themeSwitch.addEventListener('change', () => {
-  const isDarkMode = themeSwitch.checked;
-  document.body.classList.toggle('dark-mode', isDarkMode);
-  localStorage.setItem('darkMode', isDarkMode.toString());
-});*/
+// themeSwitch.addEventListener('change', () => {
+//   const isDarkMode = themeSwitch.checked;
+//   document.body.classList.toggle('dark-mode', isDarkMode);
+//   localStorage.setItem('darkMode', isDarkMode.toString());
+//   if (isDarkMode === true) {
+//     li.addEventListener('mouseover', () => {
+//       li.style.color = '#eac645';
+//     });
+//     li.addEventListener('mouseout', () => {
+//       li.style.color = 'inherit';
+//     });
+//   }
+// });

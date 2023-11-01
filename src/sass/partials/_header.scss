@@ -132,6 +132,7 @@
   height: 45px;
   border-radius: 150px 150px 150px 150px;
   z-index: -1;
+  color: black;
 }
 .home_link {
   background-color: inherit;
@@ -222,6 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
 }
 .arrow_stefan {
   position: absolute;
@@ -246,11 +248,9 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
   z-index: 15;
-  background-image: radial-gradient(circle at top left,
-        #786be7 1%,
-        #4F2EE8 50%);
+  background-image: radial-gradient(circle at top left, #786be7 1%, #4f2ee8 50%);
 }
 
 .modal_signup {
@@ -526,6 +526,7 @@
   .stefan_name-mobile {
     color: white;
     font-size: larger;
+    text-transform: uppercase;
   }
 
   .home_shopping_list-mobile {
