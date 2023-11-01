@@ -1,4 +1,4 @@
-function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,o={},n={},a=t.parcelRequire8f04;null==a&&((a=function(e){if(e in o)return o[e].exports;if(e in n){var t=n[e];delete n[e];var a={id:e,exports:{}};return o[e]=a,t.call(a.exports,a,a.exports),a.exports}var l=Error("Cannot find module '"+e+"'");throw l.code="MODULE_NOT_FOUND",l}).register=function(e,t){n[e]=t},t.parcelRequire8f04=a);var l=a.register;l("ifJdc",function(e,t){Object.defineProperty(e.exports,"register",{get:()=>o,set:e=>o=e,enumerable:!0,configurable:!0});var o,n=new Map;o=function(e,t){for(var o=0;o<t.length-1;o+=2)n.set(t[o],{baseUrl:e,path:t[o+1]})}}),l("D20OV",function(e,t){e.exports=new URL("apple.eccc0cef.svg",import.meta.url).toString()}),l("3dS40",function(e,t){e.exports=new URL("amazon.3527c8ee.svg",import.meta.url).toString()}),a("ifJdc").register(new URL("",import.meta.url).toString(),JSON.parse('["eFRlh","index.21ed1fa9.js","5h1Oy","apple.eccc0cef.svg","d6HPj","amazon.3527c8ee.svg","dadY1","barnesandnoble_logo.5e32b091.svg","hZXVu","booksamillion_logo.fcbc7356.svg","5tQdo","bookshop.f310b8df.png","d5QCj","indiebound_logo.207267c0.svg","bSbOs","shoppingList.c0c57ac1.css","6IVcl","shoppingList.691fd1c0.js","cDgZQ","shoppingList.runtime.99026a3a.js"]')),a("7Abz9"),a("eEAQo"),a("3XIIJ"),a("lUzRb"),a("865h4");var i=a("D20OV"),r=a("3dS40"),s={};s=new URL("barnesandnoble_logo.5e32b091.svg",import.meta.url).toString();var c={};c=new URL("booksamillion_logo.fcbc7356.svg",import.meta.url).toString();var d={};d=new URL("bookshop.f310b8df.png",import.meta.url).toString();var p={};function u(t){let o=document.createElement("div");o.classList.add("book-card"),o.innerHTML=`
+function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,o={},n={},a=t.parcelRequire8f04;null==a&&((a=function(e){if(e in o)return o[e].exports;if(e in n){var t=n[e];delete n[e];var a={id:e,exports:{}};return o[e]=a,t.call(a.exports,a,a.exports),a.exports}var l=Error("Cannot find module '"+e+"'");throw l.code="MODULE_NOT_FOUND",l}).register=function(e,t){n[e]=t},t.parcelRequire8f04=a);var l=a.register;l("ifJdc",function(e,t){Object.defineProperty(e.exports,"register",{get:()=>o,set:e=>o=e,enumerable:!0,configurable:!0});var o,n=new Map;o=function(e,t){for(var o=0;o<t.length-1;o+=2)n.set(t[o],{baseUrl:e,path:t[o+1]})}}),l("D20OV",function(e,t){e.exports=new URL("apple.eccc0cef.svg",import.meta.url).toString()}),l("3dS40",function(e,t){e.exports=new URL("amazon.3527c8ee.svg",import.meta.url).toString()}),a("ifJdc").register(new URL("",import.meta.url).toString(),JSON.parse('["eFRlh","index.6e1f7a78.js","5h1Oy","apple.eccc0cef.svg","d6HPj","amazon.3527c8ee.svg","dadY1","barnesandnoble_logo.5e32b091.svg","hZXVu","booksamillion_logo.fcbc7356.svg","5tQdo","bookshop.f310b8df.png","d5QCj","indiebound_logo.207267c0.svg","bSbOs","shoppingList.82ac60d4.css","6IVcl","shoppingList.d4ea8f21.js","cDgZQ","shoppingList.runtime.d55866ed.js"]')),a("7Abz9"),a("eEAQo"),a("3XIIJ"),a("lUzRb"),a("865h4");var i=a("D20OV"),r=a("3dS40"),s={};s=new URL("barnesandnoble_logo.5e32b091.svg",import.meta.url).toString();var c={};c=new URL("booksamillion_logo.fcbc7356.svg",import.meta.url).toString();var d={};d=new URL("bookshop.f310b8df.png",import.meta.url).toString();var p={};function u(t){let o=document.createElement("div");o.classList.add("book-card"),o.innerHTML=`
     <div class="popup-card-container">
         <div class="popup">
             <button class="popup-close-button">
@@ -98,15 +98,22 @@ f.innerHTML=`
 `,b(o,e),// Dodaje klasę 'selected-category' tylko do klikniętej kategorii
 t.classList.add("selected-category")}});///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ciemny motyw
-/*const themeSwitch = document.getElementById('themeSwitch');
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
+// const themeSwitch = document.getElementById('themeSwitch');
+// const isDarkMode = localStorage.getItem('darkMode') === 'true';
+// document.body.classList.toggle('dark-mode', isDarkMode);
+// themeSwitch.addEventListener('change', () => {
+//   const isDarkMode = themeSwitch.checked;
+//   document.body.classList.toggle('dark-mode', isDarkMode);
+//   localStorage.setItem('darkMode', isDarkMode.toString());
+//   if (isDarkMode === true) {
+//     li.addEventListener('mouseover', () => {
+//       li.style.color = '#eac645';
+//     });
+//     li.addEventListener('mouseout', () => {
+//       li.style.color = 'inherit';
+//     });
+//   }
+// });
+//# sourceMappingURL=index.6e1f7a78.js.map
 
-document.body.classList.toggle('dark-mode', isDarkMode);
-
-themeSwitch.addEventListener('change', () => {
-  const isDarkMode = themeSwitch.checked;
-  document.body.classList.toggle('dark-mode', isDarkMode);
-  localStorage.setItem('darkMode', isDarkMode.toString());
-});*///# sourceMappingURL=index.21ed1fa9.js.map
-
-//# sourceMappingURL=index.21ed1fa9.js.map
+//# sourceMappingURL=index.6e1f7a78.js.map
