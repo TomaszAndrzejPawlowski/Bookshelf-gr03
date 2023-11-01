@@ -1,5 +1,6 @@
 import { createBookCard } from './create-book-modal';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
+const loadingTxt = document.querySelector('.loader');
 
 // lista kategorii
 function renderCategories(categoriesData) {
@@ -17,13 +18,18 @@ function renderCategories(categoriesData) {
 // Wywołanie funkcji i obsługa Promise
 fetchCategories()
   .then(categoriesData => {
+    loadingTxt.classList.remove('is-hidden');
     //console.log('Categories Received:', categoriesData);
     renderCategories(categoriesData);
   })
+
   .catch(error => {
     // Obsługa błędów
+
     console.error('Error in promise chain:', error);
+    loadingTxt.classList.add('is-hidden');
   });
+
 //////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
 function handleSeeMoreButtonClick(event) {
@@ -107,6 +113,7 @@ fetchBooks('some-category')
         // ////////////////
         //Modal, ten sam kod dodany w 4 miejscach
         bookItem.addEventListener('click', async () => {
+          loadingTxt.classList.remove('is-hidden');
           const bookCardContainer = document.getElementById('bookCardContainer');
           bookCardContainer.innerHTML = '';
 
@@ -116,8 +123,11 @@ fetchBooks('some-category')
             const bookCard = createBookCard(bookDetails);
 
             bookCardContainer.appendChild(bookCard);
+
+            loadingTxt.classList.add('is-hidden');
           } catch (error) {
             console.error(error);
+            loadingTxt.classList.add('is-hidden');
           }
         });
         // /////////
@@ -179,6 +189,7 @@ function renderCategoriesWithBooks(categoriesData) {
       // /////////
       //Modal, ten sam kod dodany w 4 miejscach
       bookItem.addEventListener('click', async () => {
+        loadingTxt.classList.remove('is-hidden');
         const bookCardContainer = document.getElementById('bookCardContainer');
         bookCardContainer.innerHTML = '';
 
@@ -188,8 +199,10 @@ function renderCategoriesWithBooks(categoriesData) {
           const bookCard = createBookCard(bookDetails);
 
           bookCardContainer.appendChild(bookCard);
+          loadingTxt.classList.add('is-hidden');
         } catch (error) {
           console.error(error);
+          loadingTxt.classList.add('is-hidden');
         }
       });
       // /////////
@@ -213,11 +226,13 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
       // selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
+        loadingTxt.classList.remove('is-hidden');
         document.getElementById('bestSellersHeader').innerHTML = `
           Best Sellers <span class="blue-text">Books</span>
         `;
         renderCategoriesWithBooks(booksData, 'booksList');
       } catch (error) {
+        loadingTxt.classList.add('is-hidden');
         console.error('Error fetching best sellers:', error);
         alert('Failed to fetch best sellers. Please try again.');
       }
@@ -225,6 +240,7 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
       const booksData = await fetchBooks(selectedCategory);
       document.getElementById('bestSellersHeader').textContent = selectedCategory;
       renderCategoriesWithBooks(booksData, 'booksList');
+      loadingTxt.classList.add('is-hidden');
     }
   }
 });
@@ -251,6 +267,7 @@ function renderBooks(booksData, category) {
       bookItem.addEventListener('click', async () => {
         const bookCardContainer = document.getElementById('bookCardContainer');
         bookCardContainer.innerHTML = '';
+        loadingTxt.classList.remove('is-hidden');
 
         try {
           const bookDetails = await fetchBookDetails(book._id);
@@ -258,8 +275,10 @@ function renderBooks(booksData, category) {
           const bookCard = createBookCard(bookDetails);
 
           bookCardContainer.appendChild(bookCard);
+          loadingTxt.classList.add('is-hidden');
         } catch (error) {
           console.error(error);
+          loadingTxt.classList.add('is-hidden');
         }
       });
 
