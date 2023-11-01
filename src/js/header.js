@@ -53,7 +53,6 @@ const stefanNameMobile = document.querySelector('.stefan_name-mobile');
 const imgStefan = document.querySelector('.stefan-mobile');
 const shopLinkMobile = document.querySelector('.shopping_link-mobile');
 const homeLinkMobile = document.querySelector('.home_link-mobile');
-const poPup = document.querySelector('.popup');
 const bookCat = document.querySelector('.categories-block');
 
 document.body.classList.toggle('dark-mode', isDarkMode);
