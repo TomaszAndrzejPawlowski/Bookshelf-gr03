@@ -18,10 +18,10 @@ body {
 
 //dodanie klasy common-container obejmującej listę gatunków i slider support
 .common-container {
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
 
   @include tablet {
     flex-direction: row;
@@ -38,17 +38,16 @@ body {
 .left-section {
   width: 335px;
   height: 228px;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
   position: relative;
 
-@include tablet {
-  height: 474px;
-      margin-bottom:0px;
+  @include tablet {
+    height: 474px;
+    margin-bottom: 0px;
   }
 }
-
 
 .categories-title {
   color: var(--dark-violet);
@@ -98,7 +97,6 @@ body {
 }
 
 .categories-block li {
-  
   font-size: 18px;
   list-style: none;
   line-height: 18px;
@@ -145,19 +143,19 @@ body {
   letter-spacing: -0.04em;
   line-height: 38px;
   text-align: left;
-  position:relative;
+  position: relative;
   margin: 40px 0 40px 20px;
 
   @include tablet {
     font-size: 48px;
     line-height: 52px;
-    margin: 40px 40px; 
+    margin: 40px 40px;
   }
 
   @include desktop {
     font-size: 48px;
     line-height: 52px;
-    margin: 40px 40px; 
+    margin: 40px 40px;
   }
 }
 
@@ -166,11 +164,11 @@ body {
 }
 
 //klasa do stylowania listy ul określonej kategorii ksążek
-.books_category-list{
+.books_category-list {
   display: grid;
   justify-items: center;
-  align-items: stretch;          // był flex
-  grid-template-columns: 1fr;    // dodane
+  align-items: stretch; // był flex
+  grid-template-columns: 1fr; // dodane
   margin-right: 10px;
   list-style: none;
   overflow: hidden;
@@ -183,10 +181,9 @@ body {
   @include desktop {
     grid-template-columns: repeat(5, 1fr);
     margin-left: 30px;
-    gap:24px;
+    gap: 24px;
   }
 }
-
 
 //klasa do stylowania kategorii "All categories" - best seller books
 .books-list {
@@ -194,7 +191,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   list-style: none;
-  
+
   @include tablet {
     flex-direction: row;
     justify-items: center;
@@ -213,7 +210,7 @@ body {
   overflow: hidden;
   list-style: none;
   width: 335px;
-    @include tablet {
+  @include tablet {
     width: 316px;
   }
   @include desktop {
@@ -225,13 +222,13 @@ body {
   width: 335px;
   height: 485px;
   @include tablet {
-      width: 218px;
-      height: 316px;
-    }
-    @include desktop {
-      width: 180px;
-      height: 256px;
-    }
+    width: 218px;
+    height: 316px;
+  }
+  @include desktop {
+    width: 180px;
+    height: 256px;
+  }
 }
 
 //stylizacja tytułu i autora
@@ -266,7 +263,7 @@ body {
   letter-spacing: -0.04em;
   padding-bottom: 20px;
 
-   @include tablet {
+  @include tablet {
     max-width: 316px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -303,7 +300,7 @@ body {
 .category-list {
   display: grid;
   justify-content: space-evenly;
-  align-items: stretch;       // był flex
+  align-items: stretch; // był flex
   grid-template-columns: 1fr; // dodane
   list-style: none;
   overflow: hidden;
@@ -315,30 +312,29 @@ body {
 
   @include desktop {
     grid-template-columns: repeat(5, 1fr);
-    gap:24px;
+    gap: 24px;
     margin-left: 10px;
     justify-items: center;
   }
 }
 
-.category-list li:nth-child(n+2) {
-    display: none;
-    @include tablet {
+.category-list li:nth-child(n + 2) {
+  display: none;
+  @include tablet {
     display: grid;
-    }
+  }
 }
-.category-list li:nth-child(n+4) {
-    @include tablet {
-      display: none;
-    }
-    @include desktop {
-      display: grid;
-    }
+.category-list li:nth-child(n + 4) {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: grid;
+  }
 }
 
-
-                  //--obejmuje obrazek , tytuł i autora---
-.list-container{
+//--obejmuje obrazek , tytuł i autora---
+.list-container {
   justify-items: center;
 }
 
@@ -376,7 +372,7 @@ body {
   /* Domyślna szerokość obrazków */
   height: 485px;
   object-fit: contain;
-  
+
   // Dla tabletów (szerokość powyżej 768px)
   @include tablet {
     width: 218px;

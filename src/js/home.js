@@ -2,6 +2,7 @@ import { createBookCard } from './create-book-modal';
 import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from './api-books';
 
 // lista kategorii
+
 function renderCategories(categoriesData) {
   const categoriesList = document.getElementById('categoriesList');
 
@@ -319,9 +320,6 @@ document.getElementById('categoriesList').addEventListener('click', async event 
 
 // ciemny motyw
 // const themeSwitch = document.getElementById('themeSwitch');
-// const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// document.body.classList.toggle('dark-mode', isDarkMode);
 
 // themeSwitch.addEventListener('change', () => {
 //   const isDarkMode = themeSwitch.checked;
