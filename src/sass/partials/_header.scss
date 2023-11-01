@@ -37,6 +37,7 @@
   background-color: #333;
   color: #fff;
 }
+
 .logo {
   height: 28px;
 }
@@ -104,6 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
 }
 .shopping_link {
   text-decoration: none;
@@ -112,17 +114,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  cursor: pointer;
+
   position: relative;
   margin-left: 40px;
   z-index: 5;
 }
 .shopping_link:hover::after {
   content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: -13;
-  left: -25;
+  // bottom: -13;
+  // left: -25;
   background-color: #eac645;
   width: 180px;
   height: 45px;
@@ -130,7 +134,6 @@
   z-index: -1;
 }
 .home_link {
-  border: none;
   background-color: inherit;
   text-decoration: none;
   color: inherit;
@@ -144,14 +147,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
 
   z-index: 2;
 }
 .home_link:hover::after {
   content: '';
   position: absolute;
-  top: -13;
-  left: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // top: -13;
+  // left: -10;
   background-color: #eac645;
   width: 70px;
   height: 45px;
@@ -172,10 +179,12 @@
 .button_login {
   background-color: inherit;
 }
+
 .switcher_button {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 15px;
 }
 
 #themeSwitch {
@@ -472,7 +481,7 @@
   .img_css-mobile {
     height: 100vw;
     height: 439px;
-
+    position: relative;
     background-image: url('/src/images/modal-mobile-books.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -486,8 +495,101 @@
     background-color: #4f2ee8;
     border: none;
   }
-
+  .btn_log-out-mobile {
+    position: absolute;
+    left: 20;
+    bottom: 20;
+    background-color: inherit;
+    border: none;
+    display: none;
+  }
   .modal_signup {
     width: 90%;
+  }
+  .stefan_btn {
+    display: none !important;
+  }
+  .stefan_div-mobile {
+    width: 118x;
+    height: 48px;
+    background-color: inherit;
+    display: flex;
+
+    gap: 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+
+  .stefan-mobile {
+    display: none;
+  }
+  .stefan_name-mobile {
+    color: white;
+    font-size: larger;
+  }
+
+  .home_shopping_list-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    position: relative;
+    margin: 50% auto;
+  }
+
+  .shoping-list_text-mobile {
+    color: inherit;
+  }
+  .shopping_link-mobile {
+    display: none;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+  }
+  .shopping_link-mobile:hover::after {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -13;
+    left: -25;
+    background-color: #eac645;
+    width: 180px;
+    height: 45px;
+    border-radius: 150px 150px 150px 150px;
+    z-index: -1;
+  }
+
+  .home_link-mobile {
+    display: none;
+    background-color: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .home_text-mobile {
+    color: inherit;
+  }
+  .home_link-mobile:hover::after {
+    content: '';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -13;
+    left: 20;
+    background-color: #eac645;
+    width: 70px;
+    height: 45px;
+    border-radius: 150px 150px 150px 150px;
+    z-index: -1;
+  }
+  .cart-mobile {
+    position: absolute;
+    bottom: 0px;
+    left: 120px;
   }
 }
