@@ -1,3 +1,0 @@
-let e=!1;const t=document.querySelector(".arrow");function r(e){let t=document.querySelector(".arrow i");"up"===e?t.style.transform="rotate(180deg)":t.style.transform="rotate(0deg)"}//# sourceMappingURL=index.24f1108b.js.map
-t.addEventListener("click",function(){let t=document.getElementById("charitiesSlider"),l=t.children[0].offsetHeight;if(e){t.style.transform="translateY(0)";for(let e=0;e<6;e++)t.children[e].style.visibility="visible";r("up")}else{t.style.transform=`translateY(-${5*l}px)`;for(let e=0;e<3;e++)t.children[e].style.visibility="hidden";r("down")}e=!e});
-//# sourceMappingURL=index.24f1108b.js.map
