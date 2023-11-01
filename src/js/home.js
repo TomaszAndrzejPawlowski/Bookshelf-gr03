@@ -237,13 +237,12 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
       // selectedCategory = 'Best Sellers Book';
       try {
         const booksData = await fetchBooks('best-sellers');
-        loadingTxt.classList.remove('is-hidden');
+
         document.getElementById('bestSellersHeader').innerHTML = `
           Best Sellers <span class="blue-text">Books</span>
         `;
         renderCategoriesWithBooks(booksData, 'booksList');
       } catch (error) {
-        loadingTxt.classList.add('is-hidden');
         console.error('Error fetching best sellers:', error);
         alert('Failed to fetch best sellers. Please try again.');
       }
@@ -251,7 +250,6 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
       const booksData = await fetchBooks(selectedCategory);
       document.getElementById('bestSellersHeader').textContent = selectedCategory;
       renderCategoriesWithBooks(booksData, 'booksList');
-      loadingTxt.classList.add('is-hidden');
     }
   }
 });
