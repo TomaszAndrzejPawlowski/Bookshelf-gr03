@@ -16,19 +16,30 @@ function renderCategories(categoriesData) {
 }
 
 // Wywołanie funkcji i obsługa Promise
+
+function testing() {
+  setTimeout(function () {
+    loadingTxt.classList.add('is-hidden');
+  }, 2000);
+}
 fetchCategories()
   .then(categoriesData => {
-    loadingTxt.classList.remove('is-hidden');
     //console.log('Categories Received:', categoriesData);
     renderCategories(categoriesData);
+    loadingTxt.classList.remove('is-hidden');
   })
 
   .catch(error => {
     // Obsługa błędów
 
     console.error('Error in promise chain:', error);
-    loadingTxt.classList.add('is-hidden');
+  })
+  .finally(() => {
+    testing();
   });
+
+//   loadingTxt.classList.add('is-hidden');
+// });
 
 //////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
