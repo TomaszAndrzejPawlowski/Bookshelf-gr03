@@ -46,6 +46,13 @@ const shoppingBtn = document.querySelector('.shopping_link');
 const shoppList = document.querySelector('.shopping-list');
 const bookListBlock = document.querySelector('.books-list-block');
 const leftSection = document.querySelector('.left-section');
+const homeTextHover = document.querySelector('.home_text');
+const shoppingTextHover = document.querySelector('.shopping-list_text');
+const buttonLogOutMobile = document.querySelector('.btn_log-out-mobile');
+const stefanNameMobile = document.querySelector('.stefan_name-mobile');
+const imgStefan = document.querySelector('.stefan-mobile');
+const shopLinkMobile = document.querySelector('.shopping_link-mobile');
+const homeLinkMobile = document.querySelector('.home_link-mobile');
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {
@@ -134,6 +141,20 @@ themeSwitch.addEventListener('change', () => {
     modalInputName.style.color = 'white';
     modalInputMail.style.color = 'white';
     modalInputPass.style.color = 'white';
+
+    homeTextHover.addEventListener('mouseover', () => {
+      homeTextHover.style.color = 'black';
+    });
+    homeTextHover.addEventListener('mouseout', () => {
+      homeTextHover.style.color = 'white';
+    });
+
+    shoppingTextHover.addEventListener('mouseover', () => {
+      shoppingTextHover.style.color = 'black';
+    });
+    shoppingTextHover.addEventListener('mouseout', () => {
+      shoppingTextHover.style.color = 'white';
+    });
   }
 });
 
@@ -172,6 +193,7 @@ modalBtn.addEventListener('click', e => {
   const username = document.getElementById('username').value;
   const userMail = document.getElementById('usermail').value;
   const password = document.getElementById('password').value;
+
   if (username && userMail && password) {
     alert('log in!');
 
@@ -180,6 +202,13 @@ modalBtn.addEventListener('click', e => {
     stefanBtn.style.display = 'block';
     stefanName.textContent = username;
     backdrop.style.display = 'none';
+    buttonLogOutMobile.style.display = 'block';
+    modalMobile.style.display = 'block';
+    buttonMobileModal.style.display = 'none';
+    imgStefan.style.display = 'block';
+    stefanNameMobile.textContent = username;
+    shopLinkMobile.style.display = 'block';
+    homeLinkMobile.style.display = 'block';
   } else {
     alert('false');
   }
@@ -197,4 +226,23 @@ shoppingBtn.addEventListener('click', () => {
   shoppList.style.display = 'flex';
   bookListBlock.style.display = 'none';
   leftSection.style.display = 'none';
+});
+
+buttonLogOutMobile.addEventListener('click', e => {
+  e.preventDefault();
+  window.location.reload(true);
+});
+
+homeLinkMobile.addEventListener('mouseover', () => {
+  homeLinkMobile.style.color = 'black';
+});
+homeLinkMobile.addEventListener('mouseout', () => {
+  homeLinkMobile.style.color = 'white';
+});
+
+shopLinkMobile.addEventListener('mouseover', () => {
+  shopLinkMobile.style.color = 'black';
+});
+shopLinkMobile.addEventListener('mouseout', () => {
+  shopLinkMobile.style.color = 'white';
 });
