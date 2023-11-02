@@ -53,7 +53,6 @@ const stefanNameMobile = document.querySelector('.stefan_name-mobile');
 const imgStefan = document.querySelector('.stefan-mobile');
 const shopLinkMobile = document.querySelector('.shopping_link-mobile');
 const homeLinkMobile = document.querySelector('.home_link-mobile');
-const poPup = document.querySelector('.popup');
 const bookCat = document.querySelector('.categories-block');
 
 document.body.classList.toggle('dark-mode', isDarkMode);
@@ -65,7 +64,7 @@ themeSwitch.addEventListener('change', () => {
   localStorage.setItem('darkMode', isDarkMode.toString());
   switchLight.style.display = 'block';
   switchDark.style.display = 'none';
-  openModalBtn.style.backgroundColor = '#f6f6f6';
+  // openModalBtn.style.backgroundColor = '#f6f6f6';
   logoLight.style.display = 'block';
   logoDark.style.display = 'none';
 
@@ -115,8 +114,8 @@ themeSwitch.addEventListener('change', () => {
   if (isDarkMode) {
     switchLight.style.display = 'none';
     switchDark.style.display = 'block';
-    poPup.style.backgroudColor = 'white';
-    openModalBtn.style.backgroundColor = '#333';
+
+    // openModalBtn.style.backgroundColor = '#333';
     logoDark.style.display = 'block';
     logoLight.style.display = 'none';
     modal.style.backgroundColor = '#333';
@@ -152,8 +151,6 @@ themeSwitch.addEventListener('change', () => {
     modalInputName.style.color = 'white';
     modalInputMail.style.color = 'white';
     modalInputPass.style.color = 'white';
-    poPup.classList.toggle(dark - mode);
-    poPup.style.backgroundColor = 'black';
 
     homeTextHover.addEventListener('mouseover', () => {
       homeTextHover.style.color = 'black';
