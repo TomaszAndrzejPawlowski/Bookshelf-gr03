@@ -1,4 +1,4 @@
-function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,o={},n={},a=t.parcelRequire8f04;null==a&&((a=function(e){if(e in o)return o[e].exports;if(e in n){var t=n[e];delete n[e];var a={id:e,exports:{}};return o[e]=a,t.call(a.exports,a,a.exports),a.exports}var i=Error("Cannot find module '"+e+"'");throw i.code="MODULE_NOT_FOUND",i}).register=function(e,t){n[e]=t},t.parcelRequire8f04=a);var i=a.register;i("ifJdc",function(e,t){Object.defineProperty(e.exports,"register",{get:()=>o,set:e=>o=e,enumerable:!0,configurable:!0});var o,n=new Map;o=function(e,t){for(var o=0;o<t.length-1;o+=2)n.set(t[o],{baseUrl:e,path:t[o+1]})}}),i("D20OV",function(e,t){e.exports=new URL("apple.eccc0cef.svg",import.meta.url).toString()}),i("3dS40",function(e,t){e.exports=new URL("amazon.3527c8ee.svg",import.meta.url).toString()}),a("ifJdc").register(new URL("",import.meta.url).toString(),JSON.parse('["eFRlh","index.ff16b24f.js","5h1Oy","apple.eccc0cef.svg","d6HPj","amazon.3527c8ee.svg","dadY1","barnesandnoble_logo.5e32b091.svg","hZXVu","booksamillion_logo.fcbc7356.svg","5tQdo","bookshop.f310b8df.png","d5QCj","indiebound_logo.207267c0.svg","bSbOs","shoppingList.b087310e.css","6IVcl","shoppingList.1bc64588.js","cDgZQ","shoppingList.runtime.1a48ba7b.js"]')),a("7Abz9"),a("eEAQo"),a("3XIIJ"),a("lUzRb"),a("865h4");var l=a("D20OV"),s=a("3dS40"),r={};r=new URL("barnesandnoble_logo.5e32b091.svg",import.meta.url).toString();var c={};c=new URL("booksamillion_logo.fcbc7356.svg",import.meta.url).toString();var d={};d=new URL("bookshop.f310b8df.png",import.meta.url).toString();var p={};function u(t){let o=document.createElement("div");o.classList.add("book-card"),o.innerHTML=`
+function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,o={},n={},a=t.parcelRequire8f04;null==a&&((a=function(e){if(e in o)return o[e].exports;if(e in n){var t=n[e];delete n[e];var a={id:e,exports:{}};return o[e]=a,t.call(a.exports,a,a.exports),a.exports}var i=Error("Cannot find module '"+e+"'");throw i.code="MODULE_NOT_FOUND",i}).register=function(e,t){n[e]=t},t.parcelRequire8f04=a);var i=a.register;i("ifJdc",function(e,t){Object.defineProperty(e.exports,"register",{get:()=>o,set:e=>o=e,enumerable:!0,configurable:!0});var o,n=new Map;o=function(e,t){for(var o=0;o<t.length-1;o+=2)n.set(t[o],{baseUrl:e,path:t[o+1]})}}),i("D20OV",function(e,t){e.exports=new URL("apple.eccc0cef.svg",import.meta.url).toString()}),i("3dS40",function(e,t){e.exports=new URL("amazon.3527c8ee.svg",import.meta.url).toString()}),a("ifJdc").register(new URL("",import.meta.url).toString(),JSON.parse('["eFRlh","index.94c7ad16.js","5h1Oy","apple.eccc0cef.svg","d6HPj","amazon.3527c8ee.svg","dadY1","barnesandnoble_logo.5e32b091.svg","hZXVu","booksamillion_logo.fcbc7356.svg","5tQdo","bookshop.f310b8df.png","d5QCj","indiebound_logo.207267c0.svg","bSbOs","shoppingList.b087310e.css","6IVcl","shoppingList.1bc64588.js","cDgZQ","shoppingList.runtime.1a48ba7b.js"]')),a("7Abz9"),a("eEAQo"),a("3XIIJ"),a("lUzRb"),a("865h4");var l=a("D20OV"),s=a("3dS40"),r={};r=new URL("barnesandnoble_logo.5e32b091.svg",import.meta.url).toString();var c={};c=new URL("booksamillion_logo.fcbc7356.svg",import.meta.url).toString();var d={};d=new URL("bookshop.f310b8df.png",import.meta.url).toString();var p={};function u(t){let o=document.createElement("div");o.classList.add("book-card"),o.innerHTML=`
     <div class="popup-card-container">
         <div class="popup">
             <button class="popup-close-button">
@@ -56,20 +56,8 @@ function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,o={},n={},a=t.
 // });
 //////////////////////////////////////////////////
 // funkcja oblsugi button 'See more'
-function m(e){let t;if("string"==typeof e)t=e;else{let o=e.target.closest(".category-button");if(o){let e=o.closest(".category-container");e&&e.querySelector("h2")&&(t=e.querySelector("h2").textContent)}}t&&(0,h.fetchBooksData)(t).then(e=>{document.querySelectorAll(".category-container").forEach(e=>{e.classList.remove("selected-category")});let o=document.querySelectorAll(".category-container");o.forEach(e=>{e.textContent.includes(t)&&e.classList.add("selected-category")}),E.textContent=t,b(e,t)}).catch(e=>{console.error("Error fetching books data:",e)})}// funkjca tworzenia karty
-// ksiaki w best selerss, po kliknieciu w best selerss
-function f(e){let t=document.getElementById("booksList");t.innerHTML="",e.forEach(e=>{let o=document.createElement("div");o.classList.add("category-section"),t.appendChild(o);let n=document.createElement("h2");n.textContent=e.list_name,n.classList.add("category-title"),o.appendChild(n);let a=document.createElement("ul");a.classList.add("category-list"),o.appendChild(a),e.books.forEach(e=>{let t=document.createElement("li");t.classList.add("book-item"),t.innerHTML=`
-        <div class="image-container">                    
-         <img src="${e.book_image}" width="180px" height="256px" alt="${e.title}" />
-         </div>
-         <h3 class="book-title">${e.title}</h3>
-         <p class="book-author">Author: ${e.author}</p>
-         `,a.appendChild(t),// /////////
-//Modal, ten sam kod dodany w 4 miejscach
-t.addEventListener("click",async()=>{g.classList.remove("is-hidden");let t=document.getElementById("bookCardContainer");t.innerHTML="";try{let o=await (0,h.fetchBookDetails)(e._id),n=u(o);t.appendChild(n),g.classList.add("is-hidden")}catch(e){console.error(e),g.classList.add("is-hidden")}});// /////////
-});// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
-let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),o.appendChild(i),i.addEventListener("click",()=>m(e.list_name))})}////////////////////////////
-function b(e,t){let o=document.getElementById("booksList");if(o.innerHTML="",e&&e.length>0)e.forEach(e=>{let t=document.createElement("li");t.className="list-container",t.innerHTML=`
+function m(e){let t;if("string"==typeof e)t=e;else{let o=e.target.closest(".category-button");if(o){let e=o.closest(".category-container");e&&e.querySelector("h2")&&(t=e.querySelector("h2").textContent)}}t&&(0,h.fetchBooksData)(t).then(e=>{document.querySelectorAll(".category-container").forEach(e=>{e.classList.remove("selected-category")});let o=document.querySelectorAll(".category-container");o.forEach(e=>{e.textContent.includes(t)&&e.classList.add("selected-category")}),b.textContent=t,f(e,t)}).catch(e=>{console.error("Error fetching books data:",e)})}////////////////////////////
+function f(e,t){let o=document.getElementById("booksList");if(o.innerHTML="",e&&e.length>0)e.forEach(e=>{let t=document.createElement("li");t.className="list-container",t.innerHTML=`
         <div class="category-container">
           <div class="image-container">         
             <img src="${e.book_image}" alt="${e.title}" />
@@ -81,7 +69,7 @@ function b(e,t){let o=document.getElementById("booksList");if(o.innerHTML="",e&&
 // lista kategorii
 (function(e){let t=document.getElementById("categoriesList");e.forEach(e=>{let o=document.createElement("li");o.classList.add("category"),o.textContent=e.list_name,t.appendChild(o)})})(e),g.classList.remove("is-hidden")}).catch(e=>{// Obsługa błędów
 console.error("Error in promise chain:",e)}).finally(()=>{setTimeout(function(){g.classList.add("is-hidden")},2e3)}),// Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
-(0,h.fetchBooks)("some-category").then(e=>{let t=document.getElementById("booksList");e.forEach(e=>{// tworzy sekcję dla danej kategorii
+(0,h.fetchBooks)().then(e=>{let t=document.getElementById("booksList");e.forEach(e=>{// tworzy sekcję dla danej kategorii
 let o=document.createElement("div");o.className="category-section";let n=document.createElement("h2");n.innerHTML=e.list_name,n.classList.add("category-title"),o.appendChild(n);let a=document.createElement("ul");// if (window.innerWidth <= 768) {
 e.books.forEach(e=>{let t=document.createElement("li"),o=document.createElement("div");o.className="image-container";let n=document.createElement("img");n.src=e.book_image,n.alt=e.title;let i=document.createElement("h3");i.textContent=e.title,i.classList.add("book-title");let l=document.createElement("p");l.textContent=`Author: ${e.author}`,l.classList.add("book-author"),o.appendChild(n),t.appendChild(o),t.appendChild(i),t.appendChild(l),a.appendChild(t),// ////////////////
 //Modal, ten sam kod dodany w 4 miejscach
@@ -90,13 +78,25 @@ t.addEventListener("click",async()=>{g.classList.remove("is-hidden");let t=docum
 a.classList.add("category-list"),o.appendChild(a);// Dodanie przycisku "See more" dla całego zestawu książek
 let i=document.createElement("button");i.className="category-button",i.innerText="See more",o.appendChild(i),i.addEventListener("click",()=>m(e.list_name)),// Dodaj sekcję kategorii do kontenera
 t.appendChild(o)})}).catch(e=>{// Obsługa błędów
-console.error("Error in promise chain:",e)}),document.getElementById("bestSellers").addEventListener("click",async e=>{if("LI"===e.target.tagName){let t=e.target.textContent;if("All categories"===t)try{let e=await (0,h.fetchBooks)("best-sellers");document.getElementById("bestSellersHeader").innerHTML=`
+console.error("Error in promise chain:",e)}),document.getElementById("bestSellers").addEventListener("click",async e=>{if("LI"===e.target.tagName&&"All categories"===e.target.textContent)try{let e=await (0,h.fetchBooks)();document.getElementById("bestSellersHeader").innerHTML=`
           Best Sellers <span class="blue-text">Books</span>
-        `,f(e,"booksList")}catch(e){console.error("Error fetching best sellers:",e),alert("Failed to fetch best sellers. Please try again.")}else{let e=await (0,h.fetchBooks)(t);document.getElementById("bestSellersHeader").textContent=t,f(e,"booksList")}}}),document.querySelectorAll(".category");const E=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async e=>{let t=e.target.closest(".category, .categoryTop");if(t){let e=t.textContent,o=await (0,h.fetchBooksData)(e),n=function(e){let t=e.split(" ");return t[t.length-1]}(e);// Usuwa klasę selected-category od wszystkich elementów o klasie 'category' lub 'categoryTop'
+        `,// funkjca tworzenia karty
+// ksiaki w best selerss, po kliknieciu w best selerss
+function(e){let t=document.getElementById("booksList");t.innerHTML="",e.forEach(e=>{let o=document.createElement("div");o.classList.add("category-section"),t.appendChild(o);let n=document.createElement("h2");n.textContent=e.list_name,n.classList.add("category-title"),o.appendChild(n);let a=document.createElement("ul");a.classList.add("category-list"),o.appendChild(a),e.books.forEach(e=>{let t=document.createElement("li");t.classList.add("book-item"),t.innerHTML=`
+        <div class="image-container">                    
+         <img src="${e.book_image}" width="180px" height="256px" alt="${e.title}" />
+         </div>
+         <h3 class="book-title">${e.title}</h3>
+         <p class="book-author">Author: ${e.author}</p>
+         `,a.appendChild(t),// /////////
+//Modal, ten sam kod dodany w 4 miejscach
+t.addEventListener("click",async()=>{g.classList.remove("is-hidden");let t=document.getElementById("bookCardContainer");t.innerHTML="";try{let o=await (0,h.fetchBookDetails)(e._id),n=u(o);t.appendChild(n),g.classList.add("is-hidden")}catch(e){console.error(e),g.classList.add("is-hidden")}});// /////////
+});// Przycisk "See more" dodany raz dla całej kategorii, na końcu zestawu książek
+let i=document.createElement("button");i.textContent="See more",i.classList.add("category-button"),o.appendChild(i),i.addEventListener("click",()=>m(e.list_name))})}(e)}catch(e){console.error("Error fetching best sellers:",e),alert("Failed to fetch best sellers. Please try again.")}}),document.querySelectorAll(".category");const b=document.getElementById("bestSellersHeader");document.getElementById("categoriesList").addEventListener("click",async e=>{let t=e.target.closest(".category, .categoryTop");if(t){let e=t.textContent,o=await (0,h.fetchBooksData)(e),n=function(e){let t=e.split(" ");return t[t.length-1]}(e);// Usuwa klasę selected-category od wszystkich elementów o klasie 'category' lub 'categoryTop'
 document.querySelectorAll(".category, .categoryTop").forEach(e=>e.classList.remove("selected-category")),// Ustawia treść nagłówka
-E.innerHTML=`
+b.innerHTML=`
   ${e.replace(RegExp(`${n}$`),`<span class="blue-text">${n}</span>`)}
-`,b(o,e),// Dodaje klasę 'selected-category' tylko do klikniętej kategorii
+`,f(o,e),// Dodaje klasę 'selected-category' tylko do klikniętej kategorii
 t.classList.add("selected-category")}});///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ciemny motyw
 // const themeSwitch = document.getElementById('themeSwitch');
@@ -113,6 +113,6 @@ t.classList.add("selected-category")}});////////////////////////////////////////
 //     });
 //   }
 // });
-//# sourceMappingURL=index.ff16b24f.js.map
+//# sourceMappingURL=index.94c7ad16.js.map
 
-//# sourceMappingURL=index.ff16b24f.js.map
+//# sourceMappingURL=index.94c7ad16.js.map
