@@ -232,7 +232,7 @@ modalBtn.addEventListener('click', e => {
     stefanName.textContent = username;
     backdrop.style.display = 'none';
     buttonLogOutMobile.style.display = 'block';
-    modalMobile.style.display = 'block';
+    // modalMobile.style.display = 'block';
     buttonMobileModal.style.display = 'none';
     imgStefan.style.display = 'block';
     stefanNameMobile.textContent = username;
@@ -279,6 +279,7 @@ const resizeWindow = () => {
   if (window.innerWidth >= 768) {
     hamburgerOpenBtn.style.display = 'none';
     hamburgerCloseBtn.style.display = 'none';
+    modalMobile.style.display = 'none'
   } else if (hamburgerCloseBtn.style.display === 'none') {
     hamburgerOpenBtn.style.display = 'block';
   }

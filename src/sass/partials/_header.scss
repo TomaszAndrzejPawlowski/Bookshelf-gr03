@@ -267,9 +267,10 @@
   max-width: 579px;
 
   width: 100%;
-
+  height: 550px;
   border: 2px solid black;
   z-index: 55;
+  inset: 20% 0;
 }
 
 .modal_signup-form {
@@ -467,9 +468,9 @@
   .modal_mobile {
     display: none;
     width: 100vw;
-
+    height: 100%;
     position: absolute;
-    top: 70;
+    overflow: hidden;
     border: 1px solid black;
     background: linear-gradient(180deg, #4f2ee8 35%, rgba(255, 255, 255, 1) 100%);
     z-index: 100;
@@ -479,14 +480,12 @@
     flex-direction: column;
   }
   .img_css-mobile {
-    height: 100vw;
     height: 439px;
     position: relative;
     background-image: url('/src/images/modal-mobile-books.png');
     background-repeat: no-repeat;
     background-size: cover;
-
-    margin-top: 60%;
+    margin-top: -60%;
   }
   .btn_log-in-mobile {
     width: 184px;
@@ -497,8 +496,8 @@
   }
   .btn_log-out-mobile {
     position: absolute;
-    left: 20;
-    bottom: 20;
+    left: 20px;
+    bottom: 160px;
     background-color: inherit;
     border: none;
     display: none;
@@ -538,6 +537,7 @@
     color: white;
     position: relative;
     margin: 50% auto;
+    z-index: 2;
   }
 
   .shoping-list_text-mobile {

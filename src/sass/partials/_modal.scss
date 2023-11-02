@@ -128,7 +128,7 @@ button.popup-close-button .popup-iconx:hover path {
   display: block;
 }
 .popup-desc {
-  color: var(--black);
+  color: inherit;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -136,6 +136,7 @@ button.popup-close-button .popup-iconx:hover path {
   line-height: 14px;
   letter-spacing: -0.56px;
   margin-bottom: 20px;
+  max-width: 253px;
 }
 .popup-image-desc {
   @include tablet {
