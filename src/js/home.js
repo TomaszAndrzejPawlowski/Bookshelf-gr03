@@ -84,7 +84,7 @@ function handleSeeMoreButtonClick(event) {
 }
 
 // Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
-fetchBooks('some-category')
+fetchBooks()
   .then(data => {
     const booksContainer = document.getElementById('booksList');
 
@@ -237,21 +237,22 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
     if (selectedCategory === 'All categories') {
       // selectedCategory = 'Best Sellers Book';
       try {
-        const booksData = await fetchBooks('best-sellers');
+        const booksData = await fetchBooks();
 
         document.getElementById('bestSellersHeader').innerHTML = `
           Best Sellers <span class="blue-text">Books</span>
         `;
-        renderCategoriesWithBooks(booksData, 'booksList');
+        renderCategoriesWithBooks(booksData);
       } catch (error) {
         console.error('Error fetching best sellers:', error);
         alert('Failed to fetch best sellers. Please try again.');
       }
-    } else {
-      const booksData = await fetchBooks(selectedCategory);
-      document.getElementById('bestSellersHeader').textContent = selectedCategory;
-      renderCategoriesWithBooks(booksData, 'booksList');
     }
+    // else {
+    //   const booksData = await fetchBooks(selectedCategory);
+    //   document.getElementById('bestSellersHeader').textContent = selectedCategory;
+    //   renderCategoriesWithBooks(booksData, 'booksList');
+    // }
   }
 });
 ////////////////////////////
