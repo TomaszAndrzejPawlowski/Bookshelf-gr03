@@ -78,7 +78,7 @@
   position: relative;
   border: 1.5px solid black;
   border-radius: 0px 0px 8px 8px;
-  background-color: #f6f6f6;
+  background-color: inherit;
 }
 
 .logo {
@@ -132,7 +132,6 @@
   height: 45px;
   border-radius: 150px 150px 150px 150px;
   z-index: -1;
-  color: black;
 }
 .home_link {
   background-color: inherit;
@@ -168,6 +167,7 @@
 }
 .lock-icon {
   margin-left: 5%;
+  fill: #fff;
 }
 
 .menu_flex {

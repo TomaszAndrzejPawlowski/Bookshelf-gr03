@@ -3,6 +3,7 @@ import { fetchBooksData, fetchBookDetails, fetchCategories, fetchBooks } from '.
 const loadingTxt = document.querySelector('.loader');
 
 // lista kategorii
+
 function renderCategories(categoriesData) {
   const categoriesList = document.getElementById('categoriesList');
 
@@ -83,7 +84,7 @@ function handleSeeMoreButtonClick(event) {
 }
 
 // Wywołanie funkcji, top 5 z kazdej kategorii. best sellers- ksiazki ładują sie od razu.
-fetchBooks('some-category')
+fetchBooks()
   .then(data => {
     const booksContainer = document.getElementById('booksList');
 
@@ -239,24 +240,24 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
       try {
         //loadingTxt.classList.remove('is-hidden');
 
-        const booksData = await fetchBooks('best-sellers');
+        const booksData = await fetchBooks();
 
         document.getElementById('bestSellersHeader').innerHTML = `
           Best Sellers <span class="blue-text">Books</span>
           
         `;
-
-        renderCategoriesWithBooks(booksData, 'booksList');
+        
+        renderCategoriesWithBooks(booksData);
       } catch (error) {
         console.error('Error fetching best sellers:', error);
         alert('Failed to fetch best sellers. Please try again.');
       }
-    } else {
-      const booksData = await fetchBooks(selectedCategory);
-
-      document.getElementById('bestSellersHeader').textContent = selectedCategory;
-      renderCategoriesWithBooks(booksData, 'booksList');
     }
+    // else {
+    //   const booksData = await fetchBooks(selectedCategory);
+    //   document.getElementById('bestSellersHeader').textContent = selectedCategory;
+    //   renderCategoriesWithBooks(booksData, 'booksList');
+    // }
   }
 });
 ////////////////////////////
@@ -357,9 +358,6 @@ document.getElementById('categoriesList').addEventListener('click', async event 
 
 // ciemny motyw
 // const themeSwitch = document.getElementById('themeSwitch');
-// const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// document.body.classList.toggle('dark-mode', isDarkMode);
 
 // themeSwitch.addEventListener('change', () => {
 //   const isDarkMode = themeSwitch.checked;
