@@ -168,6 +168,7 @@ fetchBooks()
 // funkjca tworzenia karty
 // ksiaki w best selerss, po kliknieciu w best selerss
 function renderCategoriesWithBooks(categoriesData) {
+  loadingTxt.classList.add('is-hidden');
   const booksContainer = document.getElementById('booksList');
   booksContainer.innerHTML = '';
 
@@ -214,7 +215,6 @@ function renderCategoriesWithBooks(categoriesData) {
           loadingTxt.classList.add('is-hidden');
         } catch (error) {
           console.error(error);
-          loadingTxt.classList.add('is-hidden');
         }
       });
       // /////////
@@ -236,12 +236,17 @@ document.getElementById('bestSellers').addEventListener('click', async event => 
 
     if (selectedCategory === 'All categories') {
       // selectedCategory = 'Best Sellers Book';
+
       try {
+        //loadingTxt.classList.remove('is-hidden');
+
         const booksData = await fetchBooks();
 
         document.getElementById('bestSellersHeader').innerHTML = `
           Best Sellers <span class="blue-text">Books</span>
+          
         `;
+        
         renderCategoriesWithBooks(booksData);
       } catch (error) {
         console.error('Error fetching best sellers:', error);
@@ -296,6 +301,7 @@ function renderBooks(booksData, category) {
       booksContainer.appendChild(bookItem);
     });
   } else {
+    loadingTxt.classList.remove('is-hidden');
     const noBooksMessage = document.createElement('p');
     noBooksMessage.textContent = 'No books found in this category.';
     booksContainer.appendChild(noBooksMessage);
@@ -306,6 +312,7 @@ function renderBooks(booksData, category) {
     booksContainer.classList.replace('books_category-list', 'books-list');
   } else {
     booksContainer.classList.replace('books-list', 'books_category-list');
+    //loadingTxt.classList.add('is-hidden');
   }
 }
 
@@ -319,11 +326,13 @@ function getLastWord(text) {
 
 document.getElementById('categoriesList').addEventListener('click', async event => {
   const clickedCategory = event.target.closest('.category, .categoryTop');
+  loadingTxt.classList.remove('is-hidden');
 
   if (clickedCategory) {
     const selectedCategory = clickedCategory.textContent;
     const booksData = await fetchBooksData(selectedCategory);
     const lastWord = getLastWord(selectedCategory);
+    loadingTxt.classList.add('is-hidden');
 
     // Usuwa klasę selected-category od wszystkich elementów o klasie 'category' lub 'categoryTop'
     document
