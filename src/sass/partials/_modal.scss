@@ -15,7 +15,7 @@
   min-width: 300px;
   max-width: 600px;
   /* max-height: 100vh; */
-  color: var(--black);
+  // color: var(--black);
   background-color: var(--white);
 
   border: 2px solid var(--black);
@@ -83,7 +83,7 @@ button.popup-close-button .popup-iconx:hover path {
   }
 }
 .popup-title {
-  color: var(--black);
+  color: inherit;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;

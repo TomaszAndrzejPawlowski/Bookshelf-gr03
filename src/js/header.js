@@ -55,6 +55,19 @@ const shopLinkMobile = document.querySelector('.shopping_link-mobile');
 const homeLinkMobile = document.querySelector('.home_link-mobile');
 const bookCat = document.querySelector('.categories-block');
 
+function checkIfDarkMode() {
+  if (isDarkMode) {
+    switchDark.style.display = 'block';
+    switchLight.style.display = 'none';
+    cartDark.style.display = 'block';
+    cartLight.style.display = 'none';
+    logoDark.style.display = 'block';
+    logoLight.style.display = 'none';
+  } else {
+    return
+  }
+}
+checkIfDarkMode();
 document.body.classList.toggle('dark-mode', isDarkMode);
 
 themeSwitch.addEventListener('change', () => {

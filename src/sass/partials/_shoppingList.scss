@@ -33,6 +33,9 @@
   padding: 14px;
   margin: 0 20px;
 }
+.dark-mode .shopList-item {
+  background-color: var(--black);
+}
 
 .remove-button {
   position: absolute;
@@ -73,7 +76,7 @@
 }
 .shopList-item__information > h1 {
   padding-bottom: 4px;
-  color: var(--black);
+  color: inherit;
   font-size: var(--font-size-small);
   font-weight: 700;
   line-height: 1.13;
@@ -107,7 +110,7 @@
 }
 
 .shopList-item__summary > p {
-  color: var(--black);
+  color: inherit;
   font-size: var(--fint-size-small_1);
   font-weight: 400;
   line-height: 1.29;
